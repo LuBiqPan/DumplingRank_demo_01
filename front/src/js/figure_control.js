@@ -14,23 +14,10 @@ var now = new Date(base);
 var growthData = 0;
 
 var growthTheater;
-var growthSNH48;
-var growthBEJ48;
-var growthGNZ48;
+var growthSNH48, growthBEJ48, growthGNZ48;
 
-var valSNH48;
-var valBEJ48;
-var valGNZ48;
-var valSII;
-var valNII;
-var valHII;
-var valX;
-var valB;
-var valE;
-var valJ;
-var valG;
-var valNIII;
-var valZ;
+var valSNH48, valBEJ48, valGNZ48;
+var valSII, valNII, valHII, valX, valB, valE, valJ, valG, valNIII, valZ;
 
 
 function addData(shift, growthData) {
