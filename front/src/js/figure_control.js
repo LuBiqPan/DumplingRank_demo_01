@@ -18,6 +18,20 @@ var growthSNH48;
 var growthBEJ48;
 var growthGNZ48;
 
+var valSNH48;
+var valBEJ48;
+var valGNZ48;
+var valSII;
+var valNII;
+var valHII;
+var valX;
+var valB;
+var valE;
+var valJ;
+var valG;
+var valNIII;
+var valZ;
+
 
 function addData(shift, growthData) {
     // now = [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/');
@@ -64,6 +78,10 @@ for (var i = 1; i < 10; i++) {
 }
 
 option = {
+    title:{
+            text: '集资增长',
+            textStyle: {color: '#C0DAFF'}
+        },
     xAxis: {
         type: 'category',
         boundaryGap: false,
@@ -95,61 +113,115 @@ if (option && typeof option === "object") {
 
 
 // Total percentage (theater)
-// var totalPercentage = function () {
-function totalPercentage (valSNH48, valBEJ48, valGNZ48) {
-    var theaterPercentageChart = echarts.init(document.getElementById('inner-percentage'));
+function amountPercentage(
+    valSNH48, valBEJ48, valGNZ48,
+    valSII, valNII, valHII, valX, valB, valE, valJ, valG, valNIII, valZ
+) {
+    var percentageChart = echarts.init(document.getElementById("inner-percentage"));
 
-    var option = {
-        title: {
-            text: '集资分布',
-            textStyle: {
-                color: '#C0DAFF'
-            }
+    option = {
+        title:{
+            text: '集资比例',
+            textStyle: {color: '#C0DAFF'}
         },
-        series : [
+        tooltip: {
+            trigger: 'item',
+            formatter: "{b}: {c} ({d}%)"
+        },
+        // legend: {
+        //     orient: 'vertical',
+        //     x: 'left',
+        //     data:['SII','NII','HII','X','B','E','J','G','N','Z']
+        // },
+        series: [
             {
-                name: '',
-                type: 'pie',
-                radius: '55%',
-                data:[
-                    {value:valSNH48, name:'SNH48', itemStyle: {color: '#00b6de'}},
-                    {value:valBEJ48, name:'BEJ48', itemStyle: {color: '#EB4F74'}},
-                    {value:valGNZ48, name:'GNZ48', itemStyle: {color: '#9FBF40'}},
-                ],
-                roseType: 'angle',
+                // name:'访问来源',
+                type:'pie',
+                selectedMode: 'single',
+                radius: [0, '45%'],
+
                 label: {
-                    emphasis: {
-                        textStyle: {
-                            color: 'rgba(255, 255, 255, 1)'
-                        }
+                    normal: {
+                        position: 'inner'
                     }
                 },
                 labelLine: {
-                    emphasis: {
-                        lineStyle: {
-                            color: 'rgba(255, 255, 255, 1)'
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:valSNH48, name:'SNH48', itemStyle:{color:'#00b6de'}},
+                    {value:valBEJ48, name:'BEJ48', itemStyle:{color:'#ff4083'}},
+                    {value:valGNZ48, name:'GNZ48', itemStyle:{color:'#9FBF40'}},
+                ]
+            },
+            {
+                //name:'访问来源',
+                type:'pie',
+                radius: ['54%', '75%'],
+                label: {
+                    normal: {
+                        // formatter: '{b|{b} }{c}{per|{d}%}  ',
+                        // backgroundColor: '#eee',
+                        // borderColor: '#aaa',
+                        // borderWidth: 1,
+                        borderRadius: 4,
+                        // shadowBlur:3,
+                        // shadowOffsetX: 2,
+                        // shadowOffsetY: 2,
+                        // shadowColor: '#999',
+                        // padding: [0, 7],
+                        rich: {
+                            a: {
+                                color: '#999',
+                                lineHeight: 22,
+                                align: 'center'
+                            },
+                            // abg: {
+                            //     backgroundColor: '#333',
+                            //     width: '100%',
+                            //     align: 'right',
+                            //     height: 22,
+                            //     borderRadius: [4, 4, 0, 0]
+                            // },
+                            hr: {
+                                borderColor: '#aaa',
+                                width: '100%',
+                                borderWidth: 0.5,
+                                height: 0
+                            },
+                            b: {
+                                fontSize: 16,
+                                lineHeight: 33
+                            },
+                            per: {
+                                color: '#eee',
+                                backgroundColor: '#334455',
+                                padding: [2, 4],
+                                borderRadius: 2
+                            }
                         }
                     }
                 },
-                itemStyle: {
-                    normal: {
-                        shadowBlur: 200,
-                        shadowColor: 'rgba(0, 0, 0, 0.5)',
-                        // Show label and data.
-                        label: {
-                            show: true,
-                            formatter: '{b}({d}%)'
-                        }
-                    }
-                }
+                data:[
+                    {value:valSII, name:'SII', itemStyle:{color:'#00b6de'}},
+                    {value:valNII, name:'NII', itemStyle:{color:'#9e57b4'}},
+                    {value:valHII, name:'HII', itemStyle:{color:'#f8941d'}},
+                    {value:valX, name:'X', itemStyle:{color:'#b1d61b'}},
+                    {value:valB, name:'B', itemStyle:{color:'#ff4083'}},
+                    {value:valE, name:'E', itemStyle:{color:'#0cc8c3'}},
+                    {value:valJ, name:'J', itemStyle:{color:'#006ab7'}},
+                    {value:valG, name:'G', itemStyle:{color:'#9FBF40'}},
+                    {value:valNIII, name:'NIII', itemStyle:{color:'#ffe249'}},
+                    {value:valZ, name:'Z', itemStyle:{color:'#ea617b'}},
+                ]
             }
         ]
     };
-
-    theaterPercentageChart.setOption(option);
+    percentageChart.setOption(option, true);
 }
 
-// $(totalPercentage);
 
 /* Ajax upgrade */
 var ajaxTime = 5000;    // ajax cycle in millisecond
@@ -190,7 +262,22 @@ setInterval(function () {
             growthSNH48 = growthTheater[0]["amount_theater"];
             growthBEJ48 = growthTheater[1]["amount_theater"];
             growthGNZ48 = growthTheater[2]["amount_theater"];
-            console.log(growthSNH48, growthBEJ48, growthGNZ48);
+            // console.log(growthSNH48, growthBEJ48, growthGNZ48);
+
+            /* Percentage */
+            valSNH48 = 1000;
+            valBEJ48 = 1000;
+            valGNZ48 = 1000;
+            valSII = 1000;
+            valNII = 1000;
+            valHII = 1000;
+            valX = 1000;
+            valB = 1000;
+            valE = 1000;
+            valJ = 1000;
+            valG = 1000;
+            valNIII = 1000;
+            valZ = 1000;
         }
     });
 
@@ -208,7 +295,9 @@ setInterval(function () {
     });
 
     // percentage
-    totalPercentage(growthSNH48, growthBEJ48, growthGNZ48);
+    amountPercentage(
+        valSNH48, valBEJ48, valGNZ48,
+        valSII, valNII, valHII, valX, valB, valE, valJ, valG, valNIII, valZ)
 
 }, ajaxTime);   // ajax every ajaxTime millisecond
 
