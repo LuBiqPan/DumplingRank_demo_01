@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>饺子榜2019</title>
+
+    <script src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static '/js/echarts.min.js' %}"></script>
+    <script src="{% static '/js/ad.min.js' %}"></script>
+    <script src="{% static 'js/main_table_page_control.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static '/css/index.min.css' %}">
+
+    <!--<script src="../dist/js/jquery-3.3.1.min.js"></script>
+    <script src="../dist/js/echarts.min.js"></script>
+    <script src="../dist/js/ad.min.js"></script>
+    <script src="../dist/js/main_table_page_control.min.js"></script>
+    <link rel="stylesheet" href="../dist/css/index.min.css">-->
+
+</head>
+<body>
+    <div class="nav">
+        <div class="inner-nav-wrapper">
+            <div class="nav-item google-table">
+                <a href="#">谷歌表格</a>
+            </div>
+            <div class="nav-item main-title">
+                <span class="title-wrapper">
+                    饺子榜2019
+                </span>
+            </div>
+            <div class="nav-item about-us">
+                <a href="#">关于我们</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="inner-main-wrapper">
+            <div class="left-wrapper">
+                <div id="growth" class="growth-figure">
+                    <div id="inner-group" class="inner-growth-figure"></div>
+                     <!--<script src="../src/js/figure_control.js"></script>-->
+                     <script src="{% static '/js/figure_control.min.js' %}"></script>
+                </div>
+                <div id="percentage" class="percentage-figure">
+                    <div id="inner-percentage" class="inner-percentage-figure"></div>
+                </div>
+                <div id = "pk" class="pk-figure">
+                    <div id="inner-pk" class="inner-pk-figure"></div>
+                </div>
+            </div>
+
+            <div class="center-wrapper">
+                <div class="middle-center-wrapper">
+                    <div class="inner-center-wrapper">
+                        <div class="table-title">
+                            <div class="inner-table-title">
+                                 <span class="total-amount-txt">集资总额 </span>
+                                 <span id="amount-total"></span>
+                            </div>
+                        </div>
+                        <div class="table-wrapper">
+                            <table class="main-table">
+                                <tr class="table-head">
+                                    <th>排名</th>
+                                    <th>姓名</th>
+                                    <th>集资总额</th>
+                                </tr>
+                                <tr id="tr-rank-1" class="tr-rank tr-odd tr-p1">
+                                    <td class="rank-no">1</td>
+                                    <td class="rank-member">{{ index1.sample_time }}</td>
+                                    <td class="rank-account"></td>
+                                </tr>
+                                <tr id="tr-rank-2" class="tr-rank tr-even tr-p1">
+                                    <td class="rank-no">2</td>
+                                    <td class="rank-member"></td>
+                                    <td class="rank-account"></td>
+                                </tr>
+                                <tr id="tr-rank-3" class="tr-rank tr-odd tr-p1">
+                                    <td class="rank-no">3</td>
+                                    <td class="rank-member"></td>
+                                    <td class="rank-account"></td>
+                                </tr>
+                                <tr id="tr-rank-4" class="tr-rank tr-even tr-p1">
+                                    <td class="rank-no">4</td>
+                                    <td class="rank-member"></td>
+                                    <td class="rank-account"></td>
+                                </tr>
+                                <tr id="tr-rank-5" class="tr-rank tr-odd tr-p1">
+                                    <td class="rank-no">5</td>
+                                    <td class="rank-member">莫寒</td>
+                                    <td class="rank-account">6000000</td>
+                                </tr>
+                                <tr id="tr-rank-6" class="tr-rank tr-even tr-p1">
+                                    <td class="rank-no">6</td>
+                                    <td class="rank-member">赵粤</td>
+                                    <td class="rank-account">5000000</td>
+                                </tr>
+                                <tr id="tr-rank-7" class="tr-rank tr-odd tr-p1">
+                                    <td class="rank-no">7</td>
+                                    <td class="rank-member">许佳琪</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-8" class="tr-rank tr-even tr-p1">
+                                    <td class="rank-no">8</td>
+                                    <td class="rank-member">戴萌</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-9" class="tr-rank tr-odd tr-p1">
+                                    <td class="rank-no">9</td>
+                                    <td class="rank-member">钱蓓婷</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-10" class="tr-rank tr-even tr-p1">
+                                    <td class="rank-no">10</td>
+                                    <td class="rank-member">吴哲晗</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-11" class="tr-rank tr-odd tr-p1">
+                                    <td class="rank-no">11</td>
+                                    <td class="rank-member">谢蕾蕾</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-12" class="tr-rank tr-even tr-p1">
+                                    <td class="rank-no">12</td>
+                                    <td class="rank-member">孔肖吟</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-13" class="tr-rank tr-odd tr-p1">
+                                    <td class="rank-no">13</td>
+                                    <td class="rank-member">苏杉杉</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-14" class="tr-rank tr-even tr-p1">
+                                    <td class="rank-no">14</td>
+                                    <td class="rank-member">段艺璇</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-15" class="tr-rank tr-odd tr-p1">
+                                    <td class="rank-no">15</td>
+                                    <td class="rank-member">林思意</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-16" class="tr-rank tr-even tr-p1">
+                                    <td class="rank-no">16</td>
+                                    <td class="rank-member">林思意</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+
+                                <tr id="tr-rank-17" class="tr-rank tr-odd tr-p2">
+                                    <td class="rank-no">17</td>
+                                    <td class="rank-member">孫芮</td>
+                                    <td class="rank-account"></td>
+                                </tr>
+                                <tr id="tr-rank-18" class="tr-rank tr-even tr-p2">
+                                    <td class="rank-no">18</td>
+                                    <td class="rank-member"></td>
+                                    <td class="rank-account"></td>
+                                </tr>
+                                <tr id="tr-rank-19" class="tr-rank tr-odd tr-p2">
+                                    <td class="rank-no">19</td>
+                                    <td class="rank-member"></td>
+                                    <td class="rank-account"></td>
+                                </tr>
+                                <tr id="tr-rank-20" class="tr-rank tr-even tr-p2">
+                                    <td class="rank-no">20</td>
+                                    <td class="rank-member">陆婷</td>
+                                    <td class="rank-account">7000000</td>
+                                </tr>
+                                <tr id="tr-rank-21" class="tr-rank tr-odd tr-p2">
+                                    <td class="rank-no">21</td>
+                                    <td class="rank-member">莫寒</td>
+                                    <td class="rank-account">6000000</td>
+                                </tr>
+                                <tr id="tr-rank-22" class="tr-rank tr-even tr-p2">
+                                    <td class="rank-no">22</td>
+                                    <td class="rank-member">赵粤</td>
+                                    <td class="rank-account">5000000</td>
+                                </tr>
+                                <tr id="tr-rank-23" class="tr-rank tr-odd tr-p2">
+                                    <td class="rank-no">23</td>
+                                    <td class="rank-member">许佳琪</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-24" class="tr-rank tr-even tr-p2">
+                                    <td class="rank-no">24</td>
+                                    <td class="rank-member">戴萌</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-25" class="tr-rank tr-odd tr-p2">
+                                    <td class="rank-no">25</td>
+                                    <td class="rank-member">钱蓓婷</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-26" class="tr-rank tr-even tr-p2">
+                                    <td class="rank-no">26</td>
+                                    <td class="rank-member">吴哲晗</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-27" class="tr-rank tr-odd tr-p2">
+                                    <td class="rank-no">27</td>
+                                    <td class="rank-member">谢蕾蕾</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-28" class="tr-rank tr-even tr-p2">
+                                    <td class="rank-no">28</td>
+                                    <td class="rank-member">孔肖吟</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-29" class="tr-rank tr-odd tr-p2">
+                                    <td class="rank-no">29</td>
+                                    <td class="rank-member">苏杉杉</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-30" class="tr-rank tr-even tr-p2">
+                                    <td class="rank-no">30</td>
+                                    <td class="rank-member">段艺璇</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-31" class="tr-rank tr-odd tr-p2">
+                                    <td class="rank-no">31</td>
+                                    <td class="rank-member">林思意</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-32" class="tr-rank tr-even tr-p2">
+                                    <td class="rank-no">32</td>
+                                    <td class="rank-member">林思意</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+
+                                <tr id="tr-rank-33" class="tr-rank tr-odd tr-p3">
+                                    <td class="rank-no">33</td>
+                                    <td class="rank-member"></td>
+                                    <td class="rank-account"></td>
+                                </tr>
+                                <tr id="tr-rank-34" class="tr-rank tr-even tr-p3">
+                                    <td class="rank-no">34</td>
+                                    <td class="rank-member"></td>
+                                    <td class="rank-account"></td>
+                                </tr>
+                                <tr id="tr-rank-35" class="tr-rank tr-odd tr-p3">
+                                    <td class="rank-no">35</td>
+                                    <td class="rank-member"></td>
+                                    <td class="rank-account"></td>
+                                </tr>
+                                <tr id="tr-rank-36" class="tr-rank tr-even tr-p3">
+                                    <td class="rank-no">36</td>
+                                    <td class="rank-member">陆婷</td>
+                                    <td class="rank-account">7000000</td>
+                                </tr>
+                                <tr id="tr-rank-37" class="tr-rank tr-odd tr-p3">
+                                    <td class="rank-no">37</td>
+                                    <td class="rank-member">赵粤</td>
+                                    <td class="rank-account">5000000</td>
+                                </tr>
+                                <tr id="tr-rank-38" class="tr-rank tr-even tr-p3">
+                                    <td class="rank-no">38</td>
+                                    <td class="rank-member">许佳琪</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-39" class="tr-rank tr-odd tr-p3">
+                                    <td class="rank-no">39</td>
+                                    <td class="rank-member">戴萌</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-40" class="tr-rank tr-even tr-p3">
+                                    <td class="rank-no">40</td>
+                                    <td class="rank-member">钱蓓婷</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-41" class="tr-rank tr-odd tr-p3">
+                                    <td class="rank-no">41</td>
+                                    <td class="rank-member">吴哲晗</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-42" class="tr-rank tr-even tr-p3">
+                                    <td class="rank-no">42</td>
+                                    <td class="rank-member">谢蕾蕾</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-43" class="tr-rank tr-odd tr-p3">
+                                    <td class="rank-no">43</td>
+                                    <td class="rank-member">孔肖吟</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-44" class="tr-rank tr-even tr-p3">
+                                    <td class="rank-no">44</td>
+                                    <td class="rank-member">苏杉杉</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-45" class="tr-rank tr-odd tr-p3">
+                                    <td class="rank-no">45</td>
+                                    <td class="rank-member">段艺璇</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-46" class="tr-rank tr-even tr-p3">
+                                    <td class="rank-no">46</td>
+                                    <td class="rank-member">林思意</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-47" class="tr-rank tr-odd tr-p3">
+                                    <td class="rank-no">47</td>
+                                    <td class="rank-member">林思意</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-48" class="tr-rank tr-even tr-p3">
+                                    <td class="rank-no">48</td>
+                                    <td class="rank-member">孫芮</td>
+                                    <td class="rank-account"></td>
+                                </tr>
+
+                                <tr id="tr-rank-49" class="tr-rank tr-odd tr-p4 tr-last-group">
+                                    <td class="rank-no">49</td>
+                                    <td class="rank-member"></td>
+                                    <td class="rank-account"></td>
+                                </tr>
+                                <tr id="tr-rank-50" class="tr-rank tr-even tr-p4 tr-last-group">
+                                    <td class="rank-no">50</td>
+                                    <td class="rank-member"></td>
+                                    <td class="rank-account"></td>
+                                </tr>
+                                <tr id="tr-rank-51" class="tr-rank tr-odd tr-p4 tr-last-group">
+                                    <td class="rank-no">51</td>
+                                    <td class="rank-member">陆婷</td>
+                                    <td class="rank-account">7000000</td>
+                                </tr>
+                                <tr id="tr-rank-52" class="tr-rank tr-even tr-p4 tr-last-group">
+                                    <td class="rank-no">52</td>
+                                    <td class="rank-member">莫寒</td>
+                                    <td class="rank-account">6000000</td>
+                                </tr>
+                                <tr id="tr-rank-53" class="tr-rank tr-odd tr-p4 tr-last-group">
+                                    <td class="rank-no">53</td>
+                                    <td class="rank-member">赵粤</td>
+                                    <td class="rank-account">5000000</td>
+                                </tr>
+                                <tr id="tr-rank-54" class="tr-rank tr-even tr-p4 tr-last-group">
+                                    <td class="rank-no">54</td>
+                                    <td class="rank-member">许佳琪</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-55" class="tr-rank tr-odd tr-p4 tr-last-group">
+                                    <td class="rank-no">55</td>
+                                    <td class="rank-member">戴萌</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-56" class="tr-rank tr-even tr-p4 tr-last-group">
+                                    <td class="rank-no">56</td>
+                                    <td class="rank-member">钱蓓婷</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-57" class="tr-rank tr-odd tr-p4 tr-last-group">
+                                    <td class="rank-no">57</td>
+                                    <td class="rank-member">吴哲晗</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-58" class="tr-rank tr-even tr-p4 tr-last-group">
+                                    <td class="rank-no">58</td>
+                                    <td class="rank-member">谢蕾蕾</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-59" class="tr-rank tr-odd tr-p4 tr-last-group">
+                                    <td class="rank-no">59</td>
+                                    <td class="rank-member">孔肖吟</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-60" class="tr-rank tr-even tr-p4 tr-last-group">
+                                    <td class="rank-no">60</td>
+                                    <td class="rank-member">苏杉杉</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-61" class="tr-rank tr-odd tr-p4 tr-last-group">
+                                    <td class="rank-no">61</td>
+                                    <td class="rank-member">段艺璇</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-62" class="tr-rank tr-even tr-p4 tr-last-group">
+                                    <td class="rank-no">62</td>
+                                    <td class="rank-member">林思意</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-63" class="tr-rank tr-odd tr-p4 tr-last-group">
+                                    <td class="rank-no">63</td>
+                                    <td class="rank-member">林思意</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-64" class="tr-rank tr-even tr-p4 tr-last-group">
+                                    <td class="rank-no">64</td>
+                                    <td class="rank-member">莫寒</td>
+                                    <td class="rank-account">6000000</td>
+                                </tr>
+                                <tr id="tr-rank-65" class="tr-rank tr-odd tr-p4 tr-last-group">
+                                    <td class="rank-no">65</td>
+                                    <td class="rank-member">林思意</td>
+                                    <td class="rank-account">3000000</td>
+                                </tr>
+                                <tr id="tr-rank-66" class="tr-rank tr-even tr-p4 tr-last-group">
+                                    <td class="rank-no">66</td>
+                                    <td class="rank-member">莫寒</td>
+                                    <td class="rank-account">6000000</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                        <div class="table-page-wrapper">
+                            <ul>
+                                <li>
+                                    <button id="p1">1</button>
+                                    <button id="p2">2</button>
+                                    <button id="p3">3</button>
+                                    <button id="p4">4</button>
+                                    <button id="p-more">更 多</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-wrapper">
+                <div class="ad-wrapper">
+                    <div class="banner-group" id="banner-group">
+                        <ul class="banner-ul" id="banner-ul">
+                            <li>
+                                <a href="https://zhongchou.modian.com/item/47181.html" target="_blank">
+                                    <img src="{% static 'images/banner/banner1.jpg' %}" alt="">
+                                    <!--<img src="../dist/images/banner/banner1.jpg" alt="">-->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://zhongchou.modian.com/item/46311.html" target="_blank">
+                                    <img src="{% static 'images/banner/banner2.jpg' %}" alt="">
+                                    <!--<img src="../dist/images/banner/banner2.jpg" alt="">-->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{% static 'images/banner/banner3.jpg' %}" alt="">
+                                    <!--<img src="../dist/images/banner/banner3.jpg" alt="">-->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://zhongchou.modian.com/item/43740.html">
+                                    <img src="{% static 'images/banner/banner4.jpg' %}" alt="">
+                                    <!--<img src="../dist/images/banner/banner4.jpg" alt="">-->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="{% static 'images/banner/banner5.jpg' %}" alt="">
+                                    <!--<img src="../dist/images/banner/banner5.jpg" alt="">-->
+                                </a>
+                            </li>
+                        </ul>
+                        <span class="arrow left-arrow">‹</span>
+                        <span class="arrow right-arrow">›</span>
+                        <div class="page-control-group">
+                            <ul class="page-control"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="fans-rank-wrapper">
+                    <div class="inner-fans-rank-wrapper">
+                        <div class="fans-table-name">
+                            粉丝集资榜
+                        </div>
+                        <table class="fans-table">
+                            <tr>
+                                <th>排名</th>
+                                <th>粉丝ID</th>
+                                <th>集资总额</th>
+                                <th>首推</th>
+                            </tr>
+                            <tr class="fans-rank tr-odd">
+                                <td class="rank-no">1</td>
+                                <td class="rank-fans">Fan1</td>
+                                <td class="rank-account">1000000</td>
+                                <td class="rank-idol">李艺彤</td>
+                            </tr>
+                            <tr class="fans-rank tr-even">
+                                <td class="rank-no">2</td>
+                                <td class="rank-fans">Fan2</td>
+                                <td class="rank-account">1000000</td>
+                                <td class="rank-idol">黄婷婷</td>
+                            </tr>
+                            <tr class="fans-rank tr-odd">
+                                <td class="rank-no">3</td>
+                                <td class="rank-fans">Fan3</td>
+                                <td class="rank-account">1000000</td>
+                                <td class="rank-idol">冯薪朵</td>
+                            </tr>
+                            <tr class="fans-rank tr-even">
+                                <td class="rank-no">4</td>
+                                <td class="rank-fans">Fan4</td>
+                                <td class="rank-account">1000000</td>
+                                <td class="rank-idol">陆婷</td>
+                            </tr>
+                            <tr class="fans-rank tr-odd">
+                                <td class="rank-no">5</td>
+                                <td class="rank-fans">Fan5</td>
+                                <td class="rank-account">1000000</td>
+                                <td class="rank-idol">莫寒</td>
+                            </tr>
+                            <tr class="fans-rank tr-even">
+                                <td class="rank-no">6</td>
+                                <td class="rank-fans">Fan6</td>
+                                <td class="rank-account">1000000</td>
+                                <td class="rank-idol">赵粤</td>
+                            </tr>
+                            <tr class="fans-rank tr-odd">
+                                <td class="rank-no">7</td>
+                                <td class="rank-fans">Fan7</td>
+                                <td class="rank-account">1000000</td>
+                                <td class="rank-idol">许佳琪</td>
+                            </tr>
+                        </table>
+                        <button id="more-fans">更  多</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="inner-footer-wrapper">
+            <ul class="external-links">
+                <li class="links">
+                    <a href="https://weibo.com/u/2827120175" target="_blank">
+                        饺子榜微博
+                    </a>
+                </li>
+                <li class="links">
+                    <a href="https://www.modian.com/" target="_blank">
+                        摩点网
+                    </a>
+                </li>
+                <li class="links">
+                    <a href="https://www.echartsjs.com/" target="_blank">
+                        Echarts
+                    </a>
+                </li>
+                <li class="links">
+                    <a href="http://www.snh48.com/" target="_blank">
+                        SNH48
+                    </a>
+                </li>
+                <li class="links">
+                    <a href="http://www.bej48.com/" target="_blank">
+                        BEJ48
+                    </a>
+                </li>
+                <li class="links">
+                    <a href="http://www.gnz48.com/" target="_blank">
+                        GNZ48
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
