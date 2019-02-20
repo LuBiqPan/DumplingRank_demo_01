@@ -13,8 +13,9 @@ var now = new Date(base);
 
 var growthData = 0;
 
-var growthTheater;
+var growthTheater, growthTeam;
 var growthSNH48, growthBEJ48, growthGNZ48;
+var growthSII, growthNII, growthHII, growthX, growthB, growthE, growthJ, growthG, growthNIII, growthZ;
 
 var valSNH48, valBEJ48, valGNZ48;
 var valSII, valNII, valHII, valX, valB, valE, valJ, valG, valNIII, valZ;
@@ -245,26 +246,24 @@ setInterval(function () {
             growthData = $.parseJSON(data["growth_total"])["amount_total"];
             // console.log(growthData);
             growthTheater = $.parseJSON(data["growth_theater"]);
-            // console.log(growthTheater);
-            growthSNH48 = growthTheater[0]["amount_theater"];
-            growthBEJ48 = growthTheater[1]["amount_theater"];
-            growthGNZ48 = growthTheater[2]["amount_theater"];
-            // console.log(growthSNH48, growthBEJ48, growthGNZ48);
+            growthTeam = $.parseJSON(data["growth_team"]);
+            // console.log(growthTeam);
 
             /* Percentage */
-            valSNH48 = 1000;
-            valBEJ48 = 1000;
-            valGNZ48 = 1000;
-            valSII = 1000;
-            valNII = 1000;
-            valHII = 1000;
-            valX = 1000;
-            valB = 1000;
-            valE = 1000;
-            valJ = 1000;
-            valG = 1000;
-            valNIII = 1000;
-            valZ = 1000;
+            valSNH48 = growthTheater[0]["amount_theater"];
+            valBEJ48 = growthTheater[1]["amount_theater"];
+            valGNZ48 = growthTheater[2]["amount_theater"];
+
+            valSII  = growthTeam[0]["amount_team"];
+            valNII  = growthTeam[1]["amount_team"];
+            valHII  = growthTeam[2]["amount_team"];
+            valX    = growthTeam[3]["amount_team"];
+            valB    = growthTeam[4]["amount_team"];
+            valE    = growthTeam[5]["amount_team"];
+            valJ    = growthTeam[6]["amount_team"];
+            valG    = growthTeam[7]["amount_team"];
+            valNIII = growthTeam[8]["amount_team"];
+            valZ    = growthTeam[9]["amount_team"];
         }
     });
 

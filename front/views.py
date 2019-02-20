@@ -85,6 +85,23 @@ def index(request):
             data_theater.append(inner_dict)
     d = {"growth_theater": json.dumps(data_theater)}
     context.update(d)
+    # print(context)
+
+    # Amount growth (team)
+    team_list = ["Team SII", "Team NII", "Team HII", "Team X",
+                 "Team B", "Team E", "Team J", "Team G", "Team NIII", "Team Z"]
+    data_team = []
+    for team in team_list:
+        results = G103GrowthTeam.objects.filter(team=team)
+        for result in results:
+            inner_dict = {
+                "sample_time": str(result.sample_time),
+                "team": str(result.team),
+                "amount_team": str(result.amount_team)
+            }
+            data_team.append(inner_dict)
+    d = {"growth_team": json.dumps(data_team)}
+    context.update(d)
     print(context)
 
     if request.is_ajax():
