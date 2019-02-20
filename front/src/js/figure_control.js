@@ -14,8 +14,6 @@ var now = new Date(base);
 var growthData = 0;
 
 var growthTheater, growthTeam;
-var growthSNH48, growthBEJ48, growthGNZ48;
-var growthSII, growthNII, growthHII, growthX, growthB, growthE, growthJ, growthG, growthNIII, growthZ;
 
 var valSNH48, valBEJ48, valGNZ48;
 var valSII, valNII, valHII, valX, valB, valE, valJ, valG, valNIII, valZ;
@@ -66,6 +64,26 @@ for (var i = 1; i < 10; i++) {
 }
 
 option = {
+    tooltip: {
+        trigger: 'axis',
+        showContent: false,     // Do not show content.
+        axisPointer: {
+            type: 'cross'
+        },
+        backgroundColor: 'rgba(192, 218, 255, 0.5)',
+        // borderWidth: 1,
+        // borderColor: '#ccc',
+        // padding: 10,
+        textStyle: {
+            color: '#000'
+        },
+        // position: function (pos, params, el, elRect, size) {
+        //     var obj = {top: 10};
+        //     obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 30;
+        //     return obj;
+        // },
+        extraCssText: 'width: 170px'
+    },
     title:{
             text: '集资增长',
             textStyle: {color: '#C0DAFF'}
@@ -73,15 +91,36 @@ option = {
     xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: date
+        data: date,
+        axisLine: {
+            lineStyle: {
+                // X axis color
+                color: '#C0DAFF'
+            }
+        }
     },
     yAxis: {
         boundaryGap: [0, '100%'],
-        type: 'value'
+        type: 'value',
+        splitLine:{
+            show: false
+        },
+        axisLine: {
+            lineStyle: {
+                color: '#C0DAFF'
+            }
+        }
+    },
+    grid: {
+        // x, y, x2, y2: axis distance from div
+        x: 60,
+        y: 35,
+        x2: 18,
+        y2: 20,
     },
     series: [
         {
-            name:'成交',
+            name:'集资总额',
             type:'line',
             smooth:true,
             symbol: 'none',
@@ -90,7 +129,17 @@ option = {
                 normal: {}
             },
             // data: data
-            data: my_data
+            data: my_data,
+            itemStyle: {
+                normal: {
+                    color: '#00b6de',
+                    borderColor: '#00b6de',
+                    areaStyle: {
+                        type: 'default',
+                        opacity: 0.3    //Color under lines.
+                    }
+                }
+            },
         }
     ]
 };
@@ -274,7 +323,7 @@ setInterval(function () {
             data: date
         },
         series: [{
-            name:'成交',
+            name:'集资总额',
             // data: data
             data: my_data
         }]

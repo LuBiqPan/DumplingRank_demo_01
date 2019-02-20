@@ -54,9 +54,11 @@ def index(request):
         inner_dict = {
             "rank": str(i),
             "member": str(field.member),
-            "real_amount": str(field.real_amount),
+            # '%.2f': reserve 2 decimals.
+            "real_amount": str('%.2f' % field.real_amount),
             "support_no": str(field.support_no)
         }
+        print(inner_dict['real_amount'])
         rank = "rank" + str(i)
         i += 1
         d = {rank: json.dumps(inner_dict)}
