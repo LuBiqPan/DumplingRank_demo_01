@@ -115,14 +115,14 @@ body{
 			
 			.growth-figure{
 				width: $sideBarWidth;
-				height: $leftSubBarHeight;
+				height: $mainHeight / 2 - 5px;
 				margin-bottom: 10px;
 				background: $wrapperColor;
 				overflow: hidden;
 				
 				.inner-growth-figure{
 					width: $sideBarWidth - 20px;
-					height: $leftSubBarHeight - 20px;
+					height: $mainHeight / 2 - 25px;
 					box-sizing: border-box;
 					border: 1px solid $wrapperBorderColor;
 					float: left;
@@ -134,32 +134,14 @@ body{
 			
 			.percentage-figure{
 				width: $sideBarWidth;
-				height: $leftSubBarHeight;
+				height: $mainHeight / 2 - 5px;
 				margin-bottom: 10px;
 				background: $wrapperColor;
 				overflow: hidden;
 				
 				.inner-percentage-figure{
 					width: $sideBarWidth - 20px;
-					height: $leftSubBarHeight - 20px;
-					box-sizing: border-box;
-					border: 1px solid $wrapperBorderColor;
-					float: left;
-					margin-top: 10px;
-					margin-left: 10px;
-					padding: 5px;
-				}
-			}
-			
-			.pk-figure{
-				width: $sideBarWidth;
-				height: $leftSubBarHeight;
-				background: $wrapperColor;
-				overflow: hidden;
-				
-				.inner-pk-figure{
-					width: $sideBarWidth - 20px;
-					height: $leftSubBarHeight - 20px;
+					height: $mainHeight / 2 - 25px;
 					box-sizing: border-box;
 					border: 1px solid $wrapperBorderColor;
 					float: left;

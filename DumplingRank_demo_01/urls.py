@@ -20,6 +20,7 @@ from front import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('growth/', views.growth, name='growth'),
     # path(r'^index_upgrade/$', views.index_upgrade, name='index_upgrade'),
     # path('list/', views.MainTableListView.as_view(), name='index'),
     # path('growth/', views.growth_index, name='growth'),
