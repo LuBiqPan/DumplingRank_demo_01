@@ -1,82 +1,70 @@
 
 var dom = document.getElementById("growth-wrapper");
 var myChart = echarts.init(dom);
-var app = {};
 option = null;
 var base = +new Date(2019, 1, 1);   // Start of sampling time.
 var oneDay = 24 * 3600 * 1000;
-var oneMinute = 60 * 1000;
 var date = [];
 
 var data = [1];
-var my_data = [0];
+var growthDataTotal = [0];
 var growthDataSNH48 = [0];
 var growthDataBEJ48 = [0];
 var growthDataGNZ48 = [0];
+var growthDataSII = [0];
+var growthDataNII = [0];
+var growthDataHII = [0];
+var growthDataX = [0];
+var growthDataB = [0];
+var growthDataE = [0];
+var growthDataJ = [0];
+var growthDataG = [0];
+var growthDataNIII = [0];
+var growthDataZ = [0];
 var now = new Date(base);
 
 var sampleTime;
-var growthData = 0;
-
+var st;
+var growthTotal = 0;
 var growthTheater, growthTeam;
 
-var valSNH48, valBEJ48, valGNZ48;
-var valSII, valNII, valHII, valX, valB, valE, valJ, valG, valNIII, valZ;
 
+function addData(shift, sampleTime, growthTotal, growthTheater, growthTeam) {
+    console.log(growthTotal);
+    if (typeof sampleTime === 'string') {
+        // sample time
+        date.push(sampleTime.substring(5, 19)); // Time format: "month-day hh:mm"
 
-function addData(shift, growthData, sampleTime) {
-    // now = [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/');
-    now = [now.getMonth() + 1, now.getDate()].join('-');
-    // date.push(now);
-    date.push(sampleTime);
+        // total
+        growthDataTotal.push(growthTotal * Math.random());
+        // theater
+        growthDataSNH48.push(growthTheater[0]["amount_theater"] * Math.random());
+        growthDataBEJ48.push(growthTheater[1]["amount_theater"] * Math.random());
+        growthDataGNZ48.push(growthTheater[2]["amount_theater"] * Math.random());
+        // team
+        growthDataSII.push(growthTeam[0]["amount_team"]);
 
-/*%%%%%%%%%%%%%%%*/
+        if (shift) {
+            date.shift();
 
-    // $.ajax({
-    //     url: '',
-    //     contentType: 'application/json',
-    //     dataType: 'json',
-    //     type: 'GET',
-    //     success: function (data) {
-    //         // console.log(data);
-    //         var raw = data["growth_total"];
-    //         // console.log(raw);
-    //         var realAmount = $.parseJSON(raw)["amount_total"];
-    //         // console.log(realAmount);
-    //         my_data.push(realAmount);
-    //         console.log(my_data);
-    //     }
-    // });
-    // my_data.push(growthData);
-    my_data.push(growthData * Math.random());
-    // my_data.push(growthData * Math.random());
-    // growthDataSNH48.push(growthData * Math.random());
-    // growthDataBEJ48.push(growthData * Math.random());
-    // growthDataGNZ48.push(growthData * Math.random());
-    // console.log(growthDataSNH48);
-    // console.log(my_data);
-/*%%%%%%%%%%%%%%%*/
+            growthDataTotal.shift();
+            growthDataSNH48.shift();
+            growthDataBEJ48.shift();
+            growthDataGNZ48.shift();
+            growthDataSII.shift();
+        }
+    } else {
+        date.push(0);
 
-    // data.push(1 + data[data.length - 1]);
-    data.push(1 + data[data.length - 1]);
-
-    if (shift) {
-        date.shift();
-        // console.log(date);
-        data.shift();
-        // console.log(data);
-        my_data.shift();
-        // growthDataSNH48.shift();
-        // growthDataBEJ48.shift();
-        // growthDataGNZ48.shift();
-        // console.log(my_data);
+        growthDataTotal.push(0);
+        growthDataSNH48.push(0);
+        growthDataBEJ48.push(0);
+        growthDataGNZ48.push(0);
+        growthDataSII.push(0);
     }
-
-    now = new Date(+new Date(now) + oneDay);
-    // now = new Date(+new Date(now) + oneMinute);
 }
 
-for (var i = 1; i < 20; i++) {
+for (var i = 1; i < 50; i++) {
     addData();
 }
 
@@ -88,25 +76,30 @@ option = {
             type: 'cross'
         },
         backgroundColor: 'rgba(192, 218, 255, 0.5)',
-        // borderWidth: 1,
-        // borderColor: '#ccc',
-        // padding: 10,
         textStyle: {
             color: '#000'
         },
-        // position: function (pos, params, el, elRect, size) {
-        //     var obj = {top: 10};
-        //     obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 30;
-        //     return obj;
-        // },
         extraCssText: 'width: 170px'
     },
+
     title:{
         text: '集资增长',
         textStyle: {
             color: '#C0DAFF',
         },
     },
+
+    legend:{
+        type: 'plain',
+        x: 'left',
+        left: 80,
+        top: 40,
+        textStyle:{
+            color: '#eeeeee',
+            fontSize: 15,
+        }
+    },
+
     xAxis: {
         type: 'category',
         boundaryGap: false,
@@ -118,9 +111,10 @@ option = {
             }
         },
     },
+
     yAxis: {
-        boundaryGap: [0, '50%'],
         type: 'value',
+        boundaryGap: false,
         splitLine:{
             show: false
         },
@@ -130,6 +124,7 @@ option = {
             }
         }
     },
+
     dataZoom: [
         {
             type: 'slider',
@@ -145,6 +140,7 @@ option = {
             end: 35
         },
     ],
+
     grid: {
         // x, y, x2, y2: axis distance from div
         x: 60,
@@ -152,23 +148,22 @@ option = {
         x2: 18,
         y2: 70,
     },
+
     series: [
         // Total
         {
             name:'集资总额',
             type:'line',
-            smooth:true,
+            smooth:false,
             symbol: 'none',
-            stack: 'a',
             areaStyle: {
                 normal: {}
             },
-            // data: data
-            data: my_data,
+            data: growthDataTotal,
             itemStyle: {
                 normal: {
-                    color: '#00b6de',
-                    borderColor: '#00b6de',
+                    color: '#aaaaaa',
+                    borderColor: '#aaaaaa',
                     areaStyle: {
                         type: 'default',
                         opacity: 0.3    //Color under lines.
@@ -180,9 +175,8 @@ option = {
         {
             name:'SNH48',
             type:'line',
-            smooth:true,
+            smooth:false,
             symbol: 'none',
-            stack: 'a',
             areaStyle: {
                 normal: {}
             },
@@ -202,9 +196,8 @@ option = {
         {
             name:'BEJ48',
             type:'line',
-            smooth:true,
+            smooth:false,
             symbol: 'none',
-            stack: 'a',
             areaStyle: {
                 normal: {}
             },
@@ -224,9 +217,8 @@ option = {
         {
             name:'GNZ48',
             type:'line',
-            smooth:true,
+            smooth:false,
             symbol: 'none',
-            stack: 'a',
             areaStyle: {
                 normal: {}
             },
@@ -242,16 +234,38 @@ option = {
                 }
             },
         },
+        // Team SII
+        {
+            name:'Team SII',
+            type:'line',
+            smooth:false,
+            symbol: 'none',
+            areaStyle: {
+                normal: {}
+            },
+            data: growthDataSII,
+            itemStyle: {
+                normal: {
+                    color: '#00b6de',
+                    borderColor: '#00b6de',
+                    areaStyle: {
+                        type: 'default',
+                        opacity: 0.3    //Color under lines.
+                    }
+                }
+            },
+        },
     ]
 };
 
 if (option && typeof option === "object") {
+    option.legend.selected = {'Team SII': false};
     myChart.setOption(option, true);
 }
 
 
 /* Ajax upgrade */
-var ajaxTime = 5000;    // ajax cycle in millisecond
+var ajaxTime = 1000;    // ajax cycle in millisecond
 setInterval(function () {
     $.ajax({
         url: '',
@@ -281,28 +295,27 @@ setInterval(function () {
                     $("#amount-total").text(rankInfoJson["amount_total"]);
                 }
             }
-            // Growth data (total).
+            // growth
             sampleTime = $.parseJSON(data["growth_total"])["sample_time"];
-            growthData = $.parseJSON(data["growth_total"])["amount_total"];
-            // console.log(growthData);
+
+            growthTotal = $.parseJSON(data["growth_total"])["amount_total"];
             growthTheater = $.parseJSON(data["growth_theater"]);
             growthTeam = $.parseJSON(data["growth_team"]);
-            // console.log(growthTeam);
         }
     });
 
     // growth
-    addData(true, growthData, sampleTime);
+    addData(true, sampleTime, growthTotal, growthTheater, growthTeam);
     myChart.setOption({
         xAxis: {
-            // data: date
             data: date
         },
         series: [
-            {name:'集资总额', data: my_data},
-            // {name:'SNH48', data: growthDataSNH48},
-            // {name:'BEJ48', data: growthDataBEJ48},
-            // {name:'GNZ48', data: growthDataGNZ48},
+            {name:'集资总额', data: growthDataTotal},
+            {name:'SNH48', data: growthDataSNH48},
+            {name:'BEJ48', data: growthDataBEJ48},
+            {name:'GNZ48', data: growthDataGNZ48},
+            {name:'Team SII', data: growthDataSII},
         ]
     });
 
