@@ -1,0 +1,10 @@
+@import "base";
+
+
+.main{
+	.percentage-wrapper{
+		width: $mainWidth;
+		height: $mainHeight;
+		margin: 0 auto;
+	}
+}

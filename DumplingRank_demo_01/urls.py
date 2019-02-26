@@ -21,9 +21,10 @@ from front import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('growth/', views.growth, name='growth'),
+    path('percentage/', views.percentage, name='percentage'),
     # path(r'^index_upgrade/$', views.index_upgrade, name='index_upgrade'),
     # path('list/', views.MainTableListView.as_view(), name='index'),
     # path('growth/', views.growth_index, name='growth'),
     # path('rank/', views.MainTableView.as_view(), name='rank'),
-    # path('about_us/', TemplateView.as_view(template_name='about_us.html'))
+    path('about_us/', TemplateView.as_view(template_name='about_us.html'), name='about_us')
 ]
