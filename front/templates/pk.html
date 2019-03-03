@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    饺子榜2019-热门PK
+{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="{% static '/css/pk.min.css' %}">
+
+    <div class="main">
+        <div class="title">热 门 PK</div>
+        <div class="inner-main-wrapper">
+            <div class="nav-bar">
+                <ul>
+                    <li class="pk-li pk-1-li"><button class="pk-btn pk-1-btn">PK1</button></li>
+                    <li class="pk-li pk-2-li"><button class="pk-btn pk-2-btn">PK2</button></li>
+                    <li class="pk-li pk-3-li"><button class="pk-btn pk-3-btn">PK3</button></li>
+                    <li class="pk-li pk-4-li"><button class="pk-btn pk-4-btn" onclick="window.open('https://www.baidu.com')">更多</button></li>
+                </ul>
+            </div>
+            <div id="pk-1-wrapper" class="pk-series-wrapper">PK1</div>
+            <div id="pk-2-wrapper" class="pk-series-wrapper">PK2</div>
+            <div id="pk-3-wrapper" class="pk-series-wrapper">PK3</div>
+        </div>
+    </div>
+
+    <script src="{% static '/js/pk.min.js' %}"></script>
+{% endblock %}

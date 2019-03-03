@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+
+{% block title %}饺子榜-成员集资明细{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="{% static '/css/detail.min.css' %}">
+
+    <div class="main">
+        <div class="inner-main-wrapper">
+            <div class="center-wrapper">
+                <div class="middle-center-wrapper">
+                    <div class="inner-center-wrapper">
+                        <div class="member-avatar">
+                            <img class="member-img" src="http://www.gnz48.com/images/member/zp_30012.jpg" alt="">
+                        </div>
+                        <div class="amount-info">
+                            <span class="member-name">谢蕾蕾（GNZ48 Team G）</span>
+                            <span class="total-amount">集资总额：10086</span>
+                            <span class="project-no">集资链接：16</span>
+                        </div>
+                        <div class="table-title">
+                            <div class="title-field project-name">项目</div>
+                            <div class="title-field fans-club">应援会</div>
+                            <div class="title-field platform">平台</div>
+                            <div class="title-field amount">金额</div>
+                            <div class="title-field remark">备注</div>
+                        </div>
+                        <div class="table-wrapper">
+                            <div class="scroll-bar"></div>
+                            <table class="member-table" width="80%" border="1">
+                                <tbody>
+                                    <tr id="project-1" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资1qqwwwwwwwwwwwwwqq</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会11111111</td>
+                                        <td class="project-platform">摩点</td>
+                                        <td class="project-amount">100000.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-2" class="project-even project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资2</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会</td>
+                                        <td class="project-platform">摩点</td>
+                                        <td class="project-amount">104401.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-3" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资3</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会</td>
+                                        <td class="project-platform">微打赏</td>
+                                        <td class="project-amount">50500.09</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-4" class="project-even project-tr">
+                                        <td class="project-name"><a href="#">生日结余</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾个站</td>
+                                        <td class="project-platform">其他</td>
+                                        <td class="project-amount">6701.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-5" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资5</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾个站</td>
+                                        <td class="project-platform">其他</td>
+                                        <td class="project-amount">0.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-6" class="project-even project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资5</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾个站</td>
+                                        <td class="project-platform">其他</td>
+                                        <td class="project-amount">0.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-7" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资1</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会</td>
+                                        <td class="project-platform">摩点</td>
+                                        <td class="project-amount">10000.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-8" class="project-even project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资2</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会</td>
+                                        <td class="project-platform">摩点</td>
+                                        <td class="project-amount">10001.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-9" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资3</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会</td>
+                                        <td class="project-platform">微打赏</td>
+                                        <td class="project-amount">50500.09</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-10" class="project-even project-tr">
+                                        <td class="project-name"><a href="#">生日结余</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾个站</td>
+                                        <td class="project-platform">其他</td>
+                                        <td class="project-amount">6701.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-11" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资5</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾个站</td>
+                                        <td class="project-platform">其他</td>
+                                        <td class="project-amount">0.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-12" class="project-even project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资5</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾个站</td>
+                                        <td class="project-platform">其他</td>
+                                        <td class="project-amount">0.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-13" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资1</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会</td>
+                                        <td class="project-platform">摩点</td>
+                                        <td class="project-amount">10000.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-14" class="project-even project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资2</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会</td>
+                                        <td class="project-platform">摩点</td>
+                                        <td class="project-amount">10001.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-15" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资3</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会</td>
+                                        <td class="project-platform">微打赏</td>
+                                        <td class="project-amount">50500.09</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-16" class="project-even project-tr">
+                                        <td class="project-name"><a href="#">生日结余</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾个站</td>
+                                        <td class="project-platform">其他</td>
+                                        <td class="project-amount">6701.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-17" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资5</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾个站</td>
+                                        <td class="project-platform">其他</td>
+                                        <td class="project-amount">0.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-18" class="project-even project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资5</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾个站</td>
+                                        <td class="project-platform">其他</td>
+                                        <td class="project-amount">0.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-19" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资1</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会</td>
+                                        <td class="project-platform">摩点</td>
+                                        <td class="project-amount">10000.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-20" class="project-even project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资2</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会</td>
+                                        <td class="project-platform">摩点</td>
+                                        <td class="project-amount">10001.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-21" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资3</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会</td>
+                                        <td class="project-platform">微打赏</td>
+                                        <td class="project-amount">50500.09</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-22" class="project-even project-tr">
+                                        <td class="project-name"><a href="#">生日结余</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾个站</td>
+                                        <td class="project-platform">其他</td>
+                                        <td class="project-amount">6701.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-23" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资5</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾个站</td>
+                                        <td class="project-platform">其他</td>
+                                        <td class="project-amount">0.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                    <tr id="project-24" class="project-even project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资5</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾个站</td>
+                                        <td class="project-platform">其他</td>
+                                        <td class="project-amount">0.00</td>
+                                        <td class="project-remark">Demo</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

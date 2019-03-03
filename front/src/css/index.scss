@@ -1,6 +1,5 @@
 
 @import "init";
-@import "base";
 
 
 /* Basic main style */
@@ -32,6 +31,8 @@
 				top: 20px;
 				left: 335px;
 				z-index: 100;
+				font-family: 微软雅黑;
+				//font-weight: bold;
 			}
 			
 			
@@ -94,7 +95,7 @@
 				overflow: hidden;
 				
 				.inner-center-wrapper{
-					width: $mainTableWidth - 36px;
+					width: $mainTableWidth - 35px;
 					height: $mainHeight - 36px;
 					box-sizing: border-box;
 					border: 1px solid $wrapperBorderColor;
@@ -136,6 +137,22 @@
 			.pk-wrapper{
 				height: $mainHeight / 2 - 5px;
 				background: $wrapperColor;
+				position: relative;
+				
+				.detail-pk{
+					width: 45px;
+					height: 30px;
+					color: $mainFontColor;
+					background: $wrapperBorderColor;
+					cursor: pointer;
+					border: none;
+					position: absolute;
+					top: 20px;
+					left: 335px;
+					z-index: 100;
+					font-family: 微软雅黑;
+					//font-weight: bold;
+				}
 				
 				.inner-pk-wrapper{
 					width: $sideBarWidth - 20px;
@@ -160,8 +177,9 @@
 			.middle-center-wrapper{
 				.inner-center-wrapper{
 					.table-wrapper{
-						height: 615px;
-						margin-top: 10px;
+						height: $mainHeight - 155px;
+						margin-top: 5px;
+						font-size: 18px;
 						
 						.main-table{
 							//padding: 10px;
@@ -175,15 +193,16 @@
 							
 							.tr-rank{
 								font-size: 14px;
-								line-height: 35px;
+								line-height: 28px;
+								cursor: pointer;
 							}
 							
 							.tr-last-group{
-								line-height: 32px;
+								line-height: 25px;
 							}
 							
 							tr{
-								cursor: pointer;
+								//cursor: pointer;
 								th{
 									background: $wrapperBorderColor;
 									height: 30px;
@@ -201,12 +220,13 @@
 					.table-page-wrapper{
 						width: $mainTableWidth - 50px;
 						height: 40px;
+						margin-top: 8px;
 						
 						ul{
-							margin-left: 125px;
+							margin-left: 85px;
 							li{
 								button{
-									width: 45px;
+									width: 65px;
 									height: 30px;
 									color: $mainFontColor;
 									background: $wrapperBorderColor;
@@ -215,7 +235,8 @@
 								}
 								
 								#p-more{
-									width: 60px;
+									//font-family: 微软雅黑;
+									font-weight: bold;
 								}
 							}
 						}
@@ -291,7 +312,7 @@
 						bottom: 20px;
 	
 						.page-control{
-							//width: (8 * 2 + 12) * 4px;
+							// width: (8 * 2 + 12) * 4px;
 							margin: 0 auto;
 							overflow: hidden;
 	
@@ -314,21 +335,7 @@
 				}
 			}
 		}
-		
 	}
 }
 
-
-/* PK style */
-.main{
-	.inner-main-wrapper{
-		.right-wrapper{
-			.pk-wrapper{
-				.inner-pk-wrapper{
-
-				}
-			}
-		}
-	}
-}
 

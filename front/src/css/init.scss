@@ -6,3 +6,39 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     list-style: none;
     text-decoration: none;
 }
+
+
+$mainWidth: 1350px;
+//$mainHeight: 770px;
+$mainHeight: 630px;
+$sideBarWidth: 400px;
+$leftSubBarHeight: 250px;
+$mainTableWidth: $mainWidth - $sideBarWidth * 2;
+$navHeight: 50px;
+$footerHeight: 50px;
+$bannerHeight: 258px;
+$bannerWidth:798px;
+$tableTitleSize: 26px;
+
+$lineColor: #eee;
+$backgroundColor: #121A20;
+$wrapperColor: #19232F;
+$wrapperBorderColor: #222e3f;
+$tableHeaderColor: #222e3f;
+$mainFontColor: #C0DAFF;
+
+$colorSNH48: #00b6de;
+$colorBEJ48: #ff4083;
+$colorGNZ48: #9FBF40;
+$colorSII: #00b6de;
+$colorNII: #9e57b4;
+$colorHII: #f8941d;
+$colorX: #b1d61b;
+$colorB: #ff4083;
+$colorE: #0cc8c3;
+$colorJ: #006ab7;
+$colorG: #9FBF40;
+$colorNIII: #ffe249;
+$colorZ: #ea617b;
+
+$backgroundColorLight: #f7f7f7;

@@ -1,13 +1,18 @@
 
+var pkMember = [];
+var pkAmount = [];
+var pkAmountRatio;
+var pkTitle;
+
 var growthChart = echarts.init(document.getElementById("inner-group"));
-var app = {};
+
 option = null;
 var base = +new Date(2014, 9, 3);
-var oneDay = 24 * 3600 * 1000;
+
 var date = [0];
 
 var data = [1];
-var my_data = [0];
+
 var sampleTime;
 var growthDataTotal = [0];
 var growthDataSNH48 = [0];
@@ -15,10 +20,12 @@ var growthDataBEJ48 = [0];
 var growthDataGNZ48 = [0];
 var now = new Date(base);
 
-var growthTotal, growthTheater, growthTeam;
+
+var growthTotal, growthTheater, growthTeam, growthMember;
 
 var valSNH48, valBEJ48, valGNZ48;
 var valSII, valNII, valHII, valX, valB, valE, valJ, valG, valNIII, valZ;
+
 
 
 function addData(shift, sampleTime, growthTotal, growthTheater) {
@@ -59,13 +66,17 @@ option = {
         trigger: 'axis',
         showContent: true,     // Do not show content.
         formatter: function (params) { // toFixed(): show two decimals
-            return params[0]["seriesName"] + ": " + params[0].value.toFixed(2) + "<br>"
-                 + params[1]["seriesName"] + ": " + params[1].value.toFixed(2) + "<br>"
-                 + params[2]["seriesName"] + ": " + params[2].value.toFixed(2) + "<br>"
-                 + params[3]["seriesName"] + ": " + params[3].value.toFixed(2)
+            return params[0]["seriesName"] + ": " + parseFloat(params[0].value).toFixed(2) + '<br>'
+                 + params[1]["seriesName"] + ": " + parseFloat(params[1].value).toFixed(2) + '<br>'
+                 + params[2]["seriesName"] + ": " + parseFloat(params[2].value).toFixed(2) + '<br>'
+                 + params[3]["seriesName"] + ": " + parseFloat(params[3].value).toFixed(2);
         },
         axisPointer: {
-            type: 'cross'
+            type: 'cross',
+            snap: true,
+            lineStyle: {
+                type: 'dashed'
+            }
         },
         backgroundColor: 'rgba(192, 218, 255, 0.5)',
         textStyle: {
@@ -88,9 +99,10 @@ option = {
         top: 40,
         inactiveColor: '#121A20',
         textStyle:{
-            color: '#eeeeee',
-            fontSize: 15,
-        }
+            color: '#aaaaaa',
+            fontSize: 9,
+        },
+        selectedMode: false
     },
 
     xAxis: {
@@ -122,8 +134,8 @@ option = {
         // x, y, x2, y2: axis distance from div
         x: 60,
         y: 50,
-        x2: 18,
-        y2: 70,
+        x2: 10,
+        y2: 30,
     },
 
     series: [
@@ -236,7 +248,11 @@ function amountPercentage(
         },
         tooltip: {
             trigger: 'item',
-            formatter: "{b}: {c} ({d}%)"
+            // formatter: "{b}: {c} ({d}%)"
+            formatter: function (params) {
+                console.log(params);
+                return params["name"] + ": " + parseFloat(params["value"]).toFixed(2) + " (" + params["percent"].toFixed(1) + "%)";
+            }
         },
         series: [
             {
@@ -313,34 +329,108 @@ function amountPercentage(
 }
 
 
-//
-function hotPK() {
-
-    var pkChart = echarts.init(document.getElementById('pk'));
+/* Hot PK */
+function hotPK(pkMember, pkAmount, pkAmountRatio, pkTitle) {
+    var dom = document.getElementById("pk");
+    var myChart = echarts.init(dom);
 
     var option = {
         title: {
-            text: '热门PK',
+            text: "热门PK",
             textStyle: {
-                color: '#C0DAFF'
+                color: '#C0DAFF',
+                fontSize: 20,
+            },
+            subtext: pkTitle,
+            subtextStyle: {
+                fontSize: 20,
+                color: '#C0DAFF',
+            }
+            // x: "center"  // title align
+        },
+        tooltip: {
+            formatter: function (params) {
+                return params["name"] + "(" + params["seriesName"] + ")" + ": " + parseFloat(params["value"]).toFixed(2)
             }
         },
-        tooltip: {},
-        legend: {
-            data:['集资总额']
-        },
         xAxis: {
-            data: ["李艺彤","黄婷婷","冯薪朵","陆婷","莫寒","赵粤"]
+            data: pkMember,
+            axisLine: {
+                lineStyle: {
+                    color: '#C0DAFF'
+                }
+            },
+            // axisLabel: {
+            //     textStyle: {
+            //         fontSize: 20
+            //     }
+            // },
         },
-        yAxis: {},
-        series: [{
-            name: '集资总额',
-            type: 'bar',
-            data: [1500, 1000, 400, 350, 250, 300]
-        }]
+        yAxis: {
+            axisLine: {
+                lineStyle: {
+                    color: '#C0DAFF'
+                }
+            },
+            splitLine:{
+                show: false
+            },
+            // axisLabel: {
+            //     textStyle: {
+            //         fontSize: 20
+            //     }
+            // },
+        },
+        grid: {
+            // x, y, x2, y2: axis distance from div
+            x: 60,
+            y: 70,
+            x2: 10,
+            y2: 30,
+        },
+        series: [
+            {
+                name: '实际集资',
+                type: 'bar',
+                data: pkAmount,
+                stack: "总量",
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'insideTop'
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: function (params) {
+                            var colorList = ['#C33531', '#EFE42A', '#64BD3D', '#EE9201', '#29AAE3', '#B74AE5', '#0AAF9F', '#E89589', '#16A085', '#4A235A', '#C39BD3 ', '#F9E79F', '#BA4A00', '#ECF0F1', '#616A6B', '#EAF2F8', '#4A235A', '#3498DB'];
+                            return colorList[params.dataIndex]
+                        }
+                    }
+                }
+            },
+            {
+                name: '系数集资',
+                type: 'bar',
+                data: pkAmountRatio,
+                stack: "总量",
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'insideTop'
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#888'
+                    }
+                }
+            }
+        ]
     };
 
-    pkChart.setOption(option, true);
+    myChart.setOption(option, true);
+
 }
 
 
@@ -364,10 +454,15 @@ setInterval(function () {
                     var memberSelector = "#tr-rank-" + i.toString() + " .rank-member";
                     // Construct real_amount field selector.
                     var totalAmountSelector = "#tr-rank-" + i.toString() + " .rank-account";
+                    // Construct vote field selector.
+                    var voteSelector = "#tr-rank-" + i.toString() + " .rank-vote";
+
                     // Set value for member tag.
                     $(memberSelector).text(rankInfoJson["member"]);
                     // Set value for real_amount (total) tag.
                     $(totalAmountSelector).text(rankInfoJson["real_amount"]);
+                    // Set value for vote (32 yuan per vote) tag.
+                    $(voteSelector).text(rankInfoJson["vote"]);
                     // Set value for amount total tag
                     $("#amount-total").text(rankInfoJson["amount_total"]);
                 }
@@ -393,6 +488,13 @@ setInterval(function () {
             valG    = growthTeam[7]["amount_team"];
             valNIII = growthTeam[8]["amount_team"];
             valZ    = growthTeam[9]["amount_team"];
+
+            /* PK */
+            pkMember = ["李艺彤","黄婷婷","冯薪朵","陆婷","莫寒"];
+            pkAmount = [1500, 1000, 400, 350, 350];
+            pkAmountRatio = [0, 100, 40, 350, 30];
+            pkTitle = "Pk 1==============";
+
         }
     });
 
@@ -413,9 +515,9 @@ setInterval(function () {
     // percentage
     amountPercentage(
         valSNH48, valBEJ48, valGNZ48,
-        valSII, valNII, valHII, valX, valB, valE, valJ, valG, valNIII, valZ)
+        valSII, valNII, valHII, valX, valB, valE, valJ, valG, valNIII, valZ);
 
     // pk
-    hotPK();
+    hotPK(pkMember, pkAmount, pkAmountRatio, pkTitle);
 
 }, ajaxTime);   // ajax every ajaxTime millisecond

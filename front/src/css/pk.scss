@@ -1,0 +1,51 @@
+
+@import "init";
+
+$titleHeight: 40px;
+$pkBarHeight: 30px;
+
+.main{
+	width: 100%;
+	height: $mainHeight;
+	
+	.title{
+		width: 200px;
+		height: 40px;
+		margin: 0 auto;
+		font-size: 30px;
+		text-align: center;
+		line-height: 40px;
+		font-family: "楷体";
+		font-weight: bold;
+	}
+	
+	.inner-main-wrapper{
+		width: $mainWidth + 20px;
+		height: $mainHeight - $titleHeight;
+		margin: 0 auto;
+		
+		.nav-bar{
+			ul{
+				.pk-li{
+					display: inline;
+					
+					.pk-btn{
+						width: 150px;
+						height: $pkBarHeight;
+						font-family: 微软雅黑;
+						color: $mainFontColor;
+						background: $wrapperBorderColor;
+						border: none;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+		
+		.pk-series-wrapper{
+			width: $mainWidth + 20px;
+			height: $mainHeight - $titleHeight - $pkBarHeight;
+			margin-top: 10px;
+		}
+	}
+}

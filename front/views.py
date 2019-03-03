@@ -3,11 +3,12 @@ from django.views.generic import View, ListView
 from django.core import serializers
 from django.http import HttpResponse
 from django.http.response import JsonResponse
-import json
 from datetime import datetime
+import json
 
 # from .models import *
 from .my_sql_views import *
+from .member import *
 
 
 def index(request):
@@ -57,9 +58,10 @@ def index(request):
             "member": str(field.member),
             # '%.2f': reserve 2 decimals.
             "real_amount": str('%.2f' % field.real_amount),
+            "vote": str('%.2f' % (field.real_amount / 32.0)),
             "support_no": str(field.support_no)
         }
-        print(inner_dict['real_amount'])
+        # print(inner_dict['real_amount'])
         rank = "rank" + str(i)
         i += 1
         d = {rank: json.dumps(inner_dict)}
@@ -105,7 +107,7 @@ def index(request):
             data_team.append(inner_dict)
     d = {"growth_team": json.dumps(data_team)}
     context.update(d)
-    print(context)
+    # print(context)
 
     if request.is_ajax():
         return JsonResponse(context)
@@ -208,50 +210,6 @@ def growth(request):
     context.update(d)
 
     # Amount growth (member)
-    member_sii = ["陈观慧", "陈俊羽", "陈思", "戴萌", "蒋芸", "孔肖吟", "李宇琪", "刘增艳", "莫寒", "钱蓓婷",
-                  "邱欣怡", "孙芮", "邵雪聪", "温晶婕", "吴哲晗", "徐晨辰", "许佳琪", "徐子轩", "袁丹妮",
-                  "杨令仪", "袁雨桢", "朱小丹", "张语格"]
-    member_nii = ["陈佳莹", "冯薪朵", "黄婷婷", "何晓玉", "金莹玥", "江真仪", "刘洁", "栾嘉仪", "李美琪",
-                  "陆婷", "卢天惠", "马凡", "王诗蒙", "谢妮", "易嘉爱", "颜沁", "赵佳蕊", "周诗雨", "张茜",
-                  "赵粤", "张怡", "张雨鑫"]
-    member_hii = ["陈盼", "费沁源", "郭爽", "郝婧怡", "洪珮雲", "姜杉", "蒋舒婷", "林楠", "林舒晴", "林思意",
-                  "李玉倩", "李艺彤", "戚予珠", "沈梦瑶", "宋雨珊", "孙珍妮", "万丽娜", "王欣颜甜甜", "王奕",
-                  "徐晗", "许杨玉琢", "袁一琦", "张昕"]
-    member_x = ["陈琳", "冯晓菲", "刘静晗", "鲁静萍", "李星羽", "吕一", "李钊", "潘瑛琪", "祁静", "冉蔚",
-                "宋昕冉", " 孙歆文", "王菲妍", "汪佳翎", "王晓佳", "谢天依", "杨冰怡", "张丹三", "张嘉予"]
-    member_b = ["程戈", "陈美君", "段艺璇", "胡丽芝", "胡晓慧", "刘姝贤", "林溪荷", "李瑜璇", "曲美霖",
-                "青钰雯", "沈小爱", "孙晓艳", "田姝丽", "熊素君", "闫明筠", "杨鑫", "张梦慧", "赵天杨", "张羽涵"]
-    member_e = ["陈倩楠", "程宇璐", "冯思佳", "高蔚然", "李丽满", "李娜", "刘胜男", "李诗彦", "李梓", "马玉灵",
-                "彭嘉敏", "任蔓琳", "苏杉杉", "王嘉瑜", "王雨兰", "顼凘炀", "熊鑫", "杨一帆", "张爱静", "臧聪",
-                "张丹丹", "张笑盈"]
-    member_j = ["柏欣妤", "陈雅钰", "房蕾", "葛司琪", "黄恩茹", "韩家乐", "何阳青青", "金锣赛", "楼澍", "刘闲",
-                "刘一菲", "任心怡", "孙语姗", "唐霖", "王雨煊", "叶苗苗", "杨晔", "张怀瑾", "郑洁丽", "周湘"]
-    member_g = ["陈俊宏", "GNZ48陈佳莹", "陈珂", "符冰冰", "高源婧", "黄楚茵", "罗寒月", "梁娇", "林嘉佩",
-                "罗可嘉", "李沁洁", "李姗姗", "林芝", "徐楚雯", "徐慧玲", "谢蕾蕾", "阳青颖", "叶舒淇",
-                "曾艾佳", "张琼予", "朱怡欣"]
-    member_niii = ["陈楠茜", "陈欣妤", "邓熳慧", "高雪逸", "洪静雯", "卢静", "刘力菲", "刘倩倩", "孙馨",
-                   "唐莉佳", "吴羽霏", "谢艾琳", "冼燊楠", "肖文铃", "熊心瑶", "郑丹妮", "左嘉欣", "左婧媛",
-                   "张润"]
-    member_z = ["毕瑞珊", "陈桂君", "邓惠恩", "杜秋霖", "方琪", "郭铱宁", "何梦瑶", "梁乔", "梁婉琳", "龙亦瑞",
-                "赖梓惜", "农燕萍", "王翠菲", "王炯义", "王偲越", "谢菲菲", "杨可璐", "杨媛媛", "余芷媛",
-                "张秋怡"]
-
-    # member_list = ["张语格", "宋昕冉", "杨媛媛", "苏杉杉", "易嘉爱", "费沁源",
-    #                "段艺璇", "韩家乐", "谢蕾蕾", "刘力菲", "赵佳蕊"]
-    # data_member = []
-    # for member in member_list:
-    #     results = G104GrowthMember.objects.filter(member=member)
-    #     for result in results:
-    #         inner_dict = {
-    #             "sample_time": str(result.sample_time),
-    #             "member": str(result.member),
-    #             "amount_member": str(result.amount_member)
-    #         }
-    #         data_member.append(inner_dict)
-    # d = {"growth_member": json.dumps(data_member)}
-    # context.update(d)
-    # print(context)
-
     member_list = member_sii + member_nii + member_hii + member_x + member_b + member_e + \
                   member_j + member_g + member_niii + member_z
     data_member = []
@@ -284,4 +242,16 @@ def growth(request):
 
 def percentage(request):
 
-    return render(request, 'percentage.html')
+    # return render(request, 'percentage.html')
+    return render(request, 'sunburst-drink.html')
+
+
+def hot_pk(request):
+    # # PK
+
+    return render(request, 'pk.html')
+
+
+def member_detail(request):
+
+    return render(request, 'detail.html')

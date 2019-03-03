@@ -7,6 +7,9 @@
     <script src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static '/js/echarts.min.js' %}"></script>
 
+    <link rel="stylesheet" href="{% static '/css/base.min.css' %}">
+    <link rel="Shortcut Icon" href="{% static '/images/logo.ico' %}">
+
 </head>
 <body>
 
@@ -17,12 +20,19 @@
             </div>
             <div class="nav-item main-title">
                 <span class="title-wrapper">
-                    饺子榜2019
+                    <a href="{% url 'index' %}">SNH48-饺子榜</a>
                 </span>
+                <span class="year-wrapper">2019</span>
             </div>
             <div class="nav-item about-us">
                 <a href="{% url 'about_us' %}">关于我们</a>
             </div>
+        </div>
+        <div class="theme">
+            <span><button class="theme-dark theme-btn">深色主题</button></span>
+            <span><button class="theme-light theme-btn">浅色主题</button></span>
+
+            <script src="{% static '/js/theme.min.js' %}"></script>
         </div>
     </div>
     

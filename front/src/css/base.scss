@@ -2,39 +2,6 @@
 @import "init";
 
 
-$mainWidth: 1350px;
-$mainHeight: 770px;
-$sideBarWidth: 400px;
-$leftSubBarHeight: 250px;
-$mainTableWidth: $mainWidth - $sideBarWidth * 2;
-$navHeight: 60px;
-$footerHeight: 60px;
-$bannerHeight: 258px;
-$bannerWidth:798px;
-$tableTitleSize: 26px;
-
-$lineColor: #eee;
-$backgroundColor: #121A20;
-$wrapperColor: #19232F;
-$wrapperBorderColor: #222e3f;
-$tableHeaderColor: #222e3f;
-$mainFontColor: #C0DAFF;
-
-$colorSNH48: #00b6de;
-$colorBEJ48: #ff4083;
-$colorGNZ48: #9FBF40;
-$colorSII: #00b6de;
-$colorNII: #9e57b4;
-$colorHII: #f8941d;
-$colorX: #b1d61b;
-$colorB: #ff4083;
-$colorE: #0cc8c3;
-$colorJ: #006ab7;
-$colorG: #9FBF40;
-$colorNIII: #ffe249;
-$colorZ: #ea617b;
-
-
 body{
 	background: $backgroundColor;
 	font-family: "微软雅黑";
@@ -47,6 +14,7 @@ body{
 	height: $navHeight;
 	background: $wrapperColor;
 	margin-bottom: 10px;
+	position: relative;
 	
 	.inner-nav-wrapper{
 		width: $mainWidth;
@@ -56,9 +24,6 @@ body{
 		margin: 0 auto;
 		overflow: hidden;
 		
-		.nav-item{
-		}
-		
 		.google-table{
 			width: $sideBarWidth;
 			float: left;
@@ -66,14 +31,26 @@ body{
 			a{
 				font-size: 22px;
 				color: $mainFontColor;
+				font-family: "楷体";
+				font-weight: bold;
 			}
 		}
 		
 		.main-title{
 			width: $mainTableWidth;
 			float: left;
+			font-family: "楷体";
+			font-weight: bold;
 			
 			.title-wrapper{
+				a{
+					font-size: 32px;
+					color: $mainFontColor;
+				}
+			}
+			
+			.year-wrapper{
+				font-family: "AntsyPants";
 				font-size: 32px;
 			}
 		}
@@ -85,7 +62,30 @@ body{
 			a{
 				font-size: 22px;
 				color: $mainFontColor;
+				font-family: "楷体";
+				font-weight: bold;
 			}
+		}
+	}
+	
+	.theme{
+		position: absolute;
+		right: 20px;
+		top: 13px;
+		
+		.theme-btn{
+			width: 70px;
+			height: 25px;
+			font-family: "微软雅黑";
+			border: none;
+		}
+		
+		.theme-dark{
+			background: $mainFontColor;
+		}
+		
+		.theme-light{
+			background: $backgroundColorLight;
 		}
 	}
 }

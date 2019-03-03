@@ -1,0 +1,206 @@
+
+@import "base";
+
+$detailTableWidth: $mainWidth;
+
+.main{
+	width: 100%;
+	height: $mainHeight;
+	
+	.inner-main-wrapper{
+		width: $mainWidth + 20px;
+		margin: 0 auto;
+		//margin-top: 5px;
+		overflow: hidden;
+		
+		.center-wrapper{
+			width: $detailTableWidth;
+			height: $mainHeight;
+			float: left;
+			background: $wrapperColor;
+			box-sizing: border-box;
+			
+			.middle-center-wrapper{
+				width: $detailTableWidth - 20px;
+				height: $mainHeight - 20px;
+				box-sizing: border-box;
+				border: 1px solid $wrapperBorderColor;
+				float: left;
+				margin-top: 10px;
+				margin-left: 10px;
+				padding: 5px;
+				overflow: hidden;
+				
+				.inner-center-wrapper{
+					width: $detailTableWidth - 35px;
+					height: $mainHeight - 36px;
+					box-sizing: border-box;
+					border: 1px solid $wrapperBorderColor;
+					float: left;
+					margin-top: 2px;
+					margin-left: 2px;
+					padding: 2px;
+					overflow: hidden;
+					
+					.member-avatar{
+						width: 80px;
+						height: 80px;
+						margin-left: 30px;
+						margin-top: 10px;
+						float: left;
+						
+						img{
+							border: 8px solid $wrapperColor;
+							border-radius: 50%;
+							//width: 80px;
+							//height: 80px;
+							width: 100%;
+							height: 100%;
+						}
+					}
+					
+					.amount-info{
+						width: $detailTableWidth - 50px;
+						height: 55px;
+						line-height: 55px;
+						text-align: center;
+						font-size: $tableTitleSize;
+						font-weight: 800;
+						background: $wrapperBorderColor;
+						margin-left: 5px;
+						margin-top: 5px;
+						border-top-left-radius: 50px;
+						
+						.member-name{
+							float: left;
+							margin-left: 60px;
+							font-size: 20px;
+							//line-height: 70px;
+						}
+						
+						.total-amount{
+							float: left;
+							margin-left: 400px;
+						}
+						
+						.project-no{
+							float: left;
+							margin-left: 40px;
+						}
+					}
+						
+					.table-title{
+						width: $detailTableWidth - 51px;
+						height: 40px;
+						margin-top: 10px;
+						margin-left: 5px;
+						background: $wrapperBorderColor;
+						font-weight: bold;
+						border-bottom-left-radius: 40px;
+						
+						div{
+							display: inline;
+							line-height: 40px;
+						}
+						
+						.project-name{
+							margin-left: 210px;
+						}
+
+						.fans-club{
+							margin-left: 250px;
+						}
+						
+						.platform{
+							margin-left: 205px;
+						}
+						
+						.amount{
+							margin-left: 90px;
+						}
+						
+						.remark{
+							margin-left: 150px;
+						}
+					}
+					
+					.table-wrapper{
+						padding: 5px;
+						height: 615px;
+						font-size: 18px;
+						overflow-y: auto;	// scroll bar
+						overflow-x: hidden;
+						
+						.scroll-bar{
+							width: 30px;
+							margin: 0 auto;
+						}
+						
+						.member-table{
+							width: $detailTableWidth - 50px;
+							border-collapse: collapse;
+							text-align: center;
+							
+							tbody{
+								height: $mainHeight - 150px;
+								
+								
+								.project-even{
+									background: $wrapperBorderColor;
+								}
+								
+								.project-tr{
+									font-size: 16px;
+									line-height: 35px;
+									
+									.project-name{
+										width: 600px;
+										text-align: left;
+										
+										a{
+											margin-left: 20px;
+										}
+									}
+									
+									.project-fans-club{
+										width: 260px;
+										text-align: left;
+									}
+									
+									.project-platform{
+										text-align: left;
+									}
+									
+									.project-amount{
+										text-align: left;
+									}
+									
+									.project-remark{
+										text-align: left;
+									}
+								}
+							}
+						}
+					}
+					
+					.table-wrapper::-webkit-scrollbar {/*滚动条整体样式*/
+						width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+						height: 3px;
+					}
+					
+					.table-wrapper::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+						border-radius: 10px;
+						 -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+						background: $mainFontColor;
+					}
+					
+					.table-wrapper::-webkit-scrollbar-track {/*滚动条里面轨道*/
+						-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+						border-radius: 10px;
+						background: #EDEDED;
+					}
+				}
+			}
+		}
+	}
+}

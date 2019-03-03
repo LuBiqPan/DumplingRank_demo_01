@@ -216,19 +216,19 @@ var memberColor = {
     "赵天杨": '#eeeeee',
     "张羽涵": '#eeeeee',
     // Team E
-    "陈倩楠": '#eeeeee',
+    "陈倩楠": '#8B99CD',
     "程宇璐": '#eeeeee',
-    "冯思佳": '#eeeeee',
+    "冯思佳": '#60BBC1',
     "高蔚然": '#eeeeee',
     "李丽满": '#eeeeee',
     "李娜": '#eeeeee',
     "刘胜男": '#eeeeee',
     "李诗彦": '#eeeeee',
-    "李梓": '#eeeeee',
-    "马玉灵": '#eeeeee',
+    "李梓": '#931211',
+    "马玉灵": '#FED737',
     "彭嘉敏": '#eeeeee',
     "任蔓琳": '#eeeeee',
-    "苏杉杉": '#eeeeee',
+    "苏杉杉": '#F29A03',
     "王嘉瑜": '#eeeeee',
     "王雨兰": '#eeeeee',
     "顼凘炀": '#eeeeee',
@@ -239,32 +239,32 @@ var memberColor = {
     "张丹丹": '#eeeeee',
     "张笑盈": '#eeeeee',
     // Team J
-    "柏欣妤": '#eeeeee',
+    "柏欣妤": '#232F3A',
     "陈雅钰": '#eeeeee',
-    "房蕾": '#eeeeee',
-    "葛司琪": '#eeeeee',
-    "黄恩茹": '#eeeeee',
-    "韩家乐": '#eeeeee',
+    "房蕾": '#749E6B',
+    "葛司琪": '#A3D8FF',
+    "黄恩茹": '#FEE0F9',
+    "韩家乐": '#F5B5B1',
     "何阳青青": '#eeeeee',
     "金锣赛": '#eeeeee',
     "楼澍": '#eeeeee',
     "刘闲": '#eeeeee',
     "刘一菲": '#eeeeee',
-    "任心怡": '#eeeeee',
-    "孙语姗": '#eeeeee',
+    "任心怡": '#0FA3B8',
+    "孙语姗": '#FDD143',
     "唐霖": '#eeeeee',
     "王雨煊": '#eeeeee',
     "叶苗苗": '#eeeeee',
     "杨晔": '#eeeeee',
-    "张怀瑾": '#eeeeee',
+    "张怀瑾": '#E9D19C',
     "郑洁丽": '#eeeeee',
     "周湘": '#eeeeee',
     // Team G
     "陈俊宏": '#eeeeee',
     "GNZ48陈佳莹": '#eeeeee',
-    "陈珂": '#eeeeee',
+    "陈珂": '#FADB2E',
     "符冰冰": '#eeeeee',
-    "高源婧": '#eeeeee',
+    "高源婧": '#61C4C0',
     "黄楚茵": '#eeeeee',
     "罗寒月": '#eeeeee',
     "梁娇": '#eeeeee',
@@ -275,7 +275,7 @@ var memberColor = {
     "林芝": '#eeeeee',
     "徐楚雯": '#eeeeee',
     "徐慧玲": '#eeeeee',
-    "谢蕾蕾": '#eeeeee',
+    "谢蕾蕾": '#FFC2C4',
     "阳青颖": '#eeeeee',
     "叶舒淇": '#eeeeee',
     "曾艾佳": '#eeeeee',
@@ -287,19 +287,19 @@ var memberColor = {
     "邓熳慧": '#eeeeee',
     "高雪逸": '#eeeeee',
     "洪静雯": '#eeeeee',
-    "卢静": '#eeeeee',
-    "刘力菲": '#eeeeee',
-    "刘倩倩": '#eeeeee',
+    "卢静": '#C0DDEE',
+    "刘力菲": '#8DC41E',
+    "刘倩倩": '#FD61A5',
     "孙馨": '#eeeeee',
-    "唐莉佳": '#eeeeee',
+    "唐莉佳": '#5F4A8A',
     "吴羽霏": '#eeeeee',
     "谢艾琳": '#eeeeee',
     "冼燊楠": '#eeeeee',
-    "肖文铃": '#eeeeee',
+    "肖文铃": '#FFCDC7',
     "熊心瑶": '#eeeeee',
-    "郑丹妮": '#eeeeee',
+    "郑丹妮": '#F6EABD',
     "左嘉欣": '#eeeeee',
-    "左婧媛": '#eeeeee',
+    "左婧媛": '#653B8C',
     "张润": '#eeeeee',
     // Team Z
     "毕瑞珊": '#eeeeee',
@@ -310,17 +310,17 @@ var memberColor = {
     "郭铱宁": '#eeeeee',
     "何梦瑶": '#eeeeee',
     "梁乔": '#eeeeee',
-    "梁婉琳": '#eeeeee',
-    "龙亦瑞": '#eeeeee',
+    "梁婉琳": '#A93539',
+    "龙亦瑞": '#B484B7',
     "赖梓惜": '#eeeeee',
     "农燕萍": '#eeeeee',
     "王翠菲": '#eeeeee',
-    "王炯义": '#eeeeee',
+    "王炯义": '#E73161',
     "王偲越": '#eeeeee',
     "谢菲菲": '#eeeeee',
     "杨可璐": '#eeeeee',
-    "杨媛媛": '#54a555',
-    "余芷媛": '#eeeeee',
+    "杨媛媛": '#BF0204',
+    "余芷媛": '#E2586D',
     "张秋怡": '#eeeeee',
 };
 
@@ -395,7 +395,10 @@ option = {
         trigger: 'axis',
         showContent: true,     // Do not show content.
         axisPointer: {
-            type: 'cross'
+            type: 'cross',
+            lineStyle: {
+                type: 'dashed'
+            }
         },
         backgroundColor: 'rgba(192, 218, 255, 0.5)',
         textStyle: {
@@ -422,10 +425,13 @@ option = {
     },
 
     title:{
-        text: '集资增长',
+        text: '集 资 增 长',
         textStyle: {
             color: '#C0DAFF',
+            fontSize: 30,
+            fontFamily: "楷体"
         },
+        x: "center"
     },
 
     legend:{
@@ -435,7 +441,7 @@ option = {
         top: 40,
         inactiveColor: '#121A20',
         textStyle:{
-            color: '#eeeeee',
+            color: '#aaaaaa',
             fontSize: 15,
         }
     },
@@ -462,7 +468,13 @@ option = {
             lineStyle: {
                 color: '#C0DAFF'
             }
-        }
+        },
+        axisLabel: {
+            textStyle: {
+                fontSize: 15
+            }
+        },
+
     },
 
     dataZoom: [
@@ -519,7 +531,7 @@ option = {
             name:'SNH48',
             type:'line',
             smooth:false,
-            symbol: 'none',
+            symbol: 'circle',
             areaStyle: {
                 normal: {}
             },
@@ -540,7 +552,7 @@ option = {
             name:'BEJ48',
             type:'line',
             smooth:false,
-            symbol: 'none',
+            symbol: 'circle',
             areaStyle: {
                 normal: {}
             },
@@ -561,7 +573,7 @@ option = {
             name:'GNZ48',
             type:'line',
             smooth:false,
-            symbol: 'none',
+            symbol: 'circle',
             areaStyle: {
                 normal: {}
             },
@@ -626,8 +638,8 @@ function dropDownCk(selectId,hiddenId, item) {
 return tagArr;
 }
 
-var selectedTeam = dropDownCk("select-team", "ul-team", "请选择队伍");
-var selectedMember = dropDownCk("lang1","ck1", "请选择成员");
+var selectedTeam = dropDownCk("select-team", "ul-team", "选择队伍");
+var selectedMember = dropDownCk("lang1","ck1", "选择成员");
 
 
 // Array a - Array b
@@ -641,6 +653,7 @@ function sub(a, b) {
     }
     return d;
 }
+
 
 // Add option dynamically.
 function addOption(selectedTeam, selectedMember) {
@@ -665,7 +678,7 @@ function addOption(selectedTeam, selectedMember) {
             name: selectedTeam[i],
             type:'line',
             smooth:false,
-            symbol: 'none',
+            symbol: 'circle',
             areaStyle: {normal: {}},
             data: growthDataTeam[selectedTeam[i]],
             itemStyle: {
@@ -699,7 +712,7 @@ function addOption(selectedTeam, selectedMember) {
             name: selectedMember[i],
             type:'line',
             smooth:false,
-            symbol: 'none',
+            symbol: 'circle',
             areaStyle: {normal: {}},
             data: growthDataMember[selectedMember[i]],
             itemStyle: {
