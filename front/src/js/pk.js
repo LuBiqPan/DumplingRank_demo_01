@@ -70,10 +70,10 @@ PkControl.prototype.chartControl = function (pkMember, pkAmount, pkAmountRatio, 
         },
         grid: {
             // x, y, x2, y2: axis distance from div
-            x: 60,
+            x: 90,
             y: 50,
-            x2: 10,
-            y2: 30,
+            x2: 50,
+            y2: 80,
         },
         series: [
             {

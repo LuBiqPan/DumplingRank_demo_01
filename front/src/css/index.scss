@@ -62,6 +62,21 @@
 				margin-bottom: 10px;
 				background: $wrapperColor;
 				overflow: hidden;
+				position: relative;
+				
+				.detail-percentage{
+					width: 45px;
+					height: 30px;
+					color: $mainFontColor;
+					background: $wrapperBorderColor;
+					cursor: pointer;
+					border: none;
+					position: absolute;
+					top: 20px;
+					left: 335px;
+					z-index: 100;
+					font-family: 微软雅黑;
+				}
 				
 				.inner-percentage-figure{
 					width: $sideBarWidth - 20px;
@@ -187,8 +202,9 @@
 							border-collapse: collapse;
 							
 							.tr-even{
-								background: $wrapperBorderColor;
-								//opacity: 0.5;
+								//background: $wrapperBorderColor;
+								background: rgba(34, 46, 77, 0.25);
+								//opacity: 0.8;
 							}
 							
 							.tr-rank{

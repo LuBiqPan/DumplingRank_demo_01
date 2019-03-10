@@ -48,14 +48,21 @@ $detailTableWidth: $mainWidth;
 						margin-left: 30px;
 						margin-top: 10px;
 						float: left;
+						//overflow: hidden;
 						
-						img{
+						.inner-member-avatar{
+							background-image: url("https://tvax4.sinaimg.cn/crop.443.39.1137.1137.180/a8826e2fly8fp0ydn6yzoj21kw11x43d.jpg");
 							border: 8px solid $wrapperColor;
 							border-radius: 50%;
-							//width: 80px;
-							//height: 80px;
 							width: 100%;
-							height: 100%;
+							height: 0;
+							padding-top: 100%;
+							overflow: hidden;
+							background-position: center center;
+							background-repeat: no-repeat;
+							background-size: cover;
+							-webkit-background-size: cover;
+							-moz-background-size: cover;
 						}
 					}
 					
@@ -64,28 +71,120 @@ $detailTableWidth: $mainWidth;
 						height: 55px;
 						line-height: 55px;
 						text-align: center;
-						font-size: $tableTitleSize;
+						font-size: 20px;
 						font-weight: 800;
 						background: $wrapperBorderColor;
 						margin-left: 5px;
 						margin-top: 5px;
 						border-top-left-radius: 50px;
 						
-						.member-name{
+						
+						.member-info{
+							width: 300px;
 							float: left;
-							margin-left: 60px;
-							font-size: 20px;
-							//line-height: 70px;
+							display: inline;
+							overflow: hidden;
+							
+							.member-name{
+								float: left;
+								margin-left: 20px;
+								text-align: left;
+							}
+							
+							.theater-team{
+								float: left;
+								font-size: 14px;
+								text-align: left;
+								margin-left: 5px;
+							}
 						}
 						
 						.total-amount{
+							width: 100px;
 							float: left;
-							margin-left: 400px;
+							margin-left: 150px;
+						}
+						
+						.total-amount-number{
+							width: 150px;
+							float: left;
+							text-align: left;
+						}
+						
+						.current-rank{
+							width: 100px;
+							float: left;
+						}
+						
+						.current-rank-number{
+							width: 40px;
+							float: left;
+							text-align: left;
 						}
 						
 						.project-no{
+							width: 100px;
 							float: left;
-							margin-left: 40px;
+							margin-left: 10px;
+						}
+						
+						.project-no-number{
+							width: 40px;
+							float: left;
+							text-align: left;
+						}
+						
+						.select-member{
+							#select-bar{
+								width: 100px;
+								height: 30px;
+								font-family: 微软雅黑;
+								
+								.not-select{
+									font-weight: bold;
+									background: #eeeeee;
+								}
+								
+								.SII{
+									background: #00b6de;
+								}
+								
+								.NII{
+									background: #9e57b4;
+								}
+								
+								.HII{
+									background: #f8941d;
+								}
+								
+								.X{
+									background: #b1d61b;
+								}
+								
+								.B{
+									background: #ff4083;
+								}
+								
+								.E{
+									background: #0cc8c3;
+								}
+								
+								.J{
+									background: #006ab7;
+								}
+								
+								.G{
+									background: #9FBF40;
+								}
+								
+								.NIII{
+									background: #ffe249;
+								}
+								
+								.Z{
+									background: #ea617b;
+								}
+							}
 						}
 					}
 						
@@ -104,23 +203,27 @@ $detailTableWidth: $mainWidth;
 						}
 						
 						.project-name{
-							margin-left: 210px;
+							margin-left: 200px;
 						}
 
 						.fans-club{
-							margin-left: 250px;
+							margin-left: 200px;
 						}
 						
 						.platform{
-							margin-left: 205px;
+							margin-left: 150px;
 						}
 						
 						.amount{
-							margin-left: 90px;
+							margin-left: 100px;
+						}
+						
+						.status{
+							margin-left: 100px;
 						}
 						
 						.remark{
-							margin-left: 150px;
+							margin-left: 100px;
 						}
 					}
 					
@@ -136,8 +239,24 @@ $detailTableWidth: $mainWidth;
 							margin: 0 auto;
 						}
 						
+						.water-print{
+							font-size: 50px;
+							font-weight: bold;
+							color: rgba(34, 46, 77, 0.5);
+							margin-top: 200px;
+							text-align: center;
+						}
+						
+						.animate-wrapper{
+							font-size: 40px;
+							font-weight: bold;
+							color: rgba(34, 46, 77, 0.5);
+							margin-top: 205px;
+							text-align: center;
+						}
+						
 						.member-table{
-							width: $detailTableWidth - 50px;
+							width: $detailTableWidth - 51px;
 							border-collapse: collapse;
 							text-align: center;
 							
@@ -146,7 +265,7 @@ $detailTableWidth: $mainWidth;
 								
 								
 								.project-even{
-									background: $wrapperBorderColor;
+									background: rgba(34, 46, 77, 0.25);
 								}
 								
 								.project-tr{
@@ -154,29 +273,44 @@ $detailTableWidth: $mainWidth;
 									line-height: 35px;
 									
 									.project-name{
-										width: 600px;
+										width: 540px;
 										text-align: left;
 										
 										a{
+											overflow: hidden;
 											margin-left: 20px;
 										}
 									}
 									
 									.project-fans-club{
-										width: 260px;
+										width: 205px;
 										text-align: left;
+										float: left;
 									}
 									
 									.project-platform{
+										width: 135px;
 										text-align: left;
+										float: left;
 									}
 									
 									.project-amount{
+										width: 135px;
 										text-align: left;
+										float: left;
+									}
+									
+									.project-status{
+										width: 140px;
+										text-align: left;
+										float: left;
 									}
 									
 									.project-remark{
+										width: 140px;
 										text-align: left;
+										float: left;
+										//overflow: hidden;
 									}
 								}
 							}

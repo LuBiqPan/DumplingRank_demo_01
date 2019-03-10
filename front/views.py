@@ -3,6 +3,7 @@ from django.views.generic import View, ListView
 from django.core import serializers
 from django.http import HttpResponse
 from django.http.response import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
 import json
 
@@ -71,7 +72,7 @@ def index(request):
     for field in growth_total:
         inner_dict = {
             "sample_time": str(field.sample_time),
-            "amount_total": str(field.amount_total)
+            "amount_total": str('%.2f' % field.amount_total)
         }
         d = {"growth_total": json.dumps(inner_dict)}
         context.update(d)
@@ -241,9 +242,63 @@ def growth(request):
 
 
 def percentage(request):
+    context = {}
+    temp_dict = {}
 
-    # return render(request, 'percentage.html')
-    return render(request, 'sunburst-drink.html')
+    # Member amount.
+    growth_member = G104GrowthMember.objects.all()
+    for result in growth_member:
+        member_dict = {
+            str(result.member): str('%.2f' % result.amount_member)
+        }
+        temp_dict.update(member_dict)
+    d = {"member_amount": json.dumps(temp_dict)}
+    context.update(d)
+
+    # Rest members amount.
+    rest_dict = {
+        "rest_SII": str('%.2f' % 10000),
+        "rest_NII": str('%.2f' % 10000),
+        "rest_HII": str('%.2f' % 10000),
+        "rest_X": str('%.2f' % 10000),
+        "rest_B": str('%.2f' % 10000),
+        "rest_E": str('%.2f' % 10000),
+        "rest_J": str('%.2f' % 10000),
+        "rest_G": str('%.2f' % 10000),
+        "rest_NIII": str('%.2f' % 10000),
+        "rest_Z": str('%.2f' % 10000),
+    }
+    d = {"rest_amount": json.dumps(rest_dict)}
+    context.update(d)
+    # print(context)
+
+    # Top members excluding SNH48一期生 and SNH48二期生
+    # temp_dict1 = {}
+    # top_members = P101TopMembers.objects.all()
+    # for member in top_members:
+    #     inner_dict = {
+    #         str(member.member): str('%.2f' % member.real_amount)
+    #     }
+    #     temp_dict1.update(inner_dict)
+    # d = {"top_members": json.dumps(temp_dict1)}
+    # context.update(d)
+    top_member_list = []
+    top_member_amount = []
+    top_members = P101TopMembers.objects.all()
+    for member in top_members:
+        top_member_list.append(str(member.member))
+        top_member_amount.append(str(member.real_amount))
+    d = {
+        "top_member_list": json.dumps(top_member_list),
+        "top_member_amount": json.dumps(top_member_amount),
+    }
+    context.update(d)
+    print(context)
+
+    if request.is_ajax():
+        return JsonResponse(context)
+    else:
+        return render(request, 'percentage.html')
 
 
 def hot_pk(request):
@@ -252,6 +307,85 @@ def hot_pk(request):
     return render(request, 'pk.html')
 
 
+@csrf_exempt
 def member_detail(request):
+    project_list = []
+    context = {}
+    # Selected member from member page.
+    select_member_detail = request.POST.get('select_member_detail')
+    if select_member_detail:
 
-    return render(request, 'detail.html')
+        # Avatar.
+        avatar_link = member_avatar.get(select_member_detail)
+        if avatar_link:
+            d = {"avatar_link": json.dumps(avatar_link)}
+        else:
+            d = {"avatar_link": json.dumps("https://tvax4.sinaimg.cn/crop.443.39.1137.1137.180/a8826e2fly8fp0ydn6yzoj21kw11x43d.jpg")}
+        context.update(d)
+
+        # Theater and team of selected member.
+        theater_team_info = Member.objects.filter(member=select_member_detail).first()
+        if theater_team_info:
+            inner_dict = {
+                "theater": str(theater_team_info.theater.theater),
+                "team": str(theater_team_info.team.team),
+            }
+        else:
+            inner_dict = {
+                "theater": "",
+                "team": "",
+            }
+        d = {"theater_team_info": json.dumps(inner_dict)}
+        context.update(d)
+
+        # Real time total amount of member.
+        amount_info = G104GrowthMember.objects.filter(member=select_member_detail).first()
+        # If there is data for selected member, return to client.
+        if amount_info:
+            d = {"amount_info": json.dumps("%.2f" % amount_info.amount_member)}
+        # Otherwise, return 0.
+        else:
+            d = {"amount_info": json.dumps(str('%.2f' % 0))}
+        context.update(d)
+
+        # Rank.
+        rank_member = V103RealTimeAmount.objects.filter(member=select_member_detail).first()
+        rank_total = V103RealTimeAmount.objects.all()
+        if rank_member:
+            rank = 1
+            for result in rank_total:
+                if result.member != select_member_detail:
+                    rank = rank + 1
+                else:
+                    break
+        else:
+            rank = str(0)
+        d = {"rank_info": json.dumps(rank)}
+        context.update(d)
+
+        # Project quantity.
+        project_no = V102RealTimeAmount.objects.filter(member_id=select_member_detail).count()
+        d = {"project_no": json.dumps(project_no)}
+        context.update(d)
+
+        # Project information.
+        project_info = V102RealTimeAmount.objects.filter(member_id=select_member_detail).all()
+        for field in project_info:
+            inner_dict = {
+                "project_url": "#",
+                "project_name": str(field.project_name),
+                "fans_club": str(field.fans_club_id),
+                "platform": "摩点",
+                "amount": str('%.2f' % field.real_amount),
+                "status": "正在进行",
+                "remark": "Demo",
+            }
+            project_list.append(inner_dict)
+        d = {"project_info": json.dumps(project_list)}
+        context.update(d)
+        # print(context)
+
+    if request.is_ajax():
+        return JsonResponse(context)
+    else:
+        return render(request, 'detail.html', context=context)

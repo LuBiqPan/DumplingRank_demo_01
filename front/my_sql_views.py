@@ -2,6 +2,19 @@
 from .models import *
 
 
+class V102RealTimeAmount(models.Model):
+    member_id = models.CharField(max_length=100)
+    fans_club_id = models.CharField(max_length=100)
+    project_name = models.CharField(max_length=200)
+    project_id_id = models.CharField(max_length=100, primary_key=True)
+    sample_time = models.DateTimeField()
+    real_amount = models.FloatField()
+    support_no = models.IntegerField()
+
+    class Meta:
+        db_table = 'v102_real_time_amount'
+
+
 class V103RealTimeAmount(models.Model):
     member = models.CharField(max_length=100, primary_key=True)
     real_amount = models.FloatField()
@@ -54,3 +67,14 @@ class G104GrowthMember(models.Model):
     class Meta:
         managed = False
         db_table = 'g104_growth_member'
+
+
+class P101TopMembers(models.Model):
+    member = models.CharField(max_length=100, primary_key=True)
+    real_amount = models.FloatField()
+    support_no = models.IntegerField()
+
+    class Meta:
+        db_table = 'p101_top_members'
+        ordering = ['-real_amount']
+

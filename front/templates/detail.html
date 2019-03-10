@@ -4,6 +4,7 @@
 
 {% block main %}
     <link rel="stylesheet" href="{% static '/css/detail.min.css' %}">
+    {% csrf_token %}
 
     <div class="main">
         <div class="inner-main-wrapper">
@@ -11,27 +12,270 @@
                 <div class="middle-center-wrapper">
                     <div class="inner-center-wrapper">
                         <div class="member-avatar">
-                            <img class="member-img" src="http://www.gnz48.com/images/member/zp_30012.jpg" alt="">
+                            <div class="inner-member-avatar"></div>
                         </div>
                         <div class="amount-info">
-                            <span class="member-name">谢蕾蕾（GNZ48 Team G）</span>
-                            <span class="total-amount">集资总额：10086</span>
-                            <span class="project-no">集资链接：16</span>
+                            <div class="member-info">
+                                <span class="member-name">请选择成员</span>
+                                <span class="theater-team"></span>
+                            </div>
+                            <span class="total-amount">集资总额：</span>
+                            <span class="total-amount-number">0.00</span>
+                            <span class="current-rank">当前排名：</span>
+                            <span class="current-rank-number">0</span>
+                            <span class="project-no">集资链接：</span>
+                            <span class="project-no-number">0</span>
+                            <span class="select-member">
+                                <select name="" id="select-bar">
+                                    <option class="not-select">请选择成员</option>
+                                    <optgroup label="Team SII" class="SII">
+                                        <option value="陈观慧">陈观慧</option>
+                                        <option value="陈俊羽">陈俊羽</option>
+                                        <option value="陈思">陈思</option>
+                                        <option value="戴萌">戴萌</option>
+                                        <option value="蒋芸">蒋芸</option>
+                                        <option value="孔肖吟">孔肖吟</option>
+                                        <option value="李宇琪">李宇琪</option>
+                                        <option value="刘增艳">刘增艳</option>
+                                        <option value="莫寒">莫寒</option>
+                                        <option value="钱蓓婷">钱蓓婷</option>
+                                        <option value="邱欣怡">邱欣怡</option>
+                                        <option value="孙芮">孙芮</option>
+                                        <option value="邵雪聪">邵雪聪</option>
+                                        <option value="温晶婕">温晶婕</option>
+                                        <option value="吴哲晗">吴哲晗</option>
+                                        <option value="徐晨辰">徐晨辰</option>
+                                        <option value="许佳琪">许佳琪</option>
+                                        <option value="徐子轩">徐子轩</option>
+                                        <option value="袁丹妮">袁丹妮</option>
+                                        <option value="杨令仪">杨令仪</option>
+                                        <option value="袁雨桢">袁雨桢</option>
+                                        <option value="朱小丹">朱小丹</option>
+                                        <option value="张语格">张语格</option>
+                                    </optgroup>
+                                    <optgroup label="Team NII" class="NII">
+                                        <option value="陈佳莹">陈佳莹</option>
+                                        <option value="冯薪朵">冯薪朵</option>
+                                        <option value="黄婷婷">黄婷婷</option>
+                                        <option value="何晓玉">何晓玉</option>
+                                        <option value="金莹玥">金莹玥</option>
+                                        <option value="江真仪">江真仪</option>
+                                        <option value="刘洁">刘洁</option>
+                                        <option value="栾嘉仪">栾嘉仪</option>
+                                        <option value="李美琪">李美琪</option>
+                                        <option value="陆婷">陆婷</option>
+                                        <option value="卢天惠">卢天惠</option>
+                                        <option value="马凡">马凡</option>
+                                        <option value="王诗蒙">王诗蒙</option>
+                                        <option value="谢妮">谢妮</option>
+                                        <option value="易嘉爱">易嘉爱</option>
+                                        <option value="颜沁">颜沁</option>
+                                        <option value="赵佳蕊">赵佳蕊</option>
+                                        <option value="周诗雨">周诗雨</option>
+                                        <option value="张茜">张茜</option>
+                                        <option value="赵粤">赵粤</option>
+                                        <option value="张怡">张怡</option>
+                                        <option value="张雨鑫">张雨鑫</option>
+                                    </optgroup>
+                                    <optgroup label="Team HII" class="HII">
+                                        <option value="陈盼">陈盼</option>
+                                        <option value="费沁源">费沁源</option>
+                                        <option value="郭爽">郭爽</option>
+                                        <option value="郝婧怡">郝婧怡</option>
+                                        <option value="洪珮雲">洪珮雲</option>
+                                        <option value="姜杉">姜杉</option>
+                                        <option value="蒋舒婷">蒋舒婷</option>
+                                        <option value="林楠">林楠</option>
+                                        <option value="林舒晴">林舒晴</option>
+                                        <option value="林思意">林思意</option>
+                                        <option value="李玉倩">李玉倩</option>
+                                        <option value="李艺彤">李艺彤</option>
+                                        <option value="戚予珠">戚予珠</option>
+                                        <option value="沈梦瑶">沈梦瑶</option>
+                                        <option value="宋雨珊">宋雨珊</option>
+                                        <option value="孙珍妮">孙珍妮</option>
+                                        <option value="万丽娜">万丽娜</option>
+                                        <option value="王欣颜甜甜">王欣颜甜甜</option>
+                                        <option value="王奕">王奕</option>
+                                        <option value="徐晗">徐晗</option>
+                                        <option value="许杨玉琢">许杨玉琢</option>
+                                        <option value="袁一琦">袁一琦</option>
+                                        <option value="张昕">张昕</option>
+                                    </optgroup>
+                                    <optgroup label="Team X" class="X">
+                                        <option value="陈琳">陈琳</option>
+                                        <option value="冯晓菲">冯晓菲</option>
+                                        <option value="刘静晗">刘静晗</option>
+                                        <option value="鲁静萍">鲁静萍</option>
+                                        <option value="李星羽">李星羽</option>
+                                        <option value="吕一">吕一</option>
+                                        <option value="李钊">李钊</option>
+                                        <option value="潘瑛琪">潘瑛琪</option>
+                                        <option value="祁静">祁静</option>
+                                        <option value="冉蔚">冉蔚</option>
+                                        <option value="宋昕冉">宋昕冉</option>
+                                        <option value="孙歆文">孙歆文</option>
+                                        <option value="王菲妍">王菲妍</option>
+                                        <option value="汪佳翎">汪佳翎</option>
+                                        <option value="王晓佳">王晓佳</option>
+                                        <option value="谢天依">谢天依</option>
+                                        <option value="杨冰怡">杨冰怡</option>
+                                        <option value="张丹三">张丹三</option>
+                                        <option value="张嘉予">张嘉予</option>
+                                    </optgroup>
+                                    <optgroup label="Team B" class="B">
+                                        <option value="程戈">程戈</option>
+                                        <option value="陈美君">陈美君</option>
+                                        <option value="段艺璇">段艺璇</option>
+                                        <option value="胡丽芝">胡丽芝</option>
+                                        <option value="胡晓慧">胡晓慧</option>
+                                        <option value="刘姝贤">刘姝贤</option>
+                                        <option value="林溪荷">林溪荷</option>
+                                        <option value="李瑜璇">李瑜璇</option>
+                                        <option value="曲美霖">曲美霖</option>
+                                        <option value="青钰雯">青钰雯</option>
+                                        <option value="沈小爱">沈小爱</option>
+                                        <option value="孙晓艳">孙晓艳</option>
+                                        <option value="田姝丽">田姝丽</option>
+                                        <option value="熊素君">熊素君</option>
+                                        <option value="闫明筠">闫明筠</option>
+                                        <option value="杨鑫">杨鑫</option>
+                                        <option value="张梦慧">张梦慧</option>
+                                        <option value="赵天杨">赵天杨</option>
+                                        <option value="张羽涵">张羽涵</option>
+                                    </optgroup>
+                                    <optgroup label="Team E" class="E">
+                                        <option value="陈倩楠">陈倩楠</option>
+                                        <option value="程宇璐">程宇璐</option>
+                                        <option value="冯思佳">冯思佳</option>
+                                        <option value="高蔚然">高蔚然</option>
+                                        <option value="李丽满">李丽满</option>
+                                        <option value="李娜">李娜</option>
+                                        <option value="刘胜男">刘胜男</option>
+                                        <option value="李诗彦">李诗彦</option>
+                                        <option value="李梓">李梓</option>
+                                        <option value="马玉灵">马玉灵</option>
+                                        <option value="彭嘉敏">彭嘉敏</option>
+                                        <option value="任蔓琳">任蔓琳</option>
+                                        <option value="苏杉杉">苏杉杉</option>
+                                        <option value="王嘉瑜">王嘉瑜</option>
+                                        <option value="王雨兰">王雨兰</option>
+                                        <option value="顼凘炀">顼凘炀</option>
+                                        <option value="熊鑫">熊鑫</option>
+                                        <option value="杨一帆">杨一帆</option>
+                                        <option value="张爱静">张爱静</option>
+                                        <option value="臧聪">臧聪</option>
+                                        <option value="张丹丹">张丹丹</option>
+                                        <option value="张笑盈">张笑盈</option>
+                                    </optgroup>
+                                    <optgroup label="Team J" class="J">
+                                        <option value="柏欣妤">柏欣妤</option>
+                                        <option value="陈雅钰">陈雅钰</option>
+                                        <option value="房蕾">房蕾</option>
+                                        <option value="葛司琪">葛司琪</option>
+                                        <option value="黄恩茹">黄恩茹</option>
+                                        <option value="韩家乐">韩家乐</option>
+                                        <option value="何阳青青">何阳青青</option>
+                                        <option value="金锣赛">金锣赛</option>
+                                        <option value="楼澍">楼澍</option>
+                                        <option value="刘闲">刘闲</option>
+                                        <option value="刘一菲">刘一菲</option>
+                                        <option value="任心怡">任心怡</option>
+                                        <option value="孙语姗">孙语姗</option>
+                                        <option value="唐霖">唐霖</option>
+                                        <option value="王雨煊">王雨煊</option>
+                                        <option value="叶苗苗">叶苗苗</option>
+                                        <option value="杨晔">杨晔</option>
+                                        <option value="张怀瑾">张怀瑾</option>
+                                        <option value="郑洁丽">郑洁丽</option>
+                                        <option value="周湘">周湘</option>
+                                    </optgroup>
+                                    <optgroup label="Team G" class="G">
+                                        <option value="陈俊宏">陈俊宏</option>
+                                        <option value="GNZ48陈佳莹">GNZ48陈佳莹</option>
+                                        <option value="陈珂">陈珂</option>
+                                        <option value="符冰冰">符冰冰</option>
+                                        <option value="高源婧">高源婧</option>
+                                        <option value="黄楚茵">黄楚茵</option>
+                                        <option value="罗寒月">罗寒月</option>
+                                        <option value="梁娇">梁娇</option>
+                                        <option value="林嘉佩">林嘉佩</option>
+                                        <option value="罗可嘉">罗可嘉</option>
+                                        <option value="李沁洁">李沁洁</option>
+                                        <option value="李姗姗">李姗姗</option>
+                                        <option value="林芝">林芝</option>
+                                        <option value="徐楚雯">徐楚雯</option>
+                                        <option value="徐慧玲">徐慧玲</option>
+                                        <option value="谢蕾蕾">谢蕾蕾</option>
+                                        <option value="阳青颖">阳青颖</option>
+                                        <option value="叶舒淇">叶舒淇</option>
+                                        <option value="曾艾佳">曾艾佳</option>
+                                        <option value="张琼予">张琼予</option>
+                                        <option value="朱怡欣">朱怡欣</option>
+                                    </optgroup>
+                                    <optgroup label="Team NIII" class="NIII">
+                                        <option value="陈楠茜">陈楠茜</option>
+                                        <option value="陈欣妤">陈欣妤</option>
+                                        <option value="邓熳慧">邓熳慧</option>
+                                        <option value="高雪逸">高雪逸</option>
+                                        <option value="洪静雯">洪静雯</option>
+                                        <option value="卢静">卢静</option>
+                                        <option value="刘力菲">刘力菲</option>
+                                        <option value="刘倩倩">刘倩倩</option>
+                                        <option value="孙馨">孙馨</option>
+                                        <option value="唐莉佳">唐莉佳</option>
+                                        <option value="吴羽霏">吴羽霏</option>
+                                        <option value="谢艾琳">谢艾琳</option>
+                                        <option value="冼燊楠">冼燊楠</option>
+                                        <option value="肖文铃">肖文铃</option>
+                                        <option value="熊心瑶">熊心瑶</option>
+                                        <option value="郑丹妮">郑丹妮</option>
+                                        <option value="左嘉欣">左嘉欣</option>
+                                        <option value="左婧媛">左婧媛</option>
+                                        <option value="张润">张润</option>
+                                    </optgroup>
+                                    <optgroup label="Team Z" class="Z">
+                                        <option value="毕瑞珊">毕瑞珊</option>
+                                        <option value="陈桂君">陈桂君</option>
+                                        <option value="邓惠恩">邓惠恩</option>
+                                        <option value="杜秋霖">杜秋霖</option>
+                                        <option value="方琪">方琪</option>
+                                        <option value="郭铱宁">郭铱宁</option>
+                                        <option value="何梦瑶">何梦瑶</option>
+                                        <option value="梁乔">梁乔</option>
+                                        <option value="梁婉琳">梁婉琳</option>
+                                        <option value="龙亦瑞">龙亦瑞</option>
+                                        <option value="赖梓惜">赖梓惜</option>
+                                        <option value="农燕萍">农燕萍</option>
+                                        <option value="王翠菲">王翠菲</option>
+                                        <option value="王炯义">王炯义</option>
+                                        <option value="王偲越">王偲越</option>
+                                        <option value="谢菲菲">谢菲菲</option>
+                                        <option value="杨可璐">杨可璐</option>
+                                        <option value="杨媛媛">杨媛媛</option>
+                                        <option value="余芷媛">余芷媛</option>
+                                        <option value="张秋怡">张秋怡</option>
+                                    </optgroup>
+                                </select>
+                            </span>
                         </div>
                         <div class="table-title">
                             <div class="title-field project-name">项目</div>
                             <div class="title-field fans-club">应援会</div>
                             <div class="title-field platform">平台</div>
                             <div class="title-field amount">金额</div>
+                            <div class="title-field status">状态</div>
                             <div class="title-field remark">备注</div>
                         </div>
                         <div class="table-wrapper">
                             <div class="scroll-bar"></div>
+                            <div class="water-print"></div>
+                            <div class="animate-wrapper">正在查询，请稍后...</div>
                             <table class="member-table" width="80%" border="1">
                                 <tbody>
-                                    <tr id="project-1" class="project-odd project-tr">
-                                        <td class="project-name"><a href="#">谢蕾蕾集资1qqwwwwwwwwwwwwwqq</a></td>
-                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会11111111</td>
+                                    <!--<tr id="project-1" class="project-odd project-tr">
+                                        <td class="project-name"><a href="#">谢蕾蕾集资1</a></td>
+                                        <td class="project-fans-club">GNZ48-谢蕾蕾应援会</td>
                                         <td class="project-platform">摩点</td>
                                         <td class="project-amount">100000.00</td>
                                         <td class="project-remark">Demo</td>
@@ -196,7 +440,7 @@
                                         <td class="project-platform">其他</td>
                                         <td class="project-amount">0.00</td>
                                         <td class="project-remark">Demo</td>
-                                    </tr>
+                                    </tr>-->
                                 </tbody>
                             </table>
                         </div>
@@ -205,4 +449,6 @@
             </div>
         </div>
     </div>
+
+    <script src="{% static '/js/detail.min.js' %}"></script>
 {% endblock %}

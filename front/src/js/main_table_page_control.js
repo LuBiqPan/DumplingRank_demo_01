@@ -19,33 +19,75 @@ PageControl.prototype.listenSelect = function () {
     var self = this;
     // Change li background color when mouse moves in.
     $(".tr-rank").mouseenter(function () {
+        var currentTheme = self.getThemeColor();
         var tagId = $(this).attr("id");
-        $("#"+tagId).css("background", "#eeeeee");
-        $("#"+tagId).click(function () {
-            console.log(tagId);
-            $(location).attr("href", "member/");
-        });
+
+        // Dark theme.
+        if (currentTheme === undefined || currentTheme === "rgb(25, 35, 47)") {
+            // $("#"+tagId).css("background", "rgba(238, 238, 238, 0.5)");
+            $("#"+tagId).css({
+                "background": "rgba(34, 46, 77, 0.7)",
+                "font-weight": "bold",
+                "font-size": "18px",
+            });
+        } else { // Light theme.
+            $("#"+tagId).css({
+                "background": "rgba(238, 238, 238, 1)",
+                "font-weight": "bold",
+                "font-size": "18px",
+            });
+        }
+
+        // Click list to jump to member detail amount page.
+        // $("#"+tagId).click(function () {
+        //     window.open("member");
+        //     // Select the member within selected li.
+        //     var data = {"select_member_index": $("#"+tagId).children(".rank-member").text()};
+        //     // Post selected member to server.
+        //     $.post(
+        //         "/member/",
+        //         data,
+        //         function (data) {
+        //             // console.log(data);
+        //         }
+        //     );
+        // });
     });
 
     // Restore li color to default value when mouse moves out.
     $(".tr-rank").mouseleave(function () {
         var currentTheme = self.getThemeColor();
-
         var tagId = $(this).attr("id");
         var rank = parseInt(tagId.substr(8));
 
         // Dark theme.
         if (currentTheme === undefined || currentTheme === "rgb(25, 35, 47)") {
             if (rank%2 === 0) { // Even rank color.
-                $("#"+tagId).css("background", "#222e3f");
+                $("#"+tagId).css({
+                    "background": "rgba(34, 46, 77, 0.25)",
+                    "font-weight": "normal",
+                    "font-size": "14px",
+                });
             } else { // Odd rank color.
-                $("#"+tagId).css("background", "#19232F");
+                $("#"+tagId).css({
+                    "background": "#19232F",
+                    "font-weight": "normal",
+                    "font-size": "14px",
+                });
             }
         } else { // Light theme.
             if (rank%2 === 0) { // Even rank color.
-                $("#"+tagId).css("background", "#f7f7f7");
+                $("#"+tagId).css({
+                    "background": "#f7f7f7",
+                    "font-weight": "normal",
+                    "font-size": "14px",
+                });
             } else { // Odd rank color.
-                $("#"+tagId).css("background", "rgba(255,255,255,0.94)");
+                $("#"+tagId).css({
+                    "background": "rgba(255,255,255,0.94)",
+                    "font-weight": "normal",
+                    "font-size": "14px",
+                });
             }
         }
     });

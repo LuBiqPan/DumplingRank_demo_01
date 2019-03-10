@@ -431,13 +431,14 @@ option = {
             fontSize: 30,
             fontFamily: "楷体"
         },
-        x: "center"
+        x: "center",
+        y: 10,
     },
 
     legend:{
         type: 'plain',
         x: 'left',
-        left: 80,
+        left: 100,
         top: 40,
         inactiveColor: '#121A20',
         textStyle:{
@@ -495,7 +496,7 @@ option = {
 
     grid: {
         // x, y, x2, y2: axis distance from div
-        x: 60,
+        x: 90,
         y: 50,
         x2: 18,
         y2: 70,

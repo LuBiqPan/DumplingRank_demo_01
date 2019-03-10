@@ -3,9 +3,41 @@
 
 
 .main{
-	.percentage-wrapper{
-		width: $mainWidth;
+	.inner-main-wrapper{
+		width: $mainWidth + 20px;
 		height: $mainHeight;
 		margin: 0 auto;
+
+		.percentage-wrapper{
+			width: $mainWidth / 2 + 5px;
+			height: $mainHeight;
+			float: left;
+			background: $wrapperColor;
+			
+			.inner-percentage-wrapper{
+				width: $mainWidth / 2 - 17px;
+				height: $mainHeight - 22px;
+				border: 1px solid $wrapperBorderColor;
+				margin-left: 10px;
+				margin-top: 10px;
+			}
+		}
+		
+		.top-member-wrapper{
+			width: $mainWidth / 2 + 5px;
+			height: $mainHeight;
+			float: right;
+			background: $wrapperColor;
+			
+			.inner-top-member-wrapper{
+				width: $mainWidth / 2 - 17px;
+				height: $mainHeight - 22px;
+				border: 1px solid $wrapperBorderColor;
+				margin-left: 10px;
+				margin-top: 10px;
+				//padding: 10px 10px;
+			}
+		}
 	}
+	
 }

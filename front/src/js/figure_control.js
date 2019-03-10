@@ -5,6 +5,8 @@ var pkAmountRatio;
 var pkTitle;
 
 var growthChart = echarts.init(document.getElementById("inner-group"));
+var percentageChart = echarts.init(document.getElementById("inner-percentage"));
+var pkChart = echarts.init(document.getElementById("pk"));
 
 option = null;
 var base = +new Date(2014, 9, 3);
@@ -61,7 +63,7 @@ for (var i = 1; i < 10; i++) {
     addData();
 }
 
-option = {
+var option = {
     tooltip: {
         trigger: 'axis',
         showContent: true,     // Do not show content.
@@ -239,9 +241,7 @@ function amountPercentage(
     valSNH48, valBEJ48, valGNZ48,
     valSII, valNII, valHII, valX, valB, valE, valJ, valG, valNIII, valZ
 ) {
-    var percentageChart = echarts.init(document.getElementById("inner-percentage"));
-
-    option = {
+    var option = {
         title:{
             text: '集资比例',
             textStyle: {color: '#C0DAFF'},
@@ -250,7 +250,6 @@ function amountPercentage(
             trigger: 'item',
             // formatter: "{b}: {c} ({d}%)"
             formatter: function (params) {
-                console.log(params);
                 return params["name"] + ": " + parseFloat(params["value"]).toFixed(2) + " (" + params["percent"].toFixed(1) + "%)";
             }
         },
@@ -331,9 +330,6 @@ function amountPercentage(
 
 /* Hot PK */
 function hotPK(pkMember, pkAmount, pkAmountRatio, pkTitle) {
-    var dom = document.getElementById("pk");
-    var myChart = echarts.init(dom);
-
     var option = {
         title: {
             text: "热门PK",
@@ -429,8 +425,7 @@ function hotPK(pkMember, pkAmount, pkAmountRatio, pkTitle) {
         ]
     };
 
-    myChart.setOption(option, true);
-
+    pkChart.setOption(option, true);
 }
 
 

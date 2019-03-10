@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}饺子榜2019-首页{% endblock %}
+{% block title %}饺子榜-首页{% endblock %}
 
 {% block main %}
     <script src="{% static '/js/ad.min.js' %}"></script>
@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="{% static '/css/index.min.css' %}">
 
     <div class="main">
+        {% csrf_token %}
         <div class="inner-main-wrapper">
 
             <div class="left-wrapper">
                 <div id="growth" class="growth-figure">
-                    <button class="detail-growth" onclick="window.open({% url 'growth' %})">详情</button>
+                    <button class="detail-growth" onclick="window.open({% url 'growth' %})">更多</button>
                     <div id="inner-group" class="inner-growth-figure"></div>
-                     <script src="{% static '/js/figure_control.min.js' %}"></script>
                 </div>
 
                 <div id="percentage" class="percentage-figure">
+                    <button class="detail-percentage" onclick="window.open({% url 'percentage' %})">更多</button>
                     <div id="inner-percentage" class="inner-percentage-figure"></div>
                 </div>
             </div>
@@ -448,7 +449,7 @@
                                     <button id="p2">17-32</button>
                                     <button id="p3">33-48</button>
                                     <button id="p4">49-66</button>
-                                    <button id="p-more" onclick="window.open('https://www.baidu.com')">更 多</button>
+                                    <button id="p-more" onclick="window.open({% url 'member' %})">更 多</button>
                                 </li>
                             </ul>
                         </div>
@@ -507,4 +508,6 @@
 
         </div>
     </div>
+
+    <script src="{% static '/js/figure_control.min.js' %}"></script>
 {% endblock %}

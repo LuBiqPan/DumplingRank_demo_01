@@ -4,16 +4,23 @@
 
 /* Basic main style */
 .main{
-	width: 100%;
-	height: $mainHeight;
+	//width: 100%;
+	//height: $mainHeight;
 	
-	.inner-main-wrapper{
+	.main-wrapper{
 		width: $mainWidth + 20px;
 		height: $mainHeight;
 		margin: 0 auto;
-		//float: left;
-		//margin-left: 50px;
-		//display: inline-block;
+		background: $wrapperColor;
+			
+		.pk-inner-main-wrapper{
+			width: $mainWidth - 2px;
+			height: $mainHeight - 22px;
+			margin-top: 10px;
+			margin-left: 10px;
+			border: 1px solid $wrapperBorderColor;
+			float: left;
+		}
 	}
 	
 	.select-wrapper{
