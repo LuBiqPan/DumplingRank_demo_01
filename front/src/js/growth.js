@@ -439,7 +439,7 @@ option = {
         type: 'plain',
         x: 'left',
         left: 100,
-        top: 40,
+        top: 50,
         inactiveColor: '#121A20',
         textStyle:{
             color: '#aaaaaa',
@@ -497,8 +497,8 @@ option = {
     grid: {
         // x, y, x2, y2: axis distance from div
         x: 90,
-        y: 50,
-        x2: 18,
+        y: 70,
+        x2: 40,
         y2: 70,
     },
 
@@ -636,11 +636,11 @@ function dropDownCk(selectId,hiddenId, item) {
         }
     });
 
-return tagArr;
+    return tagArr;
 }
 
 var selectedTeam = dropDownCk("select-team", "ul-team", "选择队伍");
-var selectedMember = dropDownCk("lang1","ck1", "选择成员");
+var selectedMember = dropDownCk("select-member","ul-member", "选择成员");
 
 
 // Array a - Array b

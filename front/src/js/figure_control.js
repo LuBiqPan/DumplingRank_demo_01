@@ -29,6 +29,35 @@ var valSNH48, valBEJ48, valGNZ48;
 var valSII, valNII, valHII, valX, valB, valE, valJ, valG, valNIII, valZ;
 
 
+percentageChart.showLoading({
+  text: '正在加载，请稍后...',
+  color: '#C0DAFF',
+  textColor: '#C0DAFF',
+  maskColor: 'rgba(255, 255, 255, 0.0)',
+  zlevel: 0
+});
+pkChart.showLoading({
+  text: '正在加载，请稍后...',
+  color: '#C0DAFF',
+  textColor: '#C0DAFF',
+  maskColor: 'rgba(255, 255, 255, 0.0)',
+  zlevel: 0
+});
+
+$(document).ready(function () {
+    var screenWidth = $(window).width();
+    console.log(screenWidth);
+    if (screenWidth <= 600) {
+        console.log("Mobile");
+        $(".left-wrapper").hide();
+        $(".right-wrapper").hide();
+    } else {
+        console.log("PC");
+        $(".left-wrapper").show();
+        $(".right-wrapper").show();
+    }
+});
+
 
 function addData(shift, sampleTime, growthTotal, growthTheater) {
     if (typeof sampleTime === 'string') {
@@ -324,6 +353,7 @@ function amountPercentage(
         ]
     };
 
+    percentageChart.hideLoading();
     percentageChart.setOption(option, true);
 }
 
@@ -425,6 +455,7 @@ function hotPK(pkMember, pkAmount, pkAmountRatio, pkTitle) {
         ]
     };
 
+    pkChart.hideLoading();
     pkChart.setOption(option, true);
 }
 
@@ -440,6 +471,7 @@ setInterval(function () {
         success: function (data) {
             i = 0;
             for (var val in data) {
+                console.log(data);
                 var rankInfo = data[val];
                 // Translate rankInfo into json format.
                 var rankInfoJson = $.parseJSON(rankInfo);
@@ -516,3 +548,4 @@ setInterval(function () {
     hotPK(pkMember, pkAmount, pkAmountRatio, pkTitle);
 
 }, ajaxTime);   // ajax every ajaxTime millisecond
+

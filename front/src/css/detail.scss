@@ -139,6 +139,9 @@ $detailTableWidth: $mainWidth;
 								width: 100px;
 								height: 30px;
 								font-family: 微软雅黑;
+								-webkit-border-radius: 5px;
+								-moz-border-radius: 5px;
+								border-radius: 5px;
 								
 								.not-select{
 									font-weight: bold;

@@ -20,10 +20,12 @@ from front import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('mobile/', views.index_mobile, name='mobile'),
     path('growth/', views.growth, name='growth'),
     path('percentage/', views.percentage, name='percentage'),
     path('pk/', views.hot_pk, name='pk'),
     path('member/', views.member_detail, name='member'),
+    path('descendant/', views.descendant, name='descendant'),
     # path(r'^index_upgrade/$', views.index_upgrade, name='index_upgrade'),
     # path('list/', views.MainTableListView.as_view(), name='index'),
     # path('growth/', views.growth_index, name='growth'),

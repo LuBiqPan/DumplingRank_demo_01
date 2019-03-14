@@ -69,6 +69,7 @@ class G104GrowthMember(models.Model):
         db_table = 'g104_growth_member'
 
 
+# Percentage
 class P101TopMembers(models.Model):
     member = models.CharField(max_length=100, primary_key=True)
     real_amount = models.FloatField()
@@ -78,3 +79,18 @@ class P101TopMembers(models.Model):
         db_table = 'p101_top_members'
         ordering = ['-real_amount']
 
+
+class P110RealTimeAmountJoinTime(models.Model):
+    join_time = models.CharField(max_length=50, primary_key=True)
+    real_amount = models.FloatField()
+
+    class Meta:
+        db_table = 'p110_real_amount_join_time'
+        # ordering = ["SNH48一期生", "SNH48二期生", "SNH48三期生", "SNH48四期生", "SNH48五期生", "SNH48六期生"]
+
+
+class P111RealTimeAmountJoinTimeOthers(models.Model):
+    real_amount_other = models.FloatField(primary_key=True)
+
+    class Meta:
+        db_table = 'p111_real_amount_join_time_others'

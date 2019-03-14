@@ -91,7 +91,7 @@ def index(request):
             data_theater.append(inner_dict)
     d = {"growth_theater": json.dumps(data_theater)}
     context.update(d)
-    # print(context)
+    print(context)
 
     # Amount growth (team)
     team_list = ["Team SII", "Team NII", "Team HII", "Team X",
@@ -114,6 +114,43 @@ def index(request):
         return JsonResponse(context)
     else:
         return render(request, 'index.html', context=context)
+        # return render(request, 'index_mobile.html', context=context)
+
+
+def index_mobile(request):
+
+    # # Main table.
+    main_table = V103RealTimeAmount.objects.all()
+    context = {}
+    i = 1   # rank
+    for field in main_table:
+        inner_dict = {
+            "rank": str(i),
+            "member": str(field.member),
+            # '%.2f': reserve 2 decimals.
+            "real_amount": str('%.2f' % field.real_amount),
+            "vote": str('%.2f' % (field.real_amount / 32.0)),
+            "support_no": str(field.support_no)
+        }
+        rank = "rank" + str(i)
+        i += 1
+        d = {rank: json.dumps(inner_dict)}
+        context.update(d)
+
+    # Amount growth (total).
+    growth_total = G101GrowthTotal.objects.all()
+    for field in growth_total:
+        inner_dict = {
+            "sample_time": str(field.sample_time),
+            "amount_total": str('%.2f' % field.amount_total)
+        }
+        d = {"growth_total": json.dumps(inner_dict)}
+        context.update(d)
+
+    if request.is_ajax():
+        return JsonResponse(context)
+    else:
+        return render(request, 'index_mobile.html', context=context)
 
 
 def growth(request):
@@ -233,7 +270,7 @@ def growth(request):
             data_member.append(inner_dict)
     d = {"growth_member": json.dumps(data_member)}
     context.update(d)
-    print(context)
+    # print(context)
 
     if request.is_ajax():
         return JsonResponse(context)
@@ -270,30 +307,26 @@ def percentage(request):
     }
     d = {"rest_amount": json.dumps(rest_dict)}
     context.update(d)
-    # print(context)
 
-    # Top members excluding SNH48一期生 and SNH48二期生
-    # temp_dict1 = {}
-    # top_members = P101TopMembers.objects.all()
-    # for member in top_members:
-    #     inner_dict = {
-    #         str(member.member): str('%.2f' % member.real_amount)
-    #     }
-    #     temp_dict1.update(inner_dict)
-    # d = {"top_members": json.dumps(temp_dict1)}
-    # context.update(d)
-    top_member_list = []
-    top_member_amount = []
-    top_members = P101TopMembers.objects.all()
-    for member in top_members:
-        top_member_list.append(str(member.member))
-        top_member_amount.append(str(member.real_amount))
-    d = {
-        "top_member_list": json.dumps(top_member_list),
-        "top_member_amount": json.dumps(top_member_amount),
+    # Join time amount
+    join_time_member = ["SNH48一期生", "SNH48二期生", "SNH48三期生", "SNH48四期生", "SNH48五期生", "SNH48六期生"]
+    temp_dict2 = {}
+    # "SNH48一期生", "SNH48二期生", "SNH48三期生", "SNH48四期生", "SNH48五期生", "SNH48六期生"
+    for join_time in join_time_member:
+        result = P110RealTimeAmountJoinTime.objects.filter(join_time=join_time).first()
+        inner_dict = {
+            str(join_time): str('%.2f' % result.real_amount)
+        }
+        temp_dict2.update(inner_dict)
+    # Other members
+    result_other = P111RealTimeAmountJoinTimeOthers.objects.first()
+    inner_dict = {
+        "其他": str('%.f' % result_other.real_amount_other)
     }
+    temp_dict2.update(inner_dict)
+    d = {"join_time_amount": json.dumps(temp_dict2)}
     context.update(d)
-    print(context)
+    # print(context)
 
     if request.is_ajax():
         return JsonResponse(context)
@@ -389,3 +422,25 @@ def member_detail(request):
         return JsonResponse(context)
     else:
         return render(request, 'detail.html', context=context)
+
+
+def descendant(request):
+    # Descendant members (excluding old members).
+    context = {}
+    descendant_list = []
+    descendant_amount = []
+    descendant_members = P101TopMembers.objects.all()
+    for member in descendant_members:
+        descendant_list.append(str(member.member))
+        descendant_amount.append(str('%.2f' % member.real_amount))
+    d = {
+        "descendant_list": json.dumps(descendant_list),
+        "descendant_amount": json.dumps(descendant_amount),
+    }
+    context.update(d)
+    # print(context)
+
+    if request.is_ajax():
+        return JsonResponse(context)
+    else:
+        return render(request, 'descendant.html', context=context)

@@ -239,7 +239,7 @@
 						margin-top: 8px;
 						
 						ul{
-							margin-left: 85px;
+							margin-left: 50px;
 							li{
 								button{
 									width: 65px;
@@ -252,6 +252,10 @@
 								
 								#p-more{
 									//font-family: 微软雅黑;
+									font-weight: bold;
+								}
+								
+								#descendant-btn{
 									font-weight: bold;
 								}
 							}

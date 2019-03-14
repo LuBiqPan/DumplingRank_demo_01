@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block title %}饺子榜-后辈排名{% endblock %}
+
+
+{% block main %}
+    <link rel="stylesheet" href="{% static '/css/descendant.min.css' %}">
+
+    <div class="main">
+        <div class="descendant-main-wrapper">
+            <div id="descendant-wrapper" class="descendant-inner-main-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="{% static '/js/descendant.min.js' %}"></script>
+{% endblock %}
+

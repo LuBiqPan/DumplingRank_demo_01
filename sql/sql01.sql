@@ -114,6 +114,7 @@ FROM dumpling_rank_demo_03.v103_real_time_amount V103;
 
 /*************************************** Percentage ***************************************/
 # Top members excluding SNH48一期生 and SNH48二期生
+
 # p101_top_members
 SELECT *
 FROM v103_real_time_amount V
@@ -123,7 +124,23 @@ WHERE V.member IN (
 	WHERE M.join_time NOT IN ("SNH48一期生", "SNH48二期生")
 );
 
+# p110_real_amount_join_time
+SELECT F1.join_time, SUM(real_amount) real_amount
+FROM (
+	SELECT V103.member, V103.real_amount, M.join_time
+	FROM dumpling_rank_demo_03.v103_real_time_amount V103
+	INNER JOIN dumpling_rank_demo_03.member M
+	ON V103.member = M.member) F1
+GROUP BY F1.join_time;
 
+# p111_real_amount_join_time_others
+SELECT SUM(V103.real_amount) real_amount_other
+FROM (	# F1: 
+	SELECT M.member, M.join_time
+	FROM dumpling_rank_demo_03.member M
+	WHERE M.join_time NOT IN ("SNH48一期生", "SNH48二期生", "SNH48三期生", "SNH48四期生", "SNH48五期生", "SNH48六期生")) F1
+INNER JOIN dumpling_rank_demo_03.v103_real_time_amount V103
+ON F1.member = V103.member;
 
 
 

@@ -1,29 +1,33 @@
-{% extends 'base.html' %}
-
-{% block title %}饺子榜-首页{% endblock %}
-
-{% block main %}
-    <script src="{% static '/js/ad.min.js' %}"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>饺子榜-首页</title>
+    <script src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+    <link rel="Shortcut Icon" href="{% static '/images/logo.ico' %}">
+</head>
+<body>
     <script src="{% static 'js/main_table_page_control.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static '/css/index_mobile.min.css' %}">
 
-    <link rel="stylesheet" href="{% static '/css/index.min.css' %}">
+    <div class="nav">
+        <div class="inner-nav-wrapper">
+            <div class="nav-item main-title">
+                <!--<span class="logo-wrapper">
+                    <img src="{% static '/images/DumplingRankLogo.jpg' %}" alt="">
+                </span>-->
+                <span class="title-wrapper">
+                    <a href="{% url 'index' %}">SNH48-饺子榜2019</a>
+                </span>
+                <!--<span class="year-wrapper">2019</span>-->
+            </div>
+        </div>
+    </div>
 
     <div class="main">
         {% csrf_token %}
         <div class="inner-main-wrapper">
-
-            <div class="left-wrapper">
-                <div id="growth" class="growth-figure">
-                    <button class="detail-growth" onclick="window.open({% url 'growth' %})">更多</button>
-                    <div id="inner-group" class="inner-growth-figure"></div>
-                </div>
-
-                <div id="percentage" class="percentage-figure">
-                    <button class="detail-percentage" onclick="window.open({% url 'percentage' %})">更多</button>
-                    <div id="inner-percentage" class="inner-percentage-figure"></div>
-                </div>
-            </div>
-
             <div class="center-wrapper">
                 <div class="middle-center-wrapper">
                     <div class="inner-center-wrapper">
@@ -36,10 +40,10 @@
                         <div class="table-wrapper">
                             <table class="main-table">
                                 <tr class="table-head">
-                                    <th>排名</th>
-                                    <th>姓名</th>
-                                    <th>集资总额</th>
-                                    <th>折合票数</th>
+                                    <th class="rank-no">排名</th>
+                                    <th class="rank-member">姓名</th>
+                                    <th class="rank-account">集资总额</th>
+                                    <th class="rank-vote">折合票数</th>
                                 </tr>
                                 <tr id="tr-rank-1" class="tr-rank tr-odd tr-p1">
                                     <td class="rank-no">1</td>
@@ -457,55 +461,9 @@
                     </div>
                 </div>
             </div>
-
-            <div class="right-wrapper">
-                <div class="ad-wrapper">
-                    <div class="banner-group" id="banner-group">
-                        <ul class="banner-ul" id="banner-ul">
-                            <li>
-                                <a href="https://zhongchou.modian.com/item/47181.html" target="_blank">
-                                    <img src="{% static 'images/banner/banner1.jpg' %}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://zhongchou.modian.com/item/46311.html" target="_blank">
-                                    <img src="{% static 'images/banner/banner2.jpg' %}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{% static 'images/banner/banner3.jpg' %}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://zhongchou.modian.com/item/43740.html">
-                                    <img src="{% static 'images/banner/banner4.jpg' %}" alt="">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{% static 'images/banner/banner5.jpg' %}" alt="">
-                                </a>
-                            </li>
-                        </ul>
-                        <span class="arrow left-arrow">‹</span>
-                        <span class="arrow right-arrow">›</span>
-                        <div class="page-control-group">
-                            <ul class="page-control"></ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pk-wrapper">
-                    <button class="detail-pk" onclick="window.open({% url 'pk' %})">更多</button>
-                    <div id="pk" class="inner-pk-wrapper"></div>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    <script src="{% static '/js/figure_control.min.js' %}"></script>
-{% endblock %}
-
-
+    <script src="{% static '/js/index_mobile.min.js' %}"></script>
+</body>
+</html>

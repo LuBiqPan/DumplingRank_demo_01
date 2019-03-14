@@ -1,0 +1,21 @@
+
+@import "init";
+
+.main {
+	
+	.descendant-main-wrapper {
+		width: $mainWidth + 20px;
+		height: $mainHeight;
+		margin: 0 auto;
+		background: $wrapperColor;
+		
+		.descendant-inner-main-wrapper {
+			width: $mainWidth - 2px;
+			height: $mainHeight - 22px;
+			margin-top: 10px;
+			margin-left: 10px;
+			border: 1px solid $wrapperBorderColor;
+			float: left;
+		}
+	}
+}

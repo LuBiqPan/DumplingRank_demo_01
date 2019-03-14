@@ -1,117 +1,32 @@
 
-// document.write("<script language=javascript src='growth.js'></script>");
-// var fromGrowth = document.createElement("script");
-// fromGrowth.setAttribute("type", "text/javascript");
-// fromGrowth.setAttribute("src", "/growth.js");
-// document.body.appendChild(fromGrowth);
-// console.log(testSignal);
-
 var i;
 var option = {};
-var growthTheater, growthTeam, growthMember;
 var ajaxTime = 2000;    // ajax cycle in millisecond
 
 var percentageChart = echarts.init(document.getElementById("percentage"));
-var topMemberChart = echarts.init(document.getElementById("top-member"));
+var percentageByJoinTimeChart = echarts.init(document.getElementById("top-member"));
 
 var memberAmount = {};
 var restAmount = {};
-var topMemberList = [];
-var topMemberAmount = [];
+var joinTimeAmount = {};
 
-// member
+// Loading animation.
+percentageByJoinTimeChart.showLoading({
+  text: '正在加载，请稍后...',
+  color: '#C0DAFF',
+  textColor: '#C0DAFF',
+  maskColor: 'rgba(255, 255, 255, 0.0)',
+  zlevel: 0
+});
+percentageChart.showLoading({
+  text: '正在加载，请稍后...',
+  color: '#C0DAFF',
+  textColor: '#C0DAFF',
+  maskColor: 'rgba(255, 255, 255, 0.0)',
+  zlevel: 0
+});
 
-var memberNII = ["陈佳莹", "冯薪朵", "黄婷婷", "何晓玉", "金莹玥", "江真仪", "刘洁", "栾嘉仪", "李美琪",
-                  "陆婷", "卢天惠", "马凡", "王诗蒙", "谢妮", "易嘉爱", "颜沁", "赵佳蕊", "周诗雨", "张茜",
-                  "赵粤", "张怡", "张雨鑫"];
-var memberHII = ["陈盼", "费沁源", "郭爽", "郝婧怡", "洪珮雲", "姜杉", "蒋舒婷", "林楠", "林舒晴", "林思意",
-                  "李玉倩", "李艺彤", "戚予珠", "沈梦瑶", "宋雨珊", "孙珍妮", "万丽娜", "王欣颜甜甜", "王奕",
-                  "徐晗", "许杨玉琢", "袁一琦", "张昕"];
-var memberX = ["陈琳", "冯晓菲", "刘静晗", "鲁静萍", "李星羽", "吕一", "李钊", "潘瑛琪", "祁静", "冉蔚",
-                "宋昕冉", " 孙歆文", "王菲妍", "汪佳翎", "王晓佳", "谢天依", "杨冰怡", "张丹三", "张嘉予"];
-var memberB = ["程戈", "陈美君", "段艺璇", "胡丽芝", "胡晓慧", "刘姝贤", "林溪荷", "李瑜璇", "曲美霖",
-                "青钰雯", "沈小爱", "孙晓艳", "田姝丽", "熊素君", "闫明筠", "杨鑫", "张梦慧", "赵天杨", "张羽涵"];
-var memberE = ["陈倩楠", "程宇璐", "冯思佳", "高蔚然", "李丽满", "李娜", "刘胜男", "李诗彦", "李梓", "马玉灵",
-                "彭嘉敏", "任蔓琳", "苏杉杉", "王嘉瑜", "王雨兰", "顼凘炀", "熊鑫", "杨一帆", "张爱静", "臧聪",
-                "张丹丹", "张笑盈"];
-var memberJ = ["柏欣妤", "陈雅钰", "房蕾", "葛司琪", "黄恩茹", "韩家乐", "何阳青青", "金锣赛", "楼澍", "刘闲",
-                "刘一菲", "任心怡", "孙语姗", "唐霖", "王雨煊", "叶苗苗", "杨晔", "张怀瑾", "郑洁丽", "周湘"];
-var memberG = ["陈俊宏", "GNZ48陈佳莹", "陈珂", "符冰冰", "高源婧", "黄楚茵", "罗寒月", "梁娇", "林嘉佩",
-                "罗可嘉", "李沁洁", "李姗姗", "林芝", "徐楚雯", "徐慧玲", "谢蕾蕾", "阳青颖", "叶舒淇",
-                "曾艾佳", "张琼予", "朱怡欣"];
-var memberNIII = ["陈楠茜", "陈欣妤", "邓熳慧", "高雪逸", "洪静雯", "卢静", "刘力菲", "刘倩倩", "孙馨",
-                   "唐莉佳", "吴羽霏", "谢艾琳", "冼燊楠", "肖文铃", "熊心瑶", "郑丹妮", "左嘉欣", "左婧媛",
-                   "张润"];
-var memberZ = ["毕瑞珊", "陈桂君", "邓惠恩", "杜秋霖", "方琪", "郭铱宁", "何梦瑶", "梁乔", "梁婉琳", "龙亦瑞",
-                "赖梓惜", "农燕萍", "王翠菲", "王炯义", "王偲越", "谢菲菲", "杨可璐", "杨媛媛", "余芷媛",
-                "张秋怡"];
-// var memberList = memberSII.concat(memberNII, memberHII, memberX, memberB, memberE, memberJ, memberG, memberNIII, memberZ);
-var memberSII = ["", "", "", "", "", "", "", "", "", "", "",
-    "", "", "", "", "", "", "", "", "", "", "", ""];
-var memberInfo = [
-    {"member": "陈观慧", "team": "Team "},
-    {"member": "陈俊羽", "team": "Team "},
-    {"member": "陈思", "team": "Team "},
-    {"member": "戴萌", "team": "Team "},
-    {"member": "蒋芸", "team": "Team "},
-    {"member": "孔肖吟", "team": "Team "},
-    {"member": "李宇琪", "team": "Team "},
-    {"member": "刘增艳", "team": "Team "},
-    {"member": "莫寒", "team": "Team "},
-    {"member": "钱蓓婷", "team": "Team "},
-    {"member": "邱欣怡", "team": "Team "},
-    {"member": "孙芮", "team": "Team "},
-    {"member": "邵雪聪", "team": "Team "},
-    {"member": "温晶婕", "team": "Team "},
-    {"member": "吴哲晗", "team": "Team "},
-    {"member": "徐晨辰", "team": "Team "},
-    {"member": "许佳琪", "team": "Team "},
-    {"member": "徐子轩", "team": "Team "},
-    {"member": "袁丹妮", "team": "Team "},
-    {"member": "杨令仪", "team": "Team "},
-    {"member": "袁雨桢", "team": "Team "},
-    {"member": "朱小丹", "team": "Team "},
-    {"member": "张语格", "team": "Team "},
-
-    {"member": "", "team": "Team "},
-    {"member": "", "team": "Team "},
-    {"member": "", "team": "Team "},
-];
-
-var selectedMember = {};
-
-// Parse data
-function parseData(growthTheater, growthTeam, growthMember) {
-    // append
-    var totalAmount = {};
-    // append theater
-    totalAmount["valSNH48"] = growthTheater[0]["amount_theater"];
-    totalAmount["valBEJ48"] = growthTheater[1]["amount_theater"];
-    totalAmount["valGNZ48"] = growthTheater[2]["amount_theater"];
-    // append team
-    totalAmount["valSII"] = growthTeam[0]["amount_team"];
-    totalAmount["valNII"] = growthTeam[1]["amount_team"];
-    totalAmount["valHII"] = growthTeam[2]["amount_team"];
-    totalAmount["valX"] = growthTeam[3]["amount_team"];
-    totalAmount["valB"] = growthTeam[4]["amount_team"];
-    totalAmount["valE"] = growthTeam[5]["amount_team"];
-    totalAmount["valJ"] = growthTeam[6]["amount_team"];
-    totalAmount["valG"] = growthTeam[7]["amount_team"];
-    totalAmount["valNIII"] = growthTeam[8]["amount_team"];
-    totalAmount["valZ"] = growthTeam[9]["amount_team"];
-
-    // member
-    var valMember = {};
-    for (i=0; i<memberInfo.length; i++) {
-        var valMemberSub = {};
-        valMemberSub[memberInfo[i]["member"]] = growthMember[i]["amount_member"];
-        $.extend(valMember, valMemberSub);
-    }
-
-}
-
-
-/* Percentage */
+/* Percentage by theater, team and member. */
 function percentageControl(memberAmount, restAmount) {
 
     var data = [{
@@ -130,49 +45,49 @@ function percentageControl(memberAmount, restAmount) {
                 name: '莫寒',
                 value: 9999,
                 itemStyle: {
-                    // color: '#C0DAFF'
+                    color: '#297CD7'
                 }
             }, { // 许佳琪
                 name: '许佳琪',
                 value: 9999,
                 itemStyle: {
-                    // color: '#C0DAFF'
+                    color: '#FF093D'
                 }
             }, { // 戴萌
                 name: '戴萌',
                 value: 9999,
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#F6BDC1'
                 }
             }, { // 钱蓓婷
                 name: '钱蓓婷',
                 value: 9999,
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#3A5BA5'
                 }
             }, { // 吴哲晗
                 name: '吴哲晗',
                 value: 9999,
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#F6C5C6'
                 }
             }, { // 孔肖吟
                 name: '孔肖吟',
                 value: 9999,
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#FF613C'
                 }
             }, { // 张语格
                 name: '张语格',
                 value: parseFloat(memberAmount["张语格"]),
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#FF0030'
                 }
             }, { // 其他
                 name: '其他',
                 value: parseFloat(restAmount["rest_SII"]),
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#eeeeee'
                 }
             }]
         }, { // Team NII
@@ -184,37 +99,37 @@ function percentageControl(memberAmount, restAmount) {
                 name: '黄婷婷',
                 value: 9999,
                 itemStyle: {
-                    // color: '#f99e1c'
+                    color: '#FDF200'
                 }
             }, { // 冯薪朵
                 name: '冯薪朵',
                 value: 9999,
                 itemStyle: {
-                    // color: '#ef5a78'
+                    color: '#31B26B'
                 }
             }, { // 陆婷
                 name: '陆婷',
                 value: 9999,
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#D9205E'
                 }
             }, { // 赵粤
                 name: '赵粤',
                 value: 9999,
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#0C7CE5'
                 }
             }, { // 易嘉爱
                 name: '易嘉爱',
                 value: parseFloat(memberAmount["易嘉爱"]),
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#D06479'
                 }
             }, { // 其他
                 name: '其他',
                 value: parseFloat(restAmount["rest_NII"]),
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#eeeeee'
                 }
             }]
         }, { // Team HII
@@ -226,37 +141,37 @@ function percentageControl(memberAmount, restAmount) {
                 name: '李艺彤',
                 value: 19999,
                 itemStyle: {
-                    // color: '#f99e1c'
+                    color: '#E60111'
                 }
             }, { // 林思意
                 name: '林思意',
                 value: 9999,
                 itemStyle: {
-                    // color: '#ef5a78'
+                    color: '#009441'
                 }
             }, { // 万丽娜
                 name: '万丽娜',
                 value: 9999,
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#493A90'
                 }
             }, { // 费沁源
                 name: '费沁源',
                 value: parseFloat(memberAmount["费沁源"]),
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#E7B3D2'
                 }
             }, { // 姜杉
                 name: '姜杉',
                 value: 9999,
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#870000'
                 }
             }, { // 其他
                 name: '其他',
                 value: parseFloat(restAmount["rest_HII"]),
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#eeeeee'
                 }
             }]
         }, { // Team X
@@ -268,25 +183,25 @@ function percentageControl(memberAmount, restAmount) {
                 name: '宋昕冉',
                 value: parseFloat(memberAmount["宋昕冉"]),
                 itemStyle: {
-                    // color: '#f99e1c'
+                    color: '#FCC525'
                 }
             }, { // 杨冰怡
                 name: '杨冰怡',
                 value: 9999,
                 itemStyle: {
-                    // color: '#ef5a78'
+                    color: '#AA302E'
                 }
             }, { // 张丹三
                 name: '张丹三',
                 value: 9999,
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#F8DFDA'
                 }
             }, { // 其他
                 name: '其他',
                 value: parseFloat(restAmount["rest_X"]),
                 itemStyle: {
-                    // color: '#f7f1bd'
+                    color: '#eeeeee'
                 }
             }]
         }]
@@ -306,19 +221,19 @@ function percentageControl(memberAmount, restAmount) {
                 name: '段艺璇',
                 value: parseFloat(memberAmount["段艺璇"]),
                 itemStyle: {
-                    // color: '#3e0317'
+                    color: '#FF9700'
                 }
             }, { // 胡晓慧
                 name: '胡晓慧',
                 value: 5999,
                 itemStyle: {
-                    // color: '#e62969'
+                    color: '#F7A5A4'
                 }
             }, { // 其他
                 name: '其他',
                 value: parseFloat(restAmount["rest_B"]),
                 itemStyle: {
-                    // color: '#6569b0'
+                    color: '#eeeeee'
                 }
             }]
         }, { // Team E
@@ -330,19 +245,19 @@ function percentageControl(memberAmount, restAmount) {
                 name: '苏杉杉',
                 value: parseFloat(memberAmount["苏杉杉"]),
                 itemStyle: {
-                    // color: '#b53b54'
+                    color: '#F29A03'
                 }
             }, { // 冯思佳
                 name: '冯思佳',
                 value: 9999,
                 itemStyle: {
-                    // color: '#a5446f'
+                    color: '#60BBC1'
                 }
             }, { // 其他
                 name: '其他',
                 value: parseFloat(restAmount["rest_E"]),
                 itemStyle: {
-                    // color: '#a5446f'
+                    color: '#eeeeee'
                 }
             }]
         }, {
@@ -355,25 +270,25 @@ function percentageControl(memberAmount, restAmount) {
                 name: '韩家乐',
                 value: parseFloat(memberAmount["韩家乐"]),
                 itemStyle: {
-                    // color: '#f2684b'
+                    color: '#F5B5B1'
                 }
             }, { // 张怀瑾
                 name: '张怀瑾',
                 value: 9999,
                 itemStyle: {
-                    // color: '#e73451'
+                    color: '#E9D19C'
                 }
             }, { // 黄恩茹
                 name: '黄恩茹',
                 value: 9999,
                 itemStyle: {
-                    // color: '#e65656'
+                    color: '#FEE0F9'
                 }
             }, { // 其他
                 name: '其他',
                 value: parseFloat(restAmount["rest_J"]),
                 itemStyle: {
-                    // color: '#f89a1c'
+                    color: '#eeeeee'
                 }
             }]
         }]
@@ -393,25 +308,25 @@ function percentageControl(memberAmount, restAmount) {
                 name: '谢蕾蕾',
                 value: parseFloat(memberAmount["谢蕾蕾"]),
                 itemStyle: {
-                    // color: '#9ea718'
+                    color: '#FFC2C4'
                 }
             }, { // 陈珂
                 name: '陈珂',
                 value: 9999,
                 itemStyle: {
-                    // color: '#94a76f'
+                    color: '#FADB2E'
                 }
             }, { // 张琼予
                 name: '张琼予',
                 value: 9999,
                 itemStyle: {
-                    // color: '#d0b24f'
+                    color: '#005caf'
                 }
             }, { // 其他
                 name: '其他',
                 value: parseFloat(restAmount["rest_G"]),
                 itemStyle: {
-                    // color: '#8eb646'
+                    color: '#eeeeee'
                 }
             }]
         }, { // Team NIII
@@ -423,25 +338,25 @@ function percentageControl(memberAmount, restAmount) {
                 name: '郑丹妮',
                 value: 9999,
                 itemStyle: {
-                    // color: '#8f1c53'
+                    color: '#F6EABD'
                 }
             }, { // 刘力菲
                 name: '刘力菲',
                 value: parseFloat(memberAmount["刘力菲"]),
                 itemStyle: {
-                    // color: '#b34039'
+                    color: '#8DC41E'
                 }
             }, { // 卢静
                 name: '卢静',
                 value: 9999,
                 itemStyle: {
-                    // color: '#ba9232'
+                    color: '#C0DDEE'
                 }
             }, { // 其他
                 name: '其他',
                 value: parseFloat(restAmount["rest_NIII"]),
                 itemStyle: {
-                    // color: '#8b6439'
+                    color: '#eeeeee'
                 }
             }]
         }, { // Team Z
@@ -453,25 +368,25 @@ function percentageControl(memberAmount, restAmount) {
                 name: '杨媛媛',
                 value: parseFloat(memberAmount["杨媛媛"]),
                 itemStyle: {
-                    // color: '#8f1c53'
+                    color: '#BF0204'
                 }
             }, { // 梁婉琳
                 name: '梁婉琳',
                 value: 9999,
                 itemStyle: {
-                    // color: '#ba9232'
+                    color: '#A93539'
                 }
             }, { // 余芷媛
                 name: '余芷媛',
                 value: 9999,
                 itemStyle: {
-                    // color: '#8b6439'
+                    color: '#E2586D'
                 }
             }, { // 其他
                 name: '其他',
                 value: parseFloat(restAmount["rest_Z"]),
                 itemStyle: {
-                    // color: '#8b6439'
+                    color: '#eeeeee'
                 }
             }]
         }]
@@ -499,8 +414,27 @@ function percentageControl(memberAmount, restAmount) {
             trigger: 'item',
             // formatter: "{b}: {c} ({d}%)",
             formatter: function (params) {
-                // Reserve 2 decimals.
-                return params.name + "<br/>" + "集资总额: " + params.value.toFixed(2);
+                // Theater.
+                    if (params.name === "SNH48" || params.name === "BEJ48" || params.name === "GNZ48") {
+                        return params.name + "<br/>"
+                               + "集资总额：" + params.value.toFixed(2) + "<br/>"
+                               + "团间比例：" + ((params.value/params.treePathInfo[0].value)*100).toFixed(1) + "%";
+                    // Team.
+                    } else if (params.name === "Team SII" || params.name === "Team NII" || params.name === "Team HII" || params.name === "Team X" ||
+                               params.name === "Team B"   || params.name === "Team E"   || params.name === "Team J" ||
+                               params.name === "Team G"   || params.name === "Team NIII"|| params.name === "Team Z") {
+                        return params.name + "<br/>"
+                               + "集资总额&nbsp;&nbsp;&nbsp;：" + params.value.toFixed(2) + "<br/>"
+                               + "分团内比例：" + ((params.value/params.treePathInfo[1].value)*100).toFixed(1) + "%" + "<br/>"
+                               + "队伍间比例：" + ((params.value/params.treePathInfo[0].value)*100).toFixed(1) + "%";
+                    // Member/other.
+                    } else {
+                        return params.name + "<br/>"
+                               + "集资总额&nbsp;&nbsp;&nbsp;：" + params.value.toFixed(2) + "<br/>"
+                               + "队伍内比例：" + ((params.value/params.treePathInfo[2].value)*100).toFixed(1) + "%" + "<br/>"
+                               + "分团内比例：" + ((params.value/params.treePathInfo[1].value)*100).toFixed(1) + "%" + "<br/>"
+                               + "全团比例&nbsp;&nbsp;&nbsp;：" + ((params.value/params.treePathInfo[0].value)*100).toFixed(1) + "%";
+                    }
             }
         },
         series: {
@@ -547,27 +481,25 @@ function percentageControl(memberAmount, restAmount) {
             }]
         }
     };
-
+    percentageChart.hideLoading();
     percentageChart.setOption(option, true);
 }
 
 
-/* Top members */
-function topMemberControl(topMemberList, topMemberAmount) {
-    var topMemberAmountTemp = [];
-    for (var val in topMemberAmount) {
-        topMemberAmountTemp.push(parseFloat(topMemberAmount[val]));
-    }
+/* Percentage by join time. */
+function percentageByJoinTime(joinTimeAmount) {
 
     var option = {
-        title: {
-            text: "分团TOP",
-            subtext: "不包括一期生、二期生",
+        title : {
+            text: '集资分布',
+            subtext: '按加入所属划分',
             textStyle: {
-                color: '#C0DAFF',
                 fontSize: 24,
+                align: 'center',
+                color: '#C0DAFF',
             },
             subtextStyle: {
+                align: 'center',
                 color: '#C0DAFF',
                 fontSize: 15,
                 fontFamily: "楷体",
@@ -575,72 +507,105 @@ function topMemberControl(topMemberList, topMemberAmount) {
             x: "center",  // Title align
             y: 10,        // Distance from div top.
         },
-        tooltip: {
-            formatter: function (params) {
-                return params["name"] + " " + parseFloat(params["value"]).toFixed(2)
-            }
+        tooltip : {
+            trigger: 'item',
+            formatter: "{b} : {c} ({d}%)"
         },
-        xAxis: {
-            data: topMemberList,
-            axisLine: {
-                lineStyle: {
-                    color: '#C0DAFF'
-                }
-            },
-            axisLabel: {
-                textStyle: {
-                    fontSize: 15
-                }
-            },
-        },
-        yAxis: {
-            axisLine: {
-                lineStyle: {
-                    color: '#C0DAFF'
-                }
-            },
-            splitLine:{
-                show: false
-            },
-            axisLabel: {
-                textStyle: {
-                    fontSize: 15
-                }
-            },
-        },
-        grid: {
-            // x, y, x2, y2: axis distance from div
-            x: 90,
-            y: 80,
-            x2: 20,
-            y2: 50,
-        },
-        series: [
+        calculable : true,
+        series : [
             {
-                name: '集资总额',
-                type: 'bar',
-                data: topMemberAmountTemp,
-                stack: "总量",
+                name:'半径模式',
+                type:'pie',
+                radius : [20, 150],
+                center : ['50%', '50%'],
+                roseType : 'radius',
                 label: {
                     normal: {
-                        show: false,
-                        position: 'insideTop'
+                        show: true,
+                        // formatter: '{b}\n{c} ({d}%)'
+                        formatter: function (params) {
+                            return params["name"]+"\n"+"集资总额："+params["value"].toFixed(2)+"\n"+"集资比例："+params["percent"].toFixed(2)+"%"
+                        },
+                        fontSize: 15,
+                        color: "#C0DAFF"
+                    },
+                    emphasis: {
+                        show: false
+                    },
+                },
+                labelLine: {
+                    normal: {
+                        show: true
+                    },
+                    emphasis: {
+                        show: false
                     }
                 },
-                itemStyle: {
-                    normal: {
-                        color: function (params) {
-                            var colorList = ['#C33531', '#EFE42A', '#64BD3D', '#EE9201', '#29AAE3', '#B74AE5', '#0AAF9F', '#E89589', '#16A085', '#4A235A', '#C39BD3 ', '#F9E79F', '#BA4A00', '#ECF0F1', '#616A6B', '#EAF2F8', '#4A235A', '#3498DB'];
-                            return colorList[params.dataIndex]
+                data:[
+                    {
+                        value:parseFloat(joinTimeAmount["SNH48一期生"]),
+                        name:'一期生',
+                        itemStyle: {color: '#00b6de'}
+                    },
+                    {
+                        value:parseFloat(joinTimeAmount["SNH48二期生"]),
+                        name:'二期生',
+                        itemStyle: {color: '#9e57b4'}
+                    },
+                    {
+                        value:parseFloat(joinTimeAmount["SNH48三期生"]),
+                        name:'三期生',
+                        itemStyle: {color: '#f8941d'}
+                    },
+                    {
+                        value:parseFloat(joinTimeAmount["SNH48四期生"]),
+                        name:'四期生',
+                        itemStyle: {color: '#b1d61b'}
+                    },
+                    {
+                        value:parseFloat(joinTimeAmount["SNH48五期生"]),
+                        name:'五期生',
+                        itemStyle: {
+                            // Color gradient.
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    {offset: 0, color: '#00ff00'},
+                                    {offset: 0.5, color: '#ff4083'},
+                                    {offset: 1, color: '#9FBF40'},
+                                ]
+                            )
                         }
-                    }
-                }
+                    },
+                    {
+                        value:parseFloat(joinTimeAmount["SNH48六期生"]),
+                        name:'六期生',
+                        itemStyle: {
+                            // Color gradient.
+                            color: new echarts.graphic.LinearGradient(
+                                0, 0, 0, 1,
+                                [
+                                    {offset: 0, color: '#00b6de'},
+                                    {offset: 0.5, color: '#ffe249'},
+                                    {offset: 1, color: '#0cc8c3'},
+                                ]
+                            )
+                        }
+                    },
+                    {
+                        value:parseFloat(joinTimeAmount["其他"]),
+                        name:'其他',
+                        itemStyle: {color: '#ff0000'}
+                    },
+                ]
             },
         ]
     };
 
-    topMemberChart.setOption(option, true);
+    percentageByJoinTimeChart.hideLoading();
+    percentageByJoinTimeChart.setOption(option, true);
 }
+
 
 /* Ajax upgrade */
 setInterval(function () {
@@ -652,14 +617,14 @@ setInterval(function () {
         success: function (data) {
             memberAmount = $.parseJSON(data["member_amount"]);
             restAmount = $.parseJSON(data["rest_amount"]);
-            topMemberList = $.parseJSON(data["top_member_list"]);
-            topMemberAmount= $.parseJSON(data["top_member_amount"]);
+            joinTimeAmount = $.parseJSON(data["join_time_amount"]);
         }
     });
 
-    // percentage
+    // Percentage
     percentageControl(memberAmount, restAmount);
-    topMemberControl(topMemberList, topMemberAmount);
+
+    percentageByJoinTime(joinTimeAmount);
 
 }, ajaxTime);   // ajax every ajaxTime millisecond
 

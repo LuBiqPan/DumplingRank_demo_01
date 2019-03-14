@@ -42,14 +42,14 @@ $(".theme-light").click(function () {
     $(".tr-odd").css("background", wrapperColorLight);
     $(".inner-member-avatar").css("border", "8px solid #fefefe");
 
-    $(".inner-growth-figure, .inner-percentage-figure, .middle-center-wrapper, .inner-center-wrapper, .inner-pk-wrapper, .inner-percentage-wrapper, .inner-top-member-wrapper, .pk-inner-main-wrapper, .inner-pk-page-wrapper").css("border", "1px solid #dddddd");
+    $(".inner-growth-figure, .inner-percentage-figure, .middle-center-wrapper, .inner-center-wrapper, .inner-pk-wrapper, .inner-percentage-wrapper, .inner-top-member-wrapper, .pk-inner-main-wrapper, .inner-pk-page-wrapper, .descendant-inner-main-wrapper").css("border", "1px solid #dddddd");
 
-    $("#p1, #p2, #p3, #p4, #p-more, .detail-growth, .detail-pk, .pk-btn, .detail-percentage").css({
+    $("#p1, #p2, #p3, #p4, #p-more, #descendant-btn, .detail-growth, .detail-pk, .pk-btn, .detail-percentage").css({
         "background": "#eeeeee",
         "color": fontColorLight
     });
 
-    $(".pk-page-wrapper").css("background", wrapperColorLight)
+    $(".pk-page-wrapper, .descendant-main-wrapper").css("background", wrapperColorLight)
 });
 
 $(".theme-dark").click(function () {
@@ -75,12 +75,12 @@ $(".theme-dark").click(function () {
     $(".tr-odd").css("background", wrapperColorDark);
     $(".inner-member-avatar").css("border", "8px solid #19232F");
 
-    $(".inner-growth-figure, .inner-percentage-figure, .middle-center-wrapper, .inner-center-wrapper, .inner-pk-wrapper, .inner-percentage-wrapper, .inner-top-member-wrapper, .pk-inner-main-wrapper, .inner-pk-page-wrapper").css("border", "1px solid #222e3f");
+    $(".inner-growth-figure, .inner-percentage-figure, .middle-center-wrapper, .inner-center-wrapper, .inner-pk-wrapper, .inner-percentage-wrapper, .inner-top-member-wrapper, .pk-inner-main-wrapper, .inner-pk-page-wrapper, .descendant-inner-main-wrapper").css("border", "1px solid #222e3f");
 
-    $("#p1, #p2, #p3, #p4, #p-more, .detail-growth, .detail-pk, .pk-btn, .detail-percentage").css({
+    $("#p1, #p2, #p3, #p4, #p-more, #descendant-btn, .detail-growth, .detail-pk, .pk-btn, .detail-percentage").css({
         "background": wrapperBorderColorDark,
         "color": mainFontColorDark
     });
 
-    $(".pk-page-wrapper").css("background", wrapperColorDark)
+    $(".pk-page-wrapper, .descendant-main-wrapper").css("background", wrapperColorDark)
 });

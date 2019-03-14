@@ -2,10 +2,7 @@
 @import "init";
 
 
-/* Basic main style */
 .main{
-	//width: 100%;
-	//height: $mainHeight;
 	
 	.main-wrapper{
 		width: $mainWidth + 20px;
@@ -24,100 +21,159 @@
 	}
 	
 	.select-wrapper{
-		width: 200px;
+		width: 105px;
 		height: 500px;
 		//float: left;
 		display: inline-block;
 		//margin-left: 20px;
 		position: absolute;
-		top: 55px;
-		right: 20px;
+		top: 80px;
+		right: 97px;
 		overflow: auto;		// scroll bar
 		
-		select{
-			min-width: 200px;
-			height: 30px;
-			border: 1px solid $wrapperBorderColor;
-			background: $mainFontColor;
-			font-family: 微软雅黑;
-			font-size: 20px;
-		}
-		
-		ul{
-			display: none;
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			border: 1px solid #eee;
+		.select-wrapper-team{
+			#select-team{
+				min-width: 100px;
+				height: 30px;
+				border: 1px solid $wrapperBorderColor;
+				background: $mainFontColor;
+				font-family: 微软雅黑;
+				font-size: 15px;
+			}
 			
-			.li-team{
-				//border-top: 1px solid #eee;
-				font-size: 22px;
-				margin-top: 10px;
-				margin-bottom: 5px;
-				margin-left: 10px;
+			ul{
+				width: 98px;
+				display: none;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				border: 1px solid #eee;
+				//background: rgba(255, 255, 255, 0.5);
 				
-				.label-team{
-					height: 50px;
+				li{
+					label{
+						font-size: 15px;
+						margin-left: 3px;
+					}
+				}
+				
+				li:hover{
+					background: #aabbcc;
 				}
 			}
 		}
 		
-		li{
-			label{
-				display: block;
-				padding: 2px 10px;
-				white-space: nowrap;
+		.select-wrapper-member{
+			#select-member{
+				min-width: 100px;
+				height: 30px;
+				border: 1px solid $wrapperBorderColor;
+				background: $mainFontColor;
+				font-family: 微软雅黑;
+				font-size: 15px;
 			}
 			
-			.label-sii{
-				color: $colorSNH48;
+			ul{
+				width: 100px;
+				display: none;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				border: 1px solid #eee;
+				//background: rgba(255, 255, 255, 0.5);
+				
+				.li-team{
+					//border-top: 1px solid #eee;
+					font-size: 15px;
+					margin-top: 10px;
+					margin-bottom: 5px;
+					margin-left: 10px;
+					
+					.label-team{
+						height: 50px;
+					}
+				}
+				
+				li{
+					margin-left: 3px;
+					.label-sii{
+						color: $colorSNH48;
+					}
+					
+					.label-nii{
+						color: $colorNII;
+					}
+					
+					.label-hii{
+						color: $colorHII;
+					}
+					
+					.label-x{
+						color: $colorX;
+					}
+					
+					.label-b{
+						color: $colorB;
+					}
+					
+					.label-e{
+						color: $colorE;
+					}
+					
+					.label-j{
+						color: $colorJ;
+					}
+					
+					.label-g{
+						color: $colorG;
+					}
+					
+					.label-niii{
+						color: $colorNIII;
+					}
+					
+					.label-z{
+						color: $colorZ;
+					}
+				}
+				
+				
+				
+				//li{
+				//	label{
+				//		input{
+				//			//font-family: 微软雅黑;
+				//			font-size: 15px;
+				//		}
+				//	}
+				//}
+				
+				li:hover{
+					background: #aabbcc;
+				}
 			}
-			
-			.label-nii{
-				color: $colorNII;
-			}
-			
-			.label-hii{
-				color: $colorHII;
-			}
-			
-			.label-x{
-				color: $colorX;
-			}
-			
-			.label-b{
-				color: $colorB;
-			}
-			
-			.label-e{
-				color: $colorE;
-			}
-			
-			.label-j{
-				color: $colorJ;
-			}
-			
-			.label-g{
-				color: $colorG;
-			}
-			
-			.label-niii{
-				color: $colorNIII;
-			}
-			
-			.label-z{
-				color: $colorZ;
-			}
-		}
-		
-		li:hover{
-			background: #aabbcc;
 		}
 	}
 	
 	input{
 		float: right;
+	}
+	
+	.select-wrapper::-webkit-scrollbar {/*滚动条整体样式*/
+		width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+		height: 3px;
+	}
+	
+	.select-wrapper::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+		border-radius: 10px;
+		 -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+		background: $mainFontColor;
+	}
+	
+	.select-wrapper::-webkit-scrollbar-track {/*滚动条里面轨道*/
+		-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+		border-radius: 10px;
+		background: #EDEDED;
 	}
 }
 
