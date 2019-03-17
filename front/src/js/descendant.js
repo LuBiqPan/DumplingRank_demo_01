@@ -26,7 +26,7 @@ function descendantControl(descendantList, descendantAmount) {
 
     var option = {
         title: {
-            text: "分团TOP",
+            text: "后辈榜",
             subtext: "不包括一期生、二期生",
             textStyle: {
                 color: '#C0DAFF',
@@ -103,26 +103,6 @@ function descendantControl(descendantList, descendantAmount) {
                 },
                 itemStyle: {
                     normal: {
-                        // color: function (params) {
-                        //     var colorList = ['#C33531', '#EFE42A', '#64BD3D', '#EE9201', '#29AAE3', '#B74AE5', '#0AAF9F', '#E89589', '#16A085', '#4A235A', '#C39BD3 ', '#F9E79F', '#BA4A00', '#ECF0F1', '#616A6B', '#EAF2F8', '#4A235A', '#3498DB'];
-                        //     return colorList[params.dataIndex]
-                        // }
-
-                        // Color gradient.
-                        //
-                        // color: {
-                        //     type: 'linear',
-                        //     x: 1,
-                        //     y: 0,
-                        //     x2: 0,
-                        //     y2: 0.5,
-                        //     colorStops: [{
-                        //         offset: 0, color: '#ff0000' // 0% 处的颜色
-                        //     }, {
-                        //         offset: 1, color: '#00ff00' // 100% 处的颜色
-                        //     }],
-                        //     global: false // 缺省为 false
-                        // }
                     }
                 }
             },
@@ -142,6 +122,7 @@ setInterval(function () {
         dataType: 'json',
         type: "GET",
         success: function (data) {
+            // console.log(data);
             descendantList = $.parseJSON(data["descendant_list"]);
             descendantAmount = $.parseJSON(data["descendant_amount"]);
         }

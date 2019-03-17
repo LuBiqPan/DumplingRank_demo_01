@@ -8,19 +8,14 @@
     <link rel="Shortcut Icon" href="{% static '/images/logo.ico' %}">
 </head>
 <body>
-    <script src="{% static 'js/main_table_page_control.min.js' %}"></script>
     <link rel="stylesheet" href="{% static '/css/index_mobile.min.css' %}">
 
     <div class="nav">
         <div class="inner-nav-wrapper">
             <div class="nav-item main-title">
-                <!--<span class="logo-wrapper">
-                    <img src="{% static '/images/DumplingRankLogo.jpg' %}" alt="">
-                </span>-->
                 <span class="title-wrapper">
                     <a href="{% url 'index' %}">SNH48-饺子榜2019</a>
                 </span>
-                <!--<span class="year-wrapper">2019</span>-->
             </div>
         </div>
     </div>
@@ -364,6 +359,7 @@
                                     <td class="rank-no">53</td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
+                                    <td class="rank-vote"></td>
                                 </tr>
                                 <tr id="tr-rank-54" class="tr-rank tr-even tr-p4 tr-last-group">
                                     <td class="rank-no">54</td>
@@ -443,7 +439,6 @@
                                     <td class="rank-account"></td>
                                     <td class="rank-vote"></td>
                                 </tr>
-
                             </table>
                         </div>
                         <div class="table-page-wrapper">
@@ -453,8 +448,6 @@
                                     <button id="p2">17-32</button>
                                     <button id="p3">33-48</button>
                                     <button id="p4">49-66</button>
-                                    <button id="p-more" onclick="window.open({% url 'member' %})">更 多</button>
-                                    <button id="descendant-btn" onclick="window.open({% url 'descendant' %})">后辈榜</button>
                                 </li>
                             </ul>
                         </div>

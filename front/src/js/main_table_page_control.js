@@ -32,7 +32,7 @@ PageControl.prototype.listenSelect = function () {
             });
         } else { // Light theme.
             $("#"+tagId).css({
-                "background": "rgba(238, 238, 238, 1)",
+                "background": "rgba(238, 238, 238, 0.7)",
                 "font-weight": "bold",
                 "font-size": "18px",
             });
@@ -70,7 +70,8 @@ PageControl.prototype.listenSelect = function () {
                 });
             } else { // Odd rank color.
                 $("#"+tagId).css({
-                    "background": "#19232F",
+                    // "background": "#19232F",
+                    "background": "rgba(25, 35, 47, 0.25)",
                     "font-weight": "normal",
                     "font-size": "14px",
                 });
@@ -78,13 +79,14 @@ PageControl.prototype.listenSelect = function () {
         } else { // Light theme.
             if (rank%2 === 0) { // Even rank color.
                 $("#"+tagId).css({
-                    "background": "#f7f7f7",
+                    // "background": "#f7f7f7",
+                    "background": "rgba(247,247,247,0.5)",
                     "font-weight": "normal",
                     "font-size": "14px",
                 });
             } else { // Odd rank color.
                 $("#"+tagId).css({
-                    "background": "rgba(255,255,255,0.94)",
+                    "background": "rgba(255,255,255,0.74)",
                     "font-weight": "normal",
                     "font-size": "14px",
                 });

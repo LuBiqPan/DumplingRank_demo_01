@@ -1,12 +1,12 @@
 
-var pkMember = [];
-var pkAmount = [];
-var pkAmountRatio;
-var pkTitle;
+// var pkMember = [];
+// var pkAmount = [];
+// var pkAmountRatio;
+// var pkTitle;
 
 var growthChart = echarts.init(document.getElementById("inner-group"));
 var percentageChart = echarts.init(document.getElementById("inner-percentage"));
-var pkChart = echarts.init(document.getElementById("pk"));
+// var pkChart = echarts.init(document.getElementById("pk"));
 
 option = null;
 var base = +new Date(2014, 9, 3);
@@ -36,23 +36,21 @@ percentageChart.showLoading({
   maskColor: 'rgba(255, 255, 255, 0.0)',
   zlevel: 0
 });
-pkChart.showLoading({
-  text: '正在加载，请稍后...',
-  color: '#C0DAFF',
-  textColor: '#C0DAFF',
-  maskColor: 'rgba(255, 255, 255, 0.0)',
-  zlevel: 0
-});
+// pkChart.showLoading({
+//   text: '正在加载，请稍后...',
+//   color: '#C0DAFF',
+//   textColor: '#C0DAFF',
+//   maskColor: 'rgba(255, 255, 255, 0.0)',
+//   zlevel: 0
+// });
 
 $(document).ready(function () {
     var screenWidth = $(window).width();
-    console.log(screenWidth);
     if (screenWidth <= 600) {
         console.log("Mobile");
         $(".left-wrapper").hide();
         $(".right-wrapper").hide();
     } else {
-        console.log("PC");
         $(".left-wrapper").show();
         $(".right-wrapper").show();
     }
@@ -64,11 +62,12 @@ function addData(shift, sampleTime, growthTotal, growthTheater) {
         // sample time
         date.push(sampleTime.substring(5, 16)); // Time format: "month-day hh:mm"
         // total
-        growthDataTotal.push(growthTotal * Math.random());
+        growthDataTotal.push(growthTotal);
         // theater
-        growthDataSNH48.push(growthTheater[0]["amount_theater"] * Math.random());
-        growthDataBEJ48.push(growthTheater[1]["amount_theater"] * Math.random());
-        growthDataGNZ48.push(growthTheater[2]["amount_theater"] * Math.random());
+        growthDataSNH48.push(growthTheater[0]["amount_theater"]);
+        growthDataBEJ48.push(growthTheater[1]["amount_theater"]);
+        // growthDataGNZ48.push(growthTheater[2]["amount_theater"] * Math.random());
+        growthDataGNZ48.push(growthTheater[2]["amount_theater"]);
 
         if (shift) {
             date.shift();
@@ -359,105 +358,105 @@ function amountPercentage(
 
 
 /* Hot PK */
-function hotPK(pkMember, pkAmount, pkAmountRatio, pkTitle) {
-    var option = {
-        title: {
-            text: "热门PK",
-            textStyle: {
-                color: '#C0DAFF',
-                fontSize: 20,
-            },
-            subtext: pkTitle,
-            subtextStyle: {
-                fontSize: 20,
-                color: '#C0DAFF',
-            }
-            // x: "center"  // title align
-        },
-        tooltip: {
-            formatter: function (params) {
-                return params["name"] + "(" + params["seriesName"] + ")" + ": " + parseFloat(params["value"]).toFixed(2)
-            }
-        },
-        xAxis: {
-            data: pkMember,
-            axisLine: {
-                lineStyle: {
-                    color: '#C0DAFF'
-                }
-            },
-            // axisLabel: {
-            //     textStyle: {
-            //         fontSize: 20
-            //     }
-            // },
-        },
-        yAxis: {
-            axisLine: {
-                lineStyle: {
-                    color: '#C0DAFF'
-                }
-            },
-            splitLine:{
-                show: false
-            },
-            // axisLabel: {
-            //     textStyle: {
-            //         fontSize: 20
-            //     }
-            // },
-        },
-        grid: {
-            // x, y, x2, y2: axis distance from div
-            x: 60,
-            y: 70,
-            x2: 10,
-            y2: 30,
-        },
-        series: [
-            {
-                name: '实际集资',
-                type: 'bar',
-                data: pkAmount,
-                stack: "总量",
-                label: {
-                    normal: {
-                        show: false,
-                        position: 'insideTop'
-                    }
-                },
-                itemStyle: {
-                    normal: {
-                        color: function (params) {
-                            var colorList = ['#C33531', '#EFE42A', '#64BD3D', '#EE9201', '#29AAE3', '#B74AE5', '#0AAF9F', '#E89589', '#16A085', '#4A235A', '#C39BD3 ', '#F9E79F', '#BA4A00', '#ECF0F1', '#616A6B', '#EAF2F8', '#4A235A', '#3498DB'];
-                            return colorList[params.dataIndex]
-                        }
-                    }
-                }
-            },
-            {
-                name: '系数集资',
-                type: 'bar',
-                data: pkAmountRatio,
-                stack: "总量",
-                label: {
-                    normal: {
-                        show: false,
-                        position: 'insideTop'
-                    }
-                },
-                itemStyle: {
-                    normal: {
-                        color: '#888'
-                    }
-                }
-            }
-        ]
-    };
-
-    pkChart.hideLoading();
-    pkChart.setOption(option, true);
-}
+// function hotPK(pkMember, pkAmount, pkAmountRatio, pkTitle) {
+//     var option = {
+//         title: {
+//             text: "热门PK",
+//             textStyle: {
+//                 color: '#C0DAFF',
+//                 fontSize: 20,
+//             },
+//             subtext: pkTitle,
+//             subtextStyle: {
+//                 fontSize: 20,
+//                 color: '#C0DAFF',
+//             }
+//             // x: "center"  // title align
+//         },
+//         tooltip: {
+//             formatter: function (params) {
+//                 return params["name"] + "(" + params["seriesName"] + ")" + ": " + parseFloat(params["value"]).toFixed(2)
+//             }
+//         },
+//         xAxis: {
+//             data: pkMember,
+//             axisLine: {
+//                 lineStyle: {
+//                     color: '#C0DAFF'
+//                 }
+//             },
+//             // axisLabel: {
+//             //     textStyle: {
+//             //         fontSize: 20
+//             //     }
+//             // },
+//         },
+//         yAxis: {
+//             axisLine: {
+//                 lineStyle: {
+//                     color: '#C0DAFF'
+//                 }
+//             },
+//             splitLine:{
+//                 show: false
+//             },
+//             // axisLabel: {
+//             //     textStyle: {
+//             //         fontSize: 20
+//             //     }
+//             // },
+//         },
+//         grid: {
+//             // x, y, x2, y2: axis distance from div
+//             x: 60,
+//             y: 70,
+//             x2: 10,
+//             y2: 30,
+//         },
+//         series: [
+//             {
+//                 name: '实际集资',
+//                 type: 'bar',
+//                 data: pkAmount,
+//                 stack: "总量",
+//                 label: {
+//                     normal: {
+//                         show: false,
+//                         position: 'insideTop'
+//                     }
+//                 },
+//                 itemStyle: {
+//                     normal: {
+//                         color: function (params) {
+//                             var colorList = ['#C33531', '#EFE42A', '#64BD3D', '#EE9201', '#29AAE3', '#B74AE5', '#0AAF9F', '#E89589', '#16A085', '#4A235A', '#C39BD3 ', '#F9E79F', '#BA4A00', '#ECF0F1', '#616A6B', '#EAF2F8', '#4A235A', '#3498DB'];
+//                             return colorList[params.dataIndex]
+//                         }
+//                     }
+//                 }
+//             },
+//             {
+//                 name: '系数集资',
+//                 type: 'bar',
+//                 data: pkAmountRatio,
+//                 stack: "总量",
+//                 label: {
+//                     normal: {
+//                         show: false,
+//                         position: 'insideTop'
+//                     }
+//                 },
+//                 itemStyle: {
+//                     normal: {
+//                         color: '#888'
+//                     }
+//                 }
+//             }
+//         ]
+//     };
+//
+//     pkChart.hideLoading();
+//     pkChart.setOption(option, true);
+// }
 
 
 /* Ajax upgrade */
@@ -471,7 +470,6 @@ setInterval(function () {
         success: function (data) {
             i = 0;
             for (var val in data) {
-                console.log(data);
                 var rankInfo = data[val];
                 // Translate rankInfo into json format.
                 var rankInfoJson = $.parseJSON(rankInfo);
@@ -517,11 +515,10 @@ setInterval(function () {
             valZ    = growthTeam[9]["amount_team"];
 
             /* PK */
-            pkMember = ["李艺彤","黄婷婷","冯薪朵","陆婷","莫寒"];
-            pkAmount = [1500, 1000, 400, 350, 350];
-            pkAmountRatio = [0, 100, 40, 350, 30];
-            pkTitle = "Pk 1==============";
-
+            // pkMember = $.parseJSON(data["pk1"])["pk_member"];
+            // pkAmount = $.parseJSON(data["pk1"])["pk_amount"];
+            // pkAmountRatio = $.parseJSON(data["pk1"])["pk_amount_ratio"];
+            // pkTitle = $.parseJSON(data["pk1"])["pk_title"];
         }
     });
 
@@ -545,7 +542,7 @@ setInterval(function () {
         valSII, valNII, valHII, valX, valB, valE, valJ, valG, valNIII, valZ);
 
     // pk
-    hotPK(pkMember, pkAmount, pkAmountRatio, pkTitle);
+    // hotPK(pkMember, pkAmount, pkAmountRatio, pkTitle);
 
 }, ajaxTime);   // ajax every ajaxTime millisecond
 

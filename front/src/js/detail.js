@@ -90,7 +90,7 @@ MemberDetail.prototype.getMember = function () {
                     // Status font color.
                     if (self.amountList["status"] === "正在进行") {     // Status: amounting.
                         var statusColor = self.statusColor["amounting"];
-                    } else if (self.amountList["status"] === "完成") {    // Status: finished.
+                    } else if (self.amountList["status"] === "已完成") {    // Status: finished.
                         statusColor = self.statusColor["finished"];
                     } else if (self.amountList["status"] === "隐藏") {    // Status: hidden.
                         statusColor = self.statusColor["hidden"];

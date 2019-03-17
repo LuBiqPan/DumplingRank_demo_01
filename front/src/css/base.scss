@@ -5,6 +5,7 @@
 body{
 	background: $backgroundColor;
 	font-family: "微软雅黑";
+	//font-family: "Noto Sans S Chinese Black";
 	color: #C0DAFF;
 }
 
@@ -26,13 +27,30 @@ body{
 		
 		.google-table{
 			width: $sideBarWidth;
+			height: 100%;
 			float: left;
 			
-			a{
-				font-size: 22px;
-				color: $mainFontColor;
-				font-family: "楷体";
-				font-weight: bold;
+			.theme{
+				//position: absolute;
+				//right: 20px;
+				//top: 13px;
+				
+				.theme-btn{
+					width: 80px;
+					height: 25px;
+					font-family: "微软雅黑";
+					font-weight: bold;
+					border: none;
+					border-radius: 5px;
+				}
+				
+				.theme-dark{
+					background: $mainFontColor;
+				}
+				
+				.theme-light{
+					background: $backgroundColorLight;
+				}
 			}
 		}
 		
@@ -87,29 +105,6 @@ body{
 				font-family: "楷体";
 				font-weight: bold;
 			}
-		}
-	}
-	
-	.theme{
-		position: absolute;
-		right: 20px;
-		top: 13px;
-		
-		.theme-btn{
-			width: 70px;
-			height: 25px;
-			font-family: "微软雅黑";
-			font-weight: bold;
-			border: none;
-			border-radius: 5px;
-		}
-		
-		.theme-dark{
-			background: $mainFontColor;
-		}
-		
-		.theme-light{
-			background: $backgroundColorLight;
 		}
 	}
 }

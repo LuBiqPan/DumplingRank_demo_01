@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width initial-scale=1.0">-->
+    <title>饺子榜-集资增长</title>
+
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/echarts.min.js"></script>
+
+    <link rel="stylesheet" href="/static/css/base.min.css">
+    <link rel="Shortcut Icon" href="/static/images/logo.ico">
+
+</head>
+<body>
+
+    <div class="nav">
+        <div class="inner-nav-wrapper">
+            <div class="nav-item google-table">
+                <a href="https://docs.google.com/spreadsheets/d/1-iJjdMkQhkoIag01P21djys7f9DIdsAzT6YWATG2W04/edit#gid=1471363713">饺子榜2017&nbsp;</a>
+                <a href="https://docs.google.com/spreadsheets/d/1vjgn01WMTbeLyqiinTGccEFMnpeAlCiUlvNr7Zm11kU/edit?pli=1#gid=1831524129">&nbsp;饺子榜2018</a>
+            </div>
+            <div class="nav-item main-title">
+                <div class="logo-wrapper">
+                    <img src="/static/images/DumplingRankLogo.jpg" alt="">
+                </div>
+                <span class="title-wrapper">
+                    <a href="/">SNH48-饺子榜</a>
+                </span>
+                <span class="year-wrapper">2019</span>
+            </div>
+            <div class="nav-item about-us">
+                <a href="/about_us/">关于我们</a>
+            </div>
+        </div>
+        <div class="theme">
+            <span><button class="theme-dark theme-btn">深色主题</button></span>
+            <span><button class="theme-light theme-btn">浅色主题</button></span>
+
+            <script src="/static/js/theme.min.js"></script>
+        </div>
+    </div>
+    
+    
+    <link rel="stylesheet" href="/static/css/growth.min.css">
+
+    <div class="main">
+        <div class="main-wrapper">
+            <div id="growth-wrapper" class="pk-inner-main-wrapper"></div>
+        </div>
+        <div class="select-wrapper">
+            <div class="select-wrapper-team">
+                <!-- Team menu -->
+                <select name="" id="select-team"></select>
+                <ul id="ul-team">
+                    <li><label><input class="team-input" type="checkbox">Team SII</label></li>
+                    <li><label><input class="team-input" type="checkbox">Team NII</label></li>
+                    <li><label><input class="team-input" type="checkbox">Team HII</label></li>
+                    <li><label><input class="team-input" type="checkbox">Team X</label></li>
+                    <li><label><input class="team-input" type="checkbox">Team B</label></li>
+                    <li><label><input class="team-input" type="checkbox">Team E</label></li>
+                    <li><label><input class="team-input" type="checkbox">Team J</label></li>
+                    <li><label><input class="team-input" type="checkbox">Team G</label></li>
+                    <li><label><input class="team-input" type="checkbox">Team NIII</label></li>
+                    <li><label><input class="team-input" type="checkbox">Team Z</label></li>
+                </ul>
+            </div>
+            <div class="select-wrapper-member">
+                <!-- Member menu -->
+                <select name="" id="select-member"></select>
+                <ul id="ul-member">
+                    <!-- Team SII -->
+                    <li class="li-team"><balel class="label-team label-sii">Team SII</balel></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">陈观慧</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">陈俊羽</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">陈思</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">戴萌</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">蒋芸</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">孔肖吟</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">李宇琪</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">刘增艳</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">莫寒</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">钱蓓婷</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">邱欣怡</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">孙芮</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">邵雪聪</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">温晶婕</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">吴哲晗</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">徐晨辰</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">许佳琪</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">杨令仪</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">袁雨桢</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">朱小丹</label></li>
+                    <li><label class="label-member label-sii"><input type="checkbox">张语格</label></li>
+
+                    <!-- Team NII -->
+                    <li class="li-team"><balel class="label-team label-nii">Team NII</balel></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">陈佳莹</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">冯薪朵</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">黄婷婷</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">何晓玉</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">金莹玥</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">江真仪</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">刘洁</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">栾嘉仪</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">李美琪</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">陆婷</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">卢天惠</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">马凡</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">王诗蒙</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">谢妮</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">易嘉爱</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">颜沁</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">赵佳蕊</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">周诗雨</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">张茜</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">赵粤</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">张怡</label></li>
+                    <li><label class="label-member label-nii"><input type="checkbox">张雨鑫</label></li>
+
+                    <!-- Team HII -->
+                    <li class="li-team"><balel class="label-team label-hii">Team HII</balel></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">陈盼</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">费沁源</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">郭爽</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">郝婧怡</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">洪珮雲</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">姜杉</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">蒋舒婷</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">林楠</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">林舒晴</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">林思意</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">李玉倩</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">李艺彤</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">戚予珠</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">沈梦瑶</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">宋雨珊</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">孙珍妮</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">万丽娜</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">王欣颜甜甜</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">王奕</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">徐晗</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">许杨玉琢</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">袁一琦</label></li>
+                    <li><label class="label-member label-hii"><input type="checkbox">张昕</label></li>
+
+                    <!-- Team X -->
+                    <li class="li-team"><balel class="label-team label-x">Team X</balel></li>
+                    <li><label class="label-member label-x"><input type="checkbox">陈琳</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">冯晓菲</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">刘静晗</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">鲁静萍</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">李星羽</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">吕一</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">李钊</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">潘瑛琪</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">祁静</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">冉蔚</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">宋昕冉</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">孙歆文</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">王菲妍</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">汪佳翎</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">王晓佳</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">谢天依</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">杨冰怡</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">张丹三</label></li>
+                    <li><label class="label-member label-x"><input type="checkbox">张嘉予</label></li>
+
+                    <!-- Team B -->
+                    <li class="li-team"><balel class="label-team label-b">Team B</balel></li>
+                    <li><label class="label-member label-b"><input type="checkbox">程戈</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">陈美君</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">段艺璇</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">胡丽芝</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">胡晓慧</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">刘姝贤</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">林溪荷</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">李瑜璇</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">曲美霖</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">青钰雯</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">沈小爱</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">孙晓艳</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">田姝丽</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">熊素君</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">闫明筠</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">杨鑫</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">张梦慧</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">赵天杨</label></li>
+                    <li><label class="label-member label-b"><input type="checkbox">张羽涵</label></li>
+
+                    <!-- Team E -->
+                    <li class="li-team"><balel class="label-team label-e">Team E</balel></li>
+                    <li><label class="label-member label-e"><input type="checkbox">陈倩楠</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">程宇璐</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">冯思佳</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">高蔚然</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">李丽满</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">李娜</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">刘胜男</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">李诗彦</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">李梓</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">马玉灵</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">彭嘉敏</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">任蔓琳</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">苏杉杉</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">王嘉瑜</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">王雨兰</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">顼凘炀</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">熊鑫</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">杨一帆</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">张爱静</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">臧聪</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">张丹丹</label></li>
+                    <li><label class="label-member label-e"><input type="checkbox">张笑盈</label></li>
+
+                    <!-- Team J -->
+                    <li class="li-team"><balel class="label-team label-j">Team J</balel></li>
+                    <li><label class="label-member label-j"><input type="checkbox">柏欣妤</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">陈雅钰</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">房蕾</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">葛司琪</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">黄恩茹</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">韩家乐</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">何阳青青</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">金锣赛</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">楼澍</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">刘闲</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">刘一菲</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">任心怡</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">孙语姗</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">唐霖</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">王雨煊</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">叶苗苗</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">杨晔</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">张怀瑾</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">郑洁丽</label></li>
+                    <li><label class="label-member label-j"><input type="checkbox">周湘</label></li>
+
+                    <!-- Team G -->
+                    <li class="li-team"><balel class="label-team label-g">Team G</balel></li>
+                    <li><label class="label-member label-g"><input type="checkbox">陈俊宏</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">GNZ48陈佳莹</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">陈珂</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">符冰冰</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">高源婧</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">黄楚茵</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">罗寒月</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">梁娇</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">林嘉佩</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">罗可嘉</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">李沁洁</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">李姗姗</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">林芝</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">徐楚雯</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">徐慧玲</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">谢蕾蕾</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">阳青颖</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">叶舒淇</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">曾艾佳</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">张琼予</label></li>
+                    <li><label class="label-member label-g"><input type="checkbox">朱怡欣</label></li>
+
+                    <!-- Team NIII -->
+                    <li class="li-team"><balel class="label-team label-niii">Team NIII</balel></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">陈楠茜</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">陈欣妤</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">邓熳慧</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">高雪逸</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">洪静雯</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">卢静</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">刘力菲</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">刘倩倩</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">孙馨</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">唐莉佳</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">吴羽霏</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">谢艾琳</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">冼燊楠</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">肖文铃</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">熊心瑶</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">郑丹妮</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">左嘉欣</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">左婧媛</label></li>
+                    <li><label class="label-member label-niii"><input type="checkbox">张润</label></li>
+
+                    <!-- Team Z -->
+                    <li class="li-team"><balel class="label-team label-z">Team Z</balel></li>
+                    <li><label class="label-member label-z"><input type="checkbox">毕瑞珊</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">陈桂君</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">邓惠恩</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">杜秋霖</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">方琪</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">郭铱宁</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">何梦瑶</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">梁乔</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">梁婉琳</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">龙亦瑞</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">赖梓惜</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">农燕萍</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">王翠菲</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">王炯义</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">王偲越</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">谢菲菲</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">杨可璐</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">杨媛媛</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">余芷媛</label></li>
+                    <li><label class="label-member label-z"><input type="checkbox">张秋怡</label></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src = "/static/js/growth.min.js"></script>
+
+
+
+    <div class="footer">
+        <div class="inner-footer-wrapper">
+            <ul class="external-links">
+                <li class="links">
+                    <a href="https://weibo.com/u/2827120175" target="_blank">
+                        饺子榜微博
+                    </a>
+                </li>
+                <li class="links">
+                    <a href="https://www.modian.com/" target="_blank">
+                        摩点网
+                    </a>
+                </li>
+                <li class="links">
+                    <a href="https://www.echartsjs.com/" target="_blank">
+                        eCharts
+                    </a>
+                </li>
+                <li class="links">
+                    <a href="http://www.snh48.com/" target="_blank">
+                        SNH48
+                    </a>
+                </li>
+                <li class="links">
+                    <a href="http://www.bej48.com/" target="_blank">
+                        BEJ48
+                    </a>
+                </li>
+                <li class="links">
+                    <a href="http://www.gnz48.com/" target="_blank">
+                        GNZ48
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import View, ListView
 from django.core import serializers
 from django.http import HttpResponse
+from django.views.decorators.http import require_POST
 from django.http.response import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
@@ -91,11 +92,13 @@ def index(request):
             data_theater.append(inner_dict)
     d = {"growth_theater": json.dumps(data_theater)}
     context.update(d)
-    print(context)
+    # print(context)
 
     # Amount growth (team)
     team_list = ["Team SII", "Team NII", "Team HII", "Team X",
                  "Team B", "Team E", "Team J", "Team G", "Team NIII", "Team Z"]
+    # team_list = ["Team B", "Team E", "Team G", "Team HII",
+    #              "Team J", "Team NII", "Team NIII", "Team SII", "Team X", "Team Z"]
     data_team = []
     for team in team_list:
         results = G103GrowthTeam.objects.filter(team=team)
@@ -107,6 +110,18 @@ def index(request):
             }
             data_team.append(inner_dict)
     d = {"growth_team": json.dumps(data_team)}
+    context.update(d)
+    # print(context)
+
+    # PK
+    # context = {}
+    inner_dict = {
+        "pk_member": ['李艺彤', '黄婷婷', '冯薪朵', '陆婷', '莫寒', '张语格'],
+        "pk_amount": [1500, 1000, 400, 350, 450, 1700],
+        "pk_amount_ratio": [0, 100, 40, 350, 31, 0],
+        "pk_title": "PK 1",
+    }
+    d = {"pk1": json.dumps(inner_dict)}
     context.update(d)
     # print(context)
 
@@ -190,21 +205,21 @@ def growth(request):
     # print(new_raw.sample_time, new_raw.member, new_raw.amount_member)
 
     # # Main table.
-    main_table = V103RealTimeAmount.objects.all()
     context = {}
-    i = 1  # rank
-    for field in main_table:
-        inner_dict = {
-            "rank": str(i),
-            "member": str(field.member),
-            # '%.2f': reserve 2 decimals.
-            "real_amount": str('%.2f' % field.real_amount),
-            "support_no": str(field.support_no)
-        }
-        rank = "rank" + str(i)
-        i += 1
-        d = {rank: json.dumps(inner_dict)}
-        context.update(d)
+    # main_table = V103RealTimeAmount.objects.all()
+    # i = 1  # rank
+    # for field in main_table:
+    #     inner_dict = {
+    #         "rank": str(i),
+    #         "member": str(field.member),
+    #         # '%.2f': reserve 2 decimals.
+    #         "real_amount": str('%.2f' % field.real_amount),
+    #         "support_no": str(field.support_no)
+    #     }
+    #     rank = "rank" + str(i)
+    #     i += 1
+    #     d = {rank: json.dumps(inner_dict)}
+    #     context.update(d)
 
     # Amount growth (total).
     for field in growth_total:
@@ -331,13 +346,45 @@ def percentage(request):
     if request.is_ajax():
         return JsonResponse(context)
     else:
-        return render(request, 'percentage.html')
+        return render(request, 'percentage.html', context=context)
 
 
 def hot_pk(request):
     # # PK
+    context = {}
+    # pk1
+    inner_dict = {
+        "pk_member": ['李艺彤', '黄婷婷', '冯薪朵', '陆婷', '莫寒', '张语格'],
+        "pk_amount": [1503.02, 1200, 400, 350, 450, 1700],
+        "pk_amount_ratio": [0, 100, 40, 350, 31, 0],
+        "pk_title": "PK 1",
+    }
+    d = {"pk1": json.dumps(inner_dict)}
+    context.update(d)
+    # pk2
+    inner_dict = {
+        "pk_member": ['段艺璇', '苏杉杉', '冯思佳', '谢蕾蕾', '郑丹妮', '刘力菲'],
+        "pk_amount": [1892.23, 1000, 400, 350, 450, 1700],
+        "pk_amount_ratio": [0, 100, 40, 350, 310.22, 0],
+        "pk_title": "PK 2",
+    }
+    d = {"pk2": json.dumps(inner_dict)}
+    context.update(d)
+    # pk3
+    inner_dict = {
+        "pk_member": ['费沁源', '姜杉'],
+        "pk_amount": [1500, 1000],
+        "pk_amount_ratio": [0, 100],
+        "pk_title": "PK 3",
+    }
+    d = {"pk3": json.dumps(inner_dict)}
+    context.update(d)
+    # print(context)
 
-    return render(request, 'pk.html')
+    if request.is_ajax():
+        return JsonResponse(context)
+    else:
+        return render(request, 'pk.html', context=context)
 
 
 @csrf_exempt
@@ -416,7 +463,7 @@ def member_detail(request):
             project_list.append(inner_dict)
         d = {"project_info": json.dumps(project_list)}
         context.update(d)
-        # print(context)
+        print(context)
 
     if request.is_ajax():
         return JsonResponse(context)
@@ -438,7 +485,7 @@ def descendant(request):
         "descendant_amount": json.dumps(descendant_amount),
     }
     context.update(d)
-    # print(context)
+    print(context)
 
     if request.is_ajax():
         return JsonResponse(context)

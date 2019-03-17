@@ -11,7 +11,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 
 $mainWidth: 1350px;
 //$mainHeight: 770px;
-$mainHeight: 630px;
+$mainHeight: 570px;
 $sideBarWidth: 400px;
 $leftSubBarHeight: 250px;
 $mainTableWidth: $mainWidth - $sideBarWidth * 2;
@@ -165,7 +165,7 @@ body{
 					box-sizing: border-box;
 					border: 1px solid $wrapperBorderColor;
 					//float: left;
-					margin: 10px auto;
+					margin: 7px auto;
 					//padding: 2px;
 					
 					.table-title{
@@ -222,7 +222,7 @@ body{
 			.middle-center-wrapper{
 				.inner-center-wrapper{
 					.table-wrapper{
-						height: 95%;
+						height: 426px;
 						margin-top: 5px;
 						font-size: 16px;
 						
@@ -231,21 +231,22 @@ body{
 							//padding: 10px;
 							width: 100%;
 							border-collapse: collapse;
+							background-image: url("https://wx1.sinaimg.cn/mw690/006a04EHgy1g16147d0nyj30bu0kugmr.jpg");
 							
-							.tr-even{
-								//background: $wrapperBorderColor;
-								background: #f7f7f7;
-								//opacity: 0.8;
-							}
+							//.tr-even{
+							//	//background: $wrapperBorderColor;
+							//	background: rgba(247,247,247,0.5);
+							//	//opacity: 0.8;
+							//}
 							
 							.tr-rank{
 								font-size: 12px;
-								line-height: 22px;
-								cursor: pointer;
+								line-height: 24px;
+								//cursor: pointer;
 							}
 							
 							.tr-last-group{
-								line-height: 25px;
+								line-height: 22px;
 							}
 							
 							tr{
@@ -265,29 +266,34 @@ body{
 					}
 					
 					.table-page-wrapper{
-						width: 95%;
+						width: 96%;
+						float: left;
+						margin-left: 2%;
 						height: 40px;
 						margin-top: 8px;
 						
 						ul{
 							//margin-left: 50px;
 							li{
+								width: 96%;
+								float: left;
+								margin-left: 2%;
+								
 								button{
-									width: 20px;
+									width: 23%;
 									height: 30px;
-									color: $mainFontColor;
+									float: left;
+									//margin-right: 2%;
+									margin-left: 2%;
+									color: #666666;
 									background: $wrapperBorderColor;
 									border: none;
-									cursor: pointer;
+									font-weight: bold;
+									//cursor: pointer;
 								}
 								
-								#p-more{
-									//font-family: 微软雅黑;
-									font-weight: bold;
-								}
-								
-								#descendant-btn{
-									font-weight: bold;
+								#p1{
+									margin-left: 1%;
 								}
 							}
 						}

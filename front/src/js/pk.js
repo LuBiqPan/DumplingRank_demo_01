@@ -1,30 +1,36 @@
 
 /*************************** PK control ***************************/
-var pk1Member = ["李艺彤","黄婷婷","冯薪朵","陆婷","莫寒"];
-var pk1Amount = [1500, 1000, 400, 350, 350];
-var pk1AmountRatio = [0, 100, 40, 350, 30];
-var tag1 = "pk-1-wrapper";
-var pk1Title = "Pk 1";
-
-var pk2Member = ["段艺璇","苏杉杉","韩家乐","谢蕾蕾","郑丹妮", "刘力菲"];
-var pk2Amount = [1500, 1000, 400, 350, 350, 500];
-var pk2AmountRatio = [0, 100, 40, 350, 30, 100];
-var tag2 = "pk-2-wrapper";
-var pk2Title = "Pk 2";
-
-var pk3Member = ["费沁源","姜杉"];
-var pk3Amount = [1500, 1000];
-var pk3AmountRatio = [100, 100];
-var tag3 = "pk-3-wrapper";
-var pk3Title = "Pk 3";
-
-
 function PkControl() {
+    this.ajaxTime = 3000;
+
+    this.tag1 = "pk-1-wrapper";
+    this.tag2 = "pk-2-wrapper";
+    this.tag3 = "pk-3-wrapper";
+    this.dom1 = document.getElementById(this.tag1);
+    this.dom2 = document.getElementById(this.tag2);
+    this.dom3 = document.getElementById(this.tag3);
+    this.pk1Chart = echarts.init(this.dom1);
+    this.pk2Chart = echarts.init(this.dom2);
+    this.pk3Chart = echarts.init(this.dom3);
+
+    this.pk1Member = [];
+    this.pk1Amount = [];
+    this.pk1AmountRatio = [];
+    this.pk1Title = "";
+
+    this.pk2Member = [];
+    this.pk2Amount = [];
+    this.pk2AmountRatio = [];
+    this.pk2Title = "";
+
+    this.pk3Member = [];
+    this.pk3Amount = [];
+    this.pk3AmountRatio = [];
+    this.pk3Title = "";
+
 }
 
-PkControl.prototype.chartControl = function (pkMember, pkAmount, pkAmountRatio, tag, pkTitle) {
-    var dom = document.getElementById(tag);
-    var myChart = echarts.init(dom);
+PkControl.prototype.chartControl = function (pkMember, pkAmount, pkAmountRatio, pkTitle, pkChart) {
 
     var option = {
         title: {
@@ -73,7 +79,7 @@ PkControl.prototype.chartControl = function (pkMember, pkAmount, pkAmountRatio, 
             x: 90,
             y: 50,
             x2: 50,
-            y2: 80,
+            y2: 90,
         },
         series: [
             {
@@ -116,44 +122,86 @@ PkControl.prototype.chartControl = function (pkMember, pkAmount, pkAmountRatio, 
         ]
     };
 
-    myChart.setOption(option, true);
+    pkChart.setOption(option, true);
 };
 
 PkControl.prototype.init = function () {
-    var self = this.chartControl;
-    $("#pk-1-wrapper").show();
+    $("#pk-1-wrapper").hide();
     $("#pk-2-wrapper").hide();
     $("#pk-3-wrapper").hide();
-    self(pk1Member, pk1Amount, pk1AmountRatio, tag1, pk1Title);
+    $("#pk-0-wrapper").show();
+    $("#pk-0-wrapper").text("请选择一个PK项目");
+    $("#pk-0-wrapper").css({
+        "font-size": "50px",
+        "font-weight": "bold",
+        "color": "rgba(34, 46, 77, 0.5)",
+        "line-height": "500px",
+        "text-align": "center"
+    });
 };
 
 PkControl.prototype.listenPk = function () {
-    var self = this.chartControl;
+    var self = this;
     $(".pk-1-btn").click(function () {
+        $("#pk-0-wrapper").hide();
         $("#pk-1-wrapper").show();
         $("#pk-2-wrapper").hide();
         $("#pk-3-wrapper").hide();
-        self(pk1Member, pk1Amount, pk1AmountRatio, tag1, pk1Title);
     });
+    self.chartControl(self.pk1Member, self.pk1Amount, self.pk1AmountRatio, self.pk1Title, self.pk1Chart);
 
     $(".pk-2-btn").click(function () {
+        $("#pk-0-wrapper").hide();
         $("#pk-1-wrapper").hide();
         $("#pk-2-wrapper").show();
         $("#pk-3-wrapper").hide();
-        self(pk2Member, pk2Amount, pk2AmountRatio, tag2, pk2Title);
     });
+    self.chartControl(self.pk2Member, self.pk2Amount, self.pk2AmountRatio, self.pk2Title, self.pk2Chart);
 
     $(".pk-3-btn").click(function () {
+        $("#pk-0-wrapper").hide();
         $("#pk-1-wrapper").hide();
         $("#pk-2-wrapper").hide();
         $("#pk-3-wrapper").show();
-        self(pk3Member, pk3Amount, pk3AmountRatio,tag3, pk3Title);
     });
+    self.chartControl(self.pk3Member, self.pk3Amount, self.pk3AmountRatio, self.pk3Title, self.pk3Chart);
+};
+
+PkControl.prototype.ajax = function () {
+    var self = this;
+    $.ajax({
+        url: '',
+        contentType: 'application/json',
+        dataType: 'json',
+        type: "GET",
+        success: function (data) {
+            console.log(data);
+            // PK 1
+            self.pk1Member = $.parseJSON(data["pk1"])["pk_member"];
+            self.pk1Amount = $.parseJSON(data["pk1"])["pk_amount"];
+            self.pk1AmountRatio = $.parseJSON(data["pk1"])["pk_amount_ratio"];
+            self.pk1Title = $.parseJSON(data["pk1"])["pk_title"];
+            // PK 2
+            self.pk2Member = $.parseJSON(data["pk2"])["pk_member"];
+            self.pk2Amount = $.parseJSON(data["pk2"])["pk_amount"];
+            self.pk2AmountRatio = $.parseJSON(data["pk2"])["pk_amount_ratio"];
+            self.pk2Title = $.parseJSON(data["pk2"])["pk_title"];
+            // PK 3
+            self.pk3Member = $.parseJSON(data["pk3"])["pk_member"];
+            self.pk3Amount = $.parseJSON(data["pk3"])["pk_amount"];
+            self.pk3AmountRatio = $.parseJSON(data["pk3"])["pk_amount_ratio"];
+            self.pk3Title = $.parseJSON(data["pk3"])["pk_title"];
+        }
+    })
 };
 
 PkControl.prototype.run = function () {
-    this.init();
-    this.listenPk();
+    var self = this;
+    self.init();
+    setInterval(function () {
+        self.ajax();
+        self.listenPk();
+    }, self.ajaxTime);
 };
 
 $(function () {
