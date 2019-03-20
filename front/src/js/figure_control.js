@@ -148,6 +148,8 @@ var option = {
     },
 
     yAxis: {
+        name: '单位：万元',
+        nameGap: 10,
         type: 'value',
         boundaryGap: false,
         splitLine:{
@@ -157,12 +159,17 @@ var option = {
             lineStyle: {
                 color: '#C0DAFF'
             }
+        },
+        axisLabel: {
+            formatter: function (value, index) {
+                return value / 10000;
+            }
         }
     },
 
     grid: {
         // x, y, x2, y2: axis distance from div
-        x: 60,
+        x: 40,
         y: 50,
         x2: 10,
         y2: 30,

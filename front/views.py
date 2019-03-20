@@ -387,8 +387,33 @@ def hot_pk(request):
         return render(request, 'pk.html', context=context)
 
 
+def member(request):
+
+    return render(request, 'member.html')
+
+
+def daily_growth(request):
+    return render(request, 'daily_growth.html')
+
+
+def live_growth(request):
+    return render(request, 'live_growth.html')
+
+
+def room_growth(request):
+    return render(request, 'room_growth.html')
+
+
+def login(request):
+    return render(request, 'login.html')
+
+
+def register(request):
+    return render(request, 'register.html')
+
+
 @csrf_exempt
-def member_detail(request):
+def detail(request):
     project_list = []
     context = {}
     # Selected member from member page.
@@ -458,7 +483,7 @@ def member_detail(request):
                 "platform": "摩点",
                 "amount": str('%.2f' % field.real_amount),
                 "status": "正在进行",
-                "remark": "Demo",
+                "remark": "給你足夠的備註說騷話123",
             }
             project_list.append(inner_dict)
         d = {"project_info": json.dumps(project_list)}

@@ -1,0 +1,306 @@
+{% extends 'base.html' %}
+
+{% block title %}饺子榜-直播日增{% endblock %}
+
+{% block main %}
+
+    <link rel="stylesheet" href="{% static '/css/daily_growth.min.css' %}">
+
+    <div class="main">
+        <div class="inner-main-wrapper">
+            <div class="center-wrapper">
+                <div class="middle-center-wrapper">
+                    <div class="inner-center-wrapper">
+                        <div class="table-title">
+                            <div class="inner-table-title">
+                                <span class="member-title-span">直播日增榜</span>
+                                <span class="member-subtitle-span">每日00:00统计</span>
+                                <span class="select-member">
+                                    <select name="" id="select-bar">
+                                        <option class="not-select">请选择日期</option>
+                                        <option value="">2019-07-25</option>
+                                        <option value="">2019-07-24</option>
+                                        <option value="">2019-07-23</option>
+                                        <option value="">2019-07-22</option>
+                                        <option value="">2019-07-21</option>
+                                        <option value="">2019-07-20</option>
+                                        <option value="">2019-07-19</option>
+                                    </select>
+                                </span>
+                                <span class="total-amount-txt2">日增总票数 </span>
+                                <span id="amount-total">10086.48</span>
+                            </div>
+                        </div>
+                        <div class="left-table-wrapper daily-growth-table-wrapper">
+                            <div class="daily-growth-table-title common-table-title">
+                                <span class="rank">排 名</span>
+                                <span class="member">姓 名</span>
+                                <span class="amount">日增票数</span>
+                            </div>
+                            <div class="table-scroll-wrapper">
+                                <table class="main-table-left daily-growth-table">
+                                    <tbody>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">1</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">2</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">3</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">4</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">5</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">6</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">7</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">8</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">9</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">10</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">11</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">12</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">13</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">14</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">15</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">16</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">17</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">18</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">19</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">20</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">21</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">22</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">23</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">24</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="right-table-wrapper daily-growth-table-wrapper">
+                            <div class="daily-growth-table-title common-table-title">
+                                <span class="rank">排 名</span>
+                                <span class="member">姓 名</span>
+                                <span class="amount">日增票数</span>
+                            </div>
+                            <div class="table-scroll-wrapper">
+                                <table class="main-table-right daily-growth-table">
+                                    <tbody>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">25</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">26</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">27</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">28</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">29</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">30</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">31</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">32</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">33</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">34</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">35</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">36</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">37</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">38</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">39</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">40</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">41</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">42</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">43</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">44</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">45</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">46</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-1" class="tr-rank tr-odd">
+                                            <td class="rank-no">47</td>
+                                            <td class="rank-member">张语格</td>
+                                            <td class="rank-account">10000.00</td>
+                                        </tr>
+                                        <tr id="tr-rank-2" class="tr-rank tr-even">
+                                            <td class="rank-no">48</td>
+                                            <td class="rank-member">杨媛媛</td>
+                                            <td class="rank-account">999.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

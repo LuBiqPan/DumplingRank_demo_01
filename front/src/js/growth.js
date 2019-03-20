@@ -460,6 +460,8 @@ option = {
     },
 
     yAxis: {
+        name: '单位：万元',
+        nameGap: 15,
         type: 'value',
         boundaryGap: false,
         splitLine:{
@@ -473,6 +475,9 @@ option = {
         axisLabel: {
             textStyle: {
                 fontSize: 15
+            },
+            formatter: function (value, index) {
+                return value / 10000;
             }
         },
 

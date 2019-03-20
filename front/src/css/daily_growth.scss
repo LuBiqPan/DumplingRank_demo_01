@@ -1,0 +1,182 @@
+
+@import "base";
+
+$detailTableWidth: $mainWidth;
+
+.main{
+	width: 100%;
+	height: $mainHeight;
+	
+	.inner-main-wrapper{
+		width: $mainWidth + 20px;
+		margin: 0 auto;
+		//margin-top: 5px;
+		overflow: hidden;
+		
+		.center-wrapper{
+			width: $detailTableWidth;
+			height: $mainHeight;
+			float: left;
+			background: $wrapperColor;
+			box-sizing: border-box;
+			
+			.middle-center-wrapper{
+				width: $detailTableWidth - 20px;
+				height: $mainHeight - 20px;
+				box-sizing: border-box;
+				border: 1px solid $wrapperBorderColor;
+				float: left;
+				margin-top: 10px;
+				margin-left: 10px;
+				padding: 5px;
+				overflow: hidden;
+				
+				.inner-center-wrapper{
+					width: $detailTableWidth - 35px;
+					height: $mainHeight - 36px;
+					box-sizing: border-box;
+					border: 1px solid $wrapperBorderColor;
+					float: left;
+					margin-top: 2px;
+					margin-left: 2px;
+					padding: 2px;
+					overflow: hidden;
+					
+					.table-title{
+						width: $detailTableWidth - 60px;
+						height: 50px;
+						line-height: 50px;
+						//text-align: center;
+						font-size: $tableTitleSize;
+						font-weight: 800;
+						background: $wrapperBorderColor;
+						margin-left: 10px;
+						margin-top: 10px;
+						font-family: "楷体";
+						
+						.inner-table-title{
+							.member-title-span{
+								margin-left: 73px;
+								margin-top: 10px;
+								margin-bottom: 10px;
+								text-align: center;
+								font-size: 30px;
+								
+							}
+							
+							.member-subtitle-span{
+								font-size: 16px;
+							}
+							
+							.select-member{
+								margin-left: 237px;
+								
+								#select-bar{
+									width: 100px;
+									height: 30px;
+									font-family: 微软雅黑;
+									-webkit-border-radius: 5px;
+									-moz-border-radius: 5px;
+									border-radius: 5px;
+								}
+							}
+							
+							.total-amount-txt2{
+								font-size: 30px;
+								margin-left: 250px;
+							}
+						}
+					}
+					
+					.daily-growth-table-wrapper{
+						width: $detailTableWidth / 2 - 40px;
+						height: $mainHeight - 120px;
+						display: inline;
+						float: left;
+						margin-top: 10px;
+						
+						.daily-growth-table-title{
+							width: $mainTableWidth + 40px;
+							height: 35px;
+							line-height: 35px;
+							margin: 0 auto;
+							background: $wrapperBorderColor;
+							font-size: 18px;
+							font-weight: bold;
+							
+							.rank{
+								margin-left: 20px;
+							}
+							
+							.member{
+								margin-left: 98px;
+							}
+							
+							.amount{
+								margin-left: 193px;
+							}
+						}
+						
+						.table-scroll-wrapper{
+							width: $mainTableWidth + 40px;
+							height: $mainHeight - 120px;
+							overflow-y: auto;
+							margin: 0 auto;
+							
+							.daily-growth-table{
+							width: $mainTableWidth + 40px;
+							border-collapse: collapse;
+							margin: 0 auto;
+							//overflow-y: auto;
+							
+							tbody{
+								.tr-even{
+									background: rgba(34, 46, 77, 0.25);
+								}
+								
+								.tr-rank{
+									font-size: 14px;
+									line-height: 28px;
+									cursor: pointer;
+									overflow-y: auto;
+									
+									td{
+										text-align: center;
+									}
+								}
+							}
+						}
+						}
+						
+						.table-scroll-wrapper::-webkit-scrollbar {/*滚动条整体样式*/
+							width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+							height: 3px;
+						}
+	
+						.table-scroll-wrapper::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+							border-radius: 10px;
+							 -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+							background: $mainFontColor;
+						}
+	
+						.table-scroll-wrapper::-webkit-scrollbar-track {/*滚动条里面轨道*/
+							-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+							border-radius: 10px;
+							background: #EDEDED;
+						}
+					}
+					
+					.left-table-wrapper{
+						float: left;
+						margin-left: 10px;
+					}
+					
+					.right-table-wrapper{
+						float: right;
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+	}
+}

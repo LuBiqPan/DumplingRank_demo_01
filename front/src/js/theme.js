@@ -9,6 +9,7 @@ var wrapperBorderColorDark = "#222e3f";
 var evenListColorDark = "rgba(34, 46, 77, 0.25)";
 var tableHeaderColorDark = "#222e3f";
 var mainFontColorDark = "#C0DAFF";
+var cardColorDark = "#222e3f";
 
 /* Light theme */
 var lineColorLight= "#111111";
@@ -21,8 +22,10 @@ var wrapperBorderColorLight = "#222e3f";
 var tableHeaderColorLight = "#f7f7f7";
 var mainFontColorLight = "#000000";
 var fontColorLight = "#666666";
+var cardColorLight = "#f7f7f7";
 
 
+/* Light theme */
 $(".theme-light").click(function () {
     $(".main-table").css({
         "background-image": "url('https://wx1.sinaimg.cn/mw690/006a04EHgy1g15zk1xau2j30dw0d73yk.jpg')",
@@ -41,25 +44,30 @@ $(".theme-light").click(function () {
         "box-shadow": "0 0 10px rgba(0,0,0,0.15)",
     });
     $(".main").css("background", backgroundColorLight);
-    $(".center-wrapper, .percentage-wrapper, .top-member-wrapper, .main-wrapper").css("background", wrapperColorLight);
-    $(".growth-figure, .percentage-figure, .ad-wrapper, .pk-wrapper, .about-us-main-wrapper").css("background", wrapperColorLight);
+    $(".center-wrapper, .right-wrapper, .percentage-wrapper, .top-member-wrapper, .main-wrapper").css("background", wrapperColorLight);
+    $(".growth-figure, .percentage-figure, .ad-wrapper, .pk-wrapper, .about-us-main-wrapper, .member-main-wrapper").css("background", wrapperColorLight);
     $(".middle-center-wrapper, .inner-center-wrapper").css("background", wrapperColorLight);
-    $(".table-title, .amount-info").css("background", titleColor);
+    $(".table-title, .amount-info, .common-table-title").css("background", titleColor);
     $("th").css("background", titleColor);
     $(".tr-even, .project-even").css({"background": backgroundColorLightEven,});
     $(".tr-odd").css({"background": wrapperColorLightOdd,});
     $(".inner-member-avatar").css("border", "8px solid #fefefe");
 
-    $(".inner-growth-figure, .inner-percentage-figure, .middle-center-wrapper, .inner-center-wrapper, .inner-pk-wrapper, .inner-percentage-wrapper, .inner-top-member-wrapper, .pk-inner-main-wrapper, .inner-pk-page-wrapper, .descendant-inner-main-wrapper, .about-us-inner-main-wrapper").css("border", "1px solid #dddddd");
+    $(".inner-growth-figure, .inner-percentage-figure, .middle-center-wrapper, .inner-center-wrapper, .inner-pk-wrapper, .inner-percentage-wrapper, .inner-top-member-wrapper, .pk-inner-main-wrapper, .inner-pk-page-wrapper, .descendant-inner-main-wrapper, .about-us-inner-main-wrapper, .member-inner-main-wrapper").css("border", "1px solid #dddddd");
 
-    $("#p1, #p2, #p3, #p4, #p-more, #descendant-btn, .detail-growth, .detail-pk, .pk-btn, .detail-percentage").css({
+    $("#p1, #p2, #p3, #p4, #p-more, #descendant-btn, .detail-growth, .detail-pk, .pk-btn, .detail-percentage, .top-btn").css({
         "background": "#eeeeee",
         "color": fontColorLight
     });
 
     $(".pk-page-wrapper, .descendant-main-wrapper").css("background", wrapperColorLight);
+
+    $(".middle-member-detail-wrapper").css("background", cardColorLight);
+    $(".inner-member-detail-wrapper, .inner-member-detail-avatar").css("border", "1px solid #c7c7c7");
 });
 
+
+/* Dark theme */
 $(".theme-dark").click(function () {
     $(".main-table").css("background-image", "url('https://wx1.sinaimg.cn/mw690/006a04EHgy1g160qo0p10j30dw0d7dfr.jpg')");
 
@@ -76,21 +84,24 @@ $(".theme-dark").click(function () {
         // "box-shadow": "0 0 10px rgba(0,0,0,0.15)",
     });
     $(".main").css("background", backgroundColorDark);
-    $(".center-wrapper, .percentage-wrapper, .top-member-wrapper, .main-wrapper").css("background",wrapperColorDark);
-    $(".growth-figure, .percentage-figure, .ad-wrapper, .pk-wrapper, .about-us-main-wrapper").css("background", wrapperColorDark);
+    $(".center-wrapper, .right-wrapper, .percentage-wrapper, .top-member-wrapper, .main-wrapper").css("background",wrapperColorDark);
+    $(".growth-figure, .percentage-figure, .ad-wrapper, .pk-wrapper, .about-us-main-wrapper, .member-main-wrapper").css("background", wrapperColorDark);
     $(".middle-center-wrapper, .inner-center-wrapper").css("background", wrapperColorDark);
-    $(".table-title, .amount-info").css("background", wrapperBorderColorDark);
+    $(".table-title, .amount-info, .common-table-title").css("background", wrapperBorderColorDark);
     $("th").css("background", wrapperBorderColorDark);
     $(".tr-even, .project-even").css("background", evenListColorDark);
     $(".tr-odd").css("background", wrapperColorDarkOdd);
     $(".inner-member-avatar").css("border", "8px solid #19232F");
 
-    $(".inner-growth-figure, .inner-percentage-figure, .middle-center-wrapper, .inner-center-wrapper, .inner-pk-wrapper, .inner-percentage-wrapper, .inner-top-member-wrapper, .pk-inner-main-wrapper, .inner-pk-page-wrapper, .descendant-inner-main-wrapper, .about-us-inner-main-wrapper").css("border", "1px solid #222e3f");
+    $(".inner-growth-figure, .inner-percentage-figure, .middle-center-wrapper, .inner-center-wrapper, .inner-pk-wrapper, .inner-percentage-wrapper, .inner-top-member-wrapper, .pk-inner-main-wrapper, .inner-pk-page-wrapper, .descendant-inner-main-wrapper, .about-us-inner-main-wrapper, .member-inner-main-wrapper").css("border", "1px solid #222e3f");
 
-    $("#p1, #p2, #p3, #p4, #p-more, #descendant-btn, .detail-growth, .detail-pk, .pk-btn, .detail-percentage").css({
+    $("#p1, #p2, #p3, #p4, #p-more, #descendant-btn, .detail-growth, .detail-pk, .pk-btn, .detail-percentage, .top-btn").css({
         "background": wrapperBorderColorDark,
         "color": mainFontColorDark
     });
 
     $(".pk-page-wrapper, .descendant-main-wrapper").css("background", wrapperColorDark);
+
+    $(".middle-member-detail-wrapper").css("background", cardColorDark);
+    $(".inner-member-detail-wrapper, .inner-member-detail-avatar").css("border", "1px solid #131313");
 });

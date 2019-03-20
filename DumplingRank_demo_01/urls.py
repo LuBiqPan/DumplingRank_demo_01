@@ -24,11 +24,13 @@ urlpatterns = [
     path('growth/', views.growth, name='growth'),
     path('percentage/', views.percentage, name='percentage'),
     path('pk/', views.hot_pk, name='pk'),
-    path('member/', views.member_detail, name='member'),
+    path('member/', views.member, name='member'),
+    path('daily_growth/', views.daily_growth, name='daily_growth'),
+    path('live_growth/', views.live_growth, name='live_growth'),
+    path('room_growth/', views.room_growth, name='room_growth'),
+    path('detail/', views.detail, name='detail'),
     path('descendant/', views.descendant, name='descendant'),
-    # path(r'^index_upgrade/$', views.index_upgrade, name='index_upgrade'),
-    # path('list/', views.MainTableListView.as_view(), name='index'),
-    # path('growth/', views.growth_index, name='growth'),
-    # path('rank/', views.MainTableView.as_view(), name='rank'),
+    path('login/', views.login, name='login'),
+    path('register/', views.register, name='register'),
     path('about_us/', TemplateView.as_view(template_name='about_us.html'), name='about_us')
 ]

@@ -1,0 +1,583 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+饺子榜-成员列表
+{% endblock %}
+
+
+{% block main %}
+    <link rel="stylesheet" href="{% static  'css/member.min.css' %}">
+
+    <div class="main">
+        <div class="member-main-wrapper">
+            <div class="member-inner-main-wrapper">
+                <div class="member-top-wrapper">
+                    <span class="member-title-span">成 员 列 表</span>
+                    <span class="member-subtitle-span">点击成员查看集资详情</span>
+                    <span class="daily-growth-span">
+                        <button class="top-btn daily-growth-btn" onclick="window.open({% url 'daily_growth' %})">集资日增</button>
+                    </span>
+                    <span class="live-growth-span">
+                        <button class="top-btn live-growth-btn" onclick="window.open({% url 'live_growth' %})">直播日增</button>
+                    </span>
+                    <span class="room-growth-span">
+                        <button class="top-btn room-growth-btn" onclick="window.open({% url 'room_growth' %})">房间日增</button>
+                    </span>
+                    <span class="descendant-span">
+                        <button class="top-btn descendant-btn" onclick="window.open({% url 'descendant' %})">后辈榜</button>
+                    </span>
+                </div>
+                <div class="team-wrapper">
+                    <ul>
+                        <li class="team-li team-sii-li">
+                            <button class="team-btn team-sii-btn">Team SII</button>
+                        </li>
+                        <li class="team-li team-nii-li">
+                            <button class="team-btn team-nii-btn">Team NII</button>
+                        </li>
+                        <li class="team-li team-hii-li">
+                            <button class="team-btn team-hii-btn">Team HII</button>
+                        </li>
+                        <li class="team-li team-x-li">
+                            <button class="team-btn team-x-btn">Team X</button>
+                        </li>
+                        <li class="team-li team-b-li">
+                            <button class="team-btn team-b-btn">Team B</button>
+                        </li>
+                        <li class="team-li team-e-li">
+                            <button class="team-btn team-e-btn">Team E</button>
+                        </li>
+                        <li class="team-li team-j-li">
+                            <button class="team-btn team-j-btn">Team J</button>
+                        </li>
+                        <li class="team-li team-g-li">
+                            <button class="team-btn team-g-btn">Team G</button>
+                        </li>
+                        <li class="team-li team-niii-li">
+                            <button class="team-btn team-niii-btn">Team NIII</button>
+                        </li>
+                        <li class="team-li team-z-li">
+                            <button class="team-btn team-z-btn">Team Z</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="member-detail-wrapper">
+                    <ul>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <br>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <br>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <br>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <br>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <br>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member-li sii-member-li">
+                            <div class="middle-member-detail-wrapper">
+                                <div class="inner-member-detail-wrapper">
+                                    <div class="member-detail-avatar">
+                                    <div class="inner-member-detail-avatar"></div>
+                                </div>
+                                    <div class="member-info-wrapper">
+                                        <div class="member-name">
+                                            <span>成员姓名：</span>
+                                            <span class="member-name-span">张语格</span>
+                                        </div>
+                                        <div class="current-amount">
+                                            <span>集资总额：</span>
+                                            <span class="current-amount-span">1002011.99</span>
+                                        </div>
+                                        <div class="rank-in-team">
+                                            <span>队内排名：</span>
+                                            <span class="rank-in-team-span">15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

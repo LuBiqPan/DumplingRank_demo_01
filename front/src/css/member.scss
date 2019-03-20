@@ -1,0 +1,203 @@
+
+@import "init";
+
+$buttonWidth: 125px;
+$buttonHeight: 30px;
+
+
+.main{
+	.member-main-wrapper{
+		width: $mainWidth + 20px;
+		height: $mainHeight;
+		margin: 0 auto;
+		background: $wrapperColor;
+		
+		.member-inner-main-wrapper{
+			width: $mainWidth - 2px;
+			height: $mainHeight - 22px;
+			margin-top: 10px;
+			margin-left: 10px;
+			border: 1px solid $wrapperBorderColor;
+			float: left;
+			overflow: hidden;
+			
+			.member-top-wrapper{
+				margin-left: 73px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				//margin: 10px 73px;
+				
+				.member-title-span{
+					margin-top: 10px;
+					margin-bottom: 10px;
+					text-align: center;
+					font-size: 30px;
+					font-family: "楷体";
+				}
+				
+				.member-subtitle-span{
+					font-size: 16px;
+					font-family: "楷体";
+				}
+				
+				.top-btn{
+					width: $buttonWidth;
+					height: $buttonHeight + 5px;
+					font-size: 18px;
+					font-weight: bold;
+					color: $mainFontColor;
+					background: $tableHeaderColor;
+					border: none;
+					cursor: pointer;
+				}
+				
+				.daily-growth-span{
+					margin-left: 397px;
+				}
+			}
+			
+			.team-wrapper{
+				margin-bottom: 5px;
+				
+				ul{
+					margin-left: 26px;
+					
+					li{
+						display: inline;
+						
+						.team-btn{
+							width: $buttonWidth;
+							height: $buttonHeight;
+							font-size: 18px;
+							font-weight: bold;
+							color: $mainFontColor;
+							border: none;
+							cursor: pointer;
+						}
+						
+						.team-sii-btn{
+							background: $colorSII;
+						}
+						
+						.team-nii-btn{
+							background: $colorNII;
+						}
+						
+						.team-hii-btn{
+							background: $colorHII;
+						}
+						
+						.team-x-btn{
+							background: $colorX;
+						}
+						
+						.team-b-btn{
+							background: $colorB;
+						}
+						
+						.team-e-btn{
+							background: $colorE;
+						}
+						
+						.team-j-btn{
+							background: $colorJ;
+						}
+						
+						.team-g-btn{
+							background: $colorG;
+						}
+						
+						.team-niii-btn{
+							background: $colorNIII;
+						}
+						
+						.team-z-btn{
+							background: $colorZ;
+						}
+					}
+				}
+			}
+			
+			.member-detail-wrapper{
+				//width: 300px;
+				height: 510px;
+				margin-top: 2px;
+				overflow-y: auto;
+				
+				ul{
+					margin-left: 20px;
+					
+					li{
+						.middle-member-detail-wrapper{
+							width: 320px;
+							height: 94px;
+							float: left;
+							margin-left: 5px;
+							margin-top: 6px;
+							background: $tableHeaderColor;
+							
+							.inner-member-detail-wrapper{
+								width: 306px;
+								height: 80px;
+								margin-left: 6px;
+								margin-top: 6px;
+								border: 1px solid $lineColor2;
+								float: left;
+								cursor: pointer;
+								
+								.member-detail-avatar{
+									width: 56px;
+									height: 56px;
+									float: left;
+									margin-left: 20px;
+									margin-top: 11px;
+									
+									.inner-member-detail-avatar{
+										//background-image: url("http://www.snh48.com/images/member/zp_10019.jpg");
+										border: 1px solid $lineColor2;
+										border-radius: 50%;
+										width: 100%;
+										height: 0;
+										padding-top: 100%;
+										overflow: hidden;
+										background-position: center center;
+										background-repeat: no-repeat;
+										background-size: cover;
+										-webkit-background-size: cover;
+										-moz-background-size: cover;
+									}
+								}
+							
+								.member-info-wrapper{
+									width: 200px;
+									height: 56px;
+									float: left;
+									margin-left: 20px;
+									margin-top: 11px;
+									font-size: 14px;
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			.member-detail-wrapper::-webkit-scrollbar {/*滚动条整体样式*/
+				width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+				height: 3px;
+			}
+			
+			.member-detail-wrapper::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+				border-radius: 10px;
+				 -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+				background: $mainFontColor;
+			}
+			
+			.member-detail-wrapper::-webkit-scrollbar-track {/*滚动条里面轨道*/
+				-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+				border-radius: 10px;
+				background: #EDEDED;
+			}
+		}
+	}
+}

@@ -34,8 +34,13 @@
                 </span>
                 <span class="year-wrapper">2019</span>
             </div>
-            <div class="nav-item about-us">
-                <a href="{% url 'about_us' %}">关于我们</a>
+            <div class="login-register-wrapper">
+                <span class="login-span">
+                    <a href="{% url 'login' %}">登录 | </a>
+                </span>
+                <span class="register-span">
+                    <a href="{% url 'register' %}">注册</a>
+                </span>
             </div>
         </div>
 
@@ -46,6 +51,11 @@
     <div class="footer">
         <div class="inner-footer-wrapper">
             <ul class="external-links">
+                <li class="links">
+                    <a href="{% url 'about_us' %}" target="_blank">
+                        关于我们
+                    </a>
+                </li>
                 <li class="links">
                     <a href="https://weibo.com/u/2827120175" target="_blank">
                         饺子榜微博

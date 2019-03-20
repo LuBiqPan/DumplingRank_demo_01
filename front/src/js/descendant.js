@@ -68,6 +68,8 @@ function descendantControl(descendantList, descendantAmount) {
             },
         },
         yAxis: {
+            name: '单位：万元',
+            nameGap: 15,
             axisLine: {
                 lineStyle: {
                     color: '#C0DAFF'
@@ -79,6 +81,9 @@ function descendantControl(descendantList, descendantAmount) {
             axisLabel: {
                 textStyle: {
                     fontSize: 15
+                },
+                formatter: function (value, index) {
+                    return value / 10000;
                 }
             },
         },

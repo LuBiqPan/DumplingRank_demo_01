@@ -21,7 +21,7 @@ MemberDetail.prototype.getMember = function () {
     var data = {"select_member_detail": self.selectedMember};
     // Post selected member to server.
     $.post(
-        "/member/",     // url.
+        "/detail/",     // url.
         data,           // Post data, must be a dictionary.
         // Callback function.
         function(data) {

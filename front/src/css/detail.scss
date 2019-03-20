@@ -210,7 +210,7 @@ $detailTableWidth: $mainWidth;
 						}
 
 						.fans-club{
-							margin-left: 200px;
+							margin-left: 160px;
 						}
 						
 						.platform{
@@ -218,15 +218,15 @@ $detailTableWidth: $mainWidth;
 						}
 						
 						.amount{
-							margin-left: 100px;
+							margin-left: 60px;
 						}
 						
 						.status{
-							margin-left: 100px;
+							margin-left: 80px;
 						}
 						
 						.remark{
-							margin-left: 100px;
+							margin-left: 63px;
 						}
 					}
 					
@@ -266,22 +266,24 @@ $detailTableWidth: $mainWidth;
 							tbody{
 								height: $mainHeight - 150px;
 								
-								
 								.project-even{
 									background: rgba(34, 46, 77, 0.25);
 								}
 								
 								.project-tr{
 									font-size: 16px;
-									line-height: 35px;
+									line-height: 30px;
+									height: 30px;
+									display: flex;
 									
 									.project-name{
-										width: 540px;
+										width: 500px;
 										text-align: left;
 										
 										a{
 											overflow: hidden;
 											margin-left: 20px;
+											font-size: 16px;
 										}
 									}
 									
@@ -292,25 +294,25 @@ $detailTableWidth: $mainWidth;
 									}
 									
 									.project-platform{
-										width: 135px;
+										width: 95px;
 										text-align: left;
 										float: left;
 									}
 									
 									.project-amount{
-										width: 135px;
+										width: 120px;
 										text-align: left;
 										float: left;
 									}
 									
 									.project-status{
-										width: 140px;
+										width: 100px;
 										text-align: left;
 										float: left;
 									}
 									
 									.project-remark{
-										width: 140px;
+										width: 278px;
 										text-align: left;
 										float: left;
 										//overflow: hidden;

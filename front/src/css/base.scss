@@ -95,17 +95,25 @@ body{
 			}
 		}
 		
-		.about-us{
-			width: $sideBarWidth;
-			float: right;
-			
-			a{
-				font-size: 22px;
-				color: $mainFontColor;
-				font-family: "楷体";
-				font-weight: bold;
+		.login-register-wrapper{
+			span{
+				a{
+					color: $mainFontColor;
+				}
 			}
 		}
+		
+		//.about-us{
+		//	width: $sideBarWidth;
+		//	float: right;
+		//
+		//	a{
+		//		font-size: 22px;
+		//		color: $mainFontColor;
+		//		font-family: "楷体";
+		//		font-weight: bold;
+		//	}
+		//}
 	}
 }
 
