@@ -1,33 +1,22 @@
 {% extends 'base.html' %}
 
-{% block title %}饺子榜-集资日增{% endblock %}
+{% block title %}饺子榜-登录{% endblock %}
 
 {% block main %}
 
     <link rel="stylesheet" href="{% static '/css/login.min.css' %}">
 
     <div class="main">
-        <div class="inner-main-wrapper">
-            <div class="center-wrapper">
-                <div class="login-title">登录</div>
+        <div class="login-inner-main-wrapper">
+            <div class="login-center-wrapper">
+                <div class="login-title">SNH48-饺子榜<br>登&nbsp;&nbsp;录</div>
                 <div class="login-wrapper">
                     <form action="" class="login-form">
-                        <table>
-                            <tr>
-                                <td>用户名</td>
-                                <td><input type="text" placeholder="请输入用户名"></td>
-                            </tr>
-                            <tr>
-                                <td>密码</td>
-                                <td><input type="password" placeholder="请输入密码"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox"></td>
-                                <td>记住我</td>
-                            </tr>
-                        </table>
+                        <input type="text" name="username" class="username-input login-input" placeholder="  用戶名/昵称"><br>
+                        <input type="password" name="password" class="password-input login-input" placeholder="  密码"><br>
+                        <span class="remember-me"><input type="checkbox">记住我</span>
+                        <button name="login-btn">登 录</button>
                     </form>
-                    <button id="login-btn">登录</button>
                 </div>
             </div>
         </div>

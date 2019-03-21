@@ -2,13 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!--<meta name="viewport" content="width=device-width initial-scale=1.0">-->
     <title>{% block title %}{% endblock %}</title>
 
     <script src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static '/js/echarts.min.js' %}"></script>
-    <!--<script src="{% static '/js/message.min.js' %}"></script>
-    <script src="{% static '/js/front_base.min.js' %}"></script>-->
 
     <link rel="stylesheet" href="{% static '/css/base.min.css' %}">
     <link rel="Shortcut Icon" href="{% static '/images/logo.ico' %}">
@@ -89,84 +86,6 @@
             </ul>
         </div>
     </div>
-
-    <!--<div class="mask-wrapper">
-        <div class="author-wrapper">
-            <div class="close-wrapper">
-                <span class="close-btn icon-close iconfont"></span>
-            </div>
-            <div class="author-inner-wrapper">
-                <div class="scroll-wrapper">
-
-                    <div class="signin-group auth-group">
-                        <div class="top-group">
-                            <span class="title">登录</span>
-                            <a href="javascript: void(0);" class="switch">立即注册</a>
-                        </div>
-                        <div class="form-group">
-                            <input type="hidden" id="csrf_token" value="{{ csrf_token }}">
-
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="telephone" placeholder="手机号码">
-                            </div>
-                            <div class="input-group">
-                                <input type="password" class="form-control" name="password" placeholder="密码">
-                            </div>
-                            <div class="input-group">
-                                <span>
-                                    <input type="checkbox" name="remember" value="1" class="check-box">
-                                </span>
-                                <span class="remember-me">记住我</span>
-                            </div>
-                            <div class="input-group">
-                                <input type="submit" class="submit-btn" id="btn_submit" value="登录">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="signup-group auth-group">
-                        <div class="top-group">
-                            <span class="title">注册</span>
-                            <a href="javascript: void(0);" class="switch">立即登录</a>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="telephone" placeholder="手机号码">
-                            </div>
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="username" placeholder="用户名">
-                            </div>
-                            <div class="input-group">
-                                <div class="short-input-group">
-                                    <input type="text" class="form-control" name="img_captcha" placeholder="图形验证码">
-                                </div>
-                                <div class="input-group-addon">
-                                    <img src="" alt="" class="img-captcha" style="cursor: pointer">
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <input type="password" class="form-control" name="password" placeholder="密码">
-                            </div>
-                            <div class="input-group">
-                                <input type="password" class="form-control" name="password_repeat" placeholder="确认密码">
-                            </div>
-                            <div class="input-group">
-                                <div class="short-input-group">
-                                    <input type="text" class="form-control" name="sms_captcha" placeholder="短信验证码">
-                                </div>
-                                <div class="input-group-addon">
-                                    <span class="sms-captcha-btn">发送验证码</span>
-                                </div>
-                            </div>
-                            <div class="input-group">
-                                <input type="submit" class="submit-btn" value="注册">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
 
 </body>
 </html>
