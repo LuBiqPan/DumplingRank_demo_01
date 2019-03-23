@@ -1,7 +1,7 @@
 
 /*************************** PK control ***************************/
 function PkControl() {
-    this.ajaxTime = 3000;
+    this.ajaxTime = 1000;
 
     this.tag1 = "pk-1-wrapper";
     this.tag2 = "pk-2-wrapper";
@@ -60,6 +60,8 @@ PkControl.prototype.chartControl = function (pkMember, pkAmount, pkAmountRatio, 
             },
         },
         yAxis: {
+            name: '单位：万元',
+            nameGap: 15,
             axisLine: {
                 lineStyle: {
                     color: '#C0DAFF'
@@ -71,6 +73,9 @@ PkControl.prototype.chartControl = function (pkMember, pkAmount, pkAmountRatio, 
             axisLabel: {
                 textStyle: {
                     fontSize: 20
+                },
+                formatter: function (value) {
+                    return value / 10000;
                 }
             },
         },
@@ -89,8 +94,11 @@ PkControl.prototype.chartControl = function (pkMember, pkAmount, pkAmountRatio, 
                 stack: "总量",
                 label: {
                     normal: {
-                        show: false,
-                        position: 'insideTop'
+                        show: true,
+                        position: 'insideTop',
+                        distance: 10,
+                        formatter: '{a}: {c}',
+                        fontSize: 15
                     }
                 },
                 itemStyle: {
@@ -175,7 +183,6 @@ PkControl.prototype.ajax = function () {
         dataType: 'json',
         type: "GET",
         success: function (data) {
-            console.log(data);
             // PK 1
             self.pk1Member = $.parseJSON(data["pk1"])["pk_member"];
             self.pk1Amount = $.parseJSON(data["pk1"])["pk_amount"];

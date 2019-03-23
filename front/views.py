@@ -168,122 +168,179 @@ def index_mobile(request):
         return render(request, 'index_mobile.html', context=context)
 
 
-def growth(request):
-    # # Growth.
-    growth_total = G101GrowthTotal.objects.all()
-    growth_theater = G102GrowthTheater.objects.all()
-    growth_team = G103GrowthTeam.objects.all()
-    growth_member = G104GrowthMember.objects.all()
+# def growth(request):
+#     # # Growth.
+#     growth_total = G101GrowthTotal.objects.all()
+#     growth_theater = G102GrowthTheater.objects.all()
+#     growth_team = G103GrowthTeam.objects.all()
+#     growth_member = G104GrowthMember.objects.all()
+#
+#     # Record total amount growth.
+#     # for field in growth_total:
+#     #     new_raw = AmountGrowthTotal.objects.create(sample_time=field.sample_time, amount_total=field.amount_total)
+#     #     new_raw.save()
+#
+#     # Record theater amount growth.
+#     # No need to use new_raw.save(), strange.
+#     # for field in growth_theater:
+#     #     new_raw = AmountGrowthTheater.objects.create(sample_time=field.sample_time,
+#     #                                                  theater=field.theater,
+#     #                                                  amount_theater=field.amount_theater)
+#     # print(new_raw.sample_time, new_raw.theater, new_raw.amount_theater)
+#
+#     # Record team amount growth.
+#     # No need to use new_raw.save(), strange.
+#     # for field in growth_team:
+#     #     new_raw = AmountGrowthTeam.objects.create(sample_time=field.sample_time,
+#     #                                               team=field.team,
+#     #                                               amount_team=field.amount_team)
+#     #     print(new_raw.sample_time, new_raw.team, new_raw.amount_team)
+#
+#     # Record member amount growth.
+#     # No need to use new_raw.save(), strange.
+#     # for field in growth_member:
+#     #     new_raw = AmountGrowthMember.objects.create(sample_time=field.sample_time,
+#     #                                                 member=field.member,
+#     #                                                 amount_member=field.amount_member)
+#     # print(new_raw.sample_time, new_raw.member, new_raw.amount_member)
+#
+#     # # Main table.
+#     context = {}
+#     # main_table = V103RealTimeAmount.objects.all()
+#     # i = 1  # rank
+#     # for field in main_table:
+#     #     inner_dict = {
+#     #         "rank": str(i),
+#     #         "member": str(field.member),
+#     #         # '%.2f': reserve 2 decimals.
+#     #         "real_amount": str('%.2f' % field.real_amount),
+#     #         "support_no": str(field.support_no)
+#     #     }
+#     #     rank = "rank" + str(i)
+#     #     i += 1
+#     #     d = {rank: json.dumps(inner_dict)}
+#     #     context.update(d)
+#
+#     # Amount growth (total).
+#     for field in growth_total:
+#         inner_dict = {
+#             "sample_time": str(field.sample_time),
+#             "amount_total": str(field.amount_total)
+#         }
+#         d = {"growth_total": json.dumps(inner_dict)}
+#         context.update(d)
+#
+#     # Amount growth (theater).
+#     theater_list = ['SNH48', 'BEJ48', 'GNZ48']
+#     data_theater = []
+#     for theater in theater_list:
+#         results = G102GrowthTheater.objects.filter(theater=theater)
+#         for result in results:
+#             inner_dict = {
+#                 "sample_time": str(result.sample_time),
+#                 "theater": str(result.theater),
+#                 "amount_theater": str(result.amount_theater)
+#             }
+#             data_theater.append(inner_dict)
+#     d = {"growth_theater": json.dumps(data_theater)}
+#     context.update(d)
+#     # print(context)
+#
+#     # Amount growth (team)
+#     team_list = ["Team SII", "Team NII", "Team HII", "Team X",
+#                  "Team B", "Team E", "Team J", "Team G", "Team NIII", "Team Z"]
+#     data_team = []
+#     for team in team_list:
+#         results = G103GrowthTeam.objects.filter(team=team)
+#         for result in results:
+#             inner_dict = {
+#                 "sample_time": str(result.sample_time),
+#                 "team": str(result.team),
+#                 "amount_team": str(result.amount_team)
+#             }
+#             data_team.append(inner_dict)
+#     d = {"growth_team": json.dumps(data_team)}
+#     context.update(d)
+#
+#     # Amount growth (member)
+#     member_list = member_sii + member_nii + member_hii + member_x + member_b + member_e + \
+#                   member_j + member_g + member_niii + member_z
+#     data_member = []
+#     for member in member_list:
+#         results = G104GrowthMember.objects.filter(member=member)
+#         if results:
+#             for result in results:
+#                 inner_dict = {
+#                     "sample_time": str(result.sample_time),
+#                     "member": str(result.member),
+#                     "amount_member": str(result.amount_member)
+#                 }
+#                 data_member.append(inner_dict)
+#         else:
+#             inner_dict = {
+#                 "sample_time": str(datetime.now()),
+#                 "member": str(member),
+#                 "amount_member": str(0)
+#             }
+#             data_member.append(inner_dict)
+#     d = {"growth_member": json.dumps(data_member)}
+#     context.update(d)
+#     print(context)
+#
+#     if request.is_ajax():
+#         return JsonResponse(context)
+#     else:
+#         return render(request, 'growth.html', context=context)
 
-    # Record total amount growth.
-    # for field in growth_total:
-    #     new_raw = AmountGrowthTotal.objects.create(sample_time=field.sample_time, amount_total=field.amount_total)
-    #     new_raw.save()
 
-    # Record theater amount growth.
-    # No need to use new_raw.save(), strange.
-    # for field in growth_theater:
-    #     new_raw = AmountGrowthTheater.objects.create(sample_time=field.sample_time,
-    #                                                  theater=field.theater,
-    #                                                  amount_theater=field.amount_theater)
-    # print(new_raw.sample_time, new_raw.theater, new_raw.amount_theater)
-
-    # Record team amount growth.
-    # No need to use new_raw.save(), strange.
-    # for field in growth_team:
-    #     new_raw = AmountGrowthTeam.objects.create(sample_time=field.sample_time,
-    #                                               team=field.team,
-    #                                               amount_team=field.amount_team)
-    #     print(new_raw.sample_time, new_raw.team, new_raw.amount_team)
-
-    # Record member amount growth.
-    # No need to use new_raw.save(), strange.
-    # for field in growth_member:
-    #     new_raw = AmountGrowthMember.objects.create(sample_time=field.sample_time,
-    #                                                 member=field.member,
-    #                                                 amount_member=field.amount_member)
-    # print(new_raw.sample_time, new_raw.member, new_raw.amount_member)
-
-    # # Main table.
+@csrf_exempt
+def growth_test(request):
+    # response = request.POST.get('selected_items')
+    # print(response)
     context = {}
-    # main_table = V103RealTimeAmount.objects.all()
-    # i = 1  # rank
-    # for field in main_table:
-    #     inner_dict = {
-    #         "rank": str(i),
-    #         "member": str(field.member),
-    #         # '%.2f': reserve 2 decimals.
-    #         "real_amount": str('%.2f' % field.real_amount),
-    #         "support_no": str(field.support_no)
-    #     }
-    #     rank = "rank" + str(i)
-    #     i += 1
-    #     d = {rank: json.dumps(inner_dict)}
-    #     context.update(d)
-
-    # Amount growth (total).
-    for field in growth_total:
-        inner_dict = {
-            "sample_time": str(field.sample_time),
-            "amount_total": str(field.amount_total)
+    growth_dict = {
+        "sample_time": ["01-01", "01-02", "01-03", "01-04", "01-05", "01-06",
+                        "01-07", "01-08", "01-09", "01-10", "01-11", "01-12",
+                        "01-13", "01-14", "01-15", "01-16", "01-17", "01-18",
+                        ],
+        "growth_theater": {
+            "全团总额": [10000, 20000, 30000, 40000, 50000, 40000,
+                     10000, 20000, 30000, 40000, 50000, 40000,
+                     10000, 20000, 30000, 40000, 50000, 40000
+                     ],
+            "SNH48": [3000, 2000, 3000, 4000, 10000,
+                      20000.24, 30000, 35000, 36000, 37000.02],
+            "BEJ48": [0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 2000, 2000, 5000, 4000, 8000],
+            'GNZ48': [1000, 2000, 3000, 4000, 5000],
+        },
+        "growth_team": {
+            "Team SII": [1000, 2000, 3000, 4000, 5000],
+            "Team NII": [1500, 2400, 3800, 4900, 9000],
+            "Team HII": [1000, 2100, 3000, 4000, 5000],
+            "Team X": [0, 2000, 3000, 4200, 5600],
+            "Team B": [1700, 2000, 3800, 4700, 7000],
+            "Team E": [1000, 2000, 3000, 4600, 8000],
+            "Team J": [10, 1000, 3002, 4200, 6000],
+            "Team G": [1000, 2700, 3000, 4000, 5000],
+            "Team NIII": [10, 2000, 3000, 4800, 5000],
+            "Team Z": [10, 2100, 3400, 4000, 5005],
+        },
+        "growth_member": {
+            "张语格": [1100, 2000, 3000, 4000, 8600],
+            "易嘉爱": [1000, 2000, 3000, 4000, 5700],
+            "费沁源": [1000, 2900, 3000, 3800, 5000],
+            "宋昕冉": [1000, 2000, 3800, 4000, 7000],
+            "段艺璇": [1200, 2001, 3500, 4000, 4000],
+            "苏杉杉": [1000, 2000, 3000, 4400, 5000],
+            "韩家乐": [1, 2000, 3000, 4000, 6000],
+            "谢蕾蕾": [10, 2000, 3700, 4000, 5000],
+            "刘力菲": [1000, 2400, 3000, 3000, 5008],
+            "杨媛媛": [0, 2000, 3200, 4000, 5000],
         }
-        d = {"growth_total": json.dumps(inner_dict)}
-        context.update(d)
 
-    # Amount growth (theater).
-    theater_list = ['SNH48', 'BEJ48', 'GNZ48']
-    data_theater = []
-    for theater in theater_list:
-        results = G102GrowthTheater.objects.filter(theater=theater)
-        for result in results:
-            inner_dict = {
-                "sample_time": str(result.sample_time),
-                "theater": str(result.theater),
-                "amount_theater": str(result.amount_theater)
-            }
-            data_theater.append(inner_dict)
-    d = {"growth_theater": json.dumps(data_theater)}
-    context.update(d)
-    # print(context)
-
-    # Amount growth (team)
-    team_list = ["Team SII", "Team NII", "Team HII", "Team X",
-                 "Team B", "Team E", "Team J", "Team G", "Team NIII", "Team Z"]
-    data_team = []
-    for team in team_list:
-        results = G103GrowthTeam.objects.filter(team=team)
-        for result in results:
-            inner_dict = {
-                "sample_time": str(result.sample_time),
-                "team": str(result.team),
-                "amount_team": str(result.amount_team)
-            }
-            data_team.append(inner_dict)
-    d = {"growth_team": json.dumps(data_team)}
-    context.update(d)
-
-    # Amount growth (member)
-    member_list = member_sii + member_nii + member_hii + member_x + member_b + member_e + \
-                  member_j + member_g + member_niii + member_z
-    data_member = []
-    for member in member_list:
-        results = G104GrowthMember.objects.filter(member=member)
-        if results:
-            for result in results:
-                inner_dict = {
-                    "sample_time": str(result.sample_time),
-                    "member": str(result.member),
-                    "amount_member": str(result.amount_member)
-                }
-                data_member.append(inner_dict)
-        else:
-            inner_dict = {
-                "sample_time": str(datetime.now()),
-                "member": str(member),
-                "amount_member": str(0)
-            }
-            data_member.append(inner_dict)
-    d = {"growth_member": json.dumps(data_member)}
+    }
+    d = {'growth': json.dumps(growth_dict)}
     context.update(d)
     # print(context)
 

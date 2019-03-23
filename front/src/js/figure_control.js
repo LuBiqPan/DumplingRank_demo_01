@@ -4,7 +4,7 @@
 // var pkAmountRatio;
 // var pkTitle;
 
-var growthChart = echarts.init(document.getElementById("inner-group"));
+// var growthChart = echarts.init(document.getElementById("inner-group"));
 var percentageChart = echarts.init(document.getElementById("inner-percentage"));
 // var pkChart = echarts.init(document.getElementById("pk"));
 
@@ -57,218 +57,218 @@ $(document).ready(function () {
 });
 
 
-function addData(shift, sampleTime, growthTotal, growthTheater) {
-    if (typeof sampleTime === 'string') {
-        // sample time
-        date.push(sampleTime.substring(5, 16)); // Time format: "month-day hh:mm"
-        // total
-        growthDataTotal.push(growthTotal);
-        // theater
-        growthDataSNH48.push(growthTheater[0]["amount_theater"]);
-        growthDataBEJ48.push(growthTheater[1]["amount_theater"]);
-        // growthDataGNZ48.push(growthTheater[2]["amount_theater"] * Math.random());
-        growthDataGNZ48.push(growthTheater[2]["amount_theater"]);
-
-        if (shift) {
-            date.shift();
-
-            growthDataTotal.shift();
-            growthDataSNH48.shift();
-            growthDataBEJ48.shift();
-            growthDataGNZ48.shift();
-        }
-    } else {
-        date.push(0);
-
-        growthDataTotal.push(0);
-        growthDataSNH48.push(0);
-        growthDataBEJ48.push(0);
-        growthDataGNZ48.push(0);
-    }
-}
-
-for (var i = 1; i < 10; i++) {
-    addData();
-}
-
-var option = {
-    tooltip: {
-        trigger: 'axis',
-        showContent: true,     // Do not show content.
-        formatter: function (params) { // toFixed(): show two decimals
-            return params[0]["seriesName"] + ": " + parseFloat(params[0].value).toFixed(2) + '<br>'
-                 + params[1]["seriesName"] + ": " + parseFloat(params[1].value).toFixed(2) + '<br>'
-                 + params[2]["seriesName"] + ": " + parseFloat(params[2].value).toFixed(2) + '<br>'
-                 + params[3]["seriesName"] + ": " + parseFloat(params[3].value).toFixed(2);
-        },
-        axisPointer: {
-            type: 'cross',
-            snap: true,
-            lineStyle: {
-                type: 'dashed'
-            }
-        },
-        backgroundColor: 'rgba(192, 218, 255, 0.5)',
-        textStyle: {
-            color: '#000'
-        },
-        extraCssText: 'width: 170px'
-    },
-
-    title:{
-        text: '集资增长',
-        textStyle: {
-            color: '#C0DAFF',
-        },
-    },
-
-    legend:{
-        type: 'plain',
-        x: 'left',
-        left: 80,
-        top: 40,
-        inactiveColor: '#121A20',
-        textStyle:{
-            color: '#aaaaaa',
-            fontSize: 9,
-        },
-        selectedMode: false
-    },
-
-    xAxis: {
-        type: 'category',
-        boundaryGap: false,
-        data: date,
-        axisLine: {
-            lineStyle: {
-                // X axis color
-                color: '#C0DAFF'
-            }
-        },
-    },
-
-    yAxis: {
-        name: '单位：万元',
-        nameGap: 10,
-        type: 'value',
-        boundaryGap: false,
-        splitLine:{
-            show: false
-        },
-        axisLine: {
-            lineStyle: {
-                color: '#C0DAFF'
-            }
-        },
-        axisLabel: {
-            formatter: function (value, index) {
-                return value / 10000;
-            }
-        }
-    },
-
-    grid: {
-        // x, y, x2, y2: axis distance from div
-        x: 40,
-        y: 50,
-        x2: 10,
-        y2: 30,
-    },
-
-    series: [
-        // Total
-        {
-            name:'集资总额',
-            type:'line',
-            smooth:false,
-            symbol: 'circle',
-            areaStyle: {
-                normal: {}
-            },
-            data: growthDataTotal,
-            lineStyle: {
-                width: 3
-            },
-            itemStyle: {
-                normal: {
-                    color: '#00b6de',
-                    borderColor: '#00b6de',
-                    areaStyle: {
-                        type: 'default',
-                        opacity: 0.0    //Color under lines.
-                    }
-                }
-            },
-        },
-        // SNH48
-        {
-            name:'SNH48',
-            type:'line',
-            smooth:false,
-            symbol: 'circle',
-            areaStyle: {
-                normal: {}
-            },
-            data: growthDataSNH48,
-            itemStyle: {
-                normal: {
-                    color: '#00b6de',
-                    borderColor: '#00b6de',
-                    areaStyle: {
-                        type: 'default',
-                        opacity: 0.3    //Color under lines.
-                    }
-                }
-            },
-        },
-        // BEJ48
-        {
-            name:'BEJ48',
-            type:'line',
-            smooth:false,
-            symbol: 'circle',
-            areaStyle: {
-                normal: {}
-            },
-            data: growthDataBEJ48,
-            itemStyle: {
-                normal: {
-                    color: '#ff4083',
-                    borderColor: '#ff4083',
-                    areaStyle: {
-                        type: 'default',
-                        opacity: 0.3    //Color under lines.
-                    }
-                }
-            },
-        },
-        // GNZ48
-        {
-            name:'GNZ48',
-            type:'line',
-            smooth:false,
-            symbol: 'circle',
-            areaStyle: {
-                normal: {}
-            },
-            data: growthDataBEJ48,
-            itemStyle: {
-                normal: {
-                    color: '#9FBF40',
-                    borderColor: '#9FBF40',
-                    areaStyle: {
-                        type: 'default',
-                        opacity: 0.3    //Color under lines.
-                    }
-                }
-            },
-        },
-    ]
-};
-
-if (option && typeof option === "object") {
-    growthChart.setOption(option, true);
-}
+// function addData(shift, sampleTime, growthTotal, growthTheater) {
+//     if (typeof sampleTime === 'string') {
+//         // sample time
+//         date.push(sampleTime.substring(5, 16)); // Time format: "month-day hh:mm"
+//         // total
+//         growthDataTotal.push(growthTotal);
+//         // theater
+//         growthDataSNH48.push(growthTheater[0]["amount_theater"]);
+//         growthDataBEJ48.push(growthTheater[1]["amount_theater"]);
+//         // growthDataGNZ48.push(growthTheater[2]["amount_theater"] * Math.random());
+//         growthDataGNZ48.push(growthTheater[2]["amount_theater"]);
+//
+//         if (shift) {
+//             date.shift();
+//
+//             growthDataTotal.shift();
+//             growthDataSNH48.shift();
+//             growthDataBEJ48.shift();
+//             growthDataGNZ48.shift();
+//         }
+//     } else {
+//         date.push(0);
+//
+//         growthDataTotal.push(0);
+//         growthDataSNH48.push(0);
+//         growthDataBEJ48.push(0);
+//         growthDataGNZ48.push(0);
+//     }
+// }
+//
+// for (var i = 1; i < 10; i++) {
+//     addData();
+// }
+//
+// var option = {
+//     tooltip: {
+//         trigger: 'axis',
+//         showContent: true,     // Do not show content.
+//         formatter: function (params) { // toFixed(): show two decimals
+//             return params[0]["seriesName"] + ": " + parseFloat(params[0].value).toFixed(2) + '<br>'
+//                  + params[1]["seriesName"] + ": " + parseFloat(params[1].value).toFixed(2) + '<br>'
+//                  + params[2]["seriesName"] + ": " + parseFloat(params[2].value).toFixed(2) + '<br>'
+//                  + params[3]["seriesName"] + ": " + parseFloat(params[3].value).toFixed(2);
+//         },
+//         axisPointer: {
+//             type: 'cross',
+//             snap: true,
+//             lineStyle: {
+//                 type: 'dashed'
+//             }
+//         },
+//         backgroundColor: 'rgba(192, 218, 255, 0.5)',
+//         textStyle: {
+//             color: '#000'
+//         },
+//         extraCssText: 'width: 170px'
+//     },
+//
+//     title:{
+//         text: '集资增长',
+//         textStyle: {
+//             color: '#C0DAFF',
+//         },
+//     },
+//
+//     legend:{
+//         type: 'plain',
+//         x: 'left',
+//         left: 80,
+//         top: 40,
+//         inactiveColor: '#121A20',
+//         textStyle:{
+//             color: '#aaaaaa',
+//             fontSize: 9,
+//         },
+//         selectedMode: false
+//     },
+//
+//     xAxis: {
+//         type: 'category',
+//         boundaryGap: false,
+//         data: date,
+//         axisLine: {
+//             lineStyle: {
+//                 // X axis color
+//                 color: '#C0DAFF'
+//             }
+//         },
+//     },
+//
+//     yAxis: {
+//         name: '单位：万元',
+//         nameGap: 10,
+//         type: 'value',
+//         boundaryGap: false,
+//         splitLine:{
+//             show: false
+//         },
+//         axisLine: {
+//             lineStyle: {
+//                 color: '#C0DAFF'
+//             }
+//         },
+//         axisLabel: {
+//             formatter: function (value, index) {
+//                 return value / 10000;
+//             }
+//         }
+//     },
+//
+//     grid: {
+//         // x, y, x2, y2: axis distance from div
+//         x: 40,
+//         y: 50,
+//         x2: 10,
+//         y2: 30,
+//     },
+//
+//     series: [
+//         // Total
+//         {
+//             name:'集资总额',
+//             type:'line',
+//             smooth:false,
+//             symbol: 'circle',
+//             areaStyle: {
+//                 normal: {}
+//             },
+//             data: growthDataTotal,
+//             lineStyle: {
+//                 width: 3
+//             },
+//             itemStyle: {
+//                 normal: {
+//                     color: '#00b6de',
+//                     borderColor: '#00b6de',
+//                     areaStyle: {
+//                         type: 'default',
+//                         opacity: 0.0    //Color under lines.
+//                     }
+//                 }
+//             },
+//         },
+//         // SNH48
+//         {
+//             name:'SNH48',
+//             type:'line',
+//             smooth:false,
+//             symbol: 'circle',
+//             areaStyle: {
+//                 normal: {}
+//             },
+//             data: growthDataSNH48,
+//             itemStyle: {
+//                 normal: {
+//                     color: '#00b6de',
+//                     borderColor: '#00b6de',
+//                     areaStyle: {
+//                         type: 'default',
+//                         opacity: 0.3    //Color under lines.
+//                     }
+//                 }
+//             },
+//         },
+//         // BEJ48
+//         {
+//             name:'BEJ48',
+//             type:'line',
+//             smooth:false,
+//             symbol: 'circle',
+//             areaStyle: {
+//                 normal: {}
+//             },
+//             data: growthDataBEJ48,
+//             itemStyle: {
+//                 normal: {
+//                     color: '#ff4083',
+//                     borderColor: '#ff4083',
+//                     areaStyle: {
+//                         type: 'default',
+//                         opacity: 0.3    //Color under lines.
+//                     }
+//                 }
+//             },
+//         },
+//         // GNZ48
+//         {
+//             name:'GNZ48',
+//             type:'line',
+//             smooth:false,
+//             symbol: 'circle',
+//             areaStyle: {
+//                 normal: {}
+//             },
+//             data: growthDataBEJ48,
+//             itemStyle: {
+//                 normal: {
+//                     color: '#9FBF40',
+//                     borderColor: '#9FBF40',
+//                     areaStyle: {
+//                         type: 'default',
+//                         opacity: 0.3    //Color under lines.
+//                     }
+//                 }
+//             },
+//         },
+//     ]
+// };
+//
+// if (option && typeof option === "object") {
+//     growthChart.setOption(option, true);
+// }
 
 
 // Total percentage (theater)
@@ -530,18 +530,18 @@ setInterval(function () {
     });
 
     // growth
-    addData(true, sampleTime, growthTotal, growthTheater);
-    growthChart.setOption({
-        xAxis: {
-            data: date
-        },
-        series: [
-            {name:'集资总额', data: growthDataTotal},
-            {name:'SNH48', data: growthDataSNH48},
-            {name:'BEJ48', data: growthDataBEJ48},
-            {name:'GNZ48', data: growthDataGNZ48},
-        ]
-    });
+    // addData(true, sampleTime, growthTotal, growthTheater);
+    // growthChart.setOption({
+    //     xAxis: {
+    //         data: date
+    //     },
+    //     series: [
+    //         {name:'集资总额', data: growthDataTotal},
+    //         {name:'SNH48', data: growthDataSNH48},
+    //         {name:'BEJ48', data: growthDataBEJ48},
+    //         {name:'GNZ48', data: growthDataGNZ48},
+    //     ]
+    // });
 
     // percentage
     amountPercentage(

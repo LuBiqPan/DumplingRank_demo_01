@@ -21,7 +21,7 @@ from front import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('mobile/', views.index_mobile, name='mobile'),
-    path('growth/', views.growth, name='growth'),
+    path('growth/', views.growth_test, name='growth'),
     path('percentage/', views.percentage, name='percentage'),
     path('pk/', views.hot_pk, name='pk'),
     path('member/', views.member, name='member'),

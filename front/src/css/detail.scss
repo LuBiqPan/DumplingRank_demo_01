@@ -285,6 +285,17 @@ $detailTableWidth: $mainWidth;
 											margin-left: 20px;
 											font-size: 16px;
 										}
+										
+										a:link{
+											color: $mainFontColor;
+										}
+										a:visited{
+											color: $mainFontColor;
+										}
+										a:hover{
+											color: $lineColor;
+											font-weight: bold;
+										}
 									}
 									
 									.project-fans-club{

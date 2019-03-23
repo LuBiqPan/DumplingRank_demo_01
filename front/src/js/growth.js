@@ -325,72 +325,7 @@ var memberColor = {
 };
 
 
-function addData(shift, sampleTime, growthTotal, growthTheater, growthTeam, growthMember) {
-    if (typeof sampleTime === 'string') {
-        // sample time
-        date.push(sampleTime.substring(5, 19)); // Time format: "month-day hh:mm"
-
-        // total
-        growthDataTotal.push(growthTotal * Math.random());
-        // theater
-        growthDataSNH48.push(growthTheater[0]["amount_theater"] * Math.random());
-        growthDataBEJ48.push(growthTheater[1]["amount_theater"] * Math.random());
-        growthDataGNZ48.push(growthTheater[2]["amount_theater"] * Math.random());
-
-        // team
-        // growthDataSII.push(growthTeam[0]["amount_team"]);
-        for (var i=0; i<teamList.length; i++) {
-            growthDataTeam[teamList[i]].push(growthTeam[i]["amount_team"]);
-        }
-
-        // member
-        for (var i=0; i<memberList.length; i++) {
-            growthDataMember[memberList[i]].push(growthMember[i]["amount_member"]);
-        }
-
-        if (shift) {
-            date.shift();
-
-            growthDataTotal.shift();
-
-            growthDataSNH48.shift();
-            growthDataBEJ48.shift();
-            growthDataGNZ48.shift();
-
-            // growthDataSII.shift();
-            for (var i=0; i<teamList.length; i++) {
-                growthDataTeam[teamList[i]].shift();
-            }
-
-            for (var i=0; i<memberList.length; i++) {
-                growthDataMember[memberList[i]].shift();
-            }
-        }
-    } else {
-        date.push(0);
-
-        growthDataTotal.push(0);
-        growthDataSNH48.push(0);
-        growthDataBEJ48.push(0);
-        growthDataGNZ48.push(0);
-
-        // growthDataSII.push(0);
-        for (var i=0; i<teamList.length; i++) {
-            growthDataTeam[teamList[i]].push(0);
-        }
-
-        for (var i=0; i<memberList.length; i++) {
-            growthDataMember[memberList[i]].push(0);
-        }
-    }
-}
-
-for (var i = 1; i < 50; i++) {
-    addData();
-}
-
-
-option = {
+var option = {
     tooltip: {
         trigger: 'axis',
         showContent: true,     // Do not show content.

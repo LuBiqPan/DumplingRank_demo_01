@@ -507,10 +507,10 @@ function percentageByJoinTime(joinTimeAmount) {
             x: "center",  // Title align
             y: 10,        // Distance from div top.
         },
-        tooltip : {
-            trigger: 'item',
-            formatter: "{b} : {c} ({d}%)"
-        },
+        // tooltip : {
+        //     // trigger: 'item',
+        //     formatter: "{b} : {c} ({d}%)"
+        // },
         calculable : true,
         series : [
             {
@@ -530,7 +530,7 @@ function percentageByJoinTime(joinTimeAmount) {
                         color: "#C0DAFF"
                     },
                     emphasis: {
-                        show: false
+                        show: true
                     },
                 },
                 labelLine: {

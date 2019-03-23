@@ -9,6 +9,7 @@
 		height: $mainHeight;
 		margin: 0 auto;
 		background: $wrapperColor;
+		position: relative;
 			
 		.pk-inner-main-wrapper{
 			width: $mainWidth - 2px;
@@ -18,162 +19,216 @@
 			border: 1px solid $wrapperBorderColor;
 			float: left;
 		}
-	}
-	
-	.select-wrapper{
-		width: 105px;
-		height: 500px;
-		//float: left;
-		display: inline-block;
-		//margin-left: 20px;
-		position: absolute;
-		top: 80px;
-		right: 97px;
-		overflow: auto;		// scroll bar
 		
-		.select-wrapper-team{
-			#select-team{
-				min-width: 100px;
-				height: 30px;
-				border: 1px solid $wrapperBorderColor;
-				background: $mainFontColor;
-				font-family: 微软雅黑;
-				font-size: 15px;
-			}
+		.select-wrapper-outer{
+			width: 320px;
+			height: 30px;
+			position: absolute;
+			top: 21px;
+			right: 10px;
 			
-			ul{
-				width: 98px;
-				display: none;
-				list-style: none;
-				margin: 0;
-				padding: 0;
-				border: 1px solid #eee;
-				//background: rgba(255, 255, 255, 0.5);
+			.select-wrapper1{
+				width: 105px;
+				height: 50px;
+				float: left;
+				//display: inline-block;
+				//position: absolute;
+				//top: 80px;
+				//right: 97px;
 				
-				li{
-					label{
+				
+				.select-wrapper-theater{
+					#select-theater{
+						min-width: 100px;
+						height: 30px;
+						border: 1px solid $wrapperBorderColor;
+						background: $mainFontColor;
+						font-family: 微软雅黑;
 						font-size: 15px;
-						margin-left: 3px;
+					}
+					
+					ul{
+						width: 98px;
+						display: none;
+						list-style: none;
+						margin: 0;
+						padding: 0;
+						border: 1px solid #eee;
+						//background: rgba(255, 255, 255, 0.5);
+						
+						li{
+							label{
+								font-size: 15px;
+								margin-left: 3px;
+							}
+						}
+						
+						li:hover{
+							background: #aabbcc;
+						}
 					}
 				}
-				
-				li:hover{
-					background: #aabbcc;
-				}
-			}
-		}
-		
-		.select-wrapper-member{
-			#select-member{
-				min-width: 100px;
-				height: 30px;
-				border: 1px solid $wrapperBorderColor;
-				background: $mainFontColor;
-				font-family: 微软雅黑;
-				font-size: 15px;
 			}
 			
-			ul{
-				width: 100px;
-				display: none;
-				list-style: none;
-				margin: 0;
-				padding: 0;
-				border: 1px solid #eee;
-				//background: rgba(255, 255, 255, 0.5);
+			input{
+				float: right;
+			}
+			
+			.select-wrapper2{
+				width: 105px;
+				height: 50px;
+				float: left;
+				//display: inline-block;
 				
-				.li-team{
-					//border-top: 1px solid #eee;
-					font-size: 15px;
-					margin-top: 10px;
-					margin-bottom: 5px;
-					margin-left: 10px;
-					
-					.label-team{
-						height: 50px;
-					}
-				}
-				
-				li{
-					margin-left: 3px;
-					.label-sii{
-						color: $colorSNH48;
+				.select-wrapper-team{
+					#select-team{
+						min-width: 100px;
+						height: 30px;
+						border: 1px solid $wrapperBorderColor;
+						background: $mainFontColor;
+						font-family: 微软雅黑;
+						font-size: 15px;
 					}
 					
-					.label-nii{
-						color: $colorNII;
+					ul{
+						width: 98px;
+						display: none;
+						list-style: none;
+						margin: 0;
+						padding: 0;
+						border: 1px solid #eee;
+						//background: rgba(255, 255, 255, 0.5);
+						
+						li{
+							label{
+								font-size: 15px;
+								margin-left: 3px;
+							}
+						}
+						
+						li:hover{
+							background: #aabbcc;
+						}
 					}
-					
-					.label-hii{
-						color: $colorHII;
-					}
-					
-					.label-x{
-						color: $colorX;
-					}
-					
-					.label-b{
-						color: $colorB;
-					}
-					
-					.label-e{
-						color: $colorE;
-					}
-					
-					.label-j{
-						color: $colorJ;
-					}
-					
-					.label-g{
-						color: $colorG;
-					}
-					
-					.label-niii{
-						color: $colorNIII;
-					}
-					
-					.label-z{
-						color: $colorZ;
-					}
-				}
-				
-				
-				
-				//li{
-				//	label{
-				//		input{
-				//			//font-family: 微软雅黑;
-				//			font-size: 15px;
-				//		}
-				//	}
-				//}
-				
-				li:hover{
-					background: #aabbcc;
 				}
 			}
+			
+			.select-wrapper3{
+				width: 105px;
+				height: 500px;
+				float: left;
+				//display: inline-block;
+				overflow: auto;		// scroll bar
+				
+				.select-wrapper-member{
+					#select-member{
+						min-width: 100px;
+						height: 30px;
+						border: 1px solid $wrapperBorderColor;
+						background: $mainFontColor;
+						font-family: 微软雅黑;
+						font-size: 15px;
+					}
+					
+					ul{
+						width: 100px;
+						display: none;
+						list-style: none;
+						margin: 0;
+						padding: 0;
+						border: 1px solid #eee;
+						//background: rgba(255, 255, 255, 0.5);
+						
+						.li-team{
+							//border-top: 1px solid #eee;
+							font-size: 15px;
+							margin-top: 10px;
+							margin-bottom: 5px;
+							margin-left: 10px;
+							
+							.label-team{
+								height: 50px;
+							}
+						}
+						
+						li{
+							margin-left: 3px;
+							.label-sii{
+								color: $colorSNH48;
+							}
+							
+							.label-nii{
+								color: $colorNII;
+							}
+							
+							.label-hii{
+								color: $colorHII;
+							}
+							
+							.label-x{
+								color: $colorX;
+							}
+							
+							.label-b{
+								color: $colorB;
+							}
+							
+							.label-e{
+								color: $colorE;
+							}
+							
+							.label-j{
+								color: $colorJ;
+							}
+							
+							.label-g{
+								color: $colorG;
+							}
+							
+							.label-niii{
+								color: $colorNIII;
+							}
+							
+							.label-z{
+								color: $colorZ;
+							}
+						}
+						
+						
+						
+						//li{
+						//	label{
+						//		input{
+						//			//font-family: 微软雅黑;
+						//			font-size: 15px;
+						//		}
+						//	}
+						//}
+						
+						li:hover{
+							background: #aabbcc;
+						}
+					}
+				}
+			}
+			
+			.select-wrapper3::-webkit-scrollbar {/*滚动条整体样式*/
+				width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+				height: 3px;
+			}
+			
+			.select-wrapper3::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+				border-radius: 10px;
+				 -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+				background: $mainFontColor;
+			}
+			
+			.select-wrapper3::-webkit-scrollbar-track {/*滚动条里面轨道*/
+				-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+				border-radius: 10px;
+				background: #EDEDED;
+			}
 		}
-	}
-	
-	input{
-		float: right;
-	}
-	
-	.select-wrapper::-webkit-scrollbar {/*滚动条整体样式*/
-		width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
-		height: 3px;
-	}
-	
-	.select-wrapper::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
-		border-radius: 10px;
-		 -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-		background: $mainFontColor;
-	}
-	
-	.select-wrapper::-webkit-scrollbar-track {/*滚动条里面轨道*/
-		-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-		border-radius: 10px;
-		background: #EDEDED;
 	}
 }
 
