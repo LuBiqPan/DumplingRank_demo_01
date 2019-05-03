@@ -121,6 +121,7 @@ Growth.prototype.init = function () {
                     normal: {}
                 },
                 data: self.growthData["growth_theater"]["全团总额"],
+                // data: self.growthData["growth_theater"]["48G"],
                 lineStyle: {
                     width: 3
                 },

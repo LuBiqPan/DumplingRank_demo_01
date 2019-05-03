@@ -47,7 +47,7 @@ $(".theme-light").click(function () {
     $(".center-wrapper, .right-wrapper, .percentage-wrapper, .top-member-wrapper, .main-wrapper").css("background", wrapperColorLight);
     $(".growth-figure, .percentage-figure, .ad-wrapper, .pk-wrapper, .about-us-main-wrapper, .member-main-wrapper").css("background", wrapperColorLight);
     $(".middle-center-wrapper, .inner-center-wrapper, .login-inner-main-wrapper").css("background", wrapperColorLight);
-    $(".table-title, .amount-info, .common-table-title, .login-title").css("background", titleColor);
+    $(".table-title, .amount-info, .common-table-title, .login-title, .table-title-wrapper").css("background", titleColor);
     $("th").css("background", titleColor);
     $(".tr-even, .project-even").css({"background": backgroundColorLightEven,});
     $(".tr-odd").css({"background": wrapperColorLightOdd,});
@@ -87,7 +87,7 @@ $(".theme-dark").click(function () {
     $(".center-wrapper, .right-wrapper, .percentage-wrapper, .top-member-wrapper, .main-wrapper").css("background",wrapperColorDark);
     $(".growth-figure, .percentage-figure, .ad-wrapper, .pk-wrapper, .about-us-main-wrapper, .member-main-wrapper").css("background", wrapperColorDark);
     $(".middle-center-wrapper, .inner-center-wrapper, .login-inner-main-wrapper").css("background", wrapperColorDark);
-    $(".table-title, .amount-info, .common-table-title, .login-title").css("background", wrapperBorderColorDark);
+    $(".table-title, .amount-info, .common-table-title, .login-title, .table-title-wrapper").css("background", wrapperBorderColorDark);
     $("th").css("background", wrapperBorderColorDark);
     $(".tr-even, .project-even").css("background", evenListColorDark);
     $(".tr-odd").css("background", wrapperColorDarkOdd);

@@ -55,7 +55,7 @@ Banner.prototype.toggleArrow = function (isShow) {
 
 Banner.prototype.animate = function () {
     var self = this;
-    self.bannerUl.animate({"left": -this.bannerWidth*self.index}, 1000);
+    self.bannerUl.stop().animate({"left": -this.bannerWidth*self.index}, 1000);
     var index = self.index;
     if (index === 0) {
         index = self.bannerCount - 1;

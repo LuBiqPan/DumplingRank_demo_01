@@ -304,7 +304,7 @@ def growth_test(request):
                         "01-13", "01-14", "01-15", "01-16", "01-17", "01-18",
                         ],
         "growth_theater": {
-            "全团总额": [10000, 20000, 30000, 40000, 50000, 40000,
+            "48G": [10000, 20000, 30000, 40000, 50001, 40000,
                      10000, 20000, 30000, 40000, 50000, 40000,
                      10000, 20000, 30000, 40000, 50000, 40000
                      ],
@@ -350,22 +350,132 @@ def growth_test(request):
         return render(request, 'growth.html', context=context)
 
 
-def percentage(request):
-    context = {}
-    temp_dict = {}
+# def percentage(request):
+#     context = {}
+#     temp_dict = {}
+#
+#     # Member amount.
+#     growth_member = G104GrowthMember.objects.all()
+#     for result in growth_member:
+#         member_dict = {
+#             str(result.member): str('%.2f' % result.amount_member)
+#         }
+#         temp_dict.update(member_dict)
+#     d = {"member_amount": json.dumps(temp_dict)}
+#     context.update(d)
+#
+#     # Rest members amount.
+#     rest_dict = {
+#         "rest_SII": str('%.2f' % 10000),
+#         "rest_NII": str('%.2f' % 10000),
+#         "rest_HII": str('%.2f' % 10000),
+#         "rest_X": str('%.2f' % 10000),
+#         "rest_B": str('%.2f' % 10000),
+#         "rest_E": str('%.2f' % 10000),
+#         "rest_J": str('%.2f' % 10000),
+#         "rest_G": str('%.2f' % 10000),
+#         "rest_NIII": str('%.2f' % 10000),
+#         "rest_Z": str('%.2f' % 10086),
+#     }
+#     d = {"rest_amount": json.dumps(rest_dict)}
+#     context.update(d)
+#
+#     # Join time amount
+#     join_time_member = ["SNH48一期生", "SNH48二期生", "SNH48三期生", "SNH48四期生", "SNH48五期生", "SNH48六期生"]
+#     # join_time_member = ["1001", "1002", "1003", "1004", "1005", "1006"]
+#     temp_dict2 = {}
+#     # "SNH48一期生", "SNH48二期生", "SNH48三期生", "SNH48四期生", "SNH48五期生", "SNH48六期生"
+#     for join_time in join_time_member:
+#         result = P110RealTimeAmountJoinTime.objects.filter(join_time=join_time).first()
+#         inner_dict = {
+#             str(join_time): str('%.2f' % result.real_amount)
+#         }
+#         temp_dict2.update(inner_dict)
+#     # Other members
+#     result_other = P111RealTimeAmountJoinTimeOthers.objects.first()
+#     inner_dict = {
+#         "其他": str('%.f' % result_other.real_amount_other)
+#     }
+#     temp_dict2.update(inner_dict)
+#     d = {"join_time_amount": json.dumps(temp_dict2)}
+#     context.update(d)
+#     # print(context)
+#
+#     if request.is_ajax():
+#         return JsonResponse(context)
+#     else:
+#         return render(request, 'percentage.html', context=context)
 
-    # Member amount.
-    growth_member = G104GrowthMember.objects.all()
-    for result in growth_member:
-        member_dict = {
-            str(result.member): str('%.2f' % result.amount_member)
-        }
-        temp_dict.update(member_dict)
-    d = {"member_amount": json.dumps(temp_dict)}
+
+def percentage_test(request):
+    member_amount = {
+        # Team SII
+        "莫寒": str('%.2f' % 10000),
+        "许佳琪": str('%.2f' % 10000),
+        "戴萌": str('%.2f' % 10000),
+        "钱蓓婷": str('%.2f' % 10000),
+        "吴哲晗": str('%.2f' % 10000),
+        "孔肖吟": str('%.2f' % 10000),
+        "张语格": str('%.2f' % 10000),
+        "徐子轩": str('%.2f' % 10000),
+        # Team NII
+        "黄婷婷": str('%.2f' % 10000),
+        "冯薪朵": str('%.2f' % 10000),
+        "陆婷": str('%.2f' % 10000),
+        "赵粤": str('%.2f' % 10000),
+        "张雨鑫": str('%.2f' % 10000),
+        # Team HII
+        "李艺彤": str('%.2f' % 10000),
+        "林思意": str('%.2f' % 10000),
+        "姜杉": str('%.2f' % 10000),
+        "费沁源": str('%.2f' % 10000),
+        "沈梦瑶": str('%.2f' % 10000),
+        "许杨玉琢": str('%.2f' % 10000),
+        "袁一琦": str('%.2f' % 10000),
+        "张昕": str('%.2f' % 10000),
+        # Team X
+        "宋昕冉": str('%.2f' % 10000),
+        "杨冰怡": str('%.2f' % 10000),
+        "李钊": str('%.2f' % 10000),
+        "冉蔚": str('%.2f' % 10000),
+        # Team B
+        "段艺璇": str('%.2f' % 10000),
+        "胡晓慧": str('%.2f' % 10000),
+        "刘姝贤": str('%.2f' % 10000),
+        # Team E
+        "苏杉杉": str('%.2f' % 10000),
+        "马玉灵": str('%.2f' % 10000),
+        "陈倩楠": str('%.2f' % 10000),
+        "李梓": str('%.2f' % 10000),
+        # Team J
+        "韩家乐": str('%.2f' % 10000),
+        "张怀瑾": str('%.2f' % 10000),
+        "黄恩茹": str('%.2f' % 10000),
+        "柏欣妤": str('%.2f' % 10000),
+        # Team G
+        "谢蕾蕾": str('%.2f' % 10000),
+        "陈珂": str('%.2f' % 10000),
+        "高源婧": str('%.2f' % 10000),
+        "张琼予": str('%.2f' % 10000),
+        "李姗姗": str('%.2f' % 10000),
+        # Team NIII
+        "郑丹妮": str('%.2f' % 10000),
+        "刘力菲": str('%.2f' % 10000),
+        "唐莉佳": str('%.2f' % 10000),
+        "左婧媛": str('%.2f' % 10000),
+        "卢静": str('%.2f' % 10000),
+        # Team Z
+        "杨媛媛": str('%.2f' % 10000),
+        "梁婉琳": str('%.2f' % 10000),
+        "龙亦瑞": str('%.2f' % 10000),
+
+    }
+    context = {}
+    d = {"member_amount": json.dumps(member_amount)}
     context.update(d)
 
-    # Rest members amount.
-    rest_dict = {
+    rest_amount = {
+        # Rest
         "rest_SII": str('%.2f' % 10000),
         "rest_NII": str('%.2f' % 10000),
         "rest_HII": str('%.2f' % 10000),
@@ -377,28 +487,21 @@ def percentage(request):
         "rest_NIII": str('%.2f' % 10000),
         "rest_Z": str('%.2f' % 10000),
     }
-    d = {"rest_amount": json.dumps(rest_dict)}
+    d = {"rest_amount": json.dumps(rest_amount)}
     context.update(d)
 
-    # Join time amount
-    join_time_member = ["SNH48一期生", "SNH48二期生", "SNH48三期生", "SNH48四期生", "SNH48五期生", "SNH48六期生"]
-    temp_dict2 = {}
-    # "SNH48一期生", "SNH48二期生", "SNH48三期生", "SNH48四期生", "SNH48五期生", "SNH48六期生"
-    for join_time in join_time_member:
-        result = P110RealTimeAmountJoinTime.objects.filter(join_time=join_time).first()
-        inner_dict = {
-            str(join_time): str('%.2f' % result.real_amount)
-        }
-        temp_dict2.update(inner_dict)
-    # Other members
-    result_other = P111RealTimeAmountJoinTimeOthers.objects.first()
-    inner_dict = {
-        "其他": str('%.f' % result_other.real_amount_other)
+    join_time_amount = {
+        "1001": str('%.2f' % 10000),
+        "1002": str('%.2f' % 10000),
+        "1003": str('%.2f' % 10000),
+        "1004": str('%.2f' % 10000),
+        "1005": str('%.2f' % 10000),
+        "1006": str('%.2f' % 10000),
+        "其他": str('%.2f' % 10000),
     }
-    temp_dict2.update(inner_dict)
-    d = {"join_time_amount": json.dumps(temp_dict2)}
+    d = {"join_time_amount": json.dumps(join_time_amount)}
     context.update(d)
-    # print(context)
+    print(context)
 
     if request.is_ajax():
         return JsonResponse(context)
@@ -445,12 +548,15 @@ def hot_pk(request):
 
 
 def member(request):
-
     return render(request, 'member.html')
 
 
 def daily_growth(request):
     return render(request, 'daily_growth.html')
+
+
+def daily_growth2(request):
+    return render(request, 'daily_growth2.html')
 
 
 def live_growth(request):
@@ -459,6 +565,10 @@ def live_growth(request):
 
 def room_growth(request):
     return render(request, 'room_growth.html')
+
+
+def pocket_growth(request):
+    return render(request, 'pocket_growth.html')
 
 
 def login(request):
@@ -545,7 +655,7 @@ def detail(request):
             project_list.append(inner_dict)
         d = {"project_info": json.dumps(project_list)}
         context.update(d)
-        print(context)
+        # print(context)
 
     if request.is_ajax():
         return JsonResponse(context)
@@ -553,21 +663,42 @@ def detail(request):
         return render(request, 'detail.html', context=context)
 
 
-def descendant(request):
+# def descendant(request):
+#     # Descendant members (excluding old members).
+#     context = {}
+#     descendant_list = []
+#     descendant_amount = []
+#     descendant_members = P101TopMembers.objects.all()
+#     for member in descendant_members:
+#         descendant_list.append(str(member.member))
+#         descendant_amount.append(str('%.2f' % member.real_amount))
+#     d = {
+#         "descendant_list": json.dumps(descendant_list),
+#         "descendant_amount": json.dumps(descendant_amount),
+#     }
+#     context.update(d)
+#     print(context)
+#
+#     if request.is_ajax():
+#         return JsonResponse(context)
+#     else:
+#         return render(request, 'descendant.html', context=context)
+
+
+def descendant_test(request):
     # Descendant members (excluding old members).
     context = {}
-    descendant_list = []
-    descendant_amount = []
-    descendant_members = P101TopMembers.objects.all()
-    for member in descendant_members:
-        descendant_list.append(str(member.member))
-        descendant_amount.append(str('%.2f' % member.real_amount))
-    d = {
-        "descendant_list": json.dumps(descendant_list),
-        "descendant_amount": json.dumps(descendant_amount),
-    }
-    context.update(d)
-    print(context)
+    descendant_list = ["段艺璇", "刘淑贤", "费沁源", "许杨玉琢", "张怀瑾", "郑丹妮", "谢蕾蕾", "宋昕冉",
+                       "苏杉杉", "冯晓菲", "袁一琦", "沈梦瑶", "黄恩茹", "孙珍妮", "张昕", "胡晓慧"]
+    descendant_amount = [str('%.2f' % 360000.33), str('%.2f' % 250000), str('%.2f' % 200000), str('%.2f' % 130000),
+                         str('%.2f' % 120000), str('%.2f' % 110000), str('%.2f' % 100000), str('%.2f' % 90000),
+                         str('%.2f' % 80000), str('%.2f' % 70000), str('%.2f' % 60000), str('%.2f' % 50000),
+                         str('%.2f' % 40000), str('%.2f' % 30000), str('%.2f' % 20000), str('%.2f' % 200000)]
+    d1 = {"descendant_list": json.dumps(descendant_list)}
+    d2 = {"descendant_amount": json.dumps(descendant_amount)}
+    context.update(d1)
+    context.update(d2)
+    # print(context)
 
     if request.is_ajax():
         return JsonResponse(context)

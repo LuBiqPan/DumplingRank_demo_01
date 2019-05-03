@@ -4,7 +4,7 @@
 
 {% block main %}
     <script src="{% static 'js/main_table_page_control.min.js' %}"></script>
-
+    <script src="{% static '/js/ad.min.js' %}"></script>
     <link rel="stylesheet" href="{% static '/css/index.min.css' %}">
 
     <div class="main">
@@ -13,12 +13,12 @@
 
             <div class="left-wrapper">
                 <div id="growth" class="growth-figure">
-                    <button class="detail-growth" onclick="window.open({% url 'growth' %})">更多</button>
+                    <button class="detail-growth" onclick="window.location.href='growth.html'">更多</button>
                     <div id="inner-group" class="inner-growth-figure"></div>
                 </div>
 
                 <div id="percentage" class="percentage-figure">
-                    <button class="detail-percentage" onclick="window.open({% url 'percentage' %})">更多</button>
+                    <button class="detail-percentage" onclick="window.location.href='percentage.html'">更多</button>
                     <div id="inner-percentage" class="inner-percentage-figure"></div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div class="table-wrapper">
-                            <table class="main-table">
+                            <table class="main-table" style="background-image: url({% static 'images/waterprint.jpg' %})">
                                 <tr class="table-head">
                                     <th>排名</th>
                                     <th>姓名</th>
@@ -41,403 +41,403 @@
                                     <th>折合票数</th>
                                 </tr>
                                 <tr id="tr-rank-1" class="tr-rank tr-odd tr-p1">
-                                    <td class="rank-no">1</td>
+                                    <td class="rank-no"><div class="rank-div">1</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-2" class="tr-rank tr-even tr-p1">
-                                    <td class="rank-no">2</td>
+                                    <td class="rank-no"><div class="rank-div">2</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-3" class="tr-rank tr-odd tr-p1">
-                                    <td class="rank-no">3</td>
+                                    <td class="rank-no"><div class="rank-div">3</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-4" class="tr-rank tr-even tr-p1">
-                                    <td class="rank-no">4</td>
+                                    <td class="rank-no"><div class="rank-div">4</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-5" class="tr-rank tr-odd tr-p1">
-                                    <td class="rank-no">5</td>
+                                    <td class="rank-no"><div class="rank-div">5</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-6" class="tr-rank tr-even tr-p1">
-                                    <td class="rank-no">6</td>
+                                    <td class="rank-no"><div class="rank-div">6</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-7" class="tr-rank tr-odd tr-p1">
-                                    <td class="rank-no">7</td>
+                                    <td class="rank-no"><div class="rank-div">7</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-8" class="tr-rank tr-even tr-p1">
-                                    <td class="rank-no">8</td>
+                                    <td class="rank-no"><div class="rank-div">8</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-9" class="tr-rank tr-odd tr-p1">
-                                    <td class="rank-no">9</td>
+                                    <td class="rank-no"><div class="rank-div">9</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-10" class="tr-rank tr-even tr-p1">
-                                    <td class="rank-no">10</td>
+                                    <td class="rank-no"><div class="rank-div">10</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-11" class="tr-rank tr-odd tr-p1">
-                                    <td class="rank-no">11</td>
+                                    <td class="rank-no"><div class="rank-div">11</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-12" class="tr-rank tr-even tr-p1">
-                                    <td class="rank-no">12</td>
+                                    <td class="rank-no"><div class="rank-div">12</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-13" class="tr-rank tr-odd tr-p1">
-                                    <td class="rank-no">13</td>
+                                    <td class="rank-no"><div class="rank-div">13</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-14" class="tr-rank tr-even tr-p1">
-                                    <td class="rank-no">14</td>
+                                    <td class="rank-no"><div class="rank-div">14</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-15" class="tr-rank tr-odd tr-p1">
-                                    <td class="rank-no">15</td>
+                                    <td class="rank-no"><div class="rank-div">15</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-16" class="tr-rank tr-even tr-p1">
-                                    <td class="rank-no">16</td>
+                                    <td class="rank-no"><div class="rank-div">16</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
 
                                 <tr id="tr-rank-17" class="tr-rank tr-odd tr-p2">
-                                    <td class="rank-no">17</td>
+                                    <td class="rank-no"><div class="rank-div">17</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-18" class="tr-rank tr-even tr-p2">
-                                    <td class="rank-no">18</td>
+                                    <td class="rank-no"><div class="rank-div">18</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-19" class="tr-rank tr-odd tr-p2">
-                                    <td class="rank-no">19</td>
+                                    <td class="rank-no"><div class="rank-div">19</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-20" class="tr-rank tr-even tr-p2">
-                                    <td class="rank-no">20</td>
+                                    <td class="rank-no"><div class="rank-div">20</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-21" class="tr-rank tr-odd tr-p2">
-                                    <td class="rank-no">21</td>
+                                    <td class="rank-no"><div class="rank-div">21</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-22" class="tr-rank tr-even tr-p2">
-                                    <td class="rank-no">22</td>
+                                    <td class="rank-no"><div class="rank-div">22</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-23" class="tr-rank tr-odd tr-p2">
-                                    <td class="rank-no">23</td>
+                                    <td class="rank-no"><div class="rank-div">23</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-24" class="tr-rank tr-even tr-p2">
-                                    <td class="rank-no">24</td>
+                                    <td class="rank-no"><div class="rank-div">24</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-25" class="tr-rank tr-odd tr-p2">
-                                    <td class="rank-no">25</td>
+                                    <td class="rank-no"><div class="rank-div">25</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-26" class="tr-rank tr-even tr-p2">
-                                    <td class="rank-no">26</td>
+                                    <td class="rank-no"><div class="rank-div">26</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-27" class="tr-rank tr-odd tr-p2">
-                                    <td class="rank-no">27</td>
+                                    <td class="rank-no"><div class="rank-div">27</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-28" class="tr-rank tr-even tr-p2">
-                                    <td class="rank-no">28</td>
+                                    <td class="rank-no"><div class="rank-div">28</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-29" class="tr-rank tr-odd tr-p2">
-                                    <td class="rank-no">29</td>
+                                    <td class="rank-no"><div class="rank-div">29</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-30" class="tr-rank tr-even tr-p2">
-                                    <td class="rank-no">30</td>
+                                    <td class="rank-no"><div class="rank-div">30</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-31" class="tr-rank tr-odd tr-p2">
-                                    <td class="rank-no">31</td>
+                                    <td class="rank-no"><div class="rank-div">31</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-32" class="tr-rank tr-even tr-p2">
-                                    <td class="rank-no">32</td>
+                                    <td class="rank-no"><div class="rank-div">32</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
 
                                 <tr id="tr-rank-33" class="tr-rank tr-odd tr-p3">
-                                    <td class="rank-no">33</td>
+                                    <td class="rank-no"><div class="rank-div">33</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-34" class="tr-rank tr-even tr-p3">
-                                    <td class="rank-no">34</td>
+                                    <td class="rank-no"><div class="rank-div">34</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-35" class="tr-rank tr-odd tr-p3">
-                                    <td class="rank-no">35</td>
+                                    <td class="rank-no"><div class="rank-div">35</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-36" class="tr-rank tr-even tr-p3">
-                                    <td class="rank-no">36</td>
+                                    <td class="rank-no"><div class="rank-div">36</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-37" class="tr-rank tr-odd tr-p3">
-                                    <td class="rank-no">37</td>
+                                    <td class="rank-no"><div class="rank-div">37</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-38" class="tr-rank tr-even tr-p3">
-                                    <td class="rank-no">38</td>
+                                    <td class="rank-no"><div class="rank-div">38</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-39" class="tr-rank tr-odd tr-p3">
-                                    <td class="rank-no">39</td>
+                                    <td class="rank-no"><div class="rank-div">39</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-40" class="tr-rank tr-even tr-p3">
-                                    <td class="rank-no">40</td>
+                                    <td class="rank-no"><div class="rank-div">40</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-41" class="tr-rank tr-odd tr-p3">
-                                    <td class="rank-no">41</td>
+                                    <td class="rank-no"><div class="rank-div">41</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-42" class="tr-rank tr-even tr-p3">
-                                    <td class="rank-no">42</td>
+                                    <td class="rank-no"><div class="rank-div">42</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-43" class="tr-rank tr-odd tr-p3">
-                                    <td class="rank-no">43</td>
+                                    <td class="rank-no"><div class="rank-div">43</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-44" class="tr-rank tr-even tr-p3">
-                                    <td class="rank-no">44</td>
+                                    <td class="rank-no"><div class="rank-div">44</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-45" class="tr-rank tr-odd tr-p3">
-                                    <td class="rank-no">45</td>
+                                    <td class="rank-no"><div class="rank-div">45</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-46" class="tr-rank tr-even tr-p3">
-                                    <td class="rank-no">46</td>
+                                    <td class="rank-no"><div class="rank-div">46</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-47" class="tr-rank tr-odd tr-p3">
-                                    <td class="rank-no">47</td>
+                                    <td class="rank-no"><div class="rank-div">47</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-48" class="tr-rank tr-even tr-p3">
-                                    <td class="rank-no">48</td>
+                                    <td class="rank-no"><div class="rank-div">48</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
 
                                 <tr id="tr-rank-49" class="tr-rank tr-odd tr-p4 tr-last-group">
-                                    <td class="rank-no">49</td>
+                                    <td class="rank-no"><div class="rank-div">49</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-50" class="tr-rank tr-even tr-p4 tr-last-group">
-                                    <td class="rank-no">50</td>
+                                    <td class="rank-no"><div class="rank-div">50</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-51" class="tr-rank tr-odd tr-p4 tr-last-group">
-                                    <td class="rank-no">51</td>
+                                    <td class="rank-no"><div class="rank-div">51</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-52" class="tr-rank tr-even tr-p4 tr-last-group">
-                                    <td class="rank-no">52</td>
+                                    <td class="rank-no"><div class="rank-div">52</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-53" class="tr-rank tr-odd tr-p4 tr-last-group">
-                                    <td class="rank-no">53</td>
+                                    <td class="rank-no"><div class="rank-div">53</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-54" class="tr-rank tr-even tr-p4 tr-last-group">
-                                    <td class="rank-no">54</td>
+                                    <td class="rank-no"><div class="rank-div">54</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-55" class="tr-rank tr-odd tr-p4 tr-last-group">
-                                    <td class="rank-no">55</td>
+                                    <td class="rank-no"><div class="rank-div">55</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-56" class="tr-rank tr-even tr-p4 tr-last-group">
-                                    <td class="rank-no">56</td>
+                                    <td class="rank-no"><div class="rank-div">56</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-57" class="tr-rank tr-odd tr-p4 tr-last-group">
-                                    <td class="rank-no">57</td>
+                                    <td class="rank-no"><div class="rank-div">57</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-58" class="tr-rank tr-even tr-p4 tr-last-group">
-                                    <td class="rank-no">58</td>
+                                    <td class="rank-no"><div class="rank-div">58</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-59" class="tr-rank tr-odd tr-p4 tr-last-group">
-                                    <td class="rank-no">59</td>
+                                    <td class="rank-no"><div class="rank-div">59</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-60" class="tr-rank tr-even tr-p4 tr-last-group">
-                                    <td class="rank-no">60</td>
+                                    <td class="rank-no"><div class="rank-div">60</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-61" class="tr-rank tr-odd tr-p4 tr-last-group">
-                                    <td class="rank-no">61</td>
+                                    <td class="rank-no"><div class="rank-div">61</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-62" class="tr-rank tr-even tr-p4 tr-last-group">
-                                    <td class="rank-no">62</td>
+                                    <td class="rank-no"><div class="rank-div">62</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-63" class="tr-rank tr-odd tr-p4 tr-last-group">
-                                    <td class="rank-no">63</td>
+                                    <td class="rank-no"><div class="rank-div">63</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-64" class="tr-rank tr-even tr-p4 tr-last-group">
-                                    <td class="rank-no">64</td>
+                                    <td class="rank-no"><div class="rank-div">64</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-65" class="tr-rank tr-odd tr-p4 tr-last-group">
-                                    <td class="rank-no">65</td>
+                                    <td class="rank-no"><div class="rank-div">65</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
                                 <tr id="tr-rank-66" class="tr-rank tr-even tr-p4 tr-last-group">
-                                    <td class="rank-no">66</td>
+                                    <td class="rank-no"><div class="rank-div">66</div></td>
                                     <td class="rank-member"></td>
                                     <td class="rank-account"></td>
-                                    <td class="rank-vote"></td>
+                                    <td class="rank-vote"><div class="vote-div"></div></td>
                                 </tr>
 
                             </table>
@@ -463,10 +463,35 @@
                         <ul class="banner-ul" id="banner-ul">
                             <li>
                                 <a href="https://zhongchou.modian.com/item/47181.html" target="_blank">
+                                    <img src="{% static 'images/banner/0501-0503谢妮.jpg' %}" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://zhongchou.modian.com/item/47181.html" target="_blank">
+                                    <img src="{% static 'images/banner/banner00.jpg' %}" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://zhongchou.modian.com/item/47181.html" target="_blank">
+                                    <img src="{% static 'images/banner/璇梓.jpg' %}" alt="">
+                                </a>
+                            </li>
+                            <!--<li>
+                                <a href="https://zhongchou.modian.com/item/47181.html" target="_blank">
                                     <img src="{% static 'images/banner/banner0.jpg' %}" alt="">
                                 </a>
                             </li>
+                            <li>
+                                <a href="https://zhongchou.modian.com/item/47181.html" target="_blank">
+                                    <img src="{% static 'images/banner/banner0.jpg' %}" alt="">
+                                </a>
+                            </li>-->
                         </ul>
+                        <span class="arrow left-arrow">‹</span>
+                        <span class="arrow right-arrow">›</span>
+                        <div class="page-control-group">
+                            <ul class="page-control"></ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -475,6 +500,7 @@
 
     <script src="{% static '/js/figure_control.min.js' %}"></script>
     <script src="{% static '/js/growth_index.min.js' %}"></script>
+    <script src="{% static '/js/index.min.js' %}"></script>
 {% endblock %}
 
 

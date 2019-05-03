@@ -5,7 +5,8 @@
     <title>{% block title %}{% endblock %}</title>
 
     <script src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static '/js/echarts.min.js' %}"></script>
+   <!--<script src="{% static '/js/echarts.min.js' %}"></script>-->
+     <script src="https://cdn.bootcss.com/echarts/4.2.0-rc.2/echarts-en.min.js"></script>
 
     <link rel="stylesheet" href="{% static '/css/base.min.css' %}">
     <link rel="Shortcut Icon" href="{% static '/images/logo.ico' %}">
@@ -31,16 +32,20 @@
                 </span>
                 <span class="year-wrapper">2019</span>
             </div>
-            <div class="login-register-wrapper">
+            <div class="nav-item about-us">
+                <span>
+                    <a href="{% url 'about_us' %}">关于我们</a>
+                </span>
+            </div>
+            <!--<div class="login-register-wrapper">
                 <span class="login-span">
                     <a href="{% url 'login' %}">登录 | </a>
                 </span>
                 <span class="register-span">
                     <a href="{% url 'register' %}">注册</a>
                 </span>
-            </div>
+            </div>-->
         </div>
-
     </div>
     
     {% block main %}{% endblock %}
@@ -48,11 +53,11 @@
     <div class="footer">
         <div class="inner-footer-wrapper">
             <ul class="external-links">
-                <li class="links">
+                <!--<li class="links">
                     <a href="{% url 'about_us' %}" target="_blank">
                         关于我们
                     </a>
-                </li>
+                </li>-->
                 <li class="links">
                     <a href="https://weibo.com/u/2827120175" target="_blank">
                         饺子榜微博

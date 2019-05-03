@@ -35,7 +35,7 @@ function descendantControl(descendantList, descendantAmount) {
             subtextStyle: {
                 color: '#C0DAFF',
                 fontSize: 15,
-                fontFamily: "楷体",
+                // fontFamily: "HanWang KaiBold-Gb5",
             },
             x: "center",  // Title align
             y: 10,        // Distance from div top.
@@ -49,8 +49,8 @@ function descendantControl(descendantList, descendantAmount) {
             show: false,
             type: 'continuous',
             min: 0,
-            max: 30000,
-            range: [0, 30000],
+            max: 300000,
+            range: [0, 300000],
             calculable: true,
             color: ['#fc2a01', '#ffcc00', '#54ff00'],
         }],
@@ -89,7 +89,7 @@ function descendantControl(descendantList, descendantAmount) {
         },
         grid: {
             // x, y, x2, y2: axis distance from div
-            x: 90,
+            x: 50,
             y: 80,
             x2: 20,
             y2: 50,
@@ -120,9 +120,29 @@ function descendantControl(descendantList, descendantAmount) {
 
 
 /* Ajax upgrade */
-setInterval(function () {
+// setInterval(function () {
+//     $.ajax({
+//         url: '',
+//         contentType: 'application/json',
+//         dataType: 'json',
+//         type: "GET",
+//         success: function (data) {
+//             // console.log(data);
+//             descendantList = $.parseJSON(data["descendant_list"]);
+//             descendantAmount = $.parseJSON(data["descendant_amount"]);
+//         }
+//     });
+//
+//     // Descendant
+//     descendantControl(descendantList, descendantAmount);
+//
+// }, ajaxTime);   // ajax every ajaxTime millisecond
+
+
+$(
     $.ajax({
         url: '',
+        // url: '/api/descendant.php/',
         contentType: 'application/json',
         dataType: 'json',
         type: "GET",
@@ -130,10 +150,7 @@ setInterval(function () {
             // console.log(data);
             descendantList = $.parseJSON(data["descendant_list"]);
             descendantAmount = $.parseJSON(data["descendant_amount"]);
+            descendantControl(descendantList, descendantAmount);
         }
-    });
-
-    // Descendant
-    descendantControl(descendantList, descendantAmount);
-
-}, ajaxTime);   // ajax every ajaxTime millisecond
+    })
+);

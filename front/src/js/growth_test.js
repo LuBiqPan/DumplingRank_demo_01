@@ -191,7 +191,7 @@ function Growth() {
         "林嘉佩": '#eeeeee',
         "罗可嘉": '#eeeeee',
         "李沁洁": '#eeeeee',
-        "李姗姗": '#eeeeee',
+        "李姗姗": '#68AFDE',
         "林芝": '#eeeeee',
         "徐楚雯": '#eeeeee',
         "徐慧玲": '#eeeeee',
@@ -244,7 +244,7 @@ function Growth() {
         "张秋怡": '#eeeeee',
     };
 
-    this.theaterList = ["全团总额", "SNH48", "BEJ48", "GNZ48"];
+    this.theaterList = ["48G", "SNH48", "BEJ48", "GNZ48"];
     this.teamList = ["Team SII", "Team NII", "Team HII", "Team X", "Team B", "Team E",
     "Team J", "Team G", "Team NIII", "Team Z"];
 
@@ -356,7 +356,7 @@ Growth.prototype.addOption = function (selectedTheater, selectedTeam, selectedMe
             textStyle: {
                 color: '#C0DAFF',
                 fontSize: 30,
-                fontFamily: "楷体"
+                // fontFamily: "楷体"
             },
             x: "center",
             y: 10,
@@ -582,7 +582,7 @@ Growth.prototype.init = function () {
             textStyle: {
                 color: '#C0DAFF',
                 fontSize: 30,
-                fontFamily: "楷体"
+                // fontFamily: "楷体"
             },
             x: "center",
             y: 10,
@@ -670,7 +670,8 @@ Growth.prototype.init = function () {
                 areaStyle: {
                     normal: {}
                 },
-                data: self.growthData["集资总额"],
+                // data: self.growthData["集资总额"],
+                data: self.growthData["growth_theater"]["48G"],
                 lineStyle: {
                     width: 3
                 },
@@ -680,7 +681,7 @@ Growth.prototype.init = function () {
                         borderColor: '#00b6de',
                         areaStyle: {
                             type: 'default',
-                            opacity: 0.0    //Color under lines.
+                            opacity: 0.3    //Color under lines.
                         }
                     }
                 },

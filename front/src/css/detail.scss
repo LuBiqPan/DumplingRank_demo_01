@@ -1,5 +1,6 @@
 
 @import "base";
+@import "init";
 
 $detailTableWidth: $mainWidth;
 
@@ -100,9 +101,9 @@ $detailTableWidth: $mainWidth;
 						}
 						
 						.total-amount{
-							width: 100px;
+							width: 102px;
 							float: left;
-							margin-left: 150px;
+							margin-left: 50px;
 						}
 						
 						.total-amount-number{
@@ -112,7 +113,7 @@ $detailTableWidth: $mainWidth;
 						}
 						
 						.current-rank{
-							width: 100px;
+							width: 102px;
 							float: left;
 						}
 						
@@ -122,8 +123,19 @@ $detailTableWidth: $mainWidth;
 							text-align: left;
 						}
 						
+						.target-rank{
+							width: 102px;
+							float: left;
+						}
+						
+						.target-rank-number{
+							width: 40px;
+							float: left;
+							text-align: left;
+						}
+						
 						.project-no{
-							width: 100px;
+							width: 102px;
 							float: left;
 							margin-left: 10px;
 						}
@@ -138,7 +150,7 @@ $detailTableWidth: $mainWidth;
 							#select-bar{
 									width: 100px;
 									height: 30px;
-									font-family: 微软雅黑;
+									font-family: $mainFont;
 									-webkit-border-radius: 5px;
 									-moz-border-radius: 5px;
 									border-radius: 5px;
@@ -232,7 +244,7 @@ $detailTableWidth: $mainWidth;
 					
 					.table-wrapper{
 						padding: 5px;
-						height: 615px;
+						height: 466px;
 						font-size: 18px;
 						overflow-y: auto;	// scroll bar
 						overflow-x: hidden;

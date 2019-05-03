@@ -2,6 +2,7 @@
 var i;
 var option = {};
 var ajaxTime = 2000;    // ajax cycle in millisecond
+var delayTime = 50;
 
 var percentageChart = echarts.init(document.getElementById("percentage"));
 var percentageByJoinTimeChart = echarts.init(document.getElementById("top-member"));
@@ -28,7 +29,6 @@ percentageChart.showLoading({
 
 /* Percentage by theater, team and member. */
 function percentageControl(memberAmount, restAmount) {
-
     var data = [{
 
         // SNH48
@@ -43,37 +43,37 @@ function percentageControl(memberAmount, restAmount) {
             },
             children: [{ // 莫寒
                 name: '莫寒',
-                value: 9999,
+                value: parseFloat(memberAmount["莫寒"]),
                 itemStyle: {
                     color: '#297CD7'
                 }
             }, { // 许佳琪
                 name: '许佳琪',
-                value: 9999,
+                value: parseFloat(memberAmount["许佳琪"]),
                 itemStyle: {
                     color: '#FF093D'
                 }
             }, { // 戴萌
                 name: '戴萌',
-                value: 9999,
+                value: parseFloat(memberAmount["戴萌"]),
                 itemStyle: {
                     color: '#F6BDC1'
                 }
             }, { // 钱蓓婷
                 name: '钱蓓婷',
-                value: 9999,
+                value: parseFloat(memberAmount["钱蓓婷"]),
                 itemStyle: {
                     color: '#3A5BA5'
                 }
             }, { // 吴哲晗
                 name: '吴哲晗',
-                value: 9999,
+                value: parseFloat(memberAmount["吴哲晗"]),
                 itemStyle: {
                     color: '#F6C5C6'
                 }
             }, { // 孔肖吟
                 name: '孔肖吟',
-                value: 9999,
+                value: parseFloat(memberAmount["孔肖吟"]),
                 itemStyle: {
                     color: '#FF613C'
                 }
@@ -82,6 +82,12 @@ function percentageControl(memberAmount, restAmount) {
                 value: parseFloat(memberAmount["张语格"]),
                 itemStyle: {
                     color: '#FF0030'
+                }
+            }, { // 徐子轩
+                name: '徐子轩',
+                value: parseFloat(memberAmount["徐子轩"]),
+                itemStyle: {
+                    color: '#FFA899'
                 }
             }, { // 其他
                 name: '其他',
@@ -97,33 +103,33 @@ function percentageControl(memberAmount, restAmount) {
             },
             children: [{ // 黄婷婷
                 name: '黄婷婷',
-                value: 9999,
+                value: parseFloat(memberAmount["黄婷婷"]),
                 itemStyle: {
                     color: '#FDF200'
                 }
             }, { // 冯薪朵
                 name: '冯薪朵',
-                value: 9999,
+                value: parseFloat(memberAmount["冯薪朵"]),
                 itemStyle: {
                     color: '#31B26B'
                 }
             }, { // 陆婷
                 name: '陆婷',
-                value: 9999,
+                value: parseFloat(memberAmount["陆婷"]),
                 itemStyle: {
                     color: '#D9205E'
                 }
             }, { // 赵粤
                 name: '赵粤',
-                value: 9999,
+                value: parseFloat(memberAmount["赵粤"]),
                 itemStyle: {
                     color: '#0C7CE5'
                 }
-            }, { // 易嘉爱
-                name: '易嘉爱',
-                value: parseFloat(memberAmount["易嘉爱"]),
+            }, { // 张雨鑫
+                name: '张雨鑫',
+                value: parseFloat(memberAmount["张雨鑫"]),
                 itemStyle: {
-                    color: '#D06479'
+                    color: '#FFC4D3'
                 }
             }, { // 其他
                 name: '其他',
@@ -139,21 +145,21 @@ function percentageControl(memberAmount, restAmount) {
             },
             children: [{ // 李艺彤
                 name: '李艺彤',
-                value: 19999,
+                value: parseFloat(memberAmount["李艺彤"]),
                 itemStyle: {
                     color: '#E60111'
                 }
             }, { // 林思意
                 name: '林思意',
-                value: 9999,
+                value: parseFloat(memberAmount["林思意"]),
                 itemStyle: {
                     color: '#009441'
                 }
-            }, { // 万丽娜
-                name: '万丽娜',
-                value: 9999,
+            }, { // 姜杉
+                name: '姜杉',
+                value: parseFloat(memberAmount["姜杉"]),
                 itemStyle: {
-                    color: '#493A90'
+                    color: '#870000'
                 }
             }, { // 费沁源
                 name: '费沁源',
@@ -161,11 +167,29 @@ function percentageControl(memberAmount, restAmount) {
                 itemStyle: {
                     color: '#E7B3D2'
                 }
-            }, { // 姜杉
-                name: '姜杉',
-                value: 9999,
+            }, { // 沈梦瑶
+                name: '沈梦瑶',
+                value: parseFloat(memberAmount["沈梦瑶"]),
                 itemStyle: {
                     color: '#870000'
+                }
+            }, { // 许杨玉琢
+                name: '许杨玉琢',
+                value: parseFloat(memberAmount["许杨玉琢"]),
+                itemStyle: {
+                    color: '#009113'
+                }
+            }, { // 袁一琦
+                name: '袁一琦',
+                value: parseFloat(memberAmount["袁一琦"]),
+                itemStyle: {
+                    color: '#2E2928'
+                }
+            }, { // 张昕
+                name: '张昕',
+                value: parseFloat(memberAmount["张昕"]),
+                itemStyle: {
+                    color: '#AE014E'
                 }
             }, { // 其他
                 name: '其他',
@@ -187,15 +211,21 @@ function percentageControl(memberAmount, restAmount) {
                 }
             }, { // 杨冰怡
                 name: '杨冰怡',
-                value: 9999,
+                value: parseFloat(memberAmount["杨冰怡"]),
                 itemStyle: {
                     color: '#AA302E'
                 }
-            }, { // 张丹三
-                name: '张丹三',
-                value: 9999,
+            }, { // 李钊
+                name: '李钊',
+                value: parseFloat(memberAmount["李钊"]),
                 itemStyle: {
-                    color: '#F8DFDA'
+                    color: '#EB7477'
+                }
+            }, { // 冉蔚
+                name: '冉蔚',
+                value: parseFloat(memberAmount["冉蔚"]),
+                itemStyle: {
+                    color: '#701619'
                 }
             }, { // 其他
                 name: '其他',
@@ -225,9 +255,15 @@ function percentageControl(memberAmount, restAmount) {
                 }
             }, { // 胡晓慧
                 name: '胡晓慧',
-                value: 5999,
+                value: parseFloat(memberAmount["胡晓慧"]),
                 itemStyle: {
                     color: '#F7A5A4'
+                }
+            }, { // 刘姝贤
+                name: '刘姝贤',
+                value: parseFloat(memberAmount["刘姝贤"]),
+                itemStyle: {
+                    color: '#EFCED0'
                 }
             }, { // 其他
                 name: '其他',
@@ -247,11 +283,23 @@ function percentageControl(memberAmount, restAmount) {
                 itemStyle: {
                     color: '#F29A03'
                 }
-            }, { // 冯思佳
-                name: '冯思佳',
-                value: 9999,
+            }, { // 马玉灵
+                name: '马玉灵',
+                value: parseFloat(memberAmount["马玉灵"]),
                 itemStyle: {
-                    color: '#60BBC1'
+                    color: '#FED737'
+                }
+            }, { // 陈倩楠
+                name: '陈倩楠',
+                value: parseFloat(memberAmount["陈倩楠"]),
+                itemStyle: {
+                    color: '#8B99CD'
+                }
+            }, { // 李梓
+                name: '李梓',
+                value: parseFloat(memberAmount["李梓"]),
+                itemStyle: {
+                    color: '#931211'
                 }
             }, { // 其他
                 name: '其他',
@@ -274,15 +322,21 @@ function percentageControl(memberAmount, restAmount) {
                 }
             }, { // 张怀瑾
                 name: '张怀瑾',
-                value: 9999,
+                value: parseFloat(memberAmount["张怀瑾"]),
                 itemStyle: {
                     color: '#E9D19C'
                 }
             }, { // 黄恩茹
                 name: '黄恩茹',
-                value: 9999,
+                value: parseFloat(memberAmount["黄恩茹"]),
                 itemStyle: {
                     color: '#FEE0F9'
+                }
+            }, { // 柏欣妤
+                name: '柏欣妤',
+                value: parseFloat(memberAmount["柏欣妤"]),
+                itemStyle: {
+                    color: '#232F3A'
                 }
             }, { // 其他
                 name: '其他',
@@ -312,15 +366,27 @@ function percentageControl(memberAmount, restAmount) {
                 }
             }, { // 陈珂
                 name: '陈珂',
-                value: 9999,
+                value: parseFloat(memberAmount["陈珂"]),
                 itemStyle: {
                     color: '#FADB2E'
                 }
+            }, { // 高源婧
+                name: '高源婧',
+                value: parseFloat(memberAmount["高源婧"]),
+                itemStyle: {
+                    color: '#61C4C0'
+                }
             }, { // 张琼予
                 name: '张琼予',
-                value: 9999,
+                value: parseFloat(memberAmount["张琼予"]),
                 itemStyle: {
                     color: '#005caf'
+                }
+            }, { // 李姗姗
+                name: '李姗姗',
+                value: parseFloat(memberAmount["李姗姗"]),
+                itemStyle: {
+                    color: '#68AFDE'
                 }
             }, { // 其他
                 name: '其他',
@@ -336,7 +402,7 @@ function percentageControl(memberAmount, restAmount) {
             },
             children: [{ // 郑丹妮
                 name: '郑丹妮',
-                value: 9999,
+                value: parseFloat(memberAmount["郑丹妮"]),
                 itemStyle: {
                     color: '#F6EABD'
                 }
@@ -346,9 +412,21 @@ function percentageControl(memberAmount, restAmount) {
                 itemStyle: {
                     color: '#8DC41E'
                 }
+            }, { // 唐莉佳
+                name: '唐莉佳',
+                value: parseFloat(memberAmount["唐莉佳"]),
+                itemStyle: {
+                    color: '#5F4A8A'
+                }
+            }, { // 左婧媛
+                name: '左婧媛',
+                value: parseFloat(memberAmount["左婧媛"]),
+                itemStyle: {
+                    color: '#653B8C'
+                }
             }, { // 卢静
                 name: '卢静',
-                value: 9999,
+                value: parseFloat(memberAmount["卢静"]),
                 itemStyle: {
                     color: '#C0DDEE'
                 }
@@ -372,15 +450,15 @@ function percentageControl(memberAmount, restAmount) {
                 }
             }, { // 梁婉琳
                 name: '梁婉琳',
-                value: 9999,
+                value: parseFloat(memberAmount["梁婉琳"]),
                 itemStyle: {
                     color: '#A93539'
                 }
-            }, { // 余芷媛
-                name: '余芷媛',
-                value: 9999,
+            }, { // 龙亦瑞
+                name: '龙亦瑞',
+                value: parseFloat(memberAmount["龙亦瑞"]),
                 itemStyle: {
-                    color: '#E2586D'
+                    color: '#B484B7'
                 }
             }, { // 其他
                 name: '其他',
@@ -405,7 +483,7 @@ function percentageControl(memberAmount, restAmount) {
                 align: 'center',
                 color: '#C0DAFF',
                 fontSize: 15,
-                fontFamily: "楷体",
+                // fontFamily: "楷体",
             },
             x: "center",  // Title align
             y: 10,        // Distance from div top.
@@ -415,26 +493,28 @@ function percentageControl(memberAmount, restAmount) {
             // formatter: "{b}: {c} ({d}%)",
             formatter: function (params) {
                 // Theater.
-                    if (params.name === "SNH48" || params.name === "BEJ48" || params.name === "GNZ48") {
-                        return params.name + "<br/>"
-                               + "集资总额：" + params.value.toFixed(2) + "<br/>"
-                               + "团间比例：" + ((params.value/params.treePathInfo[0].value)*100).toFixed(1) + "%";
-                    // Team.
-                    } else if (params.name === "Team SII" || params.name === "Team NII" || params.name === "Team HII" || params.name === "Team X" ||
-                               params.name === "Team B"   || params.name === "Team E"   || params.name === "Team J" ||
-                               params.name === "Team G"   || params.name === "Team NIII"|| params.name === "Team Z") {
-                        return params.name + "<br/>"
-                               + "集资总额&nbsp;&nbsp;&nbsp;：" + params.value.toFixed(2) + "<br/>"
-                               + "分团内比例：" + ((params.value/params.treePathInfo[1].value)*100).toFixed(1) + "%" + "<br/>"
-                               + "队伍间比例：" + ((params.value/params.treePathInfo[0].value)*100).toFixed(1) + "%";
-                    // Member/other.
-                    } else {
-                        return params.name + "<br/>"
-                               + "集资总额&nbsp;&nbsp;&nbsp;：" + params.value.toFixed(2) + "<br/>"
-                               + "队伍内比例：" + ((params.value/params.treePathInfo[2].value)*100).toFixed(1) + "%" + "<br/>"
-                               + "分团内比例：" + ((params.value/params.treePathInfo[1].value)*100).toFixed(1) + "%" + "<br/>"
-                               + "全团比例&nbsp;&nbsp;&nbsp;：" + ((params.value/params.treePathInfo[0].value)*100).toFixed(1) + "%";
-                    }
+                if (params.name === "SNH48" || params.name === "BEJ48" || params.name === "GNZ48") {
+                    return params.name + "<br/>"
+                           + "集资总额：" + params.value.toFixed(2) + "<br/>"
+                           + "团间比例：" + ((params.value/params.treePathInfo[0].value)*100).toFixed(1) + "%";
+                // Team.
+                } else if (params.name === "Team SII" || params.name === "Team NII" || params.name === "Team HII" || params.name === "Team X" ||
+                           params.name === "Team B"   || params.name === "Team E"   || params.name === "Team J" ||
+                           params.name === "Team G"   || params.name === "Team NIII"|| params.name === "Team Z") {
+                    return params.name + "<br/>"
+                           + "集资总额&nbsp;&nbsp;&nbsp;：" + params.value.toFixed(2) + "<br/>"
+                           + "分团内比例：" + ((params.value/params.treePathInfo[1].value)*100).toFixed(1) + "%" + "<br/>"
+                           + "队伍间比例：" + ((params.value/params.treePathInfo[0].value)*100).toFixed(1) + "%";
+                // Member/other.
+                } else if (params.treePathInfo[2]) {
+                    return params.name + "<br/>"
+                       + "集资总额&nbsp;&nbsp;&nbsp;：" + params.value.toFixed(2) + "<br/>"
+                       + "队伍内比例：" + ((params.value/params.treePathInfo[2].value)*100).toFixed(1) + "%" + "<br/>"
+                       + "分团内比例：" + ((params.value/params.treePathInfo[1].value)*100).toFixed(1) + "%" + "<br/>"
+                       + "全团比例&nbsp;&nbsp;&nbsp;：" + ((params.value/params.treePathInfo[0].value)*100).toFixed(1) + "%";
+                } else {
+                    return null;
+                }
             }
         },
         series: {
@@ -481,6 +561,7 @@ function percentageControl(memberAmount, restAmount) {
             }]
         }
     };
+
     percentageChart.hideLoading();
     percentageChart.setOption(option, true);
 }
@@ -502,7 +583,7 @@ function percentageByJoinTime(joinTimeAmount) {
                 align: 'center',
                 color: '#C0DAFF',
                 fontSize: 15,
-                fontFamily: "楷体",
+                // fontFamily: "楷体",
             },
             x: "center",  // Title align
             y: 10,        // Distance from div top.
@@ -538,32 +619,37 @@ function percentageByJoinTime(joinTimeAmount) {
                         show: true
                     },
                     emphasis: {
-                        show: false
+                        show: true
                     }
                 },
                 data:[
                     {
-                        value:parseFloat(joinTimeAmount["SNH48一期生"]),
+                        // value:parseFloat(joinTimeAmount["SNH48一期生"]),
+                        value:parseFloat(joinTimeAmount["1001"]),
                         name:'一期生',
                         itemStyle: {color: '#00b6de'}
                     },
                     {
-                        value:parseFloat(joinTimeAmount["SNH48二期生"]),
+                        // value:parseFloat(joinTimeAmount["SNH48二期生"]),
+                        value:parseFloat(joinTimeAmount["1002"]),
                         name:'二期生',
                         itemStyle: {color: '#9e57b4'}
                     },
                     {
-                        value:parseFloat(joinTimeAmount["SNH48三期生"]),
+                        // value:parseFloat(joinTimeAmount["SNH48三期生"]),
+                        value:parseFloat(joinTimeAmount["1003"]),
                         name:'三期生',
                         itemStyle: {color: '#f8941d'}
                     },
                     {
-                        value:parseFloat(joinTimeAmount["SNH48四期生"]),
+                        // value:parseFloat(joinTimeAmount["SNH48四期生"]),
+                        value:parseFloat(joinTimeAmount["1004"]),
                         name:'四期生',
                         itemStyle: {color: '#b1d61b'}
                     },
                     {
-                        value:parseFloat(joinTimeAmount["SNH48五期生"]),
+                        // value:parseFloat(joinTimeAmount["SNH48五期生"]),
+                        value:parseFloat(joinTimeAmount["1005"]),
                         name:'五期生',
                         itemStyle: {
                             // Color gradient.
@@ -578,7 +664,8 @@ function percentageByJoinTime(joinTimeAmount) {
                         }
                     },
                     {
-                        value:parseFloat(joinTimeAmount["SNH48六期生"]),
+                        // value:parseFloat(joinTimeAmount["SNH48六期生"]),
+                        value:parseFloat(joinTimeAmount["1006"]),
                         name:'六期生',
                         itemStyle: {
                             // Color gradient.
@@ -607,10 +694,10 @@ function percentageByJoinTime(joinTimeAmount) {
 }
 
 
-/* Ajax upgrade */
-setInterval(function () {
+$(
     $.ajax({
-        url: '',
+        // url: '/percentage/',
+        url: '/api/percentage.php/',
         contentType: 'application/json',
         dataType: 'json',
         type: "GET",
@@ -618,13 +705,11 @@ setInterval(function () {
             memberAmount = $.parseJSON(data["member_amount"]);
             restAmount = $.parseJSON(data["rest_amount"]);
             joinTimeAmount = $.parseJSON(data["join_time_amount"]);
+            setTimeout(function () {
+                percentageByJoinTime(joinTimeAmount);
+                percentageControl(memberAmount, restAmount);
+            }, delayTime);
         }
-    });
-
-    // Percentage
-    percentageControl(memberAmount, restAmount);
-
-    percentageByJoinTime(joinTimeAmount);
-
-}, ajaxTime);   // ajax every ajaxTime millisecond
+    })
+);
 

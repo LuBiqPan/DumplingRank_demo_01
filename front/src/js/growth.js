@@ -364,7 +364,7 @@ var option = {
         textStyle: {
             color: '#C0DAFF',
             fontSize: 30,
-            fontFamily: "楷体"
+            // fontFamily: "楷体"
         },
         x: "center",
         y: 10,

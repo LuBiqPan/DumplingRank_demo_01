@@ -1,7 +1,9 @@
 
 @import "base";
+@import "init";
 
 $detailTableWidth: $mainWidth;
+$tableWidth: 400px;
 
 .main{
 	width: 100%;
@@ -52,7 +54,7 @@ $detailTableWidth: $mainWidth;
 						background: $wrapperBorderColor;
 						margin-left: 10px;
 						margin-top: 10px;
-						font-family: "楷体";
+						font-family: $mainFont;
 						
 						.inner-table-title{
 							.member-title-span{
@@ -69,12 +71,12 @@ $detailTableWidth: $mainWidth;
 							}
 							
 							.select-member{
-								margin-left: 237px;
+								margin-left: 256px;
 								
 								#select-bar{
 									width: 100px;
 									height: 30px;
-									font-family: 微软雅黑;
+									font-family: $mainFont;
 									-webkit-border-radius: 5px;
 									-moz-border-radius: 5px;
 									border-radius: 5px;
@@ -83,20 +85,32 @@ $detailTableWidth: $mainWidth;
 							
 							.total-amount-txt2{
 								font-size: 30px;
-								margin-left: 250px;
+								margin-left: 227px;
 							}
 						}
 					}
 					
 					.daily-growth-table-wrapper{
-						width: $detailTableWidth / 2 - 40px;
+						width: $detailTableWidth / 3 - 40px;
 						height: $mainHeight - 120px;
 						display: inline;
 						float: left;
 						margin-top: 10px;
 						
+						.table-title-wrapper{
+							width: $tableWidth;
+							height: 35px;
+							line-height: 35px;
+							background: $wrapperBorderColor;
+							text-align: center;
+							font-size: 18px;
+							font-weight: bold;
+							margin-bottom: 5px;
+							margin-left: 5px;
+						}
+						
 						.daily-growth-table-title{
-							width: $mainTableWidth + 40px;
+							width: $tableWidth;
 							height: 35px;
 							line-height: 35px;
 							margin: 0 auto;
@@ -109,22 +123,23 @@ $detailTableWidth: $mainWidth;
 							}
 							
 							.member{
-								margin-left: 98px;
+								margin-left: 54px;
 							}
 							
 							.amount{
-								margin-left: 193px;
+								margin-left: 127px;
 							}
 						}
 						
 						.table-scroll-wrapper{
-							width: $mainTableWidth + 40px;
-							height: $mainHeight - 120px;
+							width: $tableWidth;
+							height: $mainHeight - 183px;
 							overflow-y: auto;
+							overflow-x: hidden;
 							margin: 0 auto;
 							
 							.daily-growth-table{
-							width: $mainTableWidth + 40px;
+							width: $tableWidth;
 							border-collapse: collapse;
 							margin: 0 auto;
 							//overflow-y: auto;
@@ -169,6 +184,11 @@ $detailTableWidth: $mainWidth;
 					.left-table-wrapper{
 						float: left;
 						margin-left: 10px;
+					}
+					
+					.middle-table-wrapper{
+						float: left;
+						margin-left: 30px;
 					}
 					
 					.right-table-wrapper{

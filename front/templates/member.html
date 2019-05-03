@@ -15,20 +15,20 @@
                 <div class="member-top-wrapper">
                     <span class="member-title-span">成 员 列 表</span>
                     <span class="member-subtitle-span">点击成员查看集资详情</span>
-                    <span class="daily-growth-span">
+                    <!--<span class="daily-growth-span">
                         <button class="top-btn daily-growth-btn" onclick="window.open({% url 'daily_growth' %})">集资日增</button>
                     </span>
                     <span class="live-growth-span">
                         <button class="top-btn live-growth-btn" onclick="window.open({% url 'live_growth' %})">直播日增</button>
+                    </span>-->
+                    <span class="daily-growth-span">
+                        <button class="top-btn room-growth-btn" onclick="window.open({% url 'daily_growth2' %})">日增榜</button>
                     </span>
-                    <span class="room-growth-span">
-                        <button class="top-btn room-growth-btn" onclick="window.open({% url 'room_growth' %})">房间日增</button>
+                    <span class="pocket-span">
+                        <button class="top-btn pocket-btn" onclick="window.open({% url 'pocket_growth' %})">口袋榜</button>
                     </span>
                     <span class="descendant-span">
                         <button class="top-btn descendant-btn" onclick="window.open({% url 'descendant' %})">后辈榜</button>
-                    </span>
-                    <span class="pk-span">
-                        <button class="top-btn pk-btn" onclick="window.open({% url 'pk' %})">热门PK</button>
                     </span>
                 </div>
                 <div class="team-wrapper">

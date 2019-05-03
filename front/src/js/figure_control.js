@@ -487,7 +487,8 @@ setInterval(function () {
                     // Construct real_amount field selector.
                     var totalAmountSelector = "#tr-rank-" + i.toString() + " .rank-account";
                     // Construct vote field selector.
-                    var voteSelector = "#tr-rank-" + i.toString() + " .rank-vote";
+                    // var voteSelector = "#tr-rank-" + i.toString() + " .rank-vote";
+                    var voteSelector = "#tr-rank-" + i.toString() + " .rank-vote .vote-div";
 
                     // Set value for member tag.
                     $(memberSelector).text(rankInfoJson["member"]);

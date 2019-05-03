@@ -8,6 +8,8 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     text-decoration: none;
 }
 
+@import "init";
+
 
 $mainWidth: 1350px;
 //$mainHeight: 770px;
@@ -50,7 +52,7 @@ $backgroundColorLight: #f7f7f7;
 
 body{
 	background: $backgroundColor;
-	font-family: "微软雅黑";
+	font-family: $mainFont;
 	color: #666666;
 }
 
@@ -76,7 +78,7 @@ body{
 			height: 100%;
 			//float: left;
 			margin: 0 auto;
-			font-family: "楷体";
+			font-family: $fontKai;
 			font-weight: bold;
 			text-align: center;
 			
@@ -116,7 +118,7 @@ body{
 			.year-wrapper{
 				//height: 100%;
 				//line-height: 100%;
-				font-family: "AntsyPants";
+				font-family: $fontKai;
 				font-size: 200%;
 				//float: left;
 				margin-left: 0.1125em;
