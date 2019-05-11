@@ -424,6 +424,7 @@ def percentage_test(request):
         "陆婷": str('%.2f' % 10000),
         "赵粤": str('%.2f' % 10000),
         "张雨鑫": str('%.2f' % 10000),
+        "易嘉爱": str('%.2f' % 10000),
         # Team HII
         "李艺彤": str('%.2f' % 10000),
         "林思意": str('%.2f' % 10000),
@@ -437,7 +438,7 @@ def percentage_test(request):
         "宋昕冉": str('%.2f' % 10000),
         "杨冰怡": str('%.2f' % 10000),
         "李钊": str('%.2f' % 10000),
-        "冉蔚": str('%.2f' % 10000),
+        "冯晓菲": str('%.2f' % 10000),
         # Team B
         "段艺璇": str('%.2f' % 10000),
         "胡晓慧": str('%.2f' % 10000),
@@ -491,17 +492,17 @@ def percentage_test(request):
     context.update(d)
 
     join_time_amount = {
-        "1001": str('%.2f' % 10000),
+        "1001": str('%.2f' % 20000),
         "1002": str('%.2f' % 10000),
-        "1003": str('%.2f' % 10000),
-        "1004": str('%.2f' % 10000),
-        "1005": str('%.2f' % 10000),
-        "1006": str('%.2f' % 10000),
-        "其他": str('%.2f' % 10000),
+        "1003": str('%.2f' % 3000),
+        "1004": str('%.2f' % 5000),
+        "1005": str('%.2f' % 12000),
+        "1006": str('%.2f' % 11000),
+        "其他": str('%.2f' % 13000),
     }
     d = {"join_time_amount": json.dumps(join_time_amount)}
     context.update(d)
-    print(context)
+    # print(context)
 
     if request.is_ajax():
         return JsonResponse(context)

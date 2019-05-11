@@ -26,6 +26,7 @@ MemberColorControl.prototype.listenMember = function () {
         var id = rankId + i.toString();
         var member = $(id).children("td.rank-member").text();
         var rankTag = $(id).children("td.rank-no").children("div.rank-div");
+        var voteTag = $(id).children("td.rank-vote").children("div.vote-div");
         // console.log(leftBorder);
 
         if (member === "陈观慧" || member === "陈俊羽" || member === "陈思" || member === "戴萌" || member === "蒋芸" ||
@@ -38,6 +39,10 @@ MemberColorControl.prototype.listenMember = function () {
                 "border-left": "4px solid" + self.teamColor["Team SII"],
                 "border-radius": "4px"
             });
+            voteTag.css({
+                "border-right": "4px solid" + self.teamColor["Team SII"],
+                "border-radius": "4px"
+            });
         } else if (member === "陈佳莹" || member === "冯薪朵" || member === "黄婷婷" || member === "何晓玉" || member === "金莹玥" ||
         member === "江真仪" || member === "刘洁" || member === "栾嘉仪" || member === "李美琪" || member === "陆婷" ||
         member === "卢天惠" || member === "马凡" || member === "王诗蒙" || member === "谢妮" || member === "易嘉爱" ||
@@ -46,6 +51,10 @@ MemberColorControl.prototype.listenMember = function () {
             // $(id).children("td.rank-member").css("-webkit-text-stroke", "1px" + self.teamColor["Team NII"]);
             rankTag.css({
                 "border-left": "4px solid" + self.teamColor["Team NII"],
+                "border-radius": "4px"
+            });
+            voteTag.css({
+                "border-right": "4px solid" + self.teamColor["Team NII"],
                 "border-radius": "4px"
             });
         } else if (member === "陈盼" || member === "费沁源" || member === "郭爽" || member === "郝婧怡" || member === "洪珮雲" ||
@@ -58,6 +67,10 @@ MemberColorControl.prototype.listenMember = function () {
                 "border-left": "4px solid" + self.teamColor["Team HII"],
                 "border-radius": "4px"
             });
+            voteTag.css({
+                "border-right": "4px solid" + self.teamColor["Team HII"],
+                "border-radius": "4px"
+            });
         } else if (member === "陈琳" || member === "冯晓菲" || member === "刘静晗" || member === "鲁静萍" || member === "李星羽" ||
         member === "吕一" || member === "李钊" || member === "潘瑛琪" || member === "祁静" || member === "冉蔚" ||
         member === "宋昕冉" || member === "孙歆文" || member === "王菲妍" || member === "汪佳翎" || member === "王晓佳" ||
@@ -67,6 +80,10 @@ MemberColorControl.prototype.listenMember = function () {
                 "border-left": "4px solid" + self.teamColor["Team X"],
                 "border-radius": "4px"
             });
+            voteTag.css({
+                "border-right": "4px solid" + self.teamColor["Team X"],
+                "border-radius": "4px"
+            });
         } else if (member === "程戈" || member === "陈美君" || member === "段艺璇" || member === "胡丽芝" || member === "胡晓慧" ||
         member === "刘姝贤" || member === "林溪荷" || member === "李瑜璇" || member === "曲美霖" || member === "青钰雯" ||
         member === "沈小爱" || member === "孙晓艳" || member === "田姝丽" || member === "熊素君" || member === "闫明筠" ||
@@ -74,6 +91,10 @@ MemberColorControl.prototype.listenMember = function () {
             // $(id).children("td.rank-member").css("-webkit-text-stroke", "1px" + self.teamColor["Team B"]);
             rankTag.css({
                 "border-left": "4px solid" + self.teamColor["Team B"],
+                "border-radius": "4px"
+            });
+            voteTag.css({
+                "border-right": "4px solid" + self.teamColor["Team B"],
                 "border-radius": "4px"
             });
         } else if (member === "陈倩楠" || member === "程宇璐" || member === "冯思佳" || member === "高蔚然" || member === "李丽满" ||
@@ -86,6 +107,10 @@ MemberColorControl.prototype.listenMember = function () {
                 "border-left": "4px solid" + self.teamColor["Team E"],
                 "border-radius": "4px"
             });
+            voteTag.css({
+                "border-right": "4px solid" + self.teamColor["Team E"],
+                "border-radius": "4px"
+            });
         } else if (member === "柏欣妤" || member === "陈雅钰" || member === "房蕾" || member === "葛司琪" || member === "黄恩茹" ||
         member === "韩家乐" || member === "何阳青青" || member === "金锣赛" || member === "楼澍" || member === "刘闲" ||
         member === "刘一菲" || member === "任心怡" || member === "孙语姗" || member === "唐霖" || member === "王雨煊" ||
@@ -93,6 +118,10 @@ MemberColorControl.prototype.listenMember = function () {
             // $(id).children("td.rank-member").css("-webkit-text-stroke", "1px" + self.teamColor["Team J"]);
             rankTag.css({
                 "border-left": "4px solid" + self.teamColor["Team J"],
+                "border-radius": "4px"
+            });
+            voteTag.css({
+                "border-right": "4px solid" + self.teamColor["Team J"],
                 "border-radius": "4px"
             });
         } else if (member === "陈俊宏" || member === "GNZ48陈佳莹" || member === "陈珂" || member === "符冰冰" || member === "高源婧" ||
@@ -104,6 +133,10 @@ MemberColorControl.prototype.listenMember = function () {
                 "border-left": "4px solid" + self.teamColor["Team G"],
                 "border-radius": "4px"
             });
+            voteTag.css({
+                "border-right": "4px solid" + self.teamColor["Team G"],
+                "border-radius": "4px"
+            });
         } else if (member === "陈楠茜" || member === "陈欣妤" || member === "邓熳慧" || member === "高雪逸" || member === "洪静雯" ||
         member === "卢静" || member === "刘力菲" || member === "刘倩倩" || member === "孙馨" || member === "唐莉佳" ||
         member === "吴羽霏" || member === "谢艾琳" || member === "冼燊楠" || member === "肖文铃" || member === "熊心瑶" ||
@@ -113,6 +146,10 @@ MemberColorControl.prototype.listenMember = function () {
                 "border-left": "4px solid" + self.teamColor["Team NIII"],
                 "border-radius": "4px"
             });
+            voteTag.css({
+                "border-right": "4px solid" + self.teamColor["Team NIII"],
+                "border-radius": "4px"
+            });
         } else if (member === "毕瑞珊" || member === "陈桂君" || member === "邓惠恩" || member === "杜秋霖" || member === "方琪" ||
         member === "郭铱宁" || member === "何梦瑶" || member === "梁乔" || member === "梁婉琳" || member === "龙亦瑞" ||
         member === "赖梓惜" || member === "农燕萍" || member === "王翠菲" || member === "王炯义" || member === "王偲越" ||
@@ -120,6 +157,10 @@ MemberColorControl.prototype.listenMember = function () {
             // $(id).children("td.rank-member").css("-webkit-text-stroke", "1px" + self.teamColor["Team Z"]);
             rankTag.css({
                 "border-left": "4px solid" + self.teamColor["Team Z"],
+                "border-radius": "4px"
+            });
+            voteTag.css({
+                "border-right": "4px solid" + self.teamColor["Team Z"],
                 "border-radius": "4px"
             });
         }
@@ -198,7 +239,7 @@ MemberColorControl.prototype.run = function () {
     var self = this;
     setInterval(function () {
         self.listenMember();
-        self.listenTheater();
+        // self.listenTheater();
     }, 2000);
 };
 

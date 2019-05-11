@@ -117,11 +117,12 @@ Growth.prototype.init = function () {
                 type:'line',
                 smooth:false,
                 symbol: 'circle',
+                symbolSize: 1,
                 areaStyle: {
                     normal: {}
                 },
-                data: self.growthData["growth_theater"]["全团总额"],
-                // data: self.growthData["growth_theater"]["48G"],
+                // data: self.growthData["growth_theater"]["全团总额"],
+                data: self.growthData["growth_theater"]["48G"],
                 lineStyle: {
                     width: 3
                 },
@@ -142,6 +143,7 @@ Growth.prototype.init = function () {
                 type:'line',
                 smooth:false,
                 symbol: 'circle',
+                symbolSize: 1,
                 areaStyle: {
                     normal: {}
                 },
@@ -163,6 +165,7 @@ Growth.prototype.init = function () {
                 type:'line',
                 smooth:false,
                 symbol: 'circle',
+                symbolSize: 1,
                 areaStyle: {
                     normal: {}
                 },
@@ -184,6 +187,7 @@ Growth.prototype.init = function () {
                 type:'line',
                 smooth:false,
                 symbol: 'circle',
+                symbolSize: 1,
                 areaStyle: {
                     normal: {}
                 },
@@ -210,7 +214,8 @@ Growth.prototype.init = function () {
 Growth.prototype.ajax = function () {
     var self = this;
     $.ajax({
-        url: "/growth/",
+        url: "/api/gwoth_index.php/",
+        // url: "",
         contentType: "application/json",
         dataType: "json",
         type: "GET",

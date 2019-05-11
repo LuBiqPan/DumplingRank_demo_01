@@ -27,9 +27,8 @@ var cardColorLight = "#f7f7f7";
 
 /* Light theme */
 $(".theme-light").click(function () {
-    $(".main-table").css({
-        "background-image": "url('https://wx1.sinaimg.cn/mw690/006a04EHgy1g15zk1xau2j30dw0d73yk.jpg')",
-    });
+    // $(".main-table").css("background-image", "url(/static/images/waterprint_light.jpg)");   // test
+    $(".main-table").css("background-image", "url(/images/waterprint_light.jpg)");             // jzb
 
     $("body").css({
         "background": backgroundColorLight,
@@ -69,7 +68,8 @@ $(".theme-light").click(function () {
 
 /* Dark theme */
 $(".theme-dark").click(function () {
-    $(".main-table").css("background-image", "url('https://wx1.sinaimg.cn/mw690/006a04EHgy1g160qo0p10j30dw0d7dfr.jpg')");
+    // $(".main-table").css("background-image", "url(/static/images/waterprint_dark.jpg)");    // test
+    $(".main-table").css("background-image", "url(/images/waterprint_dark.jpg)");              // jzb
 
     $("body").css({
         "background": backgroundColorDark,

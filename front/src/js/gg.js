@@ -4,11 +4,12 @@
 function Banner() {
     this.index = 1;
     this.bannerWidth = 400;
+    this.loopPeriod = 15000;
 
-    this.bannerGroup = $("#banner-group");
+    this.bannerGroup = $("#henggun-group");
     this.leftArrow = $(".left-arrow");
     this.rightArrow = $(".right-arrow");
-    this.bannerUl = $(".banner-ul");
+    this.bannerUl = $(".henggun-ul");
     this.pageControl = $(".page-control");
     this.liList = this.bannerUl.children("li");
     this.bannerCount = this.liList.length;
@@ -21,11 +22,11 @@ Banner.prototype.initBanner = function () {
     var firstBanner = self.liList.eq(0).clone();
     // Select last li element and clone one.
     var lastBanner = self.liList.eq(self.bannerCount-1).clone();
-    // Add first banner to the end.
+    // Add first henggun to the end.
     self.bannerUl.append(firstBanner);
-    // Add last banner to the beginning.
+    // Add last henggun to the beginning.
     self.bannerUl.prepend(lastBanner);
-    // Extend banner width.
+    // Extend henggun width.
     self.bannerUl.css({"width": self.bannerWidth*(self.bannerCount+2), "left": -self.bannerWidth});
 };
 
@@ -79,7 +80,7 @@ Banner.prototype.loop = function () {
             self.index++;
         }
         self.animate();
-    }, 5000);
+    }, self.loopPeriod);
 };
 
 Banner.prototype.listenArrowClick = function () {

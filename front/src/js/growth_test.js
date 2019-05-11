@@ -2,7 +2,7 @@
 function Growth() {
     this.dom = document.getElementById("growth-wrapper");
     this.growthChart = echarts.init(this.dom);
-    this.ajaxTime = 1000;
+    this.ajaxTime = 500;
 
     this.growthData = {};
     this.theaterColor = {
@@ -413,7 +413,7 @@ Growth.prototype.addOption = function (selectedTheater, selectedTeam, selectedMe
         // dataZoom: [
         //     {
         //         type: 'slider',
-        //         show: true,
+        //         show: false,
         //         xAxisIndex: [0],
         //         start: 0,
         //         end: 100
@@ -564,7 +564,7 @@ Growth.prototype.init = function () {
                 var seriesParams = params[0]["seriesName"] + ": " + params[0].value.toFixed(2) + '<br>';
                 for (var i=1; i<params.length; i++) {
                     /*
-                       params[i].value might sometimes be string format, therefor,
+                       params[i].value might sometimes be string format, therefore,
                        translate it into float number first before use toFixed() function.
                     */
                     if (typeof params[i].value === 'string') {
@@ -636,21 +636,21 @@ Growth.prototype.init = function () {
 
         },
 
-        dataZoom: [
-            {
-                type: 'slider',
-                show: true,
-                xAxisIndex: [0],
-                start: 0,
-                end: 100
-            },
-            {
-                type: 'inside',
-                xAxisIndex: [0],
-                start: 1,
-                end: 35
-            },
-        ],
+        // dataZoom: [
+        //     {
+        //         type: 'slider',
+        //         show: true,
+        //         xAxisIndex: [0],
+        //         start: 0,
+        //         end: 100
+        //     },
+        //     {
+        //         type: 'inside',
+        //         xAxisIndex: [0],
+        //         start: 1,
+        //         end: 35
+        //     },
+        // ],
 
         grid: {
             // x, y, x2, y2: axis distance from div
@@ -767,6 +767,29 @@ Growth.prototype.ajax = function () {
         }
     })
 };
+//
+// Growth.prototype.run = function () {
+//     var self = this;
+//     var selectedTheater = self.dropDownCk("select-theater", "ul-theater", "选择分团");
+//     var selectedTeam = self.dropDownCk("select-team", "ul-team", "选择队伍");
+//     var selectedMember = self.dropDownCk("select-member","ul-member", "选择成员");
+//     self.ajax();
+//     self.growthChart.showLoading({
+//       text: '正在加载，请稍后...',
+//       color: '#C0DAFF',
+//       textColor: '#C0DAFF',
+//       maskColor: 'rgba(255, 255, 255, 0.0)',
+//       zlevel: 0
+//     });
+//
+//     setInterval(function () {
+//         self.growthChart.hideLoading();
+//         var options = self.addOption(selectedTheater, selectedTeam, selectedMember);
+//         if (options && typeof options === "object") {
+//             self.growthChart.setOption(options, true);
+//         }
+//     }, self.ajaxTime);
+// };
 
 Growth.prototype.run = function () {
     var self = this;
@@ -785,12 +808,10 @@ Growth.prototype.run = function () {
     setInterval(function () {
         self.growthChart.hideLoading();
         var options = self.addOption(selectedTheater, selectedTeam, selectedMember);
-        console.log(options);
         if (options && typeof options === "object") {
             self.growthChart.setOption(options, true);
         }
     }, self.ajaxTime);
-
 };
 
 $(function () {

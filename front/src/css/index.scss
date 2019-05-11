@@ -148,7 +148,7 @@ body{
 			float: right;
 			background: $wrapperColor;
 			
-			.ad-wrapper{
+			.do-not-ban-me-wrapper{
 				width: $sideBarWidth - 10px;
 				height: $mainHeight;
 				//margin-left: 10px;
@@ -156,7 +156,7 @@ body{
 				float: left;
 				//margin-bottom: 10px;
 				
-				.banner-group{
+				.henggun-group{
 				
 				}
 			}
@@ -249,12 +249,12 @@ body{
 }
 
 
-/* ad */
+/* gg */
 .main{
 	.inner-main-wrapper{
 		.right-wrapper{
-			.ad-wrapper{
-				.banner-group{
+			.do-not-ban-me-wrapper{
+				.henggun-group{
 					position: relative;
 					overflow: hidden;
 					z-index: 0;
@@ -268,7 +268,7 @@ body{
 					margin-left: 10px;
 					padding: 5px;
 
-					.banner-ul{
+					.henggun-ul{
 							overflow: hidden;
 							//width: $bannerWidth*4;
 							position: absolute;
@@ -341,4 +341,27 @@ body{
 	}
 }
 
+
+/* Record */
+//.footer{
+//	.record-group{
+//		width: 100%;
+//		text-align: center;
+//		line-height: 50%;
+//
+//		a{
+//			color: $mainFontColor;
+//			font-size: 14px;
+//
+//			i{
+//				display: inline-block;
+//				width: 14px;
+//				height: 16px;
+//				margin-right: 6px;
+//				vertical-align: middle;
+//				margin-top: -4px;
+//			}
+//		}
+//	}
+//}
 

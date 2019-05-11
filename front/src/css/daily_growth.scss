@@ -71,7 +71,7 @@ $tableWidth: 400px;
 							}
 							
 							.select-member{
-								margin-left: 256px;
+								margin-left: 270px;
 								
 								#select-bar{
 									width: 100px;
@@ -84,8 +84,21 @@ $tableWidth: 400px;
 							}
 							
 							.total-amount-txt2{
-								font-size: 30px;
-								margin-left: 227px;
+								font-size: 20px;
+								margin-left: 57px;
+							}
+							
+							#amount-total{
+								font-size: 20px;
+							}
+							
+							.daily-total-vote-txt{
+								font-size: 20px;
+								margin-left: 20px;
+							}
+							
+							#daily-total-vote{
+								font-size: 20px;
 							}
 						}
 					}

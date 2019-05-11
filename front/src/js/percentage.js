@@ -131,7 +131,13 @@ function percentageControl(memberAmount, restAmount) {
                 itemStyle: {
                     color: '#FFC4D3'
                 }
-            }, { // 其他
+            }, { // 易嘉爱
+                name: '易嘉爱',
+                value: parseFloat(memberAmount["易嘉爱"]),
+                itemStyle: {
+                    color: '#D06479'
+                }
+            },{ // 其他
                 name: '其他',
                 value: parseFloat(restAmount["rest_NII"]),
                 itemStyle: {
@@ -221,11 +227,11 @@ function percentageControl(memberAmount, restAmount) {
                 itemStyle: {
                     color: '#EB7477'
                 }
-            }, { // 冉蔚
-                name: '冉蔚',
-                value: parseFloat(memberAmount["冉蔚"]),
+            }, { // 冯晓菲
+                name: '冯晓菲',
+                value: parseFloat(memberAmount["冯晓菲"]),
                 itemStyle: {
-                    color: '#701619'
+                    color: '#E75398'
                 }
             }, { // 其他
                 name: '其他',
@@ -452,7 +458,7 @@ function percentageControl(memberAmount, restAmount) {
                 name: '梁婉琳',
                 value: parseFloat(memberAmount["梁婉琳"]),
                 itemStyle: {
-                    color: '#A93539'
+                    color: '#A93539',
                 }
             }, { // 龙亦瑞
                 name: '龙亦瑞',
@@ -522,7 +528,7 @@ function percentageControl(memberAmount, restAmount) {
             highlightPolicy: 'ancestor',
             data: data,
             itemStyle: {
-                color: '#999999',
+                color: '#C0DAFF',
                 borderWidth: 0,
             },
             // radius: [0, '95%'],
@@ -559,6 +565,10 @@ function percentageControl(memberAmount, restAmount) {
                     borderWidth: 1
                 }
             }]
+        },
+        textStyle: {
+            color: '#C0DAFF',
+            textBorderColor: 'transparent',
         }
     };
 
@@ -627,25 +637,26 @@ function percentageByJoinTime(joinTimeAmount) {
                         // value:parseFloat(joinTimeAmount["SNH48一期生"]),
                         value:parseFloat(joinTimeAmount["1001"]),
                         name:'一期生',
-                        itemStyle: {color: '#00b6de'}
+                        itemStyle: {color: '#297CD7'}   // 莫寒
                     },
                     {
                         // value:parseFloat(joinTimeAmount["SNH48二期生"]),
                         value:parseFloat(joinTimeAmount["1002"]),
                         name:'二期生',
-                        itemStyle: {color: '#9e57b4'}
+                        itemStyle: {color: '#E60111'}   // 李艺彤
                     },
                     {
                         // value:parseFloat(joinTimeAmount["SNH48三期生"]),
                         value:parseFloat(joinTimeAmount["1003"]),
                         name:'三期生',
-                        itemStyle: {color: '#f8941d'}
+                        itemStyle: {color: '#FFC4D3'}   // 张雨鑫
                     },
                     {
                         // value:parseFloat(joinTimeAmount["SNH48四期生"]),
                         value:parseFloat(joinTimeAmount["1004"]),
                         name:'四期生',
-                        itemStyle: {color: '#b1d61b'}
+                        itemStyle: {color: '#FCC525'}   // 宋昕冉
+                        // itemStyle: {color: '#EF802C'}   // 宋昕冉
                     },
                     {
                         // value:parseFloat(joinTimeAmount["SNH48五期生"]),
@@ -653,14 +664,15 @@ function percentageByJoinTime(joinTimeAmount) {
                         name:'五期生',
                         itemStyle: {
                             // Color gradient.
-                            color: new echarts.graphic.LinearGradient(
-                                0, 0, 0, 1,
-                                [
-                                    {offset: 0, color: '#00ff00'},
-                                    {offset: 0.5, color: '#ff4083'},
-                                    {offset: 1, color: '#9FBF40'},
-                                ]
-                            )
+                            // color: new echarts.graphic.LinearGradient(
+                            //     0, 0, 0, 1,
+                            //     [
+                            //         {offset: 0, color: '#00ff00'},
+                            //         {offset: 0.5, color: '#ff4083'},
+                            //         {offset: 1, color: '#9FBF40'},
+                            //     ]
+                            // )
+                            color: '#FFC2C4'            // 谢蕾蕾
                         }
                     },
                     {
@@ -669,20 +681,21 @@ function percentageByJoinTime(joinTimeAmount) {
                         name:'六期生',
                         itemStyle: {
                             // Color gradient.
-                            color: new echarts.graphic.LinearGradient(
-                                0, 0, 0, 1,
-                                [
-                                    {offset: 0, color: '#00b6de'},
-                                    {offset: 0.5, color: '#ffe249'},
-                                    {offset: 1, color: '#0cc8c3'},
-                                ]
-                            )
+                            // color: new echarts.graphic.LinearGradient(
+                            //     0, 0, 0, 1,
+                            //     [
+                            //         {offset: 0, color: '#00b6de'},
+                            //         {offset: 0.5, color: '#ffe249'},
+                            //         {offset: 1, color: '#0cc8c3'},
+                            //     ]
+                            // )
+                            color: '#F29A03'            // 苏杉杉
                         }
                     },
                     {
                         value:parseFloat(joinTimeAmount["其他"]),
                         name:'其他',
-                        itemStyle: {color: '#ff0000'}
+                        itemStyle: {color: '#00b6de'}
                     },
                 ]
             },
