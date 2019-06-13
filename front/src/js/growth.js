@@ -150,7 +150,7 @@ var memberColor = {
     "张茜": '#FEEEF4',
     "赵粤": '#0C7CE5',
     "张怡": '#CAF6EF',
-    "张雨鑫": '#FFC4D3',
+    "张雨鑫": '#ffb3b3',
     // Team HII
     "陈盼": '#eeeeee',
     "费沁源": '#E7B3D2',

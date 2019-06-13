@@ -705,3 +705,58 @@ def descendant_test(request):
         return JsonResponse(context)
     else:
         return render(request, 'descendant.html', context=context)
+
+
+def sister_theaters(request):
+    """
+    {
+      member_list_bej48: ["苏杉杉", "段艺璇", "冯思佳", "张怀瑾", "马玉灵", "陈倩楠", "黄恩茹", "胡晓慧",
+                          "陈美君", "青钰雯", "王雨煊", "李梓",   "刘姝贤", "葛司琪", "闫明筠", "胡丽芝"],
+      member_list_gnz48: ["谢蕾蕾", "郑丹妮", "刘力菲", "陈珂",   "唐莉佳", "左婧媛", "肖文铃", "卢静",
+                          "刘倩倩", "高源婧", "张琼予", "杨媛媛", "杜秋霖", "梁婉琳", "龙亦瑞", "朱怡欣"],
+      member_list_vs: ["谢蕾蕾", "苏杉杉",]
+      amount_bej48: ["160000.00", "150000.00", ...],
+      amount_gnz48: ["170000.00", "140000.00", ...],
+      amount_vs: ["170000.00", "160000.00"]
+    }
+    """
+    context = {}
+    member_list_bej48 = ["苏杉杉", "段艺璇", "冯思佳", "张怀瑾", "马玉灵", "陈倩楠", "黄恩茹", "胡晓慧",
+                         "陈美君", "青钰雯", "王雨煊", "李梓", "刘姝贤", "葛司琪", "闫明筠", "胡丽芝"]
+    member_list_gnz48 = ["谢蕾蕾", "郑丹妮", "刘力菲", "陈珂",   "唐莉佳", "左婧媛", "肖文铃", "卢静",
+                         "刘倩倩", "高源婧", "张琼予", "杨媛媛", "杜秋霖", "梁婉琳", "龙亦瑞", "朱怡欣"]
+    member_list_vs = ["谢蕾蕾", "苏杉杉", "段艺璇", "郑丹妮", "刘力菲", "韩家乐", "冯思佳", "张怀瑾",
+                      "陈珂",   "马玉灵", "唐莉佳", "陈倩楠", "黄恩茹", "胡晓慧", "左婧媛", "陈美君"]
+    amount_bej48 = [str('%.2f' % 36.33), str('%.2f' % 34.33), str('%.2f' % 34.33), str('%.2f' % 30.33),
+                    str('%.2f' % 29.33), str('%.2f' % 28.00), str('%.2f' % 25.03), str('%.2f' % 25.03),
+                    str('%.2f' % 20.11), str('%.2f' % 20.00), str('%.2f' % 19.14), str('%.2f' % 18.77),
+                    str('%.2f' % 15.49), str('%.2f' % 14.67), str('%.2f' % 13.58), str('%.2f' % 12.04)]
+    amount_gnz48 = [str('%.2f' % 36.33), str('%.2f' % 35.33), str('%.2f' % 34.33), str('%.2f' % 30.33),
+                    str('%.2f' % 29.33), str('%.2f' % 28.00), str('%.2f' % 25.03), str('%.2f' % 25.03),
+                    str('%.2f' % 20.11), str('%.2f' % 20.00), str('%.2f' % 19.14), str('%.2f' % 18.77),
+                    str('%.2f' % 15.49), str('%.2f' % 14.67), str('%.2f' % 13.58), str('%.2f' % 12.04)]
+    amount_vs = [str('%.2f' % 36.34), str('%.2f' % 35.33), str('%.2f' % 34.33), str('%.2f' % 30.33),
+                 str('%.2f' % 29.33), str('%.2f' % 28.00), str('%.2f' % 25.03), str('%.2f' % 25.03),
+                 str('%.2f' % 20.11), str('%.2f' % 20.00), str('%.2f' % 19.14), str('%.2f' % 18.77),
+                 str('%.2f' % 15.49), str('%.2f' % 14.67), str('%.2f' % 13.58), str('%.2f' % 12.04)]
+
+    d1 = {"member_list_bej48": json.dumps(member_list_bej48)}
+    d2 = {"member_list_gnz48": json.dumps(member_list_gnz48)}
+    d3 = {"member_list_vs": json.dumps(member_list_vs)}
+    d4 = {"amount_bej48": json.dumps(amount_bej48)}
+    d5 = {"amount_gnz48": json.dumps(amount_gnz48)}
+    d6 = {"amount_vs": json.dumps(amount_vs)}
+
+    context.update(d1)
+    context.update(d2)
+    context.update(d3)
+    context.update(d4)
+    context.update(d5)
+    context.update(d6)
+    print(context)
+
+    if request.is_ajax():
+        return JsonResponse(context)
+    else:
+        return render(request, 'sister_theaters.html', context=context)
+

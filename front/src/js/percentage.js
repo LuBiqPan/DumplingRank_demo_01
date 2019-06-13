@@ -129,7 +129,7 @@ function percentageControl(memberAmount, restAmount) {
                 name: '张雨鑫',
                 value: parseFloat(memberAmount["张雨鑫"]),
                 itemStyle: {
-                    color: '#FFC4D3'
+                    color: '#ffb3b3'
                 }
             }, { // 易嘉爱
                 name: '易嘉爱',
@@ -177,7 +177,7 @@ function percentageControl(memberAmount, restAmount) {
                 name: '沈梦瑶',
                 value: parseFloat(memberAmount["沈梦瑶"]),
                 itemStyle: {
-                    color: '#870000'
+                    color: '#CE50A7'
                 }
             }, { // 许杨玉琢
                 name: '许杨玉琢',
@@ -368,7 +368,7 @@ function percentageControl(memberAmount, restAmount) {
                 name: '谢蕾蕾',
                 value: parseFloat(memberAmount["谢蕾蕾"]),
                 itemStyle: {
-                    color: '#FFC2C4'
+                    color: '#ffb6bd'
                 }
             }, { // 陈珂
                 name: '陈珂',
@@ -463,6 +463,12 @@ function percentageControl(memberAmount, restAmount) {
             }, { // 龙亦瑞
                 name: '龙亦瑞',
                 value: parseFloat(memberAmount["龙亦瑞"]),
+                itemStyle: {
+                    color: '#B484B7'
+                }
+            }, { // 方琪
+                name: '方琪',
+                value: parseFloat(memberAmount["方琪"]),
                 itemStyle: {
                     color: '#B484B7'
                 }
@@ -625,8 +631,11 @@ function percentageByJoinTime(joinTimeAmount) {
                     },
                 },
                 labelLine: {
+
                     normal: {
-                        show: true
+                        show: true,
+                        length: 10,
+                        length2: 5,
                     },
                     emphasis: {
                         show: true
@@ -649,7 +658,7 @@ function percentageByJoinTime(joinTimeAmount) {
                         // value:parseFloat(joinTimeAmount["SNH48三期生"]),
                         value:parseFloat(joinTimeAmount["1003"]),
                         name:'三期生',
-                        itemStyle: {color: '#FFC4D3'}   // 张雨鑫
+                        itemStyle: {color: '#ffb3b3'}   // 张雨鑫
                     },
                     {
                         // value:parseFloat(joinTimeAmount["SNH48四期生"]),
@@ -672,7 +681,7 @@ function percentageByJoinTime(joinTimeAmount) {
                             //         {offset: 1, color: '#9FBF40'},
                             //     ]
                             // )
-                            color: '#FFC2C4'            // 谢蕾蕾
+                            color: '#ffb6bd'            // 谢蕾蕾
                         }
                     },
                     {

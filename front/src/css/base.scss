@@ -130,40 +130,66 @@ body{
 		height: 30px;
 		line-height: $footerHeight;
 		margin: 0 auto;
+		text-align: center;
 		
-		.external-links{
-			line-height: 30px;
-			margin-left: 445px;
+		.count-down-wrapper{
+			width: $sideBarWidth;
+			height: $footerHeight;
+			text-align: center;
+			float: left;
+		}
+		
+		.middle-footer-wrapper{
+			width: $mainTableWidth;
+			float: left;
 			
-			.links{
-				float: left;
-				margin-left: 24px;
-				font-size: 14px;
-				
+			.external-link-wrapper{
+				width: $mainTableWidth;
+				height: 30px;
+				.external-links{
+					line-height: 30px;
+					margin-left: 41px;
+					
+					.links{
+						float: left;
+						margin-left: 24px;
+						font-size: 14px;
+						
+						a{
+							color: $mainFontColor;
+						}
+					}
+				}
+			}
+			
+			.record-group{
+				width: $mainTableWidth;
+				text-align: center;
+				line-height: 50%;
+				margin: 0 auto;
+		
 				a{
 					color: $mainFontColor;
+					font-size: 14px;
+		
+					i{
+						display: inline-block;
+						width: 14px;
+						height: 16px;
+						margin-right: 6px;
+						vertical-align: middle;
+						margin-top: -4px;
+					}
 				}
 			}
 		}
-	}
-	
-	.record-group{
-		width: $mainWidth;
-		text-align: center;
-		line-height: 50%;
-		margin: 0 auto;
-
-		a{
-			color: $mainFontColor;
-			font-size: 14px;
-
-			i{
-				display: inline-block;
-				width: 14px;
-				height: 16px;
-				margin-right: 6px;
-				vertical-align: middle;
-				margin-top: -4px;
+		
+		.history-wrapper{
+			width: $sideBarWidth;
+			float: left;
+			
+			a{
+				color: $mainFontColor;
 			}
 		}
 	}

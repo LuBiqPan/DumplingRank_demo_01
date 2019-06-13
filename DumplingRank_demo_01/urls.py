@@ -34,6 +34,7 @@ urlpatterns = [
     path('detail/', views.detail, name='detail'),
     # path('descendant/', views.descendant, name='descendant'),
     path('descendant/', views.descendant_test, name='descendant'),
+    path('sister_theaters/', views.sister_theaters, name='sister_theaters'),
     path('login/', views.login, name='login'),
     path('register/', views.register, name='register'),
     path('about_us/', TemplateView.as_view(template_name='about_us.html'), name='about_us')

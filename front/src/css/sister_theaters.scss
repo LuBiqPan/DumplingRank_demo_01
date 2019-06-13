@@ -1,0 +1,115 @@
+
+@import "init";
+
+$basicWidth: $mainWidth - 2px;
+$basicHeight: $mainHeight - 22px;
+$subWrapperWidth: $basicWidth / 3 - 15px;
+
+body{
+	font-family: $mainFont;
+}
+
+.main {
+	
+	.sister-theaters-main-wrapper {
+		width: $mainWidth + 20px;
+		height: $mainHeight;
+		margin: 0 auto;
+		background: $wrapperColor;
+		
+		.sister-theaters-inner-main-wrapper {
+			width: $basicWidth;
+			height: $basicHeight;
+			margin-top: 10px;
+			margin-left: 10px;
+			border: 1px solid $wrapperBorderColor;
+			float: left;
+			
+			.title{
+				width: 200px;
+				height: 40px;
+				margin: 10px auto;
+				font-size: 30px;
+				text-align: center;
+				line-height: 40px;
+				font-weight: bold;
+			}
+			
+			.sub-wrapper{
+				.top16-wrapper{
+					width: $subWrapperWidth;
+					height: $basicHeight - 70px;
+					float: left;
+					margin-left: 10px;
+					border: 1px solid $wrapperBorderColor;
+				}
+			
+				#BEJ48-top16-wrapper{
+				}
+				
+				#BEJvsGNZ-wrapper{
+					.inner-BEJvsGNZ-wrapper{
+						width: $subWrapperWidth - 22px;
+						height: $basicHeight - 70px - 22px;
+						margin-left: 10px;
+						margin-top: 10px;
+						border: 1px solid $wrapperBorderColor;
+						
+						.table-title{
+							width: $subWrapperWidth - 42px;
+							height: 40px;
+							line-height: 40px;
+							text-align: center;
+							font-size: 24px;
+							font-weight: 800;
+							background: $wrapperBorderColor;
+							margin-left: 10px;
+							margin-top: 10px;
+						}
+						
+						.table-wrapper{
+							height: $basicHeight - 70px - 32px;
+							margin-top: 10px;
+							margin-left: 10px;
+							font-size: 18px;
+							
+							.main-table-s{
+								width: $subWrapperWidth - 42px;
+								border-collapse: collapse;
+								
+								.tr-even{
+									background: rgba(34, 46, 77, 0.25);
+								}
+								
+								.tr-rank{
+									font-size: 14px;
+									line-height: 26px;
+									cursor: pointer;
+								}
+								
+								tr{
+									th{
+										background: $wrapperBorderColor;
+										height: 30px;
+										line-height: 30px;
+										font-weight: 800;
+									}
+								}
+								
+								td{
+									text-align: center;
+								}
+							}
+						}
+					}
+				}
+				
+				#GNZ48-top16-wrapper{
+				}
+			}
+			
+			
+			
+		}
+	}
+}

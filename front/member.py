@@ -252,6 +252,7 @@ member_avatar = {
     "王翠菲": "http://www.gnz48.com/images/member/zp_30050.jpg",
     "王炯义": "http://www.gnz48.com/images/member/zp_30055.jpg",
     "王偲越": "http://www.gnz48.com/images/member/zp_30042.jpg",
+    "王秭歆": "http://www.gnz48.com/images/member/zp_30041.jpg",
     "谢菲菲": "http://www.gnz48.com/images/member/zp_30095.jpg",
     "杨可璐": "http://www.gnz48.com/images/member/zp_30047.jpg",
     "杨媛媛": "http://www.gnz48.com/images/member/zp_30046.jpg",
