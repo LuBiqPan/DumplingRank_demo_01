@@ -214,8 +214,8 @@ Growth.prototype.init = function () {
 Growth.prototype.ajax = function () {
     var self = this;
     $.ajax({
-        url: "/api/gwoth_index.php/",
-        // url: "",
+        // url: "/api/gwoth_index.php/",
+        url: "",
         contentType: "application/json",
         dataType: "json",
         type: "GET",

@@ -197,7 +197,8 @@ SisterTheaters.prototype.teamColorControl = function () {
 SisterTheaters.prototype.ajax = function () {
     var self = this;
     $.ajax({
-        url: "/sister_theaters/",
+        // url: "/sister_theaters/",
+        url: '/api/sister_theaters.php/',
         contentType: "application/json",
         dataType: "json",
         type: "GET",
@@ -223,7 +224,7 @@ SisterTheaters.prototype.run = function () {
     setTimeout(function () {
         self.theaterColorControl();
         self.teamColorControl();
-    }, 100);
+    }, 500);
 };
 
 $(function () {

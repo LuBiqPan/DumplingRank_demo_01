@@ -101,27 +101,27 @@ function percentageControl(memberAmount, restAmount) {
             itemStyle: {
                 color: '#9e57b4'
             },
-            children: [{ // 黄婷婷
-                name: '黄婷婷',
-                value: parseFloat(memberAmount["黄婷婷"]),
+            children: [{ // 周诗雨
+                name: '周诗雨',
+                value: parseFloat(memberAmount["周诗雨"]),
                 itemStyle: {
                     color: '#FDF200'
                 }
-            }, { // 冯薪朵
-                name: '冯薪朵',
-                value: parseFloat(memberAmount["冯薪朵"]),
+            }, { // 赵佳蕊
+                name: '赵佳蕊',
+                value: parseFloat(memberAmount["赵佳蕊"]),
                 itemStyle: {
                     color: '#31B26B'
                 }
-            }, { // 陆婷
-                name: '陆婷',
-                value: parseFloat(memberAmount["陆婷"]),
+            }, { // 谢妮
+                name: '谢妮',
+                value: parseFloat(memberAmount["谢妮"]),
                 itemStyle: {
                     color: '#D9205E'
                 }
-            }, { // 赵粤
-                name: '赵粤',
-                value: parseFloat(memberAmount["赵粤"]),
+            }, { // 张怡
+                name: '张怡',
+                value: parseFloat(memberAmount["张怡"]),
                 itemStyle: {
                     color: '#0C7CE5'
                 }
@@ -221,9 +221,9 @@ function percentageControl(memberAmount, restAmount) {
                 itemStyle: {
                     color: '#AA302E'
                 }
-            }, { // 李钊
-                name: '李钊',
-                value: parseFloat(memberAmount["李钊"]),
+            }, { // 李星羽
+                name: '李星羽',
+                value: parseFloat(memberAmount["李星羽"]),
                 itemStyle: {
                     color: '#EB7477'
                 }
@@ -289,9 +289,9 @@ function percentageControl(memberAmount, restAmount) {
                 itemStyle: {
                     color: '#F29A03'
                 }
-            }, { // 马玉灵
-                name: '马玉灵',
-                value: parseFloat(memberAmount["马玉灵"]),
+            }, { // 刘胜男
+                name: '刘胜男',
+                value: parseFloat(memberAmount["刘胜男"]),
                 itemStyle: {
                     color: '#FED737'
                 }
@@ -376,9 +376,9 @@ function percentageControl(memberAmount, restAmount) {
                 itemStyle: {
                     color: '#FADB2E'
                 }
-            }, { // 高源婧
-                name: '高源婧',
-                value: parseFloat(memberAmount["高源婧"]),
+            }, { // 徐楚雯
+                name: '徐楚雯',
+                value: parseFloat(memberAmount["徐楚雯"]),
                 itemStyle: {
                     color: '#61C4C0'
                 }
