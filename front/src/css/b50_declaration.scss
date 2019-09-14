@@ -1,0 +1,13 @@
+@import "base50";
+
+body{
+	.declaration-wrapper{
+		width: $mainWidth + 200px;
+		height: 450px;
+		margin: 0 auto;
+		font-size: 24px;
+		background: #eeeeee;
+		opacity: 0.7;
+		padding: 20px 40px;
+	}
+}

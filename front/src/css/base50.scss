@@ -1,0 +1,121 @@
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    list-style: none;
+    text-decoration: none;
+}
+
+$mainFontColor: #433433;
+$mainColor: #222e3f;
+$lineColor: #eee;
+$oddRawColor: #eee;
+$evenRawColor: #ccc;
+$titleColorLight: #f7f7f7;
+$titleRawColor: #666;
+
+$backgroundOpacity: 0.7;
+
+$mainWidth: 800px;
+$sideWidth: 150px;
+$titleWidth: $mainWidth - 2*$sideWidth;
+$titleHeight: 150px;
+
+$widthRank: 50px;
+$widthSong: 250px;
+$widthType: 80px;
+$widthActress: 300px;
+$widthTotalAmount: 150px;
+
+$mainFont: "思源黑体 CN Regular";
+$fontKai: "HanWang KaiBold-Gb5";
+
+body{
+	font-family: $mainFont;
+	
+	.header-wrapper{
+		width: $mainWidth;
+		height: $titleHeight;
+		margin: 0 auto;
+		opacity: 0.8;
+		padding-top: 10px;
+		
+		.logo-wrapper{
+			width: $sideWidth;
+			height: $titleHeight;
+			float: left;
+			opacity: 1;
+			
+			img{
+				width: 80%;
+				height: 80%;
+				border-radius: 50%;
+				margin-top: 10px;
+			}
+		}
+		
+		.title-wrapper{
+			width: $titleWidth;
+			height: $titleHeight;
+			float: left;
+			text-shadow:#444 2px 1px;
+
+			p{
+				text-align: center;
+				font-size: 24px;
+				color: $titleColorLight;
+				
+				a{
+					font-size: 30px;
+					font-weight: bold;
+					color: $titleColorLight;
+				}
+			}
+		}
+		
+		.right-wrapper{
+			width: $sideWidth;
+			height: $titleHeight;
+			float: left;
+		}
+	}
+	
+	.footer-wrapper{
+		width: $mainWidth;
+		height: 50px;
+		margin: 0 auto;
+		opacity: $backgroundOpacity;
+		padding-top: 20px;
+		
+		.footer-links{
+			margin: 0 auto;
+			text-align: center;
+			
+			.link{
+				display: inline;
+				
+				a{
+					text-decoration: none;
+					font-size: 20px;
+					color: $titleColorLight;
+					text-shadow:#444 2px 1px;
+				}
+			}
+			
+			.link{
+				.record{
+					i{
+						display: inline-block;
+						width: 14px;
+						height: 16px;
+						margin-right: 6px;
+						vertical-align: middle;
+						margin-top: -4px;
+					}
+				}
+			}
+		}
+	}
+}

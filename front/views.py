@@ -760,3 +760,21 @@ def sister_theaters(request):
     else:
         return render(request, 'sister_theaters.html', context=context)
 
+
+def b50_index(request):
+    context = {
+        'rank': '1',
+        'song': 'Bingo!',
+        'type': '队歌',
+        'actress': 'SNH48 Team NII',
+        'total_amount': 12345.12
+    }
+    return render(request, 'b50_index.html', context=context)
+
+
+def b50_detail(request):
+    return render(request, 'b50_detail.html')
+
+
+def b50_declaration(request):
+    return render(request, 'b50_declaration.html')

@@ -1,0 +1,202 @@
+{% extends 'base50.html' %}
+
+{% block title %}
+    Best 50 首页
+{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="{% static '/css/b50_index.min.css' %}">
+
+    <div class="table-wrapper">
+        <div class="detail-wrapper">
+            <button class="detail-btn">
+                <a href="{% url 'b50_detail' %}">集资详情</a>
+            </button>
+        </div>
+        <div class="table-title-wrapper">
+            <div class="rank">序号</div>
+            <div class="song">歌曲</div>
+            <div class="actress">参演成员</div>
+            <div class="type">类型</div>
+            <div class="total-amount">集资总额</div>
+        </div>
+        <table class="main-table">
+            <tbody>
+                <tr id="tr-rank-1" class="tr-rank tr-odd">
+                    <td class="rank-no">{{ rank }}</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">{{ type }}</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-2" class="tr-rank tr-even">
+                    <td class="rank-no">2</td>
+                    <td class="rank-song">就差一点点</td>
+                    <td class="rank-actress">谢蕾蕾 张琼予 谢蕾蕾 张琼予 谢蕾蕾 </td>
+                    <td class="rank-type">Unit</td>
+                    <td class="rank-total-amount">502134.55</td>
+                </tr>
+                <tr id="tr-rank-3" class="tr-rank tr-odd">
+                    <td class="rank-no">3</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">Solo</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-4" class="tr-rank tr-even">
+                    <td class="rank-no">4</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">{{ type }}</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-5" class="tr-rank tr-odd">
+                    <td class="rank-no">5</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">Solo</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-6" class="tr-rank tr-even">
+                    <td class="rank-no">6</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">{{ type }}</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-7" class="tr-rank tr-odd">
+                    <td class="rank-no">7</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">Solo</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-8" class="tr-rank tr-even">
+                    <td class="rank-no">8</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">{{ type }}</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-9" class="tr-rank tr-odd">
+                    <td class="rank-no">9</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">Solo</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-10" class="tr-rank tr-even">
+                    <td class="rank-no">10</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">{{ type }}</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-11" class="tr-rank tr-odd">
+                    <td class="rank-no">11</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">Solo</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-12" class="tr-rank tr-even">
+                    <td class="rank-no">12</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">{{ type }}</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                </tr>
+                <tr id="tr-rank-13" class="tr-rank tr-odd">
+                    <td class="rank-no">13</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">Solo</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-14" class="tr-rank tr-even">
+                    <td class="rank-no">14</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">{{ type }}</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                </tr>
+                <tr id="tr-rank-15" class="tr-rank tr-odd">
+                    <td class="rank-no">15</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">Solo</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-16" class="tr-rank tr-even">
+                    <td class="rank-no">16</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">{{ type }}</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                </tr>
+                <tr id="tr-rank-11" class="tr-rank tr-odd">
+                    <td class="rank-no">11</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">Solo</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-12" class="tr-rank tr-even">
+                    <td class="rank-no">12</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">{{ type }}</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                </tr>
+                <tr id="tr-rank-11" class="tr-rank tr-odd">
+                    <td class="rank-no">11</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">Solo</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-12" class="tr-rank tr-even">
+                    <td class="rank-no">12</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">{{ type }}</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                </tr>
+                <tr id="tr-rank-11" class="tr-rank tr-odd">
+                    <td class="rank-no">11</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">Solo</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-12" class="tr-rank tr-even">
+                    <td class="rank-no">12</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">{{ type }}</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                </tr>
+                <tr id="tr-rank-11" class="tr-rank tr-odd">
+                    <td class="rank-no">11</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">Solo</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+                <tr id="tr-rank-12" class="tr-rank tr-even">
+                    <td class="rank-no">12</td>
+                    <td class="rank-song">{{ song }}</td>
+                    <td class="rank-actress">{{ actress }}</td>
+                    <td class="rank-type">{{ type }}</td>
+                    <td class="rank-total-amount">{{ total_amount }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

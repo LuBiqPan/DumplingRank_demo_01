@@ -1,0 +1,165 @@
+@import "base50";
+
+$widthSongDetail: 200px;
+$widthProjectName: 400px;
+$widthPlatform: 50px;
+$widthAmount: 100px;
+$widthFanClub: 200px;
+$widthRemark: 150px;
+
+$widthTable: $widthSongDetail + $widthProjectName + $widthPlatform + $widthAmount + $widthFanClub + $widthRemark;
+
+body{
+	
+	.table-wrapper{
+		width: $widthTable;
+		height: 500px;
+		margin: 0 auto;
+		opacity: $backgroundOpacity;
+		position: relative;
+		
+		.table-title-wrapper{
+			width: $widthTable;
+			font-size: 20px;
+			font-weight: bold;
+			margin-bottom: 15px;
+			height: 30px;
+			line-height: 40px;
+			
+			.song{
+				width: $widthSongDetail - 5px;
+				padding-left: 10px;
+				float: left;
+				background: $titleRawColor;
+			}
+			
+			.project-name{
+				width: $widthProjectName - 15px;
+				//padding-left: 10px;
+				float: left;
+				background: $titleRawColor;
+			}
+			
+			.platform{
+				width: $widthPlatform + 10px;
+				//text-align: center;
+				float: left;
+				background: $titleRawColor;
+			}
+			
+			.amount{
+				width: $widthAmount + 5px;
+				text-align: left;
+				float: left;
+				background: $titleRawColor;
+			}
+			
+			.fan-club{
+				width: $widthFanClub - 3px;
+				//text-align: center;
+				float: left;
+				background: $titleRawColor;
+			}
+			
+			.remark{
+				width: $widthRemark - 2px;
+				//text-align: center;
+				float: left;
+				background: $titleRawColor;
+			}
+		}
+		
+		.inner-table-wrapper{
+			width: $widthTable;
+			height: 450px;
+			overflow-y: auto;	// scroll bar
+			overflow-x: hidden;
+			
+			.main-table{
+				border-collapse: collapse;
+				
+				tbody{
+					.tr-rank{
+						td{
+							margin-left: 0;
+							height: 30px;
+							line-height: 30px;
+							padding-left: 8px;
+						}
+						
+						.rank-song{
+							width: $widthSongDetail;
+							text-align: left;
+							padding-left: 10px;
+						}
+						
+						.rank-project-name{
+							width: $widthProjectName;
+							//padding-left: 20px;
+						}
+						
+						.rank-platform{
+							width: $widthPlatform;
+							//text-align: center;
+						}
+						
+						.rank-amount{
+							width: $widthAmount;
+						}
+						
+						.rank-fan-club{
+							width: $widthFanClub;
+							//text-align: center;
+						}
+						
+						.rank-remark{
+							width: $widthRemark;
+						}
+					}
+					
+					.tr-odd{
+						background: $oddRawColor;
+					}
+					
+					.tr-even{
+						background: $evenRawColor;
+					}
+				}
+			}
+		}
+		
+		.inner-table-wrapper::-webkit-scrollbar {/*滚动条整体样式*/
+			width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+			height: 3px;
+		}
+	
+		.inner-table-wrapper::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+			border-radius: 10px;
+			 -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+			background: $mainFontColor;
+		}
+		
+		.inner-table-wrapper::-webkit-scrollbar-track {/*滚动条里面轨道*/
+			-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+			border-radius: 10px;
+			background: #EDEDED;
+		}
+		
+		.select-wrapper{
+			width: 225px;
+			height: 30px;
+			float: right;
+			position: absolute;
+			top: -40px;
+			right: 0px;
+			
+			span{
+				#select-bar{
+					width: 110px;
+					border: #eeeeee solid 1px;
+					font-family: 微软雅黑;
+				}
+			}
+		}
+	}
+}

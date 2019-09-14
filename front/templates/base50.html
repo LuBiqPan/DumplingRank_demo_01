@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="Shortcut Icon" href="{% static '/images/logo.ico' %}">
+    <link rel="stylesheet" href="{% static '/css/base50.min.css' %}">
+</head>
+<body style="background-image: url({% static 'images/姜杉01.jpg' %});background-repeat:  repeat-y; background-position: center top; background-size: 100% auto">
+    <div class="header-wrapper">
+        <div class="logo-wrapper">
+            <img src="{% static '/images/logo.jpg' %}" alt="">
+        </div>
+        <div class="title-wrapper">
+            <p>
+                <a href="{% url 'b50_index' %}">SNH48 GROUP 第五届金曲大赏</a>
+            </p>
+            <p class="sub-title">粉丝选曲统计</p>
+            <p class="total-info">
+                <span class="total-amount-txt">集资总额</span>
+                <span class="total-amount">123456.02</span>
+                <span class="total-song-txt">&nbsp&nbsp选曲总数</span>
+                <span class="total-song">50</span>
+            </p>
+        </div>
+        <div class="right-wrapper"></div>
+    </div>
+
+{% block main %}{% endblock %}
+
+    <div class="footer-wrapper">
+        <ul class="footer-links">
+            <li class="link">
+                <a class="record" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33050202000298">
+                <i style="background-image: url({% static 'images/备案图标.png' %})"></i>
+                浙公网安备 33050202000298号</a>&nbsp&nbsp&nbsp
+            </li>
+            <li class="link">
+                <a href="http://www.miitbeian.gov.cn/">浙ICP备19018331号</a>
+            </li>
+            <br>
+            <li class="link">
+                <a href="{% url 'b50_declaration' %}" target="_blank">网站声明&nbsp&nbsp</a>
+            </li>
+            <li class="link">
+                <a href="#" target="_blank">B50官方专题页</a>
+            </li>
+            <li class="link">
+                <a href="https://weibo.com/u/2827120175" target="_blank">饺子榜微博</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

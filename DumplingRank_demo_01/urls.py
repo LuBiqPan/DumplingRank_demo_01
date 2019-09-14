@@ -37,5 +37,10 @@ urlpatterns = [
     path('sister_theaters/', views.sister_theaters, name='sister_theaters'),
     path('login/', views.login, name='login'),
     path('register/', views.register, name='register'),
-    path('about_us/', TemplateView.as_view(template_name='about_us.html'), name='about_us')
+    path('about_us/', TemplateView.as_view(template_name='about_us.html'), name='about_us'),
+
+    # Best 50
+    path('b50_index/', views.b50_index, name='b50_index'),
+    path('b50_detail/', views.b50_detail, name='b50_detail'),
+    path('b50_declaration/', views.b50_declaration, name='b50_declaration'),
 ]

@@ -1,0 +1,226 @@
+{% extends 'base50.html' %}
+
+{% block title %}
+    Best 50 详情
+{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="{% static '/css/b50_detail.min.css' %}">
+
+    <div class="table-wrapper">
+        <div class="select-wrapper">
+            <span class="song-span">
+                <select name="" id="select-bar">
+                    <option class="not-select">请选择歌曲</option>
+                    <optgroup label="队歌" class="type-team">
+                        <option value="Bingo!">Bingo!</option>
+                    </optgroup>
+                    <optgroup label="Solo曲" class="type-solo">
+                        <option value="化作樱花树">化作樱花树</option>
+                    </optgroup>
+                    <optgroup label="Unit曲" class="type-unit">
+                        <option value="Spy">Spy</option>
+                    </optgroup>
+                </select>
+            </span>
+            <span class="fan-club-span">
+                <select name="" id="select-bar">
+                    <option class="not-select">请选择应援会</option>
+                        <option value="Bingo!">Bingo!</option>
+                        <option value="Bingo!">Bingo!</option>
+                        <option value="Bingo!">Bingo!</option>
+                </select>
+            </span>
+        </div>
+        <div class="table-title-wrapper">
+            <div class="song">歌曲</div>
+            <div class="project-name">集资项目</div>
+            <div class="platform">平台</div>
+            <div class="amount">金额</div>
+            <div class="fan-club">应援会</div>
+            <div class="remark">备注</div>
+        </div>
+        <div class="inner-table-wrapper">
+            <table class="main-table">
+                <tbody>
+                    <tr id="tr-rank-1" class="tr-rank tr-odd">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资1.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">1002.35</td>
+                        <td class="rank-fans-club">SNH48-恩兔应援会</td>
+                        <td class="remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-2" class="tr-rank tr-even">
+                        <td class="rank-song">《伴我同行》</td>
+                        <td class="rank-project-name">Bingo!集资2.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">78002.35</td>
+                        <td class="rank-fan-club">SNH48-恩兔应援会</td>
+                        <td class="rank-remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-3" class="tr-rank tr-odd">
+                        <td class="rank-song">临兵斗者皆阵列在前</td>
+                        <td class="rank-project-name">【SO蕾】临兵斗者皆阵列在前1.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">1002.35</td>
+                        <td class="rank-fans-club">SNH48-恩兔应援会</td>
+                        <td class="remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-4" class="tr-rank tr-even">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资2.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">78002.35</td>
+                        <td class="rank-fan-club">SNH48-恩兔应援会</td>
+                        <td class="rank-remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-5" class="tr-rank tr-odd">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资1.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">1002.35</td>
+                        <td class="rank-fans-club">SNH48-恩兔应援会</td>
+                        <td class="remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-6" class="tr-rank tr-even">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资2.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">78002.35</td>
+                        <td class="rank-fan-club">SNH48-恩兔应援会</td>
+                        <td class="rank-remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-7" class="tr-rank tr-odd">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资1.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">1002.35</td>
+                        <td class="rank-fans-club">SNH48-恩兔应援会</td>
+                        <td class="remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-8" class="tr-rank tr-even">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资2.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">78002.35</td>
+                        <td class="rank-fan-club">SNH48-恩兔应援会</td>
+                        <td class="rank-remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-9" class="tr-rank tr-odd">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资1.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">1002.35</td>
+                        <td class="rank-fans-club">SNH48-恩兔应援会</td>
+                        <td class="remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-10" class="tr-rank tr-even">
+                        <td class="rank-song">《伴我同行》</td>
+                        <td class="rank-project-name">Bingo!集资2.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">78002.35</td>
+                        <td class="rank-fan-club">SNH48-恩兔应援会</td>
+                        <td class="rank-remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-11" class="tr-rank tr-odd">
+                        <td class="rank-song">临兵斗者皆阵列在前</td>
+                        <td class="rank-project-name">【SO蕾】临兵斗者皆阵列在前1.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">1002.35</td>
+                        <td class="rank-fans-club">SNH48-恩兔应援会</td>
+                        <td class="remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-12" class="tr-rank tr-even">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资2.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">78002.35</td>
+                        <td class="rank-fan-club">SNH48-恩兔应援会</td>
+                        <td class="rank-remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-13" class="tr-rank tr-odd">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资1.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">1002.35</td>
+                        <td class="rank-fans-club">SNH48-恩兔应援会</td>
+                        <td class="remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-14" class="tr-rank tr-even">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资2.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">78002.35</td>
+                        <td class="rank-fan-club">SNH48-恩兔应援会</td>
+                        <td class="rank-remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-15" class="tr-rank tr-odd">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资1.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">1002.35</td>
+                        <td class="rank-fans-club">SNH48-恩兔应援会</td>
+                        <td class="remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-16" class="tr-rank tr-even">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资16.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">78002.35</td>
+                        <td class="rank-fan-club">SNH48-恩兔应援会</td>
+                        <td class="rank-remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-17" class="tr-rank tr-odd">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资1.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">1002.35</td>
+                        <td class="rank-fans-club">SNH48-恩兔应援会</td>
+                        <td class="remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-18" class="tr-rank tr-even">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资16.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">78002.35</td>
+                        <td class="rank-fan-club">SNH48-恩兔应援会</td>
+                        <td class="rank-remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-19" class="tr-rank tr-odd">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资1.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">1002.35</td>
+                        <td class="rank-fans-club">SNH48-恩兔应援会</td>
+                        <td class="remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-20" class="tr-rank tr-even">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资16.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">78002.35</td>
+                        <td class="rank-fan-club">SNH48-恩兔应援会</td>
+                        <td class="rank-remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-21" class="tr-rank tr-odd">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资1.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">1002.35</td>
+                        <td class="rank-fans-club">SNH48-恩兔应援会</td>
+                        <td class="remark">队歌集资</td>
+                    </tr>
+                    <tr id="tr-rank-22" class="tr-rank tr-even">
+                        <td class="rank-song">Bingo!</td>
+                        <td class="rank-project-name">Bingo!集资16.0</td>
+                        <td class="rank-platform">摩点</td>
+                        <td class="rank-amount">78002.35</td>
+                        <td class="rank-fan-club">SNH48-恩兔应援会</td>
+                        <td class="rank-remark">队歌集资</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
