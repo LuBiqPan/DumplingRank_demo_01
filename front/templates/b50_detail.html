@@ -6,11 +6,13 @@
 
 {% block main %}
     <link rel="stylesheet" href="{% static '/css/b50_detail.min.css' %}">
+    <script src="{% static '/js/b50_detail.min.js' %}"></script>
+    {% csrf_token %}
 
     <div class="table-wrapper">
         <div class="select-wrapper">
             <span class="song-span">
-                <select name="" id="select-bar">
+                <select name="" id="select-bar-song" class="select-bar">
                     <option class="not-select">请选择歌曲</option>
                     <optgroup label="队歌" class="type-team">
                         <option value="Bingo!">Bingo!</option>
@@ -24,11 +26,11 @@
                 </select>
             </span>
             <span class="fan-club-span">
-                <select name="" id="select-bar">
+                <select name="" id="select-bar-member" class="select-bar">
                     <option class="not-select">请选择成员</option>
-                        <option value="Bingo!">刘增艳</option>
-                        <option value="Bingo!">宋昕冉</option>
-                        <option value="Bingo!">费沁源</option>
+                    <option value="刘增艳">刘增艳</option>
+                    <option value="宋昕冉">宋昕冉</option>
+                    <option value="费沁源">费沁源</option>
                 </select>
             </span>
         </div>
@@ -42,14 +44,14 @@
         </div>
         <div class="inner-table-wrapper">
             <table class="main-table">
-                <tbody>
-                    <tr id="tr-rank-1" class="tr-rank tr-odd">
+                <tbody id="detail-table-tbody">
+                    <!--<tr id="tr-rank-1" class="tr-rank tr-odd">
                         <td class="rank-song">Bingo!</td>
                         <td class="rank-project-name">Bingo!集资1.0</td>
                         <td class="rank-platform">摩点</td>
                         <td class="rank-amount">1002.35</td>
-                        <td class="rank-fans-club">SNH48-恩兔应援会</td>
-                        <td class="remark">队歌集资</td>
+                        <td class="rank-fan-club">SNH48-恩兔应援会</td>
+                        <td class="rank-remark">队歌集资</td>
                     </tr>
                     <tr id="tr-rank-2" class="tr-rank tr-even">
                         <td class="rank-song">《伴我同行》</td>
@@ -218,7 +220,7 @@
                         <td class="rank-amount">78002.35</td>
                         <td class="rank-fan-club">SNH48-恩兔应援会</td>
                         <td class="rank-remark">队歌集资</td>
-                    </tr>
+                    </tr>-->
                 </tbody>
             </table>
         </div>

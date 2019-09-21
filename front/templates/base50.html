@@ -5,6 +5,8 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="Shortcut Icon" href="{% static '/images/logo.ico' %}">
     <link rel="stylesheet" href="{% static '/css/base50.min.css' %}">
+    <script src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+    <!--<script src="{% static '/js/b50_index.min.js' %}"></script>-->
 </head>
 <body style="background-image: url({% static 'images/鄭丹妮03.jpg' %});background-repeat:  repeat-y; background-position: center top; background-size: 100% auto">
     <div class="header-wrapper">
@@ -18,9 +20,9 @@
             <p class="sub-title">粉丝选曲统计</p>
             <p class="total-info">
                 <span class="total-amount-txt">集资总额</span>
-                <span class="total-amount">123456.02</span>
+                <span id="total-amount"></span>
                 <span class="total-song-txt">&nbsp&nbsp选曲总数</span>
-                <span class="total-song">50</span>
+                <span id="total-song"></span>
             </p>
         </div>
         <div class="right-wrapper"></div>
