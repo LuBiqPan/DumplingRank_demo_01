@@ -4,7 +4,56 @@ function DetailControl() {
 }
 
 
-DetailControl.prototype.initSelectTags = function () {};
+DetailControl.prototype.initSelectTags = function (songList, memberList) {
+    // Initialize select tag of song.
+    var songTeamSong = [];
+    var songSolo = [];
+    var songUnit = [];
+    var i;
+
+    // Song classification.
+    for (i=0; i<songList.length; i++) {
+        // Team song.
+        if (songList[i]["type"] === "队歌") {
+            songTeamSong.push(songList[i]["song"]);
+        }
+        // Solo.
+        else if (songList[i]["type"] === "Solo") {
+            songSolo.push(songList[i]["song"]);
+        }
+        // Unit.
+        else {
+            songUnit.push(songList[i]["song"]);
+        }
+    }
+
+    // Construct select group of song.
+    // Default option.
+    var tagDefaultOptionSong = $("<option class='not-select'>请选择歌曲</option>");
+    // Team song.
+    var $tagTeamSong = $("<optgroup label='队歌' class='type-team'></optgroup>");
+    for (i=0; i<songTeamSong.length; i++) {
+        $tagTeamSong.append("<option>"+songTeamSong[i]+"</option>");
+    }
+    // Solo.
+    var $tagSolo = $("<optgroup label='Solo' class='type-solo'></optgroup>");
+    for (i=0; i<songSolo.length; i++) {
+        $tagSolo.append("<option>"+songSolo[i]+"</option>");
+    }
+    // Unit.
+    var $tagUnit = $("<optgroup label='Unit' class='type-unit'></optgroup>");
+    for (i=0; i<songUnit.length; i++) {
+        $tagUnit.append("<option>"+songUnit[i]+"</option>");
+    }
+    // Append to select tag of song.
+    $("#select-bar-song").append(tagDefaultOptionSong, $tagTeamSong, $tagSolo, $tagUnit);
+
+    // Initialize select tag of member.
+    $("#select-bar-member").append($("<option class='not-select'>请选择成员</option>"));
+    for (i=0; i<memberList.length; i++) {
+        $("#select-bar-member").append("<option>"+memberList[i]+"</option>");
+    }
+};
 
 
 DetailControl.prototype.totalData = function (totalAmount, totalSong) {
@@ -27,8 +76,10 @@ DetailControl.prototype.detailTableControl = function (songData) {
             $trTemp = $("<tr id="+trId+" "+"class='tr-rank tr-even'"+"></tr>");
         }
         // Append td tags.
+        var linkTag = "<a href="+songData[i-1]["project_url"]+" target='_blank'"+">"+songData[i-1]["project_name"]+"</a>";
+        // $trTemp.append("<td class='rank-song'>"+songData[i-1]["song"]+"</td>");
         $trTemp.append("<td class='rank-song'>"+songData[i-1]["song"]+"</td>");
-        $trTemp.append("<td class='rank-project-name'>"+songData[i-1]["project_name"]+"</td>");
+        $trTemp.append("<td class='rank-project-name'>"+linkTag+"</td>");
         $trTemp.append("<td class='rank-platform'>"+songData[i-1]["platform"]+"</td>");
         $trTemp.append("<td class='rank-amount'>"+songData[i-1]["amount"]+"</td>");
         $trTemp.append("<td class='rank-fan-club'>"+songData[i-1]["fan_club"]+"</td>");
@@ -52,8 +103,10 @@ DetailControl.prototype.selectSongOrMember = function () {
 
         // Select a song from menu.
         self.selectedSong = $("#select-bar-song option:selected").text();
-        console.log(self.selectedSong);
-        var data = {"select_song_detail": self.selectedSong};
+        var data = {
+            "select_type": "song",
+            "select_song": self.selectedSong
+        };
         // Post selected song to server.
         $.post(
             "/b50_detail/",     // url.
@@ -75,15 +128,17 @@ DetailControl.prototype.selectSongOrMember = function () {
 
         // Select a member from menu.
         self.selectedMember = $("#select-bar-member option:selected").text();
-        console.log(self.selectedMember);
-        var data = {"select_member_detail": self.selectedMember};
+        var data = {
+            "select_type": "member",
+            "select_member": self.selectedMember
+        };
         // Post selected member to server.
         $.post(
             "/b50_detail/",     // url.
             data,               // Post data, must be a dictionary.
             // Callback function.
             function (data) {
-                var songData = $.parseJSON(data["song_data"]);
+                var songData = $.parseJSON(data["data"]);
                 self.detailTableControl(songData);
             }
         )
@@ -101,7 +156,11 @@ DetailControl.prototype.ajax = function () {
         success: function (data) {
             var totalAmount = $.parseJSON(data["total_amount"]);
             var totalSong = $.parseJSON(data["total_song"]);
+            var songList = $.parseJSON(data["song_list"]);
+            var memberList = $.parseJSON(data["member_list"]);
+
             self.totalData(totalAmount, totalSong);
+            self.initSelectTags(songList, memberList);
         }
     });
 };

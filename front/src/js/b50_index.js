@@ -45,7 +45,8 @@ IndexControl.prototype.ajax = function () {
         success: function (data) {
             var totalAmount = $.parseJSON(data["total_amount"]);
             var totalSong = $.parseJSON(data["total_song"]);
-            var songData = $.parseJSON(data["song_data"]);
+            var songData = $.parseJSON(data["data"]);
+            // var songData = data["data"];
 
             self.totalData(totalAmount, totalSong);
             self.mainTableControl(songData);

@@ -745,8 +745,7 @@ def b50_index(request):
          "song": "人间规则",
          "type": "Unit",
          "amount": "123.45",
-         "actress": [
-             "柏欣妤", "周湘", "张怀瑾"]
+         "actress": ["柏欣妤", "周湘", "张怀瑾"]
          },
         {"id": "2",
          "song": "亚特兰蒂斯纪念",
@@ -771,8 +770,15 @@ def b50_index(request):
     context = {
         "total_amount": "123456.79",
         "total_song": "48",
-        "song_data": json.dumps(song_list)
+        "data": json.dumps(song_list)
     }
+
+    context1 = {
+        "total_amount": "123456.79",
+        "total_song": "48",
+        "data": song_list
+    }
+    # print(context1)
 
     if request.is_ajax():
         return JsonResponse(context)
@@ -784,15 +790,15 @@ def b50_index(request):
 def b50_detail(request):
     # project_list = []
     # context = {}
-    # Selected member from member page.
-    select_member_detail = request.POST.get('select_member_detail')
-    print(select_member_detail)
+    # Selected song or member.
+    select = request.POST
 
     # if select_member_detail:
     project_list = [
         {
             "song": "FionaN",
             "project_name": "FionaN集资2.0",
+            "project_url": "http://www.snh48.com",
             "platform": "摩点",
             "amount": "1235.11",
             "fan_club": "SNH48 Team HII",
@@ -801,6 +807,7 @@ def b50_detail(request):
         {
             "song": "伴我同行",
             "project_name": "《伴我同行伴我同行伴我同行》集资1.0",
+            "project_url": "http://www.snh48.com",
             "platform": "摩点",
             "amount": "12345.11",
             "fan_club": "SNH48 Team HII",
@@ -809,122 +816,61 @@ def b50_detail(request):
         {
             "song": "伴我同行",
             "project_name": "《伴我同行》集资1.0",
+            "project_url": "http://www.snh48.com",
             "platform": "摩点",
             "amount": "12345.11",
             "fan_club": "SNH48 Team HII",
             "remark": ""
         },
-        {
-            "song": "伴我同行",
-            "project_name": "《伴我同行》集资1.0",
-            "platform": "owhat",
-            "amount": "12345.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": ""
-        },
-        {
-            "song": "FionaN",
-            "project_name": "FionaN集资2.0",
-            "platform": "摩点",
-            "amount": "1235.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": "队歌集资"
-        },
-        {
-            "song": "伴我同行",
-            "project_name": "《伴我同行伴我同行伴我同行》集资1.0",
-            "platform": "摩点",
-            "amount": "12345.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": ""
-        },
-        {
-            "song": "伴我同行",
-            "project_name": "《伴我同行》集资1.0",
-            "platform": "摩点",
-            "amount": "12345.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": ""
-        },
-        {
-            "song": "伴我同行",
-            "project_name": "《伴我同行》集资1.0",
-            "platform": "owhat",
-            "amount": "12345.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": ""
-        },
-        {
-            "song": "FionaN",
-            "project_name": "FionaN集资2.0",
-            "platform": "摩点",
-            "amount": "1235.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": "队歌集资"
-        },
-        {
-            "song": "伴我同行",
-            "project_name": "《伴我同行伴我同行伴我同行》集资1.0",
-            "platform": "摩点",
-            "amount": "12345.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": ""
-        },
-        {
-            "song": "伴我同行",
-            "project_name": "《伴我同行》集资1.0",
-            "platform": "摩点",
-            "amount": "12345.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": ""
-        },
-        {
-            "song": "伴我同行",
-            "project_name": "《伴我同行》集资1.0",
-            "platform": "owhat",
-            "amount": "12345.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": ""
-        },
-        {
-            "song": "FionaN",
-            "project_name": "FionaN集资2.0",
-            "platform": "摩点",
-            "amount": "1235.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": "队歌集资"
-        },
-        {
-            "song": "伴我同行",
-            "project_name": "《伴我同行伴我同行伴我同行》集资1.0",
-            "platform": "摩点",
-            "amount": "12345.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": ""
-        },
-        {
-            "song": "伴我同行",
-            "project_name": "《伴我同行》集资1.0",
-            "platform": "摩点",
-            "amount": "12345.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": ""
-        },
-        {
-            "song": "伴我同行",
-            "project_name": "《伴我同行》集资10.0",
-            "platform": "owhat",
-            "amount": "12345.11",
-            "fan_club": "SNH48 Team HII",
-            "remark": ""
-        }
     ]
+
+    song_list = [
+        {"id": "1", "song": "伴我同行", "type": "队歌"},
+        {"id": "2", "song": "Bingo!", "type": "队歌"},
+        # {"id": "3", "song": "新航路", "type": "队歌"},
+        # {"id": "4", "song": "给未来的我们", "type": "队歌"},
+
+        {"id": "5", "song": "化作樱花树", "type": "Solo"},
+        {"id": "6", "song": "初夏秋冬", "type": "Solo"},
+        # {"id": "7", "song": "就差一点点", "type": "Solo"},
+
+        {"id": "8", "song": "夜碟", "type": "Unit"},
+        {"id": "9", "song": "就差一点点", "type": "Unit"},
+        {"id": "10", "song": "Nine to nine", "type": "Unit"},
+        # {"id": "11", "song": "Don't Touch", "type": "Unit"},
+        # {"id": "12", "song": "Don't Touch", "type": "Unit"},
+
+    ]
+
+    member_list = [
+        "张语格",
+        "易嘉爱",
+        "费沁源",
+        # "宋昕冉",
+        # "谢蕾蕾",
+        # "苏杉杉",
+        # "谢蕾蕾",
+    ]
+
+    background_url = "url(/static/images/liulifei01.jpg)"
 
     context = {
         "total_amount": "123456.80",
         "total_song": "50",
-        "song_data": json.dumps(project_list)
+        "song_data": json.dumps(project_list),
+        "song_list": json.dumps(song_list),
+        "member_list": json.dumps(member_list),
+        "background_url": json.dumps(background_url),
     }
+
+    context1 = {
+        "total_amount": "123456.80",
+        "total_song": "50",
+        # "song_data": project_list,
+        "song_list": song_list,
+        "member_list": member_list
+    }
+    # print(context1)
 
     if request.is_ajax():
         return JsonResponse(context)

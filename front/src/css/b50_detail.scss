@@ -91,11 +91,16 @@ body{
 							width: $widthSongDetail;
 							text-align: left;
 							padding-left: 10px;
+							//color: $titleRawColor;
 						}
 						
 						.rank-project-name{
 							width: $widthProjectName;
 							//padding-left: 20px;
+							
+							a{
+								color: #222;
+							}
 						}
 						
 						.rank-platform{
@@ -158,6 +163,11 @@ body{
 					width: 110px;
 					border: #eeeeee solid 1px;
 					font-family: 微软雅黑;
+					
+					.not-select{
+						font-size: 16px;
+						font-weight: bold;
+					}
 				}
 			}
 		}
